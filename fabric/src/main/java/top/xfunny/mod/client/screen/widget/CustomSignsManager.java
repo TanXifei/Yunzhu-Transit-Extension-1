@@ -1,9 +1,6 @@
 package top.xfunny.mod.client.screen.widget;
 
-import com.google.gson.JsonArray;
-import com.google.gson.JsonElement;
-import com.google.gson.JsonObject;
-import com.google.gson.JsonParser;
+import com.google.gson.*;
 import org.mtr.libraries.it.unimi.dsi.fastutil.objects.ObjectArrayList;
 import org.mtr.mapping.holder.Identifier;
 import org.mtr.mapping.mapper.ResourceManagerHelper;
@@ -34,7 +31,9 @@ public class CustomSignsManager {
 
         ResourceManagerHelper.readAllResources(new Identifier("mtr", "mtr_custom_resources.json"), (inputStream) -> {
             try (InputStreamReader reader = new InputStreamReader(inputStream)) {
-                JsonObject jsonObject = JsonParser.parseReader(reader).getAsJsonObject();
+                Gson gson = new Gson();
+                JsonObject jsonObject = gson.fromJson(reader, JsonObject.class);
+                //JsonObject jsonObject = JsonParser.parseReader(reader).getAsJsonObject();
                 JsonArray signsArray = jsonObject.getAsJsonArray("signs");
 
                 for (JsonElement signElement : signsArray) {
