@@ -16,6 +16,7 @@ import java.util.Map;
 //TODO： 需要重写版本检查功能
 @Deprecated
 public class UpdateCheckerUtil {
+    /*
     private static final Logger LOGGER = LogManager.getLogger("Yunzhu Transit Extension/Update Utility");
     private static final String UPDATE_VERSION = "";
 
@@ -97,5 +98,5 @@ public class UpdateCheckerUtil {
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
-    }
+    }*/
 }
