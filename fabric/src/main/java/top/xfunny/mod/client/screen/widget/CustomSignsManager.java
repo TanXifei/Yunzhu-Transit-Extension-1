@@ -8,6 +8,7 @@ import top.xfunny.mod.Init;
 
 import java.io.File;
 import java.io.InputStreamReader;
+import java.util.Collections;
 import java.util.HashSet;
 import java.util.LinkedHashSet;
 import java.util.Set;
@@ -17,12 +18,24 @@ public class CustomSignsManager {
     private static ObjectArrayList<String> allSigns = new ObjectArrayList<>();
     private static ObjectArrayList<String> defaultSigns = new ObjectArrayList<>();
 
-    private static final Set<String> builtinFileNames = new HashSet<>(Set.of(""));
+    private static final Set<String> builtinFileNames;
+
+    static {
+        Set<String> names = new HashSet<>();
+        names.add("");
+        builtinFileNames = names;
+    }
     // 内置非图标列表
-    private static final Set<String> NAFileNames = Set.of(
-            "seven_segment.png","qr_code.png","lift_arrow.png",
-            "exit_letter_blank.png","circle.png","door_not_in_use.png",
-            "gap_small.png","logo_grayscale.png","rubbish.png","spit.png");
+    private static final Set<String> NAFileNames;
+
+    static {
+        NAFileNames = new HashSet<>();
+        Collections.addAll(NAFileNames,
+                "seven_segment.png","qr_code.png","lift_arrow.png",
+                "exit_letter_blank.png","circle.png","door_not_in_use.png",
+                "gap_small.png","logo_grayscale.png","rubbish.png","spit.png"
+        );
+    }
 
     public static void loader() {
         defaultSigns.clear();
