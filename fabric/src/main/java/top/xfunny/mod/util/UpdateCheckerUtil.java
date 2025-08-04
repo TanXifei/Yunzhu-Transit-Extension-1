@@ -10,6 +10,7 @@ import java.io.FileInputStream;
 import java.io.InputStream;
 import java.security.MessageDigest;
 import java.time.Instant;
+import java.util.Collections;
 import java.util.Map;
 
 //TODO： 需要重写版本检查功能
@@ -62,7 +63,7 @@ public class UpdateCheckerUtil {
     }
 
     private static Map<String, Instant> getUpdateVersions(String Hash){
-        return Map.of();
+        return Collections.emptyMap();
     }
 
     private static String getCurrentVersionHash(){
