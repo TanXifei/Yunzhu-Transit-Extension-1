@@ -193,7 +193,7 @@ public class RenderSchindlerFIGSButton1Steel extends BlockEntityRenderer<Schindl
                         sortedPositionsAndLifts.get(i).right(),
                         FontList.instance.getFont("schindler_linea_large"),
                         7,
-                        0xFFFF0000);
+                        0xFFFFFFFF);
                 liftFloorDisplayView.setDisplayLength(2, 0.05F);
                 liftFloorDisplayView.setTextureId("schindler_fi_gs_1_steel_display");
                 liftFloorDisplayView.setWidth(1.4F / 16);
@@ -208,7 +208,7 @@ public class RenderSchindlerFIGSButton1Steel extends BlockEntityRenderer<Schindl
                 liftArrowView.setDimension(0.55F / 16);
                 liftArrowView.setQueuedRenderLayer(QueuedRenderLayer.LIGHT_TRANSLUCENT);
                 liftArrowView.setGravity(Gravity.CENTER_HORIZONTAL);
-                liftArrowView.setColor(0xFFFF0000);
+                liftArrowView.setColor(0xFFFFFFFF);
 
 
                 final LinearLayout numberLayout = new LinearLayout(true);

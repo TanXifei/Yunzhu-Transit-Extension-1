@@ -18,7 +18,7 @@ public class HitachiGHL668Lantern1Odd extends LiftButtonsBase {
     @Nonnull
     @Override
     public VoxelShape getOutlineShape2(BlockState state, BlockView world, BlockPos pos, ShapeContext context) {
-        return IBlock.getVoxelShapeByDirection(4.245, 4.25, 0, 11.745, 11.775, 0.85, IBlock.getStatePropertySafe(state, FACING));
+        return IBlock.getVoxelShapeByDirection(6.1, 6.1, 0, 9.9, 9.9, 0.85, IBlock.getStatePropertySafe(state, FACING));
 
     }
 

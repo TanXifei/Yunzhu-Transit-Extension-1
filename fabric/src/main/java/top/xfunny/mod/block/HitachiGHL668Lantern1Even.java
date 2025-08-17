@@ -20,11 +20,10 @@ public class HitachiGHL668Lantern1Even extends LiftButtonsBase {
     public VoxelShape getOutlineShape2(BlockState state, BlockView world, BlockPos pos, ShapeContext context) {
         switch (IBlock.getStatePropertySafe(state, SIDE)) {
             case LEFT:
-                return IBlock.getVoxelShapeByDirection(12.245, 4.25, 0, 16, 11.775, 0.85, IBlock.getStatePropertySafe(state, FACING));
+                return IBlock.getVoxelShapeByDirection(14.1, 6.1, 0, 16, 9.9, 0.45, IBlock.getStatePropertySafe(state, FACING));
 
             case RIGHT:
-                return IBlock.getVoxelShapeByDirection(0, 4.25, 0, 3.75, 11.775, 0.85, IBlock.getStatePropertySafe(state, FACING));
-
+                return IBlock.getVoxelShapeByDirection(0, 6.1, 0, 1.9, 9.9, 0.45, IBlock.getStatePropertySafe(state, FACING));
         }
         return VoxelShapes.empty();
     }
