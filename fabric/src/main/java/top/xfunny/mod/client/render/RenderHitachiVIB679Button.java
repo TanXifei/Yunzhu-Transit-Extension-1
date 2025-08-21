@@ -196,13 +196,13 @@ public class RenderHitachiVIB679Button extends BlockEntityRenderer<HitachiVIB679
                         blockPos,
                         sortedPositionsAndLifts.get(i).right(),
                         FontList.instance.getFont("hitachi-lcd-seg"),
-                        6.75F,
+                        7.25F,
                         0xFFDEF6FF);
                 liftFloorDisplayView.setTextureId("hitachi-vib-679-segmented");
                 liftFloorDisplayView.setWidth(1.5F / 16);
                 liftFloorDisplayView.setHeight(1.7F / 16);
-
-                liftFloorDisplayView.setMargin(0, 0, 0.1F/16, 0);
+                liftFloorDisplayView.setLetterSpacing(5);
+                liftFloorDisplayView.setMargin(0, 0, 0.25F/16, 0);
                 liftFloorDisplayView.setTextAlign(TextView.HorizontalTextAlign.RIGHT);
                 liftFloorDisplayView.addStoredMatrixTransformations(graphicsHolder -> graphicsHolder.translate(0, 0, -SMALL_OFFSET));
 
