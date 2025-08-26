@@ -126,19 +126,25 @@ public class RenderMitsubishiNexWayScreen2<T extends LiftPanelBase.BlockEntityBa
                 //游戏时间处理
                 long ticksInDay = time % 24000;
                 int totalSeconds = (int) (ticksInDay * 3.6);
-                int hours = (totalSeconds / 3600 + 6) % 24; //从06:00开始
+                int hours24 = (totalSeconds / 3600 + 6) % 24; // 从06:00开始
                 int minutes = (totalSeconds % 3600) / 60;
+
+                int hours12 = hours24 % 12;
+                if (hours12 == 0) {
+                    hours12 = 12;
+                }
 
                 SimpleDateFormat dateFormat = new SimpleDateFormat("M月 d日");
                 String timeStr = dateFormat.format(day);
-                String formattedTime = String.format("%02d:%02d", hours, minutes);
-                String timePeriod = hours < 12 ? "AM" : "PM";
+                String timePeriod = hours24 < 12 ? "AM" : "PM";
+                String formattedTime = String.format("%02d:%02d", hours12, minutes);
                 String text = timeStr + " " + formattedTime + timePeriod;
+
 
                 final TextView textView = new TextView();
                 textView.setId("textView");
                 textView.setBasicsAttributes(world, blockPos, FontList.instance.getFont("wqy-microhei"), 5, 0xFFFFFFFF);
-                textView.setTextureId("schindler_z_line_3_keypad_1_display");
+                textView.setTextureId("mitsubishi_nexway_screen_2_date_display");
                 textView.setText(text);
                 textView.setWidth(4F / 16);
                 textView.setHeight(1F / 16);

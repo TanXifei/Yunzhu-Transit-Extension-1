@@ -277,7 +277,7 @@ public final class InitClient {
         });
 
         // TODO: 发布前请注释此行代码。
-        //REGISTRY_CLIENT.eventRegistryClient.registerGuiRendering(RenderWatermark::render);
+        REGISTRY_CLIENT.eventRegistryClient.registerGuiRendering(RenderWatermark::render);
 
         REGISTRY_CLIENT.init();
     }

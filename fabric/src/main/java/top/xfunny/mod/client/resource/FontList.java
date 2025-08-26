@@ -21,7 +21,8 @@ public class FontList {
     }
 
     public void FlonList() {
-        if (!fontsLoaded) {//todo:在此处添加字体
+        if (!fontsLoaded) {
+            // 字体列表
             loadFont("ces-14x7", "font/ces-14x7.ttf");
             loadFont("testfont", "font/schindler-m-series-lop-nz-thin-1-beta.ttf");
             loadFont("acmeled", "font/acme-led.ttf");
@@ -85,14 +86,14 @@ public class FontList {
             return font;
         } else {
             if (Objects.equals(fontId, "Arial")) {
-                return new Font("Arial", Font.PLAIN, 12);//单独加载Arial字体，用户自行安装。
+                return new Font("Arial", Font.PLAIN, 12);
             } else {
-                FlonList(); // 重新加载所有字体
-                font = fonts.get(fontId); // 再次尝试获取字体
+                FlonList();
+                font = fonts.get(fontId);
                 if (font != null) {
                     return font;
                 } else {
-                    return new Font("Arial", Font.PLAIN, 12); // 默认字体
+                    return new Font("Arial", Font.PLAIN, 12);
                 }
             }
         }
