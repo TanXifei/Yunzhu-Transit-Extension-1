@@ -10,13 +10,11 @@ import java.io.FileInputStream;
 import java.io.InputStream;
 import java.security.MessageDigest;
 import java.time.Instant;
-import java.util.Collections;
 import java.util.Map;
 
 //TODO： 需要重写版本检查功能
 @Deprecated
 public class UpdateCheckerUtil {
-    /*
     private static final Logger LOGGER = LogManager.getLogger("Yunzhu Transit Extension/Update Utility");
     private static final String UPDATE_VERSION = "";
 
@@ -63,10 +61,6 @@ public class UpdateCheckerUtil {
 //        LOGGER.info("Get the latest version here: https://modrinth.com/mod/yunzhu-transit-extension/versions");
     }
 
-    private static Map<String, Instant> getUpdateVersions(String Hash){
-        return Collections.emptyMap();
-    }
-
     private static String getCurrentVersionHash(){
         try{
             File jarFile = new File(UpdateCheckerUtil.class.getProtectionDomain().getCodeSource().getLocation().toURI());
@@ -98,5 +92,5 @@ public class UpdateCheckerUtil {
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
-    }*/
+    }
 }

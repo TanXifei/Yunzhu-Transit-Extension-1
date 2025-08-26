@@ -1,6 +1,9 @@
 package top.xfunny.mod.client.screen.widget;
 
-import com.google.gson.*;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParser;
 import org.mtr.libraries.it.unimi.dsi.fastutil.objects.ObjectArrayList;
 import org.mtr.mapping.holder.Identifier;
 import org.mtr.mapping.mapper.ResourceManagerHelper;
@@ -8,7 +11,6 @@ import top.xfunny.mod.Init;
 
 import java.io.File;
 import java.io.InputStreamReader;
-import java.util.Collections;
 import java.util.HashSet;
 import java.util.LinkedHashSet;
 import java.util.Set;
@@ -21,20 +23,26 @@ public class CustomSignsManager {
     private static final Set<String> builtinFileNames;
 
     static {
-        Set<String> names = new HashSet<>();
-        names.add("");
-        builtinFileNames = names;
+        Set<String> strings = new HashSet<>();
+        strings.add("");
+        builtinFileNames = new HashSet<>(strings);
     }
+
     // 内置非图标列表
     private static final Set<String> NAFileNames;
 
     static {
         NAFileNames = new HashSet<>();
-        Collections.addAll(NAFileNames,
-                "seven_segment.png","qr_code.png","lift_arrow.png",
-                "exit_letter_blank.png","circle.png","door_not_in_use.png",
-                "gap_small.png","logo_grayscale.png","rubbish.png","spit.png"
-        );
+        NAFileNames.add("seven_segment.png");
+        NAFileNames.add("qr_code.png");
+        NAFileNames.add("lift_arrow.png");
+        NAFileNames.add("exit_letter_blank.png");
+        NAFileNames.add("circle.png");
+        NAFileNames.add("door_not_in_use.png");
+        NAFileNames.add("gap_small.png");
+        NAFileNames.add("logo_grayscale.png");
+        NAFileNames.add("rubbish.png");
+        NAFileNames.add("spit.png");
     }
 
     public static void loader() {
@@ -44,9 +52,8 @@ public class CustomSignsManager {
 
         ResourceManagerHelper.readAllResources(new Identifier("mtr", "mtr_custom_resources.json"), (inputStream) -> {
             try (InputStreamReader reader = new InputStreamReader(inputStream)) {
-                Gson gson = new Gson();
-                JsonObject jsonObject = gson.fromJson(reader, JsonObject.class);
-                //JsonObject jsonObject = JsonParser.parseReader(reader).getAsJsonObject();
+                JsonParser parser = new JsonParser();
+                JsonObject jsonObject = parser.parse(reader).getAsJsonObject();
                 JsonArray signsArray = jsonObject.getAsJsonArray("signs");
 
                 for (JsonElement signElement : signsArray) {

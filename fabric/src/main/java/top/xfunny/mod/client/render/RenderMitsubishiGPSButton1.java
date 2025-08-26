@@ -117,7 +117,7 @@ public class RenderMitsubishiGPSButton1 extends BlockEntityRenderer<MitsubishiGP
         ImageView buttonUp = new ImageView();
         buttonUp.setBasicsAttributes(world, blockPos);
         buttonUp.setTexture(BUTTON_TEXTURE);
-        buttonUp.setDimension(0.9F / 16, 326, 256);
+        buttonUp.setDimension(1F / 16, 326, 256);
         buttonUp.setGravity(Gravity.CENTER);
         buttonUp.setLight(light);
 
@@ -125,7 +125,7 @@ public class RenderMitsubishiGPSButton1 extends BlockEntityRenderer<MitsubishiGP
         buttonUpLight.setId("up");
         buttonUpLight.setBasicsAttributes(world, blockPos, keyMapping);
         buttonUpLight.setTexture(BUTTON_LIGHT_TEXTURE);
-        buttonUpLight.setDimension(0.9F / 16, 326, 256);
+        buttonUpLight.setDimension(1F / 16, 326, 256);
         buttonUpLight.setGravity(Gravity.CENTER);
         buttonUpLight.setLight(light);
         buttonUpLight.setDefaultColor(ARGB_WHITE);
@@ -135,7 +135,7 @@ public class RenderMitsubishiGPSButton1 extends BlockEntityRenderer<MitsubishiGP
         ImageView buttonDown = new ImageView();
         buttonDown.setBasicsAttributes(world, blockPos);
         buttonDown.setTexture(BUTTON_TEXTURE);
-        buttonDown.setDimension(0.9F / 16, 326, 256);
+        buttonDown.setDimension(1F / 16, 326, 256);
         buttonDown.setGravity(Gravity.CENTER);
         buttonDown.setLight(light);
         buttonDown.setFlip(false, true);
@@ -144,7 +144,7 @@ public class RenderMitsubishiGPSButton1 extends BlockEntityRenderer<MitsubishiGP
         buttonDownLight.setId("down");
         buttonDownLight.setBasicsAttributes(world, blockPos, keyMapping);
         buttonDownLight.setTexture(BUTTON_LIGHT_TEXTURE);
-        buttonDownLight.setDimension(0.9F / 16, 326, 256);
+        buttonDownLight.setDimension(1F / 16, 326, 256);
         buttonDownLight.setGravity(Gravity.CENTER);
         buttonDownLight.setLight(light);
         buttonDownLight.setDefaultColor(ARGB_WHITE);
@@ -228,7 +228,7 @@ public class RenderMitsubishiGPSButton1 extends BlockEntityRenderer<MitsubishiGP
                 liftArrowView.setTexture(ARROW_TEXTURE);
                 liftArrowView.setQueuedRenderLayer(QueuedRenderLayer.LIGHT_TRANSLUCENT);
                 liftArrowView.setDimension(0.7F / 16);
-                liftArrowView.setMargin(0, 1.27F / 16, 0, 0);
+                liftArrowView.setMargin(0, 1.6F / 16, 0, 0);
                 liftArrowView.setGravity(Gravity.CENTER_HORIZONTAL);
                 liftArrowView.setColor(0xFFFA7A24);
 

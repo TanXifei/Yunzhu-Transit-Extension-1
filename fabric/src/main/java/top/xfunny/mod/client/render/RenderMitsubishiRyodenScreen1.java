@@ -255,57 +255,52 @@ public class RenderMitsubishiRyodenScreen1<T extends LiftButtonsBase.BlockEntity
                 liftFloorDisplayView.setGravity(Gravity.CENTER);
                 liftFloorDisplayView.setTextAlign(TextView.HorizontalTextAlign.CENTER);//文字对齐方式，center为居中对齐，left为左对齐，right为右对齐
                 liftFloorDisplayView.setMargin(0.6F / 16, 0, 0.6F / 16, 0);
-                // Three-digits WIP
-//                liftFloorDisplayView.addStoredMatrixTransformations(graphicsHolder -> graphicsHolder.translate(0, 0, -SMALL_OFFSET));
-//                if (liftFloorDisplayView.getTextLength() >= 3) {
-//                    liftFloorDisplayView.setBasicsAttributes(world,
-//                            blockPos,
-//                            sortedPositionsAndLifts.get(i).right(),
-//                            FontList.instance.getFont("mitsubishi_small_sht"),
-//                            11,
-//                            0xFFFA7A24);
-//                    liftFloorDisplayView.setAdaptMode(LiftFloorDisplayView.AdaptMode.FORCE_FIT_WIDTH);
-//                    liftFloorDisplayView.setMargin(0.7F / 16, 0, 0.5F / 16, 0);
-//                } else {
-//                    liftFloorDisplayView.setAdaptMode(LiftFloorDisplayView.AdaptMode.ASPECT_FILL);
-//                }
+                liftFloorDisplayView.addStoredMatrixTransformations(graphicsHolder -> graphicsHolder.translate(0, 0, -SMALL_OFFSET));
+                if (liftFloorDisplayView.getTextLength() >= 2) {
+                    liftFloorDisplayView.setBasicsAttributes(world,
+                            blockPos,
+                            sortedPositionsAndLifts.get(i).right(),
+                            FontList.instance.getFont("ryoden-led-small"),
+                            11F,
+                            0xFFFA7A24);
+                }
                 screenLayout.addChild(liftFloorDisplayView);
             }
+
+            blockEntity.forEachLiftButtonPosition(buttonPosition -> {
+                buttonLine.RenderLine(holdingLinker, buttonPosition, true);
+            });
+
+            if (buttonDescriptor.hasDownButton() && buttonDescriptor.hasUpButton()) {
+                lanternGroupLeft.addChild(downLanternLeft);
+                lanternGroupLeft.addChild(lanternArrowDownLeft);
+                lanternGroupRight.addChild(upLanternRight);
+                lanternGroupRight.addChild(lanternArrowUpRight);
+                linearLayout.addChild(lanternGroupLeft);
+                linearLayout.addChild(screenLayout);
+                linearLayout.addChild(lanternGroupRight);
+
+            } else if (buttonDescriptor.hasDownButton()) {
+                lanternGroupLeft.addChild(downLanternLeft);
+                lanternGroupLeft.addChild(lanternArrowDownLeft);
+                lanternGroupRight.addChild(downLanternRight);
+                lanternGroupRight.addChild(lanternArrowDownRight);
+                linearLayout.addChild(lanternGroupLeft);
+                linearLayout.addChild(screenLayout);
+                linearLayout.addChild(lanternGroupRight);
+
+            } else if (buttonDescriptor.hasUpButton()) {
+                lanternGroupLeft.addChild(upLanternLeft);
+                lanternGroupLeft.addChild(lanternArrowUpLeft);
+                lanternGroupRight.addChild(upLanternRight);
+                lanternGroupRight.addChild(lanternArrowUpRight);
+                linearLayout.addChild(lanternGroupLeft);
+                linearLayout.addChild(screenLayout);
+                linearLayout.addChild(lanternGroupRight);
+            }
+
+            parentLayout.addChild(linearLayout);
+            parentLayout.render();
         }
-
-        blockEntity.forEachLiftButtonPosition(buttonPosition -> {
-            buttonLine.RenderLine(holdingLinker, buttonPosition, true);
-        });
-
-        if (buttonDescriptor.hasDownButton() && buttonDescriptor.hasUpButton()) {
-            lanternGroupLeft.addChild(downLanternLeft);
-            lanternGroupLeft.addChild(lanternArrowDownLeft);
-            lanternGroupRight.addChild(upLanternRight);
-            lanternGroupRight.addChild(lanternArrowUpRight);
-            linearLayout.addChild(lanternGroupLeft);
-            linearLayout.addChild(screenLayout);
-            linearLayout.addChild(lanternGroupRight);
-
-        } else if (buttonDescriptor.hasDownButton()) {
-            lanternGroupLeft.addChild(downLanternLeft);
-            lanternGroupLeft.addChild(lanternArrowDownLeft);
-            lanternGroupRight.addChild(downLanternRight);
-            lanternGroupRight.addChild(lanternArrowDownRight);
-            linearLayout.addChild(lanternGroupLeft);
-            linearLayout.addChild(screenLayout);
-            linearLayout.addChild(lanternGroupRight);
-
-        } else if (buttonDescriptor.hasUpButton()) {
-            lanternGroupLeft.addChild(upLanternLeft);
-            lanternGroupLeft.addChild(lanternArrowUpLeft);
-            lanternGroupRight.addChild(upLanternRight);
-            lanternGroupRight.addChild(lanternArrowUpRight);
-            linearLayout.addChild(lanternGroupLeft);
-            linearLayout.addChild(screenLayout);
-            linearLayout.addChild(lanternGroupRight);
-        }
-
-        parentLayout.addChild(linearLayout);
-        parentLayout.render();
     }
 }

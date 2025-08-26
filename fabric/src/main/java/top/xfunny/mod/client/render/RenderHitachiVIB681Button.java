@@ -203,7 +203,7 @@ public class RenderHitachiVIB681Button extends BlockEntityRenderer<HitachiVIB681
                 liftFloorDisplayView.setWidth(1.5F / 16);
                 liftFloorDisplayView.setHeight(1.7F / 16);
 
-                liftFloorDisplayView.setMargin(0, 0, 0.15F/16, 0);
+                liftFloorDisplayView.setMargin(-0.125F/16, 0, 0.125F/16, 0);
                 liftFloorDisplayView.setTextAlign(TextView.HorizontalTextAlign.RIGHT);
                 liftFloorDisplayView.addStoredMatrixTransformations(graphicsHolder -> graphicsHolder.translate(0, 0, -SMALL_OFFSET));
 
