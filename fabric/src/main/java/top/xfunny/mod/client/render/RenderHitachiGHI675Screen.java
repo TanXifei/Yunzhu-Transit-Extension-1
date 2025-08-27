@@ -110,7 +110,7 @@ public class RenderHitachiGHI675Screen<T extends LiftPanelBase.BlockEntityBase> 
 
                 final LiftArrowView liftArrowView_left = new LiftArrowView();
                 liftArrowView_left.setBasicsAttributes(world, blockPos, sortedPositionsAndLifts.get(i).right(), LiftArrowView.ArrowType.AUTO);
-                liftArrowView_left.setTexture(new Identifier(Init.MOD_ID, "textures/block/hitachi_bxsclc6_arrow.png"));
+                liftArrowView_left.setTexture(new Identifier(Init.MOD_ID, "textures/block/hitachi_bxsclc5_arrow.png"));
                 liftArrowView_left.setAnimationScrolling(false, 0.05F);
                 liftArrowView_left.setDimension(0.9F / 16, 384, 512);
                 liftArrowView_left.setMargin(-3.75F / 16, 2F / 16, 0, 0);
