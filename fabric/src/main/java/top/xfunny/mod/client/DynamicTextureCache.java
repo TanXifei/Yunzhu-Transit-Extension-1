@@ -222,7 +222,7 @@ public class DynamicTextureCache {
 
         if (generatingResources.contains(key)) {// 正在生成中
             Object2ObjectLinkedOpenHashMap<String, DynamicResource> pool = lastResourceById.get(idOnly);
-            if (!pool.isEmpty()) {
+            if (pool !=null && !pool.isEmpty()) {
                 return pool.get(pool.lastKey());
             }
             return defaultRenderingColor.dynamicResource;
@@ -254,7 +254,7 @@ public class DynamicTextureCache {
 
         if (dynamicResource == null) {
             Object2ObjectLinkedOpenHashMap<String, DynamicResource> pool = lastResourceById.get(idOnly);
-            if (!pool.isEmpty()) {
+            if (pool != null && !pool.isEmpty()) {
                 return pool.get(pool.lastKey());
             }
             return defaultRenderingColor.dynamicResource;
