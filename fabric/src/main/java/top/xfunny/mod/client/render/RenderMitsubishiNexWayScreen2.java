@@ -23,7 +23,7 @@ import java.text.SimpleDateFormat;
 import java.util.Comparator;
 import java.util.Date;
 
-public class RenderMitsubishiNexWayScreen2<T extends LiftPanelBase.BlockEntityBase> extends BlockEntityRenderer<T> implements DirectionHelper, IGui, IBlock {
+public class    RenderMitsubishiNexWayScreen2<T extends LiftPanelBase.BlockEntityBase> extends BlockEntityRenderer<T> implements DirectionHelper, IGui, IBlock {
     private final boolean isOdd;
 
     public RenderMitsubishiNexWayScreen2(Argument dispatcher, Boolean isOdd) {
@@ -130,14 +130,12 @@ public class RenderMitsubishiNexWayScreen2<T extends LiftPanelBase.BlockEntityBa
                 int minutes = (totalSeconds % 3600) / 60;
 
                 int hours12 = hours24 % 12;
-                if (hours12 == 0) {
-                    hours12 = 12;
-                }
 
                 SimpleDateFormat dateFormat = new SimpleDateFormat("M月 d日");
                 String timeStr = dateFormat.format(day);
                 String timePeriod = hours24 < 12 ? "AM" : "PM";
-                String formattedTime = String.format("%02d:%02d", hours12, minutes);
+                // 移除"%02d"中的'0'，讓小時數不帶前導零
+                String formattedTime = String.format("%d:%02d", hours12, minutes);
                 String text = timeStr + " " + formattedTime + timePeriod;
 
 

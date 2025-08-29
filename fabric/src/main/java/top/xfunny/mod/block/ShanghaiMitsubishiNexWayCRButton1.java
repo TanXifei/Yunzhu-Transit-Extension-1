@@ -60,7 +60,7 @@ public class ShanghaiMitsubishiNexWayCRButton1 extends LiftButtonsBase {
      */
     public static class BlockEntity extends BlockEntityBase {
         public BlockEntity(BlockPos pos, BlockState state) {
-            super(BlockEntityTypes.SHANGHAI_MITSUBISHI_NEXWAY_BUTTON_1.get(), pos, state);
+            super(BlockEntityTypes.SHANGHAI_MITSUBISHI_NEXWAY_CR_BUTTON_1.get(), pos, state);
         }
     }
 

@@ -123,7 +123,10 @@ public class BlockEntityTypes {
     public static final BlockEntityTypeRegistryObject<MitsubishiMPVFButton1.BlockEntity> MITSUBISHI_MPVF_BUTTON_1;
     public static final BlockEntityTypeRegistryObject<MitsubishiMPVFScreen1VerticalOdd.BlockEntity> MITSUBISHI_MPVF_SCREEN_1_VERTICAL_ODD;
     public static final BlockEntityTypeRegistryObject<MitsubishiMPVFScreen1VerticalEven.BlockEntity> MITSUBISHI_MPVF_SCREEN_1_VERTICAL_EVEN;
-    public static final BlockEntityTypeRegistryObject<ShanghaiMitsubishiNexWayCRButton1.BlockEntity> SHANGHAI_MITSUBISHI_NEXWAY_BUTTON_1;
+    public static final BlockEntityTypeRegistryObject<ShanghaiMitsubishiNexWayCRButton1.BlockEntity> SHANGHAI_MITSUBISHI_NEXWAY_CR_BUTTON_1;
+    public static final BlockEntityTypeRegistryObject<ShanghaiMitsubishiLehy3Button1.BlockEntity> SHANGHAI_MITSUBISHI_LEHY_3_BUTTON_1;
+    public static final BlockEntityTypeRegistryObject<ShanghaiMitsubishiLehy3Button2.BlockEntity> SHANGHAI_MITSUBISHI_LEHY_3_BUTTON_2;
+    public static final BlockEntityTypeRegistryObject<ShanghaiMitsubishiLehy3Button3LCD.BlockEntity> SHANGHAI_MITSUBISHI_LEHY_3_BUTTON_3_LCD;
 
     public static final BlockEntityTypeRegistryObject<OtisSeries1Button.BlockEntity> OTIS_SERIES_1_BUTTON_1;
     public static final BlockEntityTypeRegistryObject<OtisSeries1Button.BlockEntity> OTIS_SERIES_1_BUTTON_2;
@@ -311,7 +314,10 @@ public class BlockEntityTypes {
         MITSUBISHI_MPVF_BUTTON_1 = Init.REGISTRY.registerBlockEntityType(new Identifier(Init.MOD_ID, "mitsubishi_mpvf_button_1"), MitsubishiMPVFButton1.BlockEntity::new, Blocks.MITSUBISHI_MPVF_BUTTON_1::get);
         MITSUBISHI_MPVF_SCREEN_1_VERTICAL_ODD = Init.REGISTRY.registerBlockEntityType(new Identifier(Init.MOD_ID, "mitsubishi_mpvf_screen_1_vertical_odd"), MitsubishiMPVFScreen1VerticalOdd.BlockEntity::new, Blocks.MITSUBISHI_MPVF_SCREEN_1_VERTICAL_ODD::get);
         MITSUBISHI_MPVF_SCREEN_1_VERTICAL_EVEN = Init.REGISTRY.registerBlockEntityType(new Identifier(Init.MOD_ID, "mitsubishi_mpvf_screen_1_vertical_even"), MitsubishiMPVFScreen1VerticalEven.BlockEntity::new, Blocks.MITSUBISHI_MPVF_SCREEN_1_VERTICAL_EVEN::get);
-        SHANGHAI_MITSUBISHI_NEXWAY_BUTTON_1 = Init.REGISTRY.registerBlockEntityType(new Identifier(Init.MOD_ID, "shanghai_mitsubishi_nexway_cr_button_1"), ShanghaiMitsubishiNexWayCRButton1.BlockEntity::new, Blocks.SHANGHAI_MITSUBISHI_NEXWAY_CR_BUTTON_1::get);
+        SHANGHAI_MITSUBISHI_NEXWAY_CR_BUTTON_1 = Init.REGISTRY.registerBlockEntityType(new Identifier(Init.MOD_ID, "shanghai_mitsubishi_nexway_cr_button_1"), ShanghaiMitsubishiNexWayCRButton1.BlockEntity::new, Blocks.SHANGHAI_MITSUBISHI_NEXWAY_CR_BUTTON_1::get);
+        SHANGHAI_MITSUBISHI_LEHY_3_BUTTON_1 = Init.REGISTRY.registerBlockEntityType(new Identifier(Init.MOD_ID, "shanghai_mitsubishi_lehy_3_button_1"), ShanghaiMitsubishiLehy3Button1.BlockEntity::new, Blocks.SHANGHAI_MITSUBISHI_LEHY_3_BUTTON_1::get);
+        SHANGHAI_MITSUBISHI_LEHY_3_BUTTON_2 = Init.REGISTRY.registerBlockEntityType(new Identifier(Init.MOD_ID, "shanghai_mitsubishi_lehy_3_button_2"), ShanghaiMitsubishiLehy3Button2.BlockEntity::new, Blocks.SHANGHAI_MITSUBISHI_LEHY_3_BUTTON_2::get);
+        SHANGHAI_MITSUBISHI_LEHY_3_BUTTON_3_LCD = Init.REGISTRY.registerBlockEntityType(new Identifier(Init.MOD_ID, "shanghai_mitsubishi_lehy_3_button_3_lcd"), ShanghaiMitsubishiLehy3Button3LCD.BlockEntity::new, Blocks.SHANGHAI_MITSUBISHI_LEHY_3_BUTTON_3_LCD::get);
         OTIS_SERIES_1_BUTTON_1 = Init.REGISTRY.registerBlockEntityType(new Identifier(Init.MOD_ID, "otis_series_1_button_1"), OtisSeries1Button.BlockEntity::new, Blocks.OTIS_SERIES_1_BUTTON_1::get);
         OTIS_SERIES_1_BUTTON_2 = Init.REGISTRY.registerBlockEntityType(new Identifier(Init.MOD_ID, "otis_series_1_button_2"), OtisSeries1Button.BlockEntity::new, Blocks.OTIS_SERIES_1_BUTTON_2::get);
         OTIS_SERIES_1_SCREEN_1 = Init.REGISTRY.registerBlockEntityType(new Identifier(Init.MOD_ID, "otis_series_1_screen_1"), OtisSeries1Screen.BlockEntity::new, Blocks.OTIS_SERIES_1_SCREEN_1::get);
