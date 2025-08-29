@@ -11,6 +11,7 @@ import top.xfunny.mod.Keys;
 public class RenderWatermark {
     private static final int a = 10;
     public static void render(GraphicsHolder b){
+        /*
         final MinecraftClient c = MinecraftClient.getInstance();
         final Window x = c.getWindow();
         int h = x.getScaledWidth() - 1;
@@ -30,6 +31,6 @@ public class RenderWatermark {
                 b.drawText(q, -GraphicsHolder.getTextWidth(q), -a, j, true, GraphicsHolder.getDefaultLight());
                 b.pop();
             }
-//        }
+//        }*/
     }
 }

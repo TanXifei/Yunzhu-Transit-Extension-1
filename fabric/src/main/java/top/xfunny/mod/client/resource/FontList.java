@@ -21,7 +21,8 @@ public class FontList {
     }
 
     public void FlonList() {
-        if (!fontsLoaded) {//todo:在此处添加字体
+        if (!fontsLoaded) {
+            // 字体列表
             loadFont("ces-14x7", "font/ces-14x7.ttf");
             loadFont("testfont", "font/schindler-m-series-lop-nz-thin-1-beta.ttf");
             loadFont("acmeled", "font/acme-led.ttf");
@@ -49,13 +50,19 @@ public class FontList {
             loadFont("thyssenkrupp_lcd", "font/new-thyssenkrupp.ttf");
             loadFont("kone-kss", "font/kone-kss-800-signalization.ttf");
             loadFont("hitachi-led-seg", "font/hitachi-cip71-led.ttf");
-            loadFont("hitachi-led-seg-fix", "font/hitachi_led_segmented_fix.ttf");
-            loadFont("hitachi-led-dot_matrix", "font/hitachi-dot-matrix-regular.ttf");
-            loadFont("hitachi-led-dot_matrix_small", "font/hitachi-dot-matrix-small.ttf");
+            loadFont("hitachi-led-seg-fix", "font/hitachi-cip71-led-left.ttf");
+            loadFont("hitachi-led-dot_matrix", "font/hitachi-dot-matrix-regular.ttf"); // 已弃用
+            loadFont("hitachi-led-dot_matrix_small", "font/hitachi-dot-matrix-small.ttf"); // 已弃用
+            loadFont("hitachi-bxsclc5", "font/hitachi-bxsclc5-led.ttf");
+            loadFont("hitachi-bxsclc5-compact", "font/hitachi-bxsclc5-led-compact.ttf");
+            loadFont("hitachi-bxsclc5-pafc-compact", "font/hitachi-bxsclc5-led-pafc-compact.ttf"); // 深圳 PAFC 使用
             loadFont("hitachi-lcd-seg", "font/hitachi-hip31-lcd.ttf");
             loadFont("hitachi-japan-lcd", "font/hitachi-hip32-lcd.ttf");
             loadFont("hitachi-hip43", "font/hitachi-hip43-lcd.ttf");
             loadFont("hitachi-sclva043", "font/hitachi-sclva043-lcd.ttf");
+            loadFont("shanghai_mitsubishi_segmented_1","font/shanghai_mitsubishi_segmented_1.ttf");
+            loadFont("shanghai_mitsubishi_segmented_1_sp","font/shanghai_mitsubishi_segmented_1_sp.ttf");
+            loadFont("shanghai_mitsubishi_lcd_1","font/shanghai_mitsubishi_lcd_1.ttf");
             loadFont("schindler_m_series_segment", "font/schindler_m_series_segment.ttf");
             loadFont("tonic-led", "font/tonic-led.ttf");
             loadFont("tonic-led-thin", "font/tonic-thin.ttf");
@@ -85,14 +92,14 @@ public class FontList {
             return font;
         } else {
             if (Objects.equals(fontId, "Arial")) {
-                return new Font("Arial", Font.PLAIN, 12);//单独加载Arial字体，用户自行安装。
+                return new Font("Arial", Font.PLAIN, 12);
             } else {
-                FlonList(); // 重新加载所有字体
-                font = fonts.get(fontId); // 再次尝试获取字体
+                FlonList();
+                font = fonts.get(fontId);
                 if (font != null) {
                     return font;
                 } else {
-                    return new Font("Arial", Font.PLAIN, 12); // 默认字体
+                    return new Font("Arial", Font.PLAIN, 12);
                 }
             }
         }
