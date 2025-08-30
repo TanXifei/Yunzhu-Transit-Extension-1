@@ -100,6 +100,7 @@ public class RenderTestLiftDestinationDispatchTerminal extends BlockEntityRender
             textView.setBasicsAttributes(world, blockPos, FontList.instance.getFont("mitsubishi_modern"), 6, HOVER_COLOR);
             textView.setDisplayLength(19, 0.005F);
             textView.setTextureId("test_lift_destination_dispatch_terminal_display");
+
             textView.setText(ArrayListToString.arrayListToString(inputNumber));
             textView.setWidth(11F / 16);
             textView.setHeight(2F / 16);

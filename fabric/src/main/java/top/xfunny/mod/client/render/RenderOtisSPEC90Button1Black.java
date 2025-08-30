@@ -194,7 +194,8 @@ public class RenderOtisSPEC90Button1Black extends BlockEntityRenderer<OtisSPEC90
                         4,
                         0xFFC94552);
                 liftFloorDisplayView.setDisplayLength(2, 0);
-                liftFloorDisplayView.setTextureId("otis_spec_90_button_1_display");
+                liftFloorDisplayView.setTextureId(String.format("otis_spec_90_button_1_display_%d", i))
+;
                 liftFloorDisplayView.setWidth(1.5F / 16);
                 liftFloorDisplayView.setLetterSpacing(10);
                 liftFloorDisplayView.setHeight(1.7F / 16);

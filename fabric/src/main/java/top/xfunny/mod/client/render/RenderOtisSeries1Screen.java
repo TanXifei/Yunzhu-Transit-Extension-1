@@ -93,7 +93,8 @@ public class RenderOtisSeries1Screen extends BlockEntityRenderer<OtisSeries1Scre
                         FontList.instance.getFont("otis_series1"),
                         4,
                         0xFF1D953F);
-                liftFloorDisplayView.setTextureId("otis_series1_screen");
+                liftFloorDisplayView.setTextureId(String.format("otis_series1_screen_display%d", i))
+;
                 liftFloorDisplayView.setWidth(2.8F / 16);
                 liftFloorDisplayView.setHeight(4F / 16);
                 liftFloorDisplayView.setMargin(0, 0, 0.8F / 16, 0);

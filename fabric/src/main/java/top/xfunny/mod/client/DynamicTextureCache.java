@@ -15,9 +15,7 @@ import javax.annotation.Nullable;
 import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.awt.image.DataBufferByte;
-import java.util.LinkedHashMap;
 import java.util.Locale;
-import java.util.Map;
 import java.util.Random;
 import java.util.function.Supplier;
 
@@ -59,7 +57,7 @@ public class DynamicTextureCache {
 
     public void tick() {
         final ObjectArrayList<String> keysToRemove = new ObjectArrayList<>();
-        dynamicResources.forEach((checkKey, checkDynamicResource) -> {
+        dynamicResources.forEach((checkKey, checkDynamicResource) -> {// 检查每个资源，如果过期则删除
             if (checkDynamicResource.expiryTime < System.currentTimeMillis()) {
                 checkDynamicResource.remove();
                 deletedResources.put(checkDynamicResource.identifier, System.currentTimeMillis() + COOL_DOWN_TIME);
@@ -69,13 +67,13 @@ public class DynamicTextureCache {
         keysToRemove.forEach(dynamicResources::remove);
 
         final ObjectArrayList<Identifier> deletedResourcesToRemove = new ObjectArrayList<>();
-        deletedResources.forEach((identifier, expiryTime) -> {
+        deletedResources.forEach((identifier, expiryTime) -> {// 检查每个资源，如果过期则删除
             if (expiryTime < System.currentTimeMillis()) {
                 MinecraftClient.getInstance().getTextureManager().destroyTexture(identifier);
                 deletedResourcesToRemove.add(identifier);
             }
         });
-        deletedResourcesToRemove.forEach(deletedResources::removeLong);
+        deletedResourcesToRemove.forEach(deletedResources::removeLong);// 删除
 
         // 清理字符缓存
         if (charImageCache.size() > 1000) {
@@ -211,12 +209,12 @@ public class DynamicTextureCache {
         resourceRegistryQueue.process(Runnable::run);
         final DynamicResource dynamicResource = dynamicResources.get(key);
 
-        String idOnly = key.contains("-") ? key.substring(0, key.indexOf("-")) : key;
-        String originalText = key.contains("-") ? key.substring(key.indexOf("-") + 1) : key;
+        String idOnly = key.contains("$") ? key.substring(0, key.indexOf("$")) : key;
+        String originalText = key.contains("$") ? key.substring(key.indexOf("$") + 1) : key;
 
-        if (dynamicResource != null && !dynamicResource.needsRefresh) {
+        if (dynamicResource != null && !dynamicResource.needsRefresh) {// 已生成且不需要刷新
             dynamicResource.expiryTime = System.currentTimeMillis() + COOL_DOWN_TIME;
-            putLastResource(idOnly, originalText, dynamicResource);
+            //putLastResource(idOnly, originalText, dynamicResource);
             return dynamicResource;
         }
 
@@ -258,10 +256,10 @@ public class DynamicTextureCache {
                 return pool.get(pool.lastKey());
             }
             return defaultRenderingColor.dynamicResource;
-        } else {
+        } else {// 现在正在显示的字符
             dynamicResource.expiryTime = System.currentTimeMillis() + COOL_DOWN_TIME;
             dynamicResource.needsRefresh = false;
-            putLastResource(idOnly, originalText, dynamicResource);
+            //putLastResource(idOnly, originalText, dynamicResource);
             return dynamicResource;
         }
     }

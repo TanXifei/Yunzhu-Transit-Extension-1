@@ -198,7 +198,7 @@ public class RenderHitachiVIB820proButton extends BlockEntityRenderer<HitachiVIB
                         7F,
                         0xFFFFFFFF);
 
-                liftFloorDisplayView.setTextureId("hitachi-vib-820pro");
+                liftFloorDisplayView.setTextureId(String.format("hitachi_vib_820pro_display_%d",i));
                 liftFloorDisplayView.setWidth(1.4F / 16);
                 liftFloorDisplayView.setHeight(1.7F / 16);
 

@@ -198,7 +198,7 @@ public class RenderHitachiVIB320ButtonHIP43 extends BlockEntityRenderer<HitachiV
                         FontList.instance.getFont("hitachi-hip43"),
                         7.5F,
                         0xFFDEF6FF);
-                liftFloorDisplayView.setTextureId("hitachi-vib-320-hip-43");
+                liftFloorDisplayView.setTextureId(String.format("hitachi_vib_320_hip_43_display_%d",i));
                 liftFloorDisplayView.setWidth(1.5F / 16);
                 liftFloorDisplayView.setHeight(1.7F / 16);
 

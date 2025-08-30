@@ -203,7 +203,7 @@ public class RenderHitachiVIB820ButtonLCD extends BlockEntityRenderer<HitachiVIB
                         FontList.instance.getFont("hitachi-japan-lcd"),
                         7.5F,
                         0xFF000000);
-                liftFloorDisplayView.setTextureId("hitachi-vib-820-lcd");
+                liftFloorDisplayView.setTextureId(String.format("hitachi_vib_820_lcd_display_%d",i));
                 liftFloorDisplayView.setWidth(1.2F / 16);
                 liftFloorDisplayView.setHeight(1.5F / 16);
                 liftFloorDisplayView.setTextAlign(TextView.HorizontalTextAlign.CENTER);
