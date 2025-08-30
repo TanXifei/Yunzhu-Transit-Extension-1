@@ -106,6 +106,10 @@ public class Blocks {
     public static final BlockRegistryObject SHANGHAI_MITSUBISHI_LEHY_3_BUTTON_1;
     public static final BlockRegistryObject SHANGHAI_MITSUBISHI_LEHY_3_BUTTON_2;
     public static final BlockRegistryObject SHANGHAI_MITSUBISHI_LEHY_3_BUTTON_3_LCD;
+    public static final BlockRegistryObject SHANGHAI_MITSUBISHI_LEHY_3_SCREEN_1_EVEN;
+    public static final BlockRegistryObject SHANGHAI_MITSUBISHI_LEHY_3_SCREEN_1_ODD;
+    public static final BlockRegistryObject SHANGHAI_MITSUBISHI_LEHY_3_SCREEN_1_WIDE_EVEN;
+    public static final BlockRegistryObject SHANGHAI_MITSUBISHI_LEHY_3_SCREEN_1_WIDE_ODD;
 
     public static final BlockRegistryObject SCHINDLER_D_SERIES_D2BUTTON;
     public static final BlockRegistryObject SCHINDLER_D_SERIES_SCREEN_1_ODD;
@@ -313,16 +317,16 @@ public class Blocks {
         MITSUBISHI_NEXWAY_LANTERN_1_HORIZONTAL_EVEN = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "mitsubishi_nexway_lantern_1_horizontal_even"), () -> new Block(new MitsubishiNexWayLantern1HorizontalEven()), CreativeModeTabs.YTE_LIFT_FIXTURES);
         MITSUBISHI_NEXWAY_LANTERN_1_VERTICAL_ODD = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "mitsubishi_nexway_lantern_1_vertical_odd"), () -> new Block(new MitsubishiNexWayLantern1VerticalOdd()), CreativeModeTabs.YTE_LIFT_FIXTURES);
         MITSUBISHI_NEXWAY_LANTERN_1_VERTICAL_EVEN = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "mitsubishi_nexway_lantern_1_vertical_even"), () -> new Block(new MitsubishiNexWayLantern1VerticalEven()), CreativeModeTabs.YTE_LIFT_FIXTURES);
-        MITSUBISHI_NEXWAY_SCREEN_1_EVEN = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "mitsubishi_nexway_screen_1_even"), () -> new Block(new MitsubishiNexWayScreen1Even()), CreativeModeTabs.YTE_LIFT_FIXTURES);
         MITSUBISHI_NEXWAY_SCREEN_1_ODD = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "mitsubishi_nexway_screen_1_odd"), () -> new Block(new MitsubishiNexWayScreen1Odd()), CreativeModeTabs.YTE_LIFT_FIXTURES);
-        MITSUBISHI_NEXWAY_SCREEN_1_SEGMENTED_EVEN = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "mitsubishi_nexway_screen_1_segmented_even"), () -> new Block(new MitsubishiNexWayScreen1SegmentedEven()), CreativeModeTabs.YTE_LIFT_FIXTURES);
+        MITSUBISHI_NEXWAY_SCREEN_1_EVEN = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "mitsubishi_nexway_screen_1_even"), () -> new Block(new MitsubishiNexWayScreen1Even()), CreativeModeTabs.YTE_LIFT_FIXTURES);
         MITSUBISHI_NEXWAY_SCREEN_1_SEGMENTED_ODD = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "mitsubishi_nexway_screen_1_segmented_odd"), () -> new Block(new MitsubishiNexWayScreen1SegmentedOdd()), CreativeModeTabs.YTE_LIFT_FIXTURES);
-        MITSUBISHI_NEXWAY_SCREEN_2_EVEN = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "mitsubishi_nexway_screen_2_even"), () -> new Block(new MitsubishiNexWayScreen2Even()), CreativeModeTabs.YTE_LIFT_FIXTURES);
+        MITSUBISHI_NEXWAY_SCREEN_1_SEGMENTED_EVEN = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "mitsubishi_nexway_screen_1_segmented_even"), () -> new Block(new MitsubishiNexWayScreen1SegmentedEven()), CreativeModeTabs.YTE_LIFT_FIXTURES);
         MITSUBISHI_NEXWAY_SCREEN_2_ODD = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "mitsubishi_nexway_screen_2_odd"), () -> new Block(new MitsubishiNexWayScreen2Odd()), CreativeModeTabs.YTE_LIFT_FIXTURES);
-        MITSUBISHI_NEXWAY_SCREEN_3_EVEN = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "mitsubishi_nexway_screen_3_even"), () -> new Block(new MitsubishiNexWayScreen3Even()), CreativeModeTabs.YTE_LIFT_FIXTURES);
+        MITSUBISHI_NEXWAY_SCREEN_2_EVEN = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "mitsubishi_nexway_screen_2_even"), () -> new Block(new MitsubishiNexWayScreen2Even()), CreativeModeTabs.YTE_LIFT_FIXTURES);
         MITSUBISHI_NEXWAY_SCREEN_3_ODD = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "mitsubishi_nexway_screen_3_odd"), () -> new Block(new MitsubishiNexWayScreen3Odd()), CreativeModeTabs.YTE_LIFT_FIXTURES);
-        MITSUBISHI_NEXWAY_SCREEN_3_SEGMENTED_EVEN = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "mitsubishi_nexway_screen_3_segmented_even"), () -> new Block(new MitsubishiNexWayScreen3SegmentedEven()), CreativeModeTabs.YTE_LIFT_FIXTURES);
+        MITSUBISHI_NEXWAY_SCREEN_3_EVEN = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "mitsubishi_nexway_screen_3_even"), () -> new Block(new MitsubishiNexWayScreen3Even()), CreativeModeTabs.YTE_LIFT_FIXTURES);
         MITSUBISHI_NEXWAY_SCREEN_3_SEGMENTED_ODD = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "mitsubishi_nexway_screen_3_segmented_odd"), () -> new Block(new MitsubishiNexWayScreen3SegmentedOdd()), CreativeModeTabs.YTE_LIFT_FIXTURES);
+        MITSUBISHI_NEXWAY_SCREEN_3_SEGMENTED_EVEN = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "mitsubishi_nexway_screen_3_segmented_even"), () -> new Block(new MitsubishiNexWayScreen3SegmentedEven()), CreativeModeTabs.YTE_LIFT_FIXTURES);
         MITSUBISHI_MPVF_BUTTON_1 = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "mitsubishi_mpvf_button_1"), () -> new Block(new MitsubishiMPVFButton1()), CreativeModeTabs.YTE_LIFT_FIXTURES);
         MITSUBISHI_MPVF_SCREEN_1_VERTICAL_ODD = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "mitsubishi_mpvf_screen_1_vertical_odd"), () -> new Block(new MitsubishiMPVFScreen1VerticalOdd()), CreativeModeTabs.YTE_LIFT_FIXTURES);
         MITSUBISHI_MPVF_SCREEN_1_VERTICAL_EVEN = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "mitsubishi_mpvf_screen_1_vertical_even"), () -> new Block(new MitsubishiMPVFScreen1VerticalEven()), CreativeModeTabs.YTE_LIFT_FIXTURES);
@@ -330,6 +334,10 @@ public class Blocks {
         SHANGHAI_MITSUBISHI_LEHY_3_BUTTON_1 = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "shanghai_mitsubishi_lehy_3_button_1"), () -> new Block(new ShanghaiMitsubishiLehy3Button1()), CreativeModeTabs.YTE_LIFT_FIXTURES);
         SHANGHAI_MITSUBISHI_LEHY_3_BUTTON_2 = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "shanghai_mitsubishi_lehy_3_button_2"), () -> new Block(new ShanghaiMitsubishiLehy3Button2()), CreativeModeTabs.YTE_LIFT_FIXTURES);
         SHANGHAI_MITSUBISHI_LEHY_3_BUTTON_3_LCD = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "shanghai_mitsubishi_lehy_3_button_3_lcd"), () -> new Block(new ShanghaiMitsubishiLehy3Button3LCD()), CreativeModeTabs.YTE_LIFT_FIXTURES);
+        SHANGHAI_MITSUBISHI_LEHY_3_SCREEN_1_ODD = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "shanghai_mitsubishi_lehy_3_screen_1_odd"), () -> new Block(new ShanghaiMitsubishiLehy3Screen1Odd()), CreativeModeTabs.YTE_LIFT_FIXTURES);
+        SHANGHAI_MITSUBISHI_LEHY_3_SCREEN_1_EVEN = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "shanghai_mitsubishi_lehy_3_screen_1_even"), () -> new Block(new ShanghaiMitsubishiLehy3Screen1Even()), CreativeModeTabs.YTE_LIFT_FIXTURES);
+        SHANGHAI_MITSUBISHI_LEHY_3_SCREEN_1_WIDE_ODD = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "shanghai_mitsubishi_lehy_3_screen_1_wide_odd"), () -> new Block(new ShanghaiMitsubishiLehy3Screen1WideOdd()), CreativeModeTabs.YTE_LIFT_FIXTURES);
+        SHANGHAI_MITSUBISHI_LEHY_3_SCREEN_1_WIDE_EVEN = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "shanghai_mitsubishi_lehy_3_screen_1_wide_even"), () -> new Block(new ShanghaiMitsubishiLehy3Screen1WideEven()), CreativeModeTabs.YTE_LIFT_FIXTURES);
 
         TEST_LIFT_HALL_LANTERNS = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "test_lift_hall_lanterns"), () -> new Block(new TestLiftHallLanterns()));
         TEST_LIFT_PANEL = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "test_lift_panel"), () -> new Block(new TestLiftPanel()));
