@@ -202,7 +202,7 @@ public class RenderShanghaiMitsubishiLehy3Button2 extends BlockEntityRenderer<Sh
                         8.25F,
                         0xFFFFEF95);
                 liftFloorDisplayView.setDisplayLength(2, 0);
-                liftFloorDisplayView.setTextureId(String.format("shanghai_mitsubishi_lehy_3_button_2_display_%d", i))
+                liftFloorDisplayView.setTextureId(String.format("shanghai_mitsubishi_lehy_3_button_2_display_%d_%s", i, blockEntity.getPos2().asLong()))
 ;
                 liftFloorDisplayView.setWidth(1.4F / 16);
                 liftFloorDisplayView.setHeight(1.7F / 16);

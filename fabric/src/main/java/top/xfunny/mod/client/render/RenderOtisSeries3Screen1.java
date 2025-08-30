@@ -88,7 +88,7 @@ public class RenderOtisSeries3Screen1<T extends LiftPanelBase.BlockEntityBase> e
                         FontList.instance.getFont("otis_series_3"),
                         5.5F,
                         0xFFFF0000);
-                liftFloorDisplayView.setTextureId(String.format("otis_series_3_screen_1_display_%d", i))
+                liftFloorDisplayView.setTextureId(String.format("otis_series_3_screen_1_display_%d_%s", i, blockEntity.getPos2().asLong()))
 ;
                 liftFloorDisplayView.setWidth(2.6F / 16);
                 liftFloorDisplayView.setHeight(2.8F / 16);

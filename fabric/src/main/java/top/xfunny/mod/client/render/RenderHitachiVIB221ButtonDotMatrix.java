@@ -203,7 +203,7 @@ public class RenderHitachiVIB221ButtonDotMatrix extends BlockEntityRenderer<Hita
                 liftFloorDisplayView.setMargin(0.01F, 0, 0, 0);
                 liftFloorDisplayView.setTextAlign(TextView.HorizontalTextAlign.CENTER);
                 liftFloorDisplayView.addStoredMatrixTransformations(graphicsHolder -> graphicsHolder.translate(0, 0, -SMALL_OFFSET));
-                liftFloorDisplayView.setTextureId(String.format("hitachi_vib_221_dot_matrix_display_%d",i));
+                liftFloorDisplayView.setTextureId(String.format("hitachi_vib_221_dot_matrix_display_%d_%s", i, blockEntity.getPos2().asLong()));
                 if (liftFloorDisplayView.getTextLength() >= 3) {
                     liftFloorDisplayView.setBasicsAttributes(world,
                             blockPos,

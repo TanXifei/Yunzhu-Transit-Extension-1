@@ -88,7 +88,7 @@ public class RenderKoneKSS280Screen1<T extends LiftPanelBase.BlockEntityBase> ex
                         FontList.instance.getFont("kone-lcd-segment"),
                         3.5F,
                         0xFFFFFFFF);
-                liftFloorDisplayView.setTextureId(String.format("kone_kss_280_screen_lcd_segment_display_%d",i));
+                liftFloorDisplayView.setTextureId(String.format("kone_kss_280_screen_lcd_segment_display_%d_%s", i, blockEntity.getPos2().asLong()));
                 liftFloorDisplayView.setWidth(2.6F / 16);
                 liftFloorDisplayView.setHeight(2.8F / 16);
                 liftFloorDisplayView.setGravity(Gravity.CENTER_VERTICAL);

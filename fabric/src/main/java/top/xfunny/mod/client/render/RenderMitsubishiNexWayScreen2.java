@@ -95,7 +95,7 @@ public class    RenderMitsubishiNexWayScreen2<T extends LiftPanelBase.BlockEntit
                         FontList.instance.getFont("gill_sans_mt"),
                         16,
                         0xFFFFFFFF);
-                liftFloorDisplayView.setTextureId(String.format("mitsubishi_nexway_screen_2_display_%d", i))
+                liftFloorDisplayView.setTextureId(String.format("mitsubishi_nexway_screen_2_display_%d_%s", i, blockEntity.getPos2().asLong()))
 ;
                 liftFloorDisplayView.setWidth(1.9F / 16);
                 liftFloorDisplayView.setHeight(1.5F / 16);
@@ -143,7 +143,7 @@ public class    RenderMitsubishiNexWayScreen2<T extends LiftPanelBase.BlockEntit
                 final TextView textView = new TextView();
                 textView.setId("textView");
                 textView.setBasicsAttributes(world, blockPos, FontList.instance.getFont("wqy-microhei"), 5, 0xFFFFFFFF);
-                textView.setTextureId(String.format("mitsubishi_nexway_screen_2_date_display_%d", i))
+                textView.setTextureId(String.format("mitsubishi_nexway_screen_2_date_display_%d_%s", i, blockEntity.getPos2().asLong()))
 ;
                 textView.setText(text);
                 textView.setWidth(4F / 16);

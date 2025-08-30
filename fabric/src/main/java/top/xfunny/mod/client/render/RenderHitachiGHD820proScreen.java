@@ -96,7 +96,7 @@ public class RenderHitachiGHD820proScreen<T extends LiftPanelBase.BlockEntityBas
                         FontList.instance.getFont(floorNumber.matches("^(1[0-9]|20|[1-9])$")?"hitachi-led-seg":"hitachi-led-seg-fix"),
                         8.5F,
                         0xFFFFFFFF);
-                liftFloorDisplayView.setTextureId(String.format("hitachi_ghd820_screen_display_%d",i));
+                liftFloorDisplayView.setTextureId(String.format("hitachi_ghd820_screen_display_%d_%s", i, blockEntity.getPos2().asLong()));
                 liftFloorDisplayView.setWidth(2.6F / 16);
                 liftFloorDisplayView.setHeight(2.8F / 16);
                 liftFloorDisplayView.setTextAlign(TextView.HorizontalTextAlign.RIGHT);
