@@ -198,7 +198,7 @@ public class RenderHitachiVIB221ButtonLCDSegmented extends BlockEntityRenderer<H
                         FontList.instance.getFont("hitachi-lcd-seg"),
                         7.25F,
                         0xFFDEF6FF);
-                liftFloorDisplayView.setTextureId("hitachi-vib-221-lcd-segmented");
+                liftFloorDisplayView.setTextureId(String.format("hitachi_vib_221_lcd_segmented_display_%d",i));
                 liftFloorDisplayView.setWidth(1.5F / 16);
                 liftFloorDisplayView.setHeight(1.7F / 16);
                 liftFloorDisplayView.setLetterSpacing(5);

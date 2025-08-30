@@ -203,7 +203,7 @@ public class RenderMitsubishiGPSButton1 extends BlockEntityRenderer<MitsubishiGP
                         6,
                         0xFFFA7A24);
                 //liftFloorDisplayView.setDisplayLength(2, 0.05F);
-                liftFloorDisplayView.setTextureId("mitsubishi_gps_button_1_display");
+                liftFloorDisplayView.setTextureId(String.format("mitsubishi_gps_button_1_display_%d",i));
                 liftFloorDisplayView.setWidth(1.3F / 16);
                 liftFloorDisplayView.setHeight(1.7F / 16);
                 liftFloorDisplayView.setMargin(0.1F / 16, 0, 0, 0);

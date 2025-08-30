@@ -201,10 +201,10 @@ public class RenderMitsubishiGPS3Button2 extends BlockEntityRenderer<MitsubishiG
                         6,
                         0xFFFA7A24);
                 //liftFloorDisplayView.setDisplayLength(2, 0.05F);
-                liftFloorDisplayView.setTextureId("mitsubishi_gps3_button_2_display");
-                liftFloorDisplayView.setWidth((float) 1.5 / 16);
-                liftFloorDisplayView.setHeight((float) 1.7 / 16);
-                liftFloorDisplayView.setMargin(0, 0, (float) -0.1 / 16, 0);
+                liftFloorDisplayView.setTextureId(String.format("mitsubishi_gps3_button_2_display_%d",i));
+                liftFloorDisplayView.setWidth(1.5F / 16);
+                liftFloorDisplayView.setHeight(1.7F / 16);
+                liftFloorDisplayView.setMargin(0, 0, -0.1F / 16, 0);
 
                 liftFloorDisplayView.setTextAlign(TextView.HorizontalTextAlign.CENTER);
                 liftFloorDisplayView.addStoredMatrixTransformations(graphicsHolder -> graphicsHolder.translate(0, 0, -SMALL_OFFSET));

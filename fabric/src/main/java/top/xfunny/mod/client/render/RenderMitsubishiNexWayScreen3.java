@@ -88,7 +88,8 @@ public class RenderMitsubishiNexWayScreen3<T extends LiftPanelBase.BlockEntityBa
                         FontList.instance.getFont("mitsubishi_modern"),
                         7,
                         0xFFFA7A24);
-                liftFloorDisplayView.setTextureId("mitsubishi_nexway_screen_3");
+                liftFloorDisplayView.setTextureId(String.format("mitsubishi_nexway_screen_3_display_%d", i))
+;
                 liftFloorDisplayView.setWidth(2.6F / 16);
                 liftFloorDisplayView.setHeight(2.8F / 16);
                 liftFloorDisplayView.setGravity(Gravity.CENTER_VERTICAL);

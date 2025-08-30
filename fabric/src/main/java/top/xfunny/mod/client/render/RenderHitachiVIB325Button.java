@@ -198,7 +198,7 @@ public class RenderHitachiVIB325Button extends BlockEntityRenderer<HitachiVIB325
                         7F,
                         0xFFFF4800);
 
-                liftFloorDisplayView.setTextureId("hitachi-led-seg");
+                liftFloorDisplayView.setTextureId(String.format("hitachi_vib_325_display_%d",i));
                 liftFloorDisplayView.setWidth(1.4F / 16);
                 liftFloorDisplayView.setHeight(1.7F / 16);
 
