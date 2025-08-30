@@ -58,6 +58,17 @@ public class DynamicTextureCache {
     public void tick() {
         final ObjectArrayList<String> keysToRemove = new ObjectArrayList<>();
         dynamicResources.forEach((checkKey, checkDynamicResource) -> {// 检查每个资源，如果过期则删除
+            String idOnly = checkKey.contains("$") ? checkKey.substring(0, checkKey.indexOf("$")) : checkKey;
+            String originalText = checkKey.contains("$") ? checkKey.substring(checkKey.indexOf("$") + 1) : checkKey;
+
+            // 如果在缓存中存在originalText，则不删除资源
+            if (lastResourceById.containsKey(idOnly)) {
+                Object2ObjectLinkedOpenHashMap<String, DynamicResource> pool = lastResourceById.get(idOnly);
+                if (pool.containsKey(originalText)) {
+                    return;
+                }
+            }
+
             if (checkDynamicResource.expiryTime < System.currentTimeMillis()) {
                 checkDynamicResource.remove();
                 deletedResources.put(checkDynamicResource.identifier, System.currentTimeMillis() + COOL_DOWN_TIME);
@@ -199,7 +210,7 @@ public class DynamicTextureCache {
         Object2ObjectLinkedOpenHashMap<String, DynamicResource> pool =
                 lastResourceById.computeIfAbsent(id, k -> new Object2ObjectLinkedOpenHashMap<>());
         // 如果超过 2 个就移除最旧的
-        if (pool.size() >= 2) {
+        if (pool.size() >= 1) {
             pool.removeFirst(); //移除第一个插入的元素
         }
         pool.put(originalText, resource);

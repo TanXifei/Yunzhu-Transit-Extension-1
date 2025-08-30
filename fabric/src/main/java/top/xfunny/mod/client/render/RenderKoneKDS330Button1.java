@@ -201,7 +201,7 @@ public class RenderKoneKDS330Button1 extends BlockEntityRenderer<KoneKDS330Butto
                         FontList.instance.getFont("kone-lcd-segment"),//字体
                         6,//字号
                         0xFFFFFFFF);//字体颜色
-                liftFloorDisplayView.setTextureId(String.format("kone_kds_330_lcd_segment_display_%d",i));//字体贴图id，不能与其他显示屏的重复
+                liftFloorDisplayView.setTextureId(String.format("kone_kds_330_lcd_segment_display_%d_%s", i, blockEntity.getPos2().asLong()));//字体贴图id，不能与其他显示屏的重复
                 liftFloorDisplayView.setWidth(1.8F / 16);//显示屏宽度
                 liftFloorDisplayView.setHeight(1.7F / 16);//显示屏高度
                 liftFloorDisplayView.setMargin(-0.25F / 16, 0, 0.4F / 16, 0);

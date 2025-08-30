@@ -193,7 +193,7 @@ public class RenderHitachiB85Button2 extends BlockEntityRenderer<HitachiB85Butto
                         12,
                         0xFFFF0000);
                 liftFloorDisplayView.setDisplayLength(2, 0.05F);
-                liftFloorDisplayView.setTextureId(String.format("hitachi_b85_screen_2_display_%d", i));
+                liftFloorDisplayView.setTextureId(String.format("hitachi_b85_screen_2_display_%d_%s", i, blockEntity.getPos2().asLong()));
                 liftFloorDisplayView.setWidth(0.6F / 16);
                 liftFloorDisplayView.setHeight(0.6F / 16);
                 liftFloorDisplayView.setMargin(0.1F / 16, 0.1F / 16, 0, 0);

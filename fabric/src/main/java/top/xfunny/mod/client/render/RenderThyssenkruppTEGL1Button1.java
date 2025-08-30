@@ -194,7 +194,7 @@ public class RenderThyssenkruppTEGL1Button1 extends BlockEntityRenderer<Thyssenk
                         4.7F,
                         0xFFFF0000);
                 liftFloorDisplayView.setDisplayLength(2, 0.05F);
-                liftFloorDisplayView.setTextureId(String.format("thyssenkrupp_lcd_display_%d", i))
+                liftFloorDisplayView.setTextureId(String.format("thyssenkrupp_lcd_display_%d_%s", i, blockEntity.getPos2().asLong()))
 ;
                 liftFloorDisplayView.setWidth(1.6F / 16);
                 liftFloorDisplayView.setHeight(1.7F / 16);
