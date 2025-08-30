@@ -71,7 +71,7 @@ public class RenderShanghaiMitsubishiLehy3Screen1Wide<T extends LiftPanelBase.Bl
         final ImageView media = new ImageView();
         media.setBasicsAttributes(world, blockEntity.getPos2());
         media.setTexture(new Identifier(Init.MOD_ID, "textures/block/media_1.png"));
-        media.setDimension(4.25F/16, 400,225);
+        media.setDimension(3.23F/16, 400,300);
         media.setMargin(0, 0, 0.2F / 16, 0);
         media.setGravity(Gravity.START);
 
@@ -125,7 +125,7 @@ public class RenderShanghaiMitsubishiLehy3Screen1Wide<T extends LiftPanelBase.Bl
                 liftArrowView.setTexture(new Identifier(Init.MOD_ID, "textures/block/shanghai_mitsubishi_lehy_3_arrow_2.png"));
                 liftArrowView.setDimension(0.875F / 16);
                 liftArrowView.setGravity(Gravity.CENTER_VERTICAL);
-                liftArrowView.setMargin(0.3F / 16, 0.3F / 16, 0, 0);
+                liftArrowView.setMargin(1.2F / 16, 0.3F / 16, 0, 0);
                 liftArrowView.setQueuedRenderLayer(QueuedRenderLayer.LIGHT_TRANSLUCENT);
                 liftArrowView.setColor(0xFFCEB993);
 
