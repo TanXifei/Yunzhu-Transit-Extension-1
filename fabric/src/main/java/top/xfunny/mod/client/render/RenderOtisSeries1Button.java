@@ -64,8 +64,8 @@ public class RenderOtisSeries1Button extends BlockEntityRenderer<OtisSeries1Butt
         FrameLayout parentLayout = new FrameLayout();
         parentLayout.setBasicsAttributes(world, blockPos);
         parentLayout.setStoredMatrixTransformations(storedMatrixTransformations1);
-        parentLayout.setParentDimensions(4.8F / 16, 6.5F / 16);
-        parentLayout.setPosition(-2.4F / 16, -0.45F / 16);
+        parentLayout.setParentDimensions(2.5F / 16, 3.75F / 16);
+        parentLayout.setPosition(-1.25F / 16, 0.9F / 16);
         parentLayout.setWidth(LayoutSize.MATCH_PARENT);
         parentLayout.setHeight(LayoutSize.MATCH_PARENT);
 

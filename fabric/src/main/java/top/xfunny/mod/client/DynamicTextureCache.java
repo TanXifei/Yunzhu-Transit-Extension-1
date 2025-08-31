@@ -209,12 +209,10 @@ public class DynamicTextureCache {
     private void putLastResource(String id, String originalText, DynamicResource resource) {
         Object2ObjectLinkedOpenHashMap<String, DynamicResource> pool =
                 lastResourceById.computeIfAbsent(id, k -> new Object2ObjectLinkedOpenHashMap<>());
-        // 如果超过 2 个就移除最旧的
-        if (pool.size() >= 1) {
-            pool.removeFirst(); //移除第一个插入的元素
-        }
+        pool.clear(); // 只存一个
         pool.put(originalText, resource);
     }
+
 
     public DynamicResource getResource(String key, Supplier<NativeImage> supplier, DefaultRenderingColor defaultRenderingColor) {
         resourceRegistryQueue.process(Runnable::run);
