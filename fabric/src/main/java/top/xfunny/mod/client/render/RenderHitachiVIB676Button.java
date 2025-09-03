@@ -198,7 +198,7 @@ public class RenderHitachiVIB676Button extends BlockEntityRenderer<HitachiVIB676
                         FontList.instance.getFont("hitachi-hip43"),
                         7.5F,
                         0xFFDEF6FF);
-                liftFloorDisplayView.setTextureId("hitachi-vib-676");
+                liftFloorDisplayView.setTextureId(String.format("hitachi_vib_676_display_%d_%s", i, blockEntity.getPos2().asLong()));
                 liftFloorDisplayView.setWidth(1.5F / 16);
                 liftFloorDisplayView.setHeight(1.7F / 16);
 

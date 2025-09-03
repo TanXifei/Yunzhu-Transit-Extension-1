@@ -200,7 +200,8 @@ public class RenderShanghaiMitsubishiLehy3Button3LCD extends BlockEntityRenderer
                         6.875F,
                         0xFFCEB993);
                 liftFloorDisplayView.setMargin(0, -0.15F / 16, 0, 0);
-                liftFloorDisplayView.setTextureId("shanghai_mitsubishi_lehy_3_button_3_lcd_display");
+                liftFloorDisplayView.setTextureId(String.format("shanghai_mitsubishi_lehy_3_button_3_lcd_display_%d_%s", i, blockEntity.getPos2().asLong()))
+;
                 liftFloorDisplayView.setWidth(1.2F / 16);
                 liftFloorDisplayView.setHeight(1.5F / 16);
                 liftFloorDisplayView.setTextAlign(TextView.HorizontalTextAlign.CENTER);

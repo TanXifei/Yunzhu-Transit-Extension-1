@@ -252,7 +252,8 @@ public class RenderMitsubishiNexWayScreen1<T extends LiftButtonsBase.BlockEntity
                         11,//字号
                         0xFFFA7A24);//字体颜色
                 //liftFloorDisplayView.setDisplayLength(2, 0);//true开启滚动，开启滚动时的字数条件(>)，滚动速度
-                liftFloorDisplayView.setTextureId("mitsubishi_nexway_screen_1");//字体贴图id，不能与其他显示屏的重复
+                liftFloorDisplayView.setTextureId(String.format("mitsubishi_nexway_screen_1_display_%d_%s", i, blockEntity.getPos2().asLong()))
+;//字体贴图id，不能与其他显示屏的重复
                 liftFloorDisplayView.setWidth(2.7F / 16);//显示屏宽度
                 liftFloorDisplayView.setHeight(2F / 16);//显示屏高度
                 liftFloorDisplayView.setGravity(Gravity.CENTER);

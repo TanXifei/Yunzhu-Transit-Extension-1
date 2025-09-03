@@ -197,7 +197,7 @@ public class RenderHitachiButtonPAFC extends BlockEntityRenderer<HitachiButtonPA
                         FontList.instance.getFont("hitachi-led-dot_matrix"),
                         4.5F,
                         0xFFFF4800);
-                liftFloorDisplayView.setTextureId("hitachi_button_pafc");
+                liftFloorDisplayView.setTextureId(String.format("hitachi_button_pafc_display_%d_%s", i, blockEntity.getPos2().asLong()));
                 liftFloorDisplayView.setWidth(1.12F / 16);
                 liftFloorDisplayView.setHeight(1.7F / 16);
 

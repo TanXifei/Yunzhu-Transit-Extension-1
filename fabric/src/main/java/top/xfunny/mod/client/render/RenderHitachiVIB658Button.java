@@ -198,7 +198,7 @@ public class RenderHitachiVIB658Button extends BlockEntityRenderer<HitachiVIB658
                         FontList.instance.getFont("hitachi-led-dot_matrix"),
                         5F,
                         0xFFFF4800);
-                liftFloorDisplayView.setTextureId("hitachi-vib-658-dot-matrix");
+                liftFloorDisplayView.setTextureId(String.format("hitachi_vib_658_display_%d_%s", i, blockEntity.getPos2().asLong()));
                 liftFloorDisplayView.setWidth(1.5F / 16);
                 liftFloorDisplayView.setHeight(1.7F / 16);
 

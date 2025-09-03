@@ -127,6 +127,10 @@ public class BlockEntityTypes {
     public static final BlockEntityTypeRegistryObject<ShanghaiMitsubishiLehy3Button1.BlockEntity> SHANGHAI_MITSUBISHI_LEHY_3_BUTTON_1;
     public static final BlockEntityTypeRegistryObject<ShanghaiMitsubishiLehy3Button2.BlockEntity> SHANGHAI_MITSUBISHI_LEHY_3_BUTTON_2;
     public static final BlockEntityTypeRegistryObject<ShanghaiMitsubishiLehy3Button3LCD.BlockEntity> SHANGHAI_MITSUBISHI_LEHY_3_BUTTON_3_LCD;
+    public static final BlockEntityTypeRegistryObject<ShanghaiMitsubishiLehy3Screen1Even.BlockEntity> SHANGHAI_MITSUBISHI_LEHY_3_SCREEN_1_EVEN;
+    public static final BlockEntityTypeRegistryObject<ShanghaiMitsubishiLehy3Screen1Odd.BlockEntity> SHANGHAI_MITSUBISHI_LEHY_3_SCREEN_1_ODD;
+    public static final BlockEntityTypeRegistryObject<ShanghaiMitsubishiLehy3Screen1WideEven.BlockEntity> SHANGHAI_MITSUBISHI_LEHY_3_SCREEN_1_WIDE_EVEN;
+    public static final BlockEntityTypeRegistryObject<ShanghaiMitsubishiLehy3Screen1WideOdd.BlockEntity> SHANGHAI_MITSUBISHI_LEHY_3_SCREEN_1_WIDE_ODD;
 
     public static final BlockEntityTypeRegistryObject<OtisSeries1Button.BlockEntity> OTIS_SERIES_1_BUTTON_1;
     public static final BlockEntityTypeRegistryObject<OtisSeries1Button.BlockEntity> OTIS_SERIES_1_BUTTON_2;
@@ -318,6 +322,10 @@ public class BlockEntityTypes {
         SHANGHAI_MITSUBISHI_LEHY_3_BUTTON_1 = Init.REGISTRY.registerBlockEntityType(new Identifier(Init.MOD_ID, "shanghai_mitsubishi_lehy_3_button_1"), ShanghaiMitsubishiLehy3Button1.BlockEntity::new, Blocks.SHANGHAI_MITSUBISHI_LEHY_3_BUTTON_1::get);
         SHANGHAI_MITSUBISHI_LEHY_3_BUTTON_2 = Init.REGISTRY.registerBlockEntityType(new Identifier(Init.MOD_ID, "shanghai_mitsubishi_lehy_3_button_2"), ShanghaiMitsubishiLehy3Button2.BlockEntity::new, Blocks.SHANGHAI_MITSUBISHI_LEHY_3_BUTTON_2::get);
         SHANGHAI_MITSUBISHI_LEHY_3_BUTTON_3_LCD = Init.REGISTRY.registerBlockEntityType(new Identifier(Init.MOD_ID, "shanghai_mitsubishi_lehy_3_button_3_lcd"), ShanghaiMitsubishiLehy3Button3LCD.BlockEntity::new, Blocks.SHANGHAI_MITSUBISHI_LEHY_3_BUTTON_3_LCD::get);
+        SHANGHAI_MITSUBISHI_LEHY_3_SCREEN_1_EVEN = Init.REGISTRY.registerBlockEntityType(new Identifier(Init.MOD_ID, "shanghai_mitsubishi_lehy_3_screen_1_even"), ShanghaiMitsubishiLehy3Screen1Even.BlockEntity::new, Blocks.SHANGHAI_MITSUBISHI_LEHY_3_SCREEN_1_EVEN::get);
+        SHANGHAI_MITSUBISHI_LEHY_3_SCREEN_1_ODD = Init.REGISTRY.registerBlockEntityType(new Identifier(Init.MOD_ID, "shanghai_mitsubishi_lehy_3_screen_1_odd"), ShanghaiMitsubishiLehy3Screen1Odd.BlockEntity::new, Blocks.SHANGHAI_MITSUBISHI_LEHY_3_SCREEN_1_ODD::get);
+        SHANGHAI_MITSUBISHI_LEHY_3_SCREEN_1_WIDE_EVEN = Init.REGISTRY.registerBlockEntityType(new Identifier(Init.MOD_ID, "shanghai_mitsubishi_lehy_3_screen_1_wide_even"), ShanghaiMitsubishiLehy3Screen1WideEven.BlockEntity::new, Blocks.SHANGHAI_MITSUBISHI_LEHY_3_SCREEN_1_WIDE_EVEN::get);
+        SHANGHAI_MITSUBISHI_LEHY_3_SCREEN_1_WIDE_ODD = Init.REGISTRY.registerBlockEntityType(new Identifier(Init.MOD_ID, "shanghai_mitsubishi_lehy_3_screen_1_wide_odd"), ShanghaiMitsubishiLehy3Screen1WideOdd.BlockEntity::new, Blocks.SHANGHAI_MITSUBISHI_LEHY_3_SCREEN_1_WIDE_ODD::get);
         OTIS_SERIES_1_BUTTON_1 = Init.REGISTRY.registerBlockEntityType(new Identifier(Init.MOD_ID, "otis_series_1_button_1"), OtisSeries1Button.BlockEntity::new, Blocks.OTIS_SERIES_1_BUTTON_1::get);
         OTIS_SERIES_1_BUTTON_2 = Init.REGISTRY.registerBlockEntityType(new Identifier(Init.MOD_ID, "otis_series_1_button_2"), OtisSeries1Button.BlockEntity::new, Blocks.OTIS_SERIES_1_BUTTON_2::get);
         OTIS_SERIES_1_SCREEN_1 = Init.REGISTRY.registerBlockEntityType(new Identifier(Init.MOD_ID, "otis_series_1_screen_1"), OtisSeries1Screen.BlockEntity::new, Blocks.OTIS_SERIES_1_SCREEN_1::get);

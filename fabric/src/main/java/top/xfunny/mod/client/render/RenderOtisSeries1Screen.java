@@ -56,8 +56,8 @@ public class RenderOtisSeries1Screen extends BlockEntityRenderer<OtisSeries1Scre
         FrameLayout parentLayout = new FrameLayout();
         parentLayout.setBasicsAttributes(world, blockPos);
         parentLayout.setStoredMatrixTransformations(storedMatrixTransformations1);
-        parentLayout.setParentDimensions(4.8F / 16, 6.5F / 16);
-        parentLayout.setPosition(-2.4F / 16, 0.75F / 16);
+        parentLayout.setParentDimensions(2.5F / 16, 3.75F / 16);
+        parentLayout.setPosition(-1.25F / 16, 0.9F / 16);
         parentLayout.setWidth(LayoutSize.MATCH_PARENT);
         parentLayout.setHeight(LayoutSize.MATCH_PARENT);
 
@@ -93,12 +93,13 @@ public class RenderOtisSeries1Screen extends BlockEntityRenderer<OtisSeries1Scre
                         FontList.instance.getFont("otis_series1"),
                         4,
                         0xFF1D953F);
-                liftFloorDisplayView.setTextureId("otis_series1_screen");
-                liftFloorDisplayView.setWidth(2.8F / 16);
-                liftFloorDisplayView.setHeight(4F / 16);
-                liftFloorDisplayView.setMargin(0, 0, 0.8F / 16, 0);
+                liftFloorDisplayView.setTextureId(String.format("otis_series1_screen_display_%d_%s", i, blockEntity.getPos2().asLong()));
+                liftFloorDisplayView.setWidth(1.5F / 16);
+                liftFloorDisplayView.setHeight(1.75F / 16);
+                liftFloorDisplayView.setMargin(0.2F / 16, 0.05F / 16, 0.2F / 16, 0.05F / 16);
                 liftFloorDisplayView.setTextAlign(TextView.HorizontalTextAlign.RIGHT);
                 liftFloorDisplayView.setDisplayLength(2, 0);
+                liftFloorDisplayView.setGravity(Gravity.CENTER_VERTICAL);
 
                 backgroundLayout.addChild(liftFloorDisplayView);
             }
