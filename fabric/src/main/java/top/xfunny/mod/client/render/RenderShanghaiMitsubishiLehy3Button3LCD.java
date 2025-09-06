@@ -219,6 +219,7 @@ public class RenderShanghaiMitsubishiLehy3Button3LCD extends BlockEntityRenderer
                 liftArrowView.setGravity(Gravity.CENTER_HORIZONTAL);
                 liftArrowView.setQueuedRenderLayer(QueuedRenderLayer.LIGHT_TRANSLUCENT);
                 liftArrowView.setMargin(0, 0.2F / 16, 0, 0);
+                liftArrowView.setAnimationYawRotation(true, 0.075F);
                 if (unlocked) {
                     liftArrowView.setColor(0xFFCEB993);
                 } else {

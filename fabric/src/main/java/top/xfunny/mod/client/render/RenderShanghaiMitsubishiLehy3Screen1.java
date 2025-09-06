@@ -118,7 +118,7 @@ public class RenderShanghaiMitsubishiLehy3Screen1<T extends LiftPanelBase.BlockE
                 liftArrowView.setGravity(Gravity.CENTER_VERTICAL);
                 liftArrowView.setQueuedRenderLayer(QueuedRenderLayer.LIGHT_TRANSLUCENT);
                 liftArrowView.setColor(0xFFCEB993);
-                liftArrowView.setAnimationYawRotation(true, 0.05F);
+                liftArrowView.setAnimationYawRotation(true, 0.075F);
 
                 numberLayout.addChild(liftArrowView);
                 numberLayout.addChild(liftFloorDisplayView);

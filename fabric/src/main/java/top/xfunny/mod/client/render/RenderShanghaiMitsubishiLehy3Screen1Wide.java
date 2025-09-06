@@ -128,6 +128,7 @@ public class RenderShanghaiMitsubishiLehy3Screen1Wide<T extends LiftPanelBase.Bl
                 liftArrowView.setMargin(1.2F / 16, 0.3F / 16, 0, 0);
                 liftArrowView.setQueuedRenderLayer(QueuedRenderLayer.LIGHT_TRANSLUCENT);
                 liftArrowView.setColor(0xFFCEB993);
+                liftArrowView.setAnimationYawRotation(true, 0.075F);
 
                 numberLayout.addChild(media);
                 numberLayout.addChild(liftArrowView);
