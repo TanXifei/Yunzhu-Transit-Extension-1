@@ -21,7 +21,7 @@ public class ShanghaiMitsubishiLehy3Button1WithoutScreen extends LiftButtonsBase
     @Nonnull
     @Override
     public VoxelShape getOutlineShape2(BlockState state, BlockView world, BlockPos pos, ShapeContext context) {
-        return IBlock.getVoxelShapeByDirection(7, 2.785, 0, 9, 7.76, 0.1, IBlock.getStatePropertySafe(state, FACING));
+        return IBlock.getVoxelShapeByDirection(7, 2.785, 0, 9, 7.76, 0.25, IBlock.getStatePropertySafe(state, FACING));
     }
 
     @Nonnull
