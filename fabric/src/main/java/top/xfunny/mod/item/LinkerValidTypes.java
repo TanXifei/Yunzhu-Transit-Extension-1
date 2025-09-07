@@ -147,6 +147,7 @@ public class LinkerValidTypes {
             MitsubishiNexWayScreen3SegmentedOdd.class,
             ShanghaiMitsubishiNexWayCRButton1.class,
             ShanghaiMitsubishiLehy3Button1.class,
+            ShanghaiMitsubishiLehy3Button1WithoutScreen.class,
             ShanghaiMitsubishiLehy3Button2.class,
             ShanghaiMitsubishiLehy3Button3LCD.class,
             ShanghaiMitsubishiLehy3Screen1Odd.class,

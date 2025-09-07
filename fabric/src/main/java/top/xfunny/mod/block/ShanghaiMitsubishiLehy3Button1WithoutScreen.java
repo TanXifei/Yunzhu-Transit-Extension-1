@@ -13,22 +13,21 @@ import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 import java.util.List;
 
-public class ShanghaiMitsubishiLehy3Button1 extends LiftButtonsBase {
-    public ShanghaiMitsubishiLehy3Button1() {
+public class ShanghaiMitsubishiLehy3Button1WithoutScreen extends LiftButtonsBase {
+    public ShanghaiMitsubishiLehy3Button1WithoutScreen() {
         super(true, true);
     }
 
     @Nonnull
     @Override
     public VoxelShape getOutlineShape2(BlockState state, BlockView world, BlockPos pos, ShapeContext context) {
-        final boolean single = !IBlock.getStatePropertySafe(world.getBlockState(pos), SINGLE);
-        return IBlock.getVoxelShapeByDirection(single ? 6.25 : 7, 2.785, 0, single ? 9.75 : 9, 11.01, 0.1, IBlock.getStatePropertySafe(state, FACING));
+        return IBlock.getVoxelShapeByDirection(7, 2.785, 0, 9, 7.76, 0.1, IBlock.getStatePropertySafe(state, FACING));
     }
 
     @Nonnull
     @Override
     public BlockEntityExtension createBlockEntity(BlockPos blockPos, BlockState blockState) {
-        return new ShanghaiMitsubishiLehy3Button1.BlockEntity(blockPos, blockState);
+        return new ShanghaiMitsubishiLehy3Button1WithoutScreen.BlockEntity(blockPos, blockState);
     }
 
     @Override
@@ -39,13 +38,13 @@ public class ShanghaiMitsubishiLehy3Button1 extends LiftButtonsBase {
     }
 
     public void addTooltips(@NotNull ItemStack stack, @Nullable BlockView world, List<MutableText> tooltip, @NotNull TooltipContext options) {
-        tooltip.add(TextHelper.translatable("tooltip.shanghai_mitsubishi_display_zlhh-110ag01").formatted(TextFormatting.GRAY));
-        tooltip.add(TextHelper.translatable("tooltip.shanghai_mitsubishi_button_a12").formatted(TextFormatting.GRAY));
+        tooltip.add(TextHelper.translatable("tooltip.shanghai_mitsubishi_button_a11").formatted(TextFormatting.GRAY));
     }
 
     public static class BlockEntity extends BlockEntityBase {
         public BlockEntity(BlockPos pos, BlockState state) {
-            super(BlockEntityTypes.SHANGHAI_MITSUBISHI_LEHY_3_BUTTON_1.get(), pos, state);
+            super(BlockEntityTypes.SHANGHAI_MITSUBISHI_LEHY_3_BUTTON_1_WITHOUT_SCREEN.get(), pos, state);
         }
     }
 }
+
