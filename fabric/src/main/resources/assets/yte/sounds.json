@@ -1,0 +1,18 @@
+{
+  "otis_series_1_lantern_1_up": {
+    "sounds": [
+			{
+				"name": "yte:otis_series_1_lantern_1_up",
+				"pitch": 1.0
+			}
+		]
+  },
+  "otis_series_1_lantern_1_down": {
+    "sounds": [
+			{
+				"name": "yte:otis_series_1_lantern_1_down",
+				"pitch": 1.0
+			}
+		]
+  }
+}

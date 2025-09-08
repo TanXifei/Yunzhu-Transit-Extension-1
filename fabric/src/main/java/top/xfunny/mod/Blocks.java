@@ -33,7 +33,6 @@ public class Blocks {
     public static final BlockRegistryObject KONE_KSS280_BUTTON_1_WITHOUT_SCREEN;
     public static final BlockRegistryObject KONE_KSS280_SCREEN_1_ODD;
     public static final BlockRegistryObject KONE_KSS280_SCREEN_1_EVEN;
-
     public static final BlockRegistryObject KONE_M_BUTTON_1;
     public static final BlockRegistryObject KONE_M_BUTTON_2;
     public static final BlockRegistryObject KONE_M_SCREEN_1_ODD;
@@ -42,6 +41,8 @@ public class Blocks {
     public static final BlockRegistryObject OTIS_SERIES_1_BUTTON_1;
     public static final BlockRegistryObject OTIS_SERIES_1_BUTTON_2;
     public static final BlockRegistryObject OTIS_SERIES_1_SCREEN_1;
+    public static final BlockRegistryObject OTIS_SERIES_1_LANTERN_1_EVEN;
+    public static final BlockRegistryObject OTIS_SERIES_1_LANTERN_1_ODD;
     public static final BlockRegistryObject OTIS_SERIES_3_BUTTON_1;
     public static final BlockRegistryObject OTIS_SERIES_3_SCREEN_1_ODD;
     public static final BlockRegistryObject OTIS_SERIES_3_SCREEN_1_EVEN;
@@ -102,6 +103,7 @@ public class Blocks {
     public static final BlockRegistryObject MITSUBISHI_MPVF_BUTTON_1;
     public static final BlockRegistryObject MITSUBISHI_MPVF_SCREEN_1_VERTICAL_ODD;
     public static final BlockRegistryObject MITSUBISHI_MPVF_SCREEN_1_VERTICAL_EVEN;
+
     public static final BlockRegistryObject SHANGHAI_MITSUBISHI_NEXWAY_CR_BUTTON_1;
     public static final BlockRegistryObject SHANGHAI_MITSUBISHI_LEHY_3_BUTTON_1;
     public static final BlockRegistryObject SHANGHAI_MITSUBISHI_LEHY_3_BUTTON_2;
@@ -349,6 +351,8 @@ public class Blocks {
         OTIS_SERIES_1_BUTTON_1 = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "otis_series_1_button_1"), () -> new Block(new OtisSeries1Button()), CreativeModeTabs.YTE_LIFT_FIXTURES);
         OTIS_SERIES_1_BUTTON_2 = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "otis_series_1_button_2"), () -> new Block(new OtisSeries1Button()));
         OTIS_SERIES_1_SCREEN_1 = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "otis_series_1_screen_1"), () -> new Block(new OtisSeries1Screen()), CreativeModeTabs.YTE_LIFT_FIXTURES);
+        OTIS_SERIES_1_LANTERN_1_EVEN = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "otis_series_1_lantern_1_even"), () -> new Block(new OtisSeries1Lantern1Even()), CreativeModeTabs.YTE_LIFT_FIXTURES);
+        OTIS_SERIES_1_LANTERN_1_ODD = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "otis_series_1_lantern_1_odd"), () -> new Block(new OtisSeries1Lantern1Odd()), CreativeModeTabs.YTE_LIFT_FIXTURES);
         OTIS_SERIES_3_BUTTON_1 = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "otis_series_3_button_1"), () -> new Block(new OtisSeries3Button1()), CreativeModeTabs.YTE_LIFT_FIXTURES);
         OTIS_SERIES_3_SCREEN_1_ODD = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "otis_series_3_screen_1_odd"), () -> new Block(new OtisSeries3Screen1Odd()), CreativeModeTabs.YTE_LIFT_FIXTURES);
         OTIS_SERIES_3_SCREEN_1_EVEN = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "otis_series_3_screen_1_even"), () -> new Block(new OtisSeries3Screen1Even()), CreativeModeTabs.YTE_LIFT_FIXTURES);

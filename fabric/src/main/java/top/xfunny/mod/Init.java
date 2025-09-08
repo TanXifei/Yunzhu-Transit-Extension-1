@@ -7,6 +7,7 @@ import org.mtr.mapping.holder.BlockPos;
 import org.mtr.mapping.holder.Identifier;
 import org.mtr.mapping.holder.MathHelper;
 import org.mtr.mapping.registry.Registry;
+import top.xfunny.mod.packet.PacketLanternSoundInstruction;
 import top.xfunny.mod.packet.PacketYTEOpenBlockEntityScreen;
 import top.xfunny.mod.packet.PacketUpdatePATRS01RailwaySignConfig;
 
@@ -19,16 +20,18 @@ public final class Init {
 
     public static void init() {
         //UpdateCheckerUtil.init();
+        SoundEvents.init();
         Blocks.init();
         BlockEntityTypes.init();
         Items.init();
         CreativeModeTabs.init();
 
+
         //注册mtr packet
         REGISTRY.setupPackets(new Identifier(MOD_ID, "packet"));
         REGISTRY.registerPacket(PacketYTEOpenBlockEntityScreen.class, PacketYTEOpenBlockEntityScreen::new);
         REGISTRY.registerPacket(PacketUpdatePATRS01RailwaySignConfig.class, PacketUpdatePATRS01RailwaySignConfig::new);
-
+        REGISTRY.registerPacket(PacketLanternSoundInstruction.class, PacketLanternSoundInstruction::new);
         REGISTRY.init();
     }
 
