@@ -106,6 +106,7 @@ public class Blocks {
 
     public static final BlockRegistryObject SHANGHAI_MITSUBISHI_NEXWAY_CR_BUTTON_1;
     public static final BlockRegistryObject SHANGHAI_MITSUBISHI_LEHY_3_BUTTON_1;
+    public static final BlockRegistryObject SHANGHAI_MITSUBISHI_LEHY_3_BUTTON_1_WITHOUT_SCREEN;
     public static final BlockRegistryObject SHANGHAI_MITSUBISHI_LEHY_3_BUTTON_2;
     public static final BlockRegistryObject SHANGHAI_MITSUBISHI_LEHY_3_BUTTON_3_LCD;
     public static final BlockRegistryObject SHANGHAI_MITSUBISHI_LEHY_3_SCREEN_1_EVEN;
@@ -334,6 +335,7 @@ public class Blocks {
         MITSUBISHI_MPVF_SCREEN_1_VERTICAL_EVEN = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "mitsubishi_mpvf_screen_1_vertical_even"), () -> new Block(new MitsubishiMPVFScreen1VerticalEven()), CreativeModeTabs.YTE_LIFT_FIXTURES);
         SHANGHAI_MITSUBISHI_NEXWAY_CR_BUTTON_1 = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "shanghai_mitsubishi_nexway_cr_button_1"), () -> new Block(new ShanghaiMitsubishiNexWayCRButton1()), CreativeModeTabs.YTE_LIFT_FIXTURES);
         SHANGHAI_MITSUBISHI_LEHY_3_BUTTON_1 = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "shanghai_mitsubishi_lehy_3_button_1"), () -> new Block(new ShanghaiMitsubishiLehy3Button1()), CreativeModeTabs.YTE_LIFT_FIXTURES);
+        SHANGHAI_MITSUBISHI_LEHY_3_BUTTON_1_WITHOUT_SCREEN = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "shanghai_mitsubishi_lehy_3_button_1_without_screen"), () -> new Block(new ShanghaiMitsubishiLehy3Button1WithoutScreen()), CreativeModeTabs.YTE_LIFT_FIXTURES);
         SHANGHAI_MITSUBISHI_LEHY_3_BUTTON_2 = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "shanghai_mitsubishi_lehy_3_button_2"), () -> new Block(new ShanghaiMitsubishiLehy3Button2()), CreativeModeTabs.YTE_LIFT_FIXTURES);
         SHANGHAI_MITSUBISHI_LEHY_3_BUTTON_3_LCD = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "shanghai_mitsubishi_lehy_3_button_3_lcd"), () -> new Block(new ShanghaiMitsubishiLehy3Button3LCD()), CreativeModeTabs.YTE_LIFT_FIXTURES);
         SHANGHAI_MITSUBISHI_LEHY_3_SCREEN_1_ODD = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "shanghai_mitsubishi_lehy_3_screen_1_odd"), () -> new Block(new ShanghaiMitsubishiLehy3Screen1Odd()), CreativeModeTabs.YTE_LIFT_FIXTURES);
@@ -346,7 +348,7 @@ public class Blocks {
         TEST_LIFT_BUTTONS_WITHOUT_SCREEN = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "test_lift_buttons_without_screen"), () -> new Block(new TestLiftButtonsWithoutScreen()));
         TEST_LIFT_DESTINATION_DISPATCH_TERMINAL = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "test_lift_destination_dispatch_terminal"), () -> new Block(new TestLiftDestinationDispatchTerminal()));
 
-        THYSSENKRUPP_TEGL1_BUTTON_1 = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "thyssenkrupp_te_gl1_button_1"), () -> new Block(new ThyssenkruppTEGL1Button1()), CreativeModeTabs.YTE_LIFT_FIXTURES);
+        THYSSENKRUPP_TEGL1_BUTTON_1 = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "thyssenkrupp_te_gl1_button_1"), () -> new Block(new ThyssenkruppTEGL1Button1()));
 
         OTIS_SERIES_1_BUTTON_1 = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "otis_series_1_button_1"), () -> new Block(new OtisSeries1Button()), CreativeModeTabs.YTE_LIFT_FIXTURES);
         OTIS_SERIES_1_BUTTON_2 = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "otis_series_1_button_2"), () -> new Block(new OtisSeries1Button()));

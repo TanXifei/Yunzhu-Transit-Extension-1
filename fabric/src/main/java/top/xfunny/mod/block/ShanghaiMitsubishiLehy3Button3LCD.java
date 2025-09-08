@@ -40,6 +40,7 @@ public class ShanghaiMitsubishiLehy3Button3LCD extends LiftButtonsBase {
 
     public void addTooltips(@NotNull ItemStack stack, @Nullable BlockView world, List<MutableText> tooltip, @NotNull TooltipContext options) {
         tooltip.add(TextHelper.translatable("tooltip.shanghai_mitsubishi_display_zlhh-101ag02").formatted(TextFormatting.GRAY));
+        tooltip.add(TextHelper.translatable("tooltip.shanghai_mitsubishi_button_a11").formatted(TextFormatting.GRAY));
     }
 
     public static class BlockEntity extends BlockEntityBase {

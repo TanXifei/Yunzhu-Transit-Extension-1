@@ -4,7 +4,6 @@
 	"texture_size": [225, 950],
 	"textures": {
 		"0": "yte:block/metal",
-		"2": "yte:block/base3",
 		"3": "yte:block/steel",
 		"4": "yte:block/1",
 		"particle": "yte:block/metal"
@@ -173,17 +172,6 @@
 				"south": {"uv": [3.00952, 0, 13.82857, 16], "texture": "#4"},
 				"up": {"uv": [4.45714, 1.16278, 16, 0.73985], "texture": "#4"},
 				"down": {"uv": [1.33333, 0.66767, 16, 1.33835], "texture": "#4"}
-			}
-		},
-		{
-			"from": [10.5, 0.9, 0],
-			"to": [13, 4.65, 0.1],
-			"rotation": {"angle": 0, "axis": "y", "origin": [3.625, -1.875, 0]},
-			"faces": {
-				"north": {"uv": [0, 1.43459, 12.76429, 6.33308], "texture": "#0"},
-				"south": {"uv": [2.50011, 0, 13.51212, 16], "texture": "#2"},
-				"up": {"uv": [4.45714, 1.16278, 16, 0.73985], "texture": "#0"},
-				"down": {"uv": [1.33333, 0.66767, 16, 1.33835], "texture": "#0"}
 			}
 		},
 		{

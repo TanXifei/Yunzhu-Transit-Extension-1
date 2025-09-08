@@ -91,12 +91,12 @@ public class RenderOtisSeries1Screen extends BlockEntityRenderer<OtisSeries1Scre
                         blockPos,
                         sortedPositionsAndLifts.get(i).right(),
                         FontList.instance.getFont("otis_series1"),
-                        4,
+                        5,
                         0xFF1D953F);
                 liftFloorDisplayView.setTextureId(String.format("otis_series1_screen_display_%d_%s", i, blockEntity.getPos2().asLong()));
-                liftFloorDisplayView.setWidth(1.5F / 16);
+                liftFloorDisplayView.setWidth(1.3F / 16);
                 liftFloorDisplayView.setHeight(1.75F / 16);
-                liftFloorDisplayView.setMargin(0.2F / 16, 0.05F / 16, 0.2F / 16, 0.05F / 16);
+                liftFloorDisplayView.setMargin(0.2F / 16, 0.1F / 16, 0.35F / 16, 0.1F / 16);
                 liftFloorDisplayView.setTextAlign(TextView.HorizontalTextAlign.RIGHT);
                 liftFloorDisplayView.setDisplayLength(2, 0);
                 liftFloorDisplayView.setGravity(Gravity.CENTER_VERTICAL);

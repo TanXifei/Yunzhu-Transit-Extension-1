@@ -22,7 +22,7 @@ public class ShanghaiMitsubishiLehy3Button1 extends LiftButtonsBase {
     @Override
     public VoxelShape getOutlineShape2(BlockState state, BlockView world, BlockPos pos, ShapeContext context) {
         final boolean single = !IBlock.getStatePropertySafe(world.getBlockState(pos), SINGLE);
-        return IBlock.getVoxelShapeByDirection(single ? 6.25 : 7, 2.785, 0, single ? 9.75 : 9, 11.01, 0.1, IBlock.getStatePropertySafe(state, FACING));
+        return IBlock.getVoxelShapeByDirection(single ? 6.25 : 7, 2.785, 0, single ? 9.75 : 9, 11.01, 0.25, IBlock.getStatePropertySafe(state, FACING));
     }
 
     @Nonnull
@@ -40,6 +40,7 @@ public class ShanghaiMitsubishiLehy3Button1 extends LiftButtonsBase {
 
     public void addTooltips(@NotNull ItemStack stack, @Nullable BlockView world, List<MutableText> tooltip, @NotNull TooltipContext options) {
         tooltip.add(TextHelper.translatable("tooltip.shanghai_mitsubishi_display_zlhh-110ag01").formatted(TextFormatting.GRAY));
+        tooltip.add(TextHelper.translatable("tooltip.shanghai_mitsubishi_button_a12").formatted(TextFormatting.GRAY));
     }
 
     public static class BlockEntity extends BlockEntityBase {
