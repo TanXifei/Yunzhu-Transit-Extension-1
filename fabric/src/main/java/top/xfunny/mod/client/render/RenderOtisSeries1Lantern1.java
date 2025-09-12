@@ -89,33 +89,33 @@ public class RenderOtisSeries1Lantern1 <T extends LiftButtonsBase.BlockEntityBas
         ButtonView upLantern = new ButtonView();
         upLantern.setBasicsAttributes(world, blockPos);
         upLantern.setTexture(ARROW_TEXTURE_END);
-        upLantern.setDimension(1.2F / 16);
+        upLantern.setDimension(1.8F / 16);
         upLantern.setGravity(Gravity.CENTER_HORIZONTAL);
         upLantern.setLight(light);
         upLantern.setDefaultColor(DEFAULT_COLOR);
         upLantern.setPressedColor(PRESSED_COLOR);
-        upLantern.setMargin(0, 0.5F / 16, 0, 1.1F / 16);
+        upLantern.setMargin(0, -0.925F/16, 0, -0.95F/16); // Changed top and bottom margins
 
         ButtonView downLantern = new ButtonView();
         downLantern.setBasicsAttributes(world, blockPos);
         downLantern.setTexture(ARROW_TEXTURE_END);
-        downLantern.setDimension(1.2F / 16);
+        downLantern.setDimension(1.8F / 16);
         downLantern.setGravity(Gravity.CENTER_HORIZONTAL);
         downLantern.setLight(light);
         downLantern.setDefaultColor(DEFAULT_COLOR);
         downLantern.setPressedColor(PRESSED_COLOR);
         downLantern.setFlip(false, true);
-        downLantern.setMargin(0, 0, 0, 0);
+        downLantern.setMargin(0, -0.925F/16, 0, -0.95F/16); // Changed top and bottom margins
 
         ButtonView middleLantern = new ButtonView();
         middleLantern.setBasicsAttributes(world, blockPos);
         middleLantern.setTexture(ARROW_TEXTURE_MIDDLE);
-        middleLantern.setDimension(1.2F / 16);
+        middleLantern.setDimension(1.8F / 16);
         middleLantern.setGravity(Gravity.CENTER_HORIZONTAL);
         middleLantern.setLight(light);
         middleLantern.setDefaultColor(DEFAULT_COLOR);
         middleLantern.setPressedColor(PRESSED_COLOR);
-        middleLantern.setMargin(0, 0.5F / 16, 0, 0);
+        middleLantern.setMargin(0, 0, 0, 0);
 
         final LineComponent line = new LineComponent();
         line.setBasicsAttributes(world, blockPos);
@@ -240,6 +240,5 @@ public class RenderOtisSeries1Lantern1 <T extends LiftButtonsBase.BlockEntityBas
 
         parentLayout.addChild(backgroundLayout);
         parentLayout.render();
-
     }
 }

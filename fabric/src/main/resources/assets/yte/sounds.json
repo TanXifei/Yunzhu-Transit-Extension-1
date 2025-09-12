@@ -14,5 +14,13 @@
 				"pitch": 1.0
 			}
 		]
+  },
+  "schindler_m_series_lantern_1": {
+    "sounds": [
+      {
+        "name": "yte:schindler_m_series_lantern_1",
+        "pitch": 1.0
+      }
+    ]
   }
 }

@@ -7,10 +7,12 @@ import org.mtr.mapping.registry.SoundEventRegistryObject;
 public class SoundEvents {
     public static final SoundEventRegistryObject OTIS_SERIES_1_LANTERN_1_UP;
     public static final SoundEventRegistryObject OTIS_SERIES_1_LANTERN_1_DOWN;
+    public static final SoundEventRegistryObject SCHINDLER_M_SERIES_LANTERN_1;
 
     static {
         OTIS_SERIES_1_LANTERN_1_UP = Init.REGISTRY.registerSoundEvent(new Identifier(Init.MOD_ID, "otis_series_1_lantern_1_up"));
         OTIS_SERIES_1_LANTERN_1_DOWN = Init.REGISTRY.registerSoundEvent(new Identifier(Init.MOD_ID, "otis_series_1_lantern_1_down"));
+        SCHINDLER_M_SERIES_LANTERN_1 = Init.REGISTRY.registerSoundEvent(new Identifier(Init.MOD_ID, "schindler_m_series_lantern_1"));
     }
 
     public static void init() {

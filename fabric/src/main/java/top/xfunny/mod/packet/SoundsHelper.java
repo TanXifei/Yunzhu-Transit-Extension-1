@@ -8,7 +8,7 @@ import top.xfunny.mod.SoundEvents;
 public final class SoundsHelper {
     public static void playSound(BlockPos blockPos, ServerPlayerEntity serverPlayerEntity, String soundInstruction){
         switch (soundInstruction){// 播放声音
-            case "otis_series_1_lantern_up":
+                case "otis_series_1_lantern_up":
                 serverPlayerEntity.getEntityWorld().playSound(
                         null,
                         blockPos,
@@ -24,6 +24,16 @@ public final class SoundsHelper {
                         null,
                         blockPos,
                         SoundEvents.OTIS_SERIES_1_LANTERN_1_DOWN.get(),
+                        SoundCategory.BLOCKS,
+                        1.0F,
+                        1.0F
+                );
+                break;
+                case "schindler_m_series_lantern_1":
+                serverPlayerEntity.getEntityWorld().playSound(
+                        null,
+                        blockPos,
+                        SoundEvents.SCHINDLER_M_SERIES_LANTERN_1.get(),
                         SoundCategory.BLOCKS,
                         1.0F,
                         1.0F
