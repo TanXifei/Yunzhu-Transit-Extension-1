@@ -94,7 +94,7 @@ public class RenderOtisSeries1Lantern1 <T extends LiftButtonsBase.BlockEntityBas
         upLantern.setLight(light);
         upLantern.setDefaultColor(DEFAULT_COLOR);
         upLantern.setPressedColor(PRESSED_COLOR);
-        upLantern.setMargin(0, -0.925F/16, 0, -0.95F/16); // Changed top and bottom margins
+        upLantern.setMargin(0, -0.9F/16, 0, -0.8F/16); // Changed top and bottom margins
 
         ButtonView downLantern = new ButtonView();
         downLantern.setBasicsAttributes(world, blockPos);
@@ -105,7 +105,7 @@ public class RenderOtisSeries1Lantern1 <T extends LiftButtonsBase.BlockEntityBas
         downLantern.setDefaultColor(DEFAULT_COLOR);
         downLantern.setPressedColor(PRESSED_COLOR);
         downLantern.setFlip(false, true);
-        downLantern.setMargin(0, -0.925F/16, 0, -0.95F/16); // Changed top and bottom margins
+        downLantern.setMargin(0, -0.9F/16, 0, -0.8F/16); // Changed top and bottom margins
 
         ButtonView middleLantern = new ButtonView();
         middleLantern.setBasicsAttributes(world, blockPos);
