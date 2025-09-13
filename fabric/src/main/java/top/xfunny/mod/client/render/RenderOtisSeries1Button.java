@@ -58,7 +58,7 @@ public class RenderOtisSeries1Button extends BlockEntityRenderer<OtisSeries1Butt
         StoredMatrixTransformations storedMatrixTransformations1 = storedMatrixTransformations.copy();
         storedMatrixTransformations1.add(graphicsHolder -> {
             graphicsHolder.rotateYDegrees(-facing.asRotation());
-            graphicsHolder.translate(0, 0, 7.83F / 16 - SMALL_OFFSET);
+            graphicsHolder.translate(0, 0, 7.75F / 16 - SMALL_OFFSET);
         });
 
         FrameLayout parentLayout = new FrameLayout();
