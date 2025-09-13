@@ -39,6 +39,26 @@ public final class SoundsHelper {
                         1.0F
                 );
                 break;
+            case "mitsubishi_nexway_lantern_1_up":
+                serverPlayerEntity.getEntityWorld().playSound(
+                        null,
+                        blockPos,
+                        SoundEvents.MITSUBISHI_NEXWAY_LANTERN_1_UP.get(),
+                        SoundCategory.BLOCKS,
+                        1.0F,
+                        1.0F
+                );
+                break;
+
+            case "mitsubishi_nexway_lantern_1_down":
+                serverPlayerEntity.getEntityWorld().playSound(
+                        null,
+                        blockPos,
+                        SoundEvents.MITSUBISHI_NEXWAY_LANTERN_1_DOWN.get(),
+                        SoundCategory.BLOCKS,
+                        1.0F,
+                        1.0F
+                );
         }
     }
 }

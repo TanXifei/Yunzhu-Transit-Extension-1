@@ -22,5 +22,21 @@
         "pitch": 1.0
       }
     ]
+  },
+  "mitsubishi_nexway_lantern_1_up": {
+    "sounds": [
+      {
+        "name": "yte:mitsubishi_nexway_lantern_1_up",
+        "pitch": 1.0
+      }
+    ]
+  },
+  "mitsubishi_nexway_lantern_1_down": {
+    "sounds": [
+      {
+        "name": "yte:mitsubishi_nexway_lantern_1_down",
+        "pitch": 1.0
+      }
+    ]
   }
 }
