@@ -29,6 +29,8 @@ public class LinkerValidTypes {
             OtisSeries1Screen.class,
             OtisSeries1Lantern1Odd.class,
             OtisSeries1Lantern1Even.class,
+            OtisSeries1LanternScreen1Odd.class,
+            OtisSeries1LanternScreen1Even.class,
             OtisSeries3Button1.class,
             OtisSeries3Screen1Odd.class,
             OtisSeries3Screen1Even.class,

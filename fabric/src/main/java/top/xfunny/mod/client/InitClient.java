@@ -117,8 +117,10 @@ public final class InitClient {
         REGISTRY_CLIENT.registerBlockEntityRenderer(BlockEntityTypes.OTIS_SERIES_1_BUTTON_1, RenderOtisSeries1Button::new);
         REGISTRY_CLIENT.registerBlockEntityRenderer(BlockEntityTypes.OTIS_SERIES_1_BUTTON_2, RenderOtisSeries1Button::new);
         REGISTRY_CLIENT.registerBlockEntityRenderer(BlockEntityTypes.OTIS_SERIES_1_SCREEN_1, dispatcher -> new top.xfunny.mod.client.render.RenderOtisSeries1Screen(dispatcher, true));
-        REGISTRY_CLIENT.registerBlockEntityRenderer(BlockEntityTypes.OTIS_SERIES_1_LANTERN_1_EVEN, dispatcher -> new top.xfunny.mod.client.render.RenderOtisSeries1Lantern1(dispatcher, false));
-        REGISTRY_CLIENT.registerBlockEntityRenderer(BlockEntityTypes.OTIS_SERIES_1_LANTERN_1_ODD, dispatcher -> new top.xfunny.mod.client.render.RenderOtisSeries1Lantern1(dispatcher, true));
+        REGISTRY_CLIENT.registerBlockEntityRenderer(BlockEntityTypes.OTIS_SERIES_1_LANTERN_1_EVEN, dispatcher -> new top.xfunny.mod.client.render.RenderOtisSeries1Lantern1<>(dispatcher, false));
+        REGISTRY_CLIENT.registerBlockEntityRenderer(BlockEntityTypes.OTIS_SERIES_1_LANTERN_1_ODD, dispatcher -> new top.xfunny.mod.client.render.RenderOtisSeries1Lantern1<>(dispatcher, true));
+        REGISTRY_CLIENT.registerBlockEntityRenderer(BlockEntityTypes.OTIS_SERIES_1_LANTERN_SCREEN_1_EVEN, dispatcher -> new top.xfunny.mod.client.render.RenderOtisSeries1LanternScreen1<>(dispatcher, false));
+        REGISTRY_CLIENT.registerBlockEntityRenderer(BlockEntityTypes.OTIS_SERIES_1_LANTERN_SCREEN_1_ODD, dispatcher -> new top.xfunny.mod.client.render.RenderOtisSeries1LanternScreen1<>(dispatcher, true));
         REGISTRY_CLIENT.registerBlockEntityRenderer(BlockEntityTypes.OTIS_SERIES_3_BUTTON_1, RenderOtisSeries3Button1::new);
         REGISTRY_CLIENT.registerBlockEntityRenderer(BlockEntityTypes.OTIS_SERIES_3_SCREEN_1_ODD, dispatcher -> new top.xfunny.mod.client.render.RenderOtisSeries3Screen1<>(dispatcher, true));
         REGISTRY_CLIENT.registerBlockEntityRenderer(BlockEntityTypes.OTIS_SERIES_3_SCREEN_1_EVEN, dispatcher -> new top.xfunny.mod.client.render.RenderOtisSeries3Screen1<>(dispatcher, false));

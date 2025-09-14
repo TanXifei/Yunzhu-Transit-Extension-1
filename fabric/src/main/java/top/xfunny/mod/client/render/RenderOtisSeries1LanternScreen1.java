@@ -15,14 +15,12 @@ import org.mtr.mod.data.IGui;
 import org.mtr.mod.render.RenderLifts;
 import org.mtr.mod.render.StoredMatrixTransformations;
 import top.xfunny.mod.Init;
-import top.xfunny.mod.SoundEvents;
+import top.xfunny.mod.block.OtisSeries1Screen;
 import top.xfunny.mod.block.SchindlerMSeriesRoundLantern1Even;
 import top.xfunny.mod.block.base.LiftButtonsBase;
 import top.xfunny.mod.client.InitClient;
-import top.xfunny.mod.client.view.ButtonView;
-import top.xfunny.mod.client.view.Gravity;
-import top.xfunny.mod.client.view.LayoutSize;
-import top.xfunny.mod.client.view.LineComponent;
+import top.xfunny.mod.client.resource.FontList;
+import top.xfunny.mod.client.view.*;
 import top.xfunny.mod.client.view.view_group.FrameLayout;
 import top.xfunny.mod.client.view.view_group.LinearLayout;
 import top.xfunny.mod.item.YteGroupLiftButtonsLinker;
@@ -30,16 +28,18 @@ import top.xfunny.mod.item.YteLiftButtonsLinker;
 import top.xfunny.mod.packet.PacketLanternSoundInstruction;
 import top.xfunny.mod.util.ClientGetLiftDetails;
 
+import java.util.Comparator;
+
 import static org.mtr.core.data.LiftDirection.NONE;
 
-public class RenderOtisSeries1Lantern1 <T extends LiftButtonsBase.BlockEntityBase> extends BlockEntityRenderer<T> implements DirectionHelper, IGui, IBlock {
+public class RenderOtisSeries1LanternScreen1<T extends LiftButtonsBase.BlockEntityBase> extends BlockEntityRenderer<T> implements DirectionHelper, IGui, IBlock {
     private final boolean isOdd;
     private static final int PRESSED_COLOR = 0xFF1D953F;
     private static final int DEFAULT_COLOR = 0xFF0D441D;
     private static final Identifier ARROW_TEXTURE_END = new Identifier(Init.MOD_ID, "textures/block/otis_series_1_lantern_arrow_end.png");
     private static final Identifier ARROW_TEXTURE_MIDDLE = new Identifier(Init.MOD_ID, "textures/block/otis_series_1_lantern_arrow_middle.png");
 
-    public RenderOtisSeries1Lantern1(Argument dispatcher, Boolean isOdd) {
+    public RenderOtisSeries1LanternScreen1(Argument dispatcher, Boolean isOdd) {
         super(dispatcher);
         this.isOdd = isOdd;
     }
@@ -71,11 +71,11 @@ public class RenderOtisSeries1Lantern1 <T extends LiftButtonsBase.BlockEntityBas
             graphicsHolder.translate(0, 0, 7.8F / 16 - SMALL_OFFSET);
         });
 
-        FrameLayout parentLayout = new FrameLayout();
+        LinearLayout parentLayout = new LinearLayout(true);
         parentLayout.setBasicsAttributes(world, blockPos);
         parentLayout.setStoredMatrixTransformations(storedMatrixTransformations1);
         parentLayout.setParentDimensions(2.5F / 16, 3.75F / 16);
-        parentLayout.setPosition(isOdd ?-1.25F / 16 : -9.25F / 16, 0.9F / 16);
+        parentLayout.setPosition(isOdd ?-2.15F / 16 : -10.15F / 16, 2.55F / 16);
         parentLayout.setWidth(LayoutSize.MATCH_PARENT);
         parentLayout.setHeight(LayoutSize.MATCH_PARENT);
 
@@ -85,6 +85,14 @@ public class RenderOtisSeries1Lantern1 <T extends LiftButtonsBase.BlockEntityBas
         backgroundLayout.setHeight(LayoutSize.WRAP_CONTENT);
         backgroundLayout.setGravity(Gravity.CENTER);
         backgroundLayout.setBackgroundColor(0xFF000000);
+
+        LinearLayout backgroundLayout1 = new LinearLayout(false);
+        backgroundLayout1.setBasicsAttributes(world, blockPos);
+        backgroundLayout1.setWidth(LayoutSize.WRAP_CONTENT);
+        backgroundLayout1.setHeight(LayoutSize.WRAP_CONTENT);
+        backgroundLayout1.setGravity(Gravity.CENTER);
+        backgroundLayout1.setBackgroundColor(0xFF000000);
+        backgroundLayout1.setMargin(0.0F/16, 0.5F/16, 0.0F/16, 0.0F/16);
 
         ButtonView upLantern = new ButtonView();
         upLantern.setBasicsAttributes(world, blockPos);
@@ -228,6 +236,41 @@ public class RenderOtisSeries1Lantern1 <T extends LiftButtonsBase.BlockEntityBas
             buttonLine.RenderLine(holdingLinker, buttonPosition, true);
         });
 
+        final LineComponent line1 = new LineComponent();
+        line.setBasicsAttributes(world, blockPos);
+
+        blockEntity.forEachTrackPosition(trackPosition -> {
+            line.RenderLine(holdingLinker, trackPosition);
+            OtisSeries1Screen.LiftCheck(trackPosition, (floorIndex, lift) -> {
+                sortedPositionsAndLifts.add(new ObjectObjectImmutablePair<>(trackPosition, lift));
+            });
+        });
+
+        sortedPositionsAndLifts.sort(Comparator.comparingInt(sortedPositionAndLift -> blockPos.getManhattanDistance(new Vector3i(sortedPositionAndLift.left().data))));
+
+        if (!sortedPositionsAndLifts.isEmpty()) {
+            final int count = 1;
+
+            for (int i = 0; i < count; i++) {
+                final LiftFloorDisplayView liftFloorDisplayView = new LiftFloorDisplayView();
+                liftFloorDisplayView.setBasicsAttributes(world,
+                        blockPos,
+                        sortedPositionsAndLifts.get(i).right(),
+                        FontList.instance.getFont("otis_series1"),
+                        5,
+                        0xFF1D953F);
+                liftFloorDisplayView.setTextureId(String.format("otis_series1_screen_display_%d_%s", i, blockEntity.getPos2().asLong()));
+                liftFloorDisplayView.setWidth(1.3F / 16);
+                liftFloorDisplayView.setHeight(1.75F / 16);
+                liftFloorDisplayView.setMargin(0.15F / 16, 0.1F / 16, 0.35F / 16, 0.1F / 16);
+                liftFloorDisplayView.setTextAlign(TextView.HorizontalTextAlign.RIGHT);
+                liftFloorDisplayView.setDisplayLength(2, 0);
+                liftFloorDisplayView.setGravity(Gravity.CENTER_VERTICAL);
+
+                backgroundLayout1.addChild(liftFloorDisplayView);
+            }
+        }
+
         if (buttonDescriptor.hasUpButton() || buttonDescriptor.hasDownButton()) {
             backgroundLayout.addChild(upLantern);
             backgroundLayout.addChild(middleLantern);
@@ -235,6 +278,7 @@ public class RenderOtisSeries1Lantern1 <T extends LiftButtonsBase.BlockEntityBas
         }
 
         parentLayout.addChild(backgroundLayout);
+        parentLayout.addChild(backgroundLayout1);
         parentLayout.render();
     }
 }

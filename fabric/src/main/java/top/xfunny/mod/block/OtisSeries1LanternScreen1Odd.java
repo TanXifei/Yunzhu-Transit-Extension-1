@@ -6,27 +6,26 @@ import org.mtr.mapping.tool.HolderBase;
 import org.mtr.mod.block.IBlock;
 import top.xfunny.mod.BlockEntityTypes;
 import top.xfunny.mod.block.base.LiftButtonsBase;
-import top.xfunny.mod.SoundEvents;
 
 import javax.annotation.Nonnull;
 import java.util.List;
 
-public class OtisSeries1Lantern1Odd extends LiftButtonsBase {
-    public OtisSeries1Lantern1Odd() {
+public class OtisSeries1LanternScreen1Odd extends LiftButtonsBase {
+    public OtisSeries1LanternScreen1Odd() {
         super(false, true);
     }
 
     @Nonnull
     @Override
     public VoxelShape getOutlineShape2(BlockState state, BlockView world, BlockPos pos, ShapeContext context) {
-        return IBlock.getVoxelShapeByDirection(6.75, 0.9, 0, 9.25, 4.65,0.25, IBlock.getStatePropertySafe(state, FACING));
+        return IBlock.getVoxelShapeByDirection(6.75, 0.9, 0, 9.25, 7.1,0.25, IBlock.getStatePropertySafe(state, FACING));
 
     }
 
     @Nonnull
     @Override
     public BlockEntityExtension createBlockEntity(BlockPos blockPos, BlockState blockState) {
-        return new OtisSeries1Lantern1Odd.BlockEntity(blockPos, blockState);
+        return new OtisSeries1LanternScreen1Odd.BlockEntity(blockPos, blockState);
     }
 
     @Override
@@ -41,7 +40,7 @@ public class OtisSeries1Lantern1Odd extends LiftButtonsBase {
     public static class BlockEntity extends BlockEntityBase {
 
         public BlockEntity(BlockPos pos, BlockState state) {
-            super(BlockEntityTypes.OTIS_SERIES_1_LANTERN_1_ODD.get(), pos, state);
+            super(BlockEntityTypes.OTIS_SERIES_1_LANTERN_SCREEN_1_ODD.get(), pos, state);
         }
     }
 
