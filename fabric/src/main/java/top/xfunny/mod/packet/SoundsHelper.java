@@ -29,6 +29,27 @@ public final class SoundsHelper {
                         1.0F
                 );
                 break;
+            case "otis_series_3_lantern_up":
+                serverPlayerEntity.getEntityWorld().playSound(
+                        null,
+                        blockPos,
+                        SoundEvents.OTIS_SERIES_3_LANTERN_1_UP.get(),
+                        SoundCategory.BLOCKS,
+                        1.0F,
+                        1.0F
+                );
+                break;
+
+            case "otis_series_3_lantern_down":
+                serverPlayerEntity.getEntityWorld().playSound(
+                        null,
+                        blockPos,
+                        SoundEvents.OTIS_SERIES_3_LANTERN_1_DOWN.get(),
+                        SoundCategory.BLOCKS,
+                        1.0F,
+                        1.0F
+                );
+                break;
                 case "schindler_m_series_lantern_1":
                 serverPlayerEntity.getEntityWorld().playSound(
                         null,
