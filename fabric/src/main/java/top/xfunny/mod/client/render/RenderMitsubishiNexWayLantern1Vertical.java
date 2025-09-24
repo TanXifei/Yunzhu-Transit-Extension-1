@@ -168,6 +168,9 @@ public class RenderMitsubishiNexWayLantern1Vertical<T extends LiftButtonsBase.Bl
 
         final ObjectArrayList<ObjectObjectImmutablePair<BlockPos, Lift>> sortedPositionsAndLifts = new ObjectArrayList<>();
 
+        // Add a variable to control the flashing state
+        final boolean flash = (System.currentTimeMillis() % 1000) < 500;
+
         blockEntity.forEachTrackPosition(trackPosition -> {
             line.RenderLine(holdingLinker, trackPosition);
 
@@ -182,7 +185,7 @@ public class RenderMitsubishiNexWayLantern1Vertical<T extends LiftButtonsBase.Bl
 
                 final ObjectArraySet<LiftDirection> instructionDirections = lift.hasInstruction(floorIndex);
 
-                if(lift.getDoorValue() == 0){
+                if (lift.getDoorValue() == 0) {
                     blockEntity.lastUpActive = false;
                     blockEntity.lastDownActive = false;
                 }
@@ -190,18 +193,22 @@ public class RenderMitsubishiNexWayLantern1Vertical<T extends LiftButtonsBase.Bl
                 if (instructionDirections.isEmpty() && pressedButtonDirection != null && lift.getDoorValue() != 0 && floorNumber.equals(currentFloorNumber)) {
                     switch (pressedButtonDirection) {
                         case DOWN:
-                            downLanternLeft.activate();
-                            downLanternRight.activate();
-                            if(!blockEntity.lastDownActive){
+                            if (flash) {
+                                downLanternLeft.activate();
+                                downLanternRight.activate();
+                            }
+                            if (!blockEntity.lastDownActive) {
                                 InitClient.REGISTRY_CLIENT.sendPacketToServer(new PacketLanternSoundInstruction(blockPos, "mitsubishi_nexway_lantern_1_down"));
                                 blockEntity.lastDownActive = true;
                                 blockEntity.lastUpActive = true;
                             }
                             break;
                         case UP:
-                            upLanternLeft.activate();
-                            upLanternRight.activate();
-                            if(!blockEntity.lastDownActive){
+                            if (flash) {
+                                upLanternLeft.activate();
+                                upLanternRight.activate();
+                            }
+                            if (!blockEntity.lastDownActive) {
                                 InitClient.REGISTRY_CLIENT.sendPacketToServer(new PacketLanternSoundInstruction(blockPos, "mitsubishi_nexway_lantern_1_down"));
                                 blockEntity.lastDownActive = true;
                                 blockEntity.lastUpActive = true;
@@ -216,18 +223,22 @@ public class RenderMitsubishiNexWayLantern1Vertical<T extends LiftButtonsBase.Bl
                             if (pressedButtonDirection != null) {
                                 switch (pressedButtonDirection) {
                                     case DOWN:
-                                        downLanternLeft.activate();
-                                        downLanternRight.activate();
-                                        if(!blockEntity.lastDownActive){
+                                        if (flash) {
+                                            downLanternLeft.activate();
+                                            downLanternRight.activate();
+                                        }
+                                        if (!blockEntity.lastDownActive) {
                                             InitClient.REGISTRY_CLIENT.sendPacketToServer(new PacketLanternSoundInstruction(blockPos, "mitsubishi_nexway_lantern_1_down"));
                                             blockEntity.lastDownActive = true;
                                             blockEntity.lastUpActive = true;
                                         }
                                         break;
                                     case UP:
-                                        upLanternLeft.activate();
-                                        upLanternRight.activate();
-                                        if(!blockEntity.lastDownActive){
+                                        if (flash) {
+                                            upLanternLeft.activate();
+                                            upLanternRight.activate();
+                                        }
+                                        if (!blockEntity.lastDownActive) {
                                             InitClient.REGISTRY_CLIENT.sendPacketToServer(new PacketLanternSoundInstruction(blockPos, "mitsubishi_nexway_lantern_1_down"));
                                             blockEntity.lastDownActive = true;
                                             blockEntity.lastUpActive = true;
@@ -240,7 +251,7 @@ public class RenderMitsubishiNexWayLantern1Vertical<T extends LiftButtonsBase.Bl
                                 case DOWN:
                                     downLanternLeft.activate();
                                     downLanternRight.activate();
-                                    if(!blockEntity.lastDownActive){
+                                    if (!blockEntity.lastDownActive) {
                                         InitClient.REGISTRY_CLIENT.sendPacketToServer(new PacketLanternSoundInstruction(blockPos, "mitsubishi_nexway_lantern_1_down"));
                                         blockEntity.lastDownActive = true;
                                         blockEntity.lastUpActive = true;
@@ -249,7 +260,7 @@ public class RenderMitsubishiNexWayLantern1Vertical<T extends LiftButtonsBase.Bl
                                 case UP:
                                     upLanternLeft.activate();
                                     upLanternRight.activate();
-                                    if(!blockEntity.lastDownActive){
+                                    if (!blockEntity.lastDownActive) {
                                         InitClient.REGISTRY_CLIENT.sendPacketToServer(new PacketLanternSoundInstruction(blockPos, "mitsubishi_nexway_lantern_1_down"));
                                         blockEntity.lastDownActive = true;
                                         blockEntity.lastUpActive = true;

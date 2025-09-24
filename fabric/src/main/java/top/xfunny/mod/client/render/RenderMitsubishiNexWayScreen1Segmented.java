@@ -176,6 +176,9 @@ public class RenderMitsubishiNexWayScreen1Segmented<T extends LiftButtonsBase.Bl
 
         final ObjectArrayList<ObjectObjectImmutablePair<BlockPos, Lift>> sortedPositionsAndLifts = new ObjectArrayList<>();
 
+        // Add a variable to control the flashing state
+        final boolean flash = (System.currentTimeMillis() % 1000) < 500;
+
         blockEntity.forEachTrackPosition(trackPosition -> {
             line.RenderLine(holdingLinker, trackPosition);
 
@@ -190,7 +193,7 @@ public class RenderMitsubishiNexWayScreen1Segmented<T extends LiftButtonsBase.Bl
 
                 final ObjectArraySet<LiftDirection> instructionDirections = lift.hasInstruction(floorIndex);
 
-                if(lift.getDoorValue() == 0){
+                if (lift.getDoorValue() == 0) {
                     blockEntity.lastUpActive = false;
                     blockEntity.lastDownActive = false;
                 }
@@ -198,18 +201,22 @@ public class RenderMitsubishiNexWayScreen1Segmented<T extends LiftButtonsBase.Bl
                 if (instructionDirections.isEmpty() && pressedButtonDirection != null && lift.getDoorValue() != 0 && floorNumber.equals(currentFloorNumber)) {
                     switch (pressedButtonDirection) {
                         case DOWN:
-                            downLanternLeft.activate();
-                            downLanternRight.activate();
-                            if(!blockEntity.lastDownActive){
+                            if (flash) {
+                                downLanternLeft.activate();
+                                downLanternRight.activate();
+                            }
+                            if (!blockEntity.lastDownActive) {
                                 InitClient.REGISTRY_CLIENT.sendPacketToServer(new PacketLanternSoundInstruction(blockPos, "mitsubishi_nexway_lantern_1_down"));
                                 blockEntity.lastDownActive = true;
                                 blockEntity.lastUpActive = true;
                             }
                             break;
                         case UP:
-                            upLanternLeft.activate();
-                            upLanternRight.activate();
-                            if(!blockEntity.lastDownActive){
+                            if (flash) {
+                                upLanternLeft.activate();
+                                upLanternRight.activate();
+                            }
+                            if (!blockEntity.lastDownActive) {
                                 InitClient.REGISTRY_CLIENT.sendPacketToServer(new PacketLanternSoundInstruction(blockPos, "mitsubishi_nexway_lantern_1_down"));
                                 blockEntity.lastDownActive = true;
                                 blockEntity.lastUpActive = true;
@@ -224,18 +231,22 @@ public class RenderMitsubishiNexWayScreen1Segmented<T extends LiftButtonsBase.Bl
                             if (pressedButtonDirection != null) {
                                 switch (pressedButtonDirection) {
                                     case DOWN:
-                                        downLanternLeft.activate();
-                                        downLanternRight.activate();
-                                        if(!blockEntity.lastDownActive){
+                                        if (flash) {
+                                            downLanternLeft.activate();
+                                            downLanternRight.activate();
+                                        }
+                                        if (!blockEntity.lastDownActive) {
                                             InitClient.REGISTRY_CLIENT.sendPacketToServer(new PacketLanternSoundInstruction(blockPos, "mitsubishi_nexway_lantern_1_down"));
                                             blockEntity.lastDownActive = true;
                                             blockEntity.lastUpActive = true;
                                         }
                                         break;
                                     case UP:
-                                        upLanternLeft.activate();
-                                        upLanternRight.activate();
-                                        if(!blockEntity.lastDownActive){
+                                        if (flash) {
+                                            upLanternLeft.activate();
+                                            upLanternRight.activate();
+                                        }
+                                        if (!blockEntity.lastDownActive) {
                                             InitClient.REGISTRY_CLIENT.sendPacketToServer(new PacketLanternSoundInstruction(blockPos, "mitsubishi_nexway_lantern_1_down"));
                                             blockEntity.lastDownActive = true;
                                             blockEntity.lastUpActive = true;
@@ -248,7 +259,7 @@ public class RenderMitsubishiNexWayScreen1Segmented<T extends LiftButtonsBase.Bl
                                 case DOWN:
                                     downLanternLeft.activate();
                                     downLanternRight.activate();
-                                    if(!blockEntity.lastDownActive){
+                                    if (!blockEntity.lastDownActive) {
                                         InitClient.REGISTRY_CLIENT.sendPacketToServer(new PacketLanternSoundInstruction(blockPos, "mitsubishi_nexway_lantern_1_down"));
                                         blockEntity.lastDownActive = true;
                                         blockEntity.lastUpActive = true;
@@ -257,7 +268,7 @@ public class RenderMitsubishiNexWayScreen1Segmented<T extends LiftButtonsBase.Bl
                                 case UP:
                                     upLanternLeft.activate();
                                     upLanternRight.activate();
-                                    if(!blockEntity.lastDownActive){
+                                    if (!blockEntity.lastDownActive) {
                                         InitClient.REGISTRY_CLIENT.sendPacketToServer(new PacketLanternSoundInstruction(blockPos, "mitsubishi_nexway_lantern_1_down"));
                                         blockEntity.lastDownActive = true;
                                         blockEntity.lastUpActive = true;
@@ -286,14 +297,12 @@ public class RenderMitsubishiNexWayScreen1Segmented<T extends LiftButtonsBase.Bl
                         11,//字号
                         0xFFFA7A24);//字体颜色
                 liftFloorDisplayView.setDisplayLength(2, 0);//true开启滚动，开启滚动时的字数条件(>)，滚动速度
-                liftFloorDisplayView.setTextureId(String.format("mitsubishi_nexway_screen_1_segmented_display_%d_%s", i, blockEntity.getPos2().asLong()))
-;//字体贴图id，不能与其他显示屏的重复
+                liftFloorDisplayView.setTextureId(String.format("mitsubishi_nexway_screen_1_segmented_display_%d_%s", i, blockEntity.getPos2().asLong()));//字体贴图id，不能与其他显示屏的重复
                 liftFloorDisplayView.setWidth(2F / 16);//显示屏宽度
                 liftFloorDisplayView.setHeight(2F / 16);//显示屏高度
                 liftFloorDisplayView.setGravity(Gravity.CENTER);
                 liftFloorDisplayView.setTextAlign(TextView.HorizontalTextAlign.RIGHT);//文字对齐方式，center为居中对齐，left为左对齐，right为右对齐
-                liftFloorDisplayView.setMargin(0.6F / 16, 0.1F / 16
-                        , 0.6F / 16, 0);
+                liftFloorDisplayView.setMargin(0.6F / 16, 0.1F / 16, 0.6F / 16, 0);
                 screenLayout.addChild(liftFloorDisplayView);
             }
         }
