@@ -17,11 +17,13 @@ import org.mtr.mod.render.StoredMatrixTransformations;
 import top.xfunny.mod.Init;
 import top.xfunny.mod.block.KoneMScreen1Even;
 import top.xfunny.mod.block.base.LiftButtonsBase;
+import top.xfunny.mod.client.InitClient;
 import top.xfunny.mod.client.resource.FontList;
 import top.xfunny.mod.client.view.*;
 import top.xfunny.mod.client.view.view_group.LinearLayout;
 import top.xfunny.mod.item.YteGroupLiftButtonsLinker;
 import top.xfunny.mod.item.YteLiftButtonsLinker;
+import top.xfunny.mod.packet.PacketLanternSoundInstruction;
 import top.xfunny.mod.util.ClientGetLiftDetails;
 
 import java.util.Comparator;
@@ -135,15 +137,30 @@ public class RenderKoneMScreen1<T extends LiftButtonsBase.BlockEntityBase> exten
 
                 final ObjectArraySet<LiftDirection> instructionDirections = lift.hasInstruction(floorIndex);
 
+                if (lift.getDoorValue() == 0) {
+                    blockEntity.lastUpActive = false;
+                    blockEntity.lastDownActive = false;
+                }
+
                 if (instructionDirections.isEmpty() && pressedButtonDirection != null && lift.getDoorValue() != 0 && floorNumber.equals(currentFloorNumber)) {
                     switch (pressedButtonDirection) {
                         case DOWN:
                             downLantern.activate();
                             downLantern1.activate();
+                            if(!blockEntity.lastDownActive){
+                                InitClient.REGISTRY_CLIENT.sendPacketToServer(new PacketLanternSoundInstruction(blockPos, "kone_m_lantern_1_down"));
+                                blockEntity.lastDownActive = true;
+                                blockEntity.lastUpActive = true;
+                                }
                             break;
                         case UP:
                             upLantern.activate();
                             upLantern1.activate();
+                            if(!blockEntity.lastDownActive) {
+                                InitClient.REGISTRY_CLIENT.sendPacketToServer(new PacketLanternSoundInstruction(blockPos, "kone_m_lantern_1_up"));
+                                blockEntity.lastDownActive = true;
+                                blockEntity.lastUpActive = true;
+                            }
                             break;
                     }
                 }
@@ -156,10 +173,20 @@ public class RenderKoneMScreen1<T extends LiftButtonsBase.BlockEntityBase> exten
                                     case DOWN:
                                         downLantern.activate();
                                         downLantern1.activate();
+                                        if(!blockEntity.lastDownActive) {
+                                            InitClient.REGISTRY_CLIENT.sendPacketToServer(new PacketLanternSoundInstruction(blockPos, "kone_m_lantern_1_down"));
+                                            blockEntity.lastDownActive = true;
+                                            blockEntity.lastUpActive = true;
+                                        }
                                         break;
                                     case UP:
                                         upLantern.activate();
                                         upLantern1.activate();
+                                        if(!blockEntity.lastDownActive) {
+                                            InitClient.REGISTRY_CLIENT.sendPacketToServer(new PacketLanternSoundInstruction(blockPos, "kone_m_lantern_1_up"));
+                                            blockEntity.lastDownActive = true;
+                                            blockEntity.lastUpActive = true;
+                                        }
                                         break;
                                 }
                             }
@@ -168,10 +195,20 @@ public class RenderKoneMScreen1<T extends LiftButtonsBase.BlockEntityBase> exten
                                 case DOWN:
                                     downLantern.activate();
                                     downLantern1.activate();
+                                    if(!blockEntity.lastDownActive) {
+                                        InitClient.REGISTRY_CLIENT.sendPacketToServer(new PacketLanternSoundInstruction(blockPos, "kone_m_lantern_1_down"));
+                                        blockEntity.lastDownActive = true;
+                                        blockEntity.lastUpActive = true;
+                                    }
                                     break;
                                 case UP:
                                     upLantern.activate();
                                     upLantern1.activate();
+                                    if(!blockEntity.lastDownActive) {
+                                        InitClient.REGISTRY_CLIENT.sendPacketToServer(new PacketLanternSoundInstruction(blockPos, "kone_m_lantern_1_up"));
+                                        blockEntity.lastDownActive = true;
+                                        blockEntity.lastUpActive = true;
+                                    }
                                     break;
                             }
                         }

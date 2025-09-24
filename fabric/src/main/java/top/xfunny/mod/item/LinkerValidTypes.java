@@ -227,6 +227,11 @@ public class LinkerValidTypes {
             TonicDMScreen1GreenEven.class,
             TonicDMScreen1YellowOdd.class,
             TonicDMScreen1YellowEven.class,
+            ToshibaButton1.class,
+            ToshibaScreen1Odd.class,
+            ToshibaScreen1Even.class,
+            ToshibaScreen2Odd.class,
+            ToshibaScreen2Even.class,
             SchindlerZLine3Keypad1.class
     ));
 }

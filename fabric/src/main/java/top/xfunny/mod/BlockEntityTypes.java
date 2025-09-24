@@ -229,6 +229,12 @@ public class BlockEntityTypes {
     public static final BlockEntityTypeRegistryObject<TonicDMScreen1YellowOdd.BlockEntity> TONIC_DM_SCREEN_1_YELLOW_ODD;
     public static final BlockEntityTypeRegistryObject<TonicDMScreen1YellowEven.BlockEntity> TONIC_DM_SCREEN_1_YELLOW_EVEN;
 
+    public static final BlockEntityTypeRegistryObject<ToshibaButton1.BlockEntity> TOSHIBA_BUTTON_1;
+    public static final BlockEntityTypeRegistryObject<ToshibaScreen1Odd.BlockEntity> TOSHIBA_SCREEN_1_ODD;
+    public static final BlockEntityTypeRegistryObject<ToshibaScreen1Even.BlockEntity> TOSHIBA_SCREEN_1_EVEN;
+    public static final BlockEntityTypeRegistryObject<ToshibaScreen2Odd.BlockEntity> TOSHIBA_SCREEN_2_ODD;
+    public static final BlockEntityTypeRegistryObject<ToshibaScreen2Even.BlockEntity> TOSHIBA_SCREEN_2_EVEN;
+
 
     public static final BlockEntityTypeRegistryObject<HitachiB85Door1.BlockEntity> HITACHI_B85_DOOR_1;
     public static final BlockEntityTypeRegistryObject<KoneMDoor1.BlockEntity> KONE_M_DOOR_1;
@@ -469,6 +475,12 @@ public class BlockEntityTypes {
         TONIC_DM_SCREEN_1_GREEN_EVEN = Init.REGISTRY.registerBlockEntityType(new Identifier(Init.MOD_ID, "tonic_dm_screen_1_green_even"), TonicDMScreen1GreenEven.BlockEntity::new, Blocks.TONIC_DM_SCREEN_1_GREEN_EVEN::get);
         TONIC_DM_SCREEN_1_YELLOW_ODD = Init.REGISTRY.registerBlockEntityType(new Identifier(Init.MOD_ID, "tonic_dm_screen_1_yellow_odd"), TonicDMScreen1YellowOdd.BlockEntity::new, Blocks.TONIC_DM_SCREEN_1_YELLOW_ODD::get);
         TONIC_DM_SCREEN_1_YELLOW_EVEN = Init.REGISTRY.registerBlockEntityType(new Identifier(Init.MOD_ID, "tonic_dm_screen_1_yellow_even"), TonicDMScreen1YellowEven.BlockEntity::new, Blocks.TONIC_DM_SCREEN_1_YELLOW_EVEN::get);
+
+        TOSHIBA_BUTTON_1 = Init.REGISTRY.registerBlockEntityType(new Identifier(Init.MOD_ID, "toshiba_button_1"), ToshibaButton1.BlockEntity::new, Blocks.TOSHIBA_BUTTON_1::get);
+        TOSHIBA_SCREEN_1_ODD = Init.REGISTRY.registerBlockEntityType(new Identifier(Init.MOD_ID, "toshiba_screen_1_odd"), ToshibaScreen1Odd.BlockEntity::new, Blocks.TOSHIBA_SCREEN_1_ODD::get);
+        TOSHIBA_SCREEN_1_EVEN = Init.REGISTRY.registerBlockEntityType(new Identifier(Init.MOD_ID, "toshiba_screen_1_even"), ToshibaScreen1Even.BlockEntity::new, Blocks.TOSHIBA_SCREEN_1_EVEN::get);
+        TOSHIBA_SCREEN_2_ODD = Init.REGISTRY.registerBlockEntityType(new Identifier(Init.MOD_ID, "toshiba_screen_2_odd"), ToshibaScreen2Odd.BlockEntity::new, Blocks.TOSHIBA_SCREEN_2_ODD::get);
+        TOSHIBA_SCREEN_2_EVEN = Init.REGISTRY.registerBlockEntityType(new Identifier(Init.MOD_ID, "toshiba_screen_2_even"), ToshibaScreen2Even.BlockEntity::new, Blocks.TOSHIBA_SCREEN_2_EVEN::get);
 
         HITACHI_B85_DOOR_1 = Init.REGISTRY.registerBlockEntityType(new Identifier(Init.MOD_ID, "hitachi_b85_door_1"), HitachiB85Door1.BlockEntity::new, Blocks.HITACHI_B85_DOOR_1::get);
         KONE_M_DOOR_1 = Init.REGISTRY.registerBlockEntityType(new Identifier(Init.MOD_ID, "kone_m_door_1"), KoneMDoor1.BlockEntity::new, Blocks.KONE_M_DOOR_1::get);

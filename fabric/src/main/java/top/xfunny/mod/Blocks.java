@@ -236,6 +236,11 @@ public class Blocks {
     public static final BlockRegistryObject TONIC_DM_SCREEN_1_GREEN_EVEN;
     public static final BlockRegistryObject TONIC_DM_SCREEN_1_YELLOW_ODD;
     public static final BlockRegistryObject TONIC_DM_SCREEN_1_YELLOW_EVEN;
+    public static final BlockRegistryObject TOSHIBA_BUTTON_1;
+    public static final BlockRegistryObject TOSHIBA_SCREEN_1_ODD;
+    public static final BlockRegistryObject TOSHIBA_SCREEN_1_EVEN;
+    public static final BlockRegistryObject TOSHIBA_SCREEN_2_ODD;
+    public static final BlockRegistryObject TOSHIBA_SCREEN_2_EVEN;
 
     public static final BlockRegistryObject PAT_P01_TICKET_BARRIER_ENTRANCE;
     public static final BlockRegistryObject PAT_P01_TICKET_BARRIER_EXIT;
@@ -489,6 +494,12 @@ public class Blocks {
         TONIC_DM_SCREEN_1_GREEN_EVEN = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "tonic_dm_screen_1_green_even"), () -> new Block(new TonicDMScreen1GreenEven()), CreativeModeTabs.YTE_LIFT_FIXTURES);
         TONIC_DM_SCREEN_1_YELLOW_ODD = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "tonic_dm_screen_1_yellow_odd"), () -> new Block(new TonicDMScreen1YellowOdd()), CreativeModeTabs.YTE_LIFT_FIXTURES);
         TONIC_DM_SCREEN_1_YELLOW_EVEN = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "tonic_dm_screen_1_yellow_even"), () -> new Block(new TonicDMScreen1YellowEven()), CreativeModeTabs.YTE_LIFT_FIXTURES);
+
+        TOSHIBA_BUTTON_1 = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "toshiba_button_1"), () -> new Block(new ToshibaButton1()), CreativeModeTabs.YTE_LIFT_FIXTURES);
+        TOSHIBA_SCREEN_1_ODD = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "toshiba_screen_1_odd"), () -> new Block(new ToshibaScreen1Odd()), CreativeModeTabs.YTE_LIFT_FIXTURES);
+        TOSHIBA_SCREEN_1_EVEN = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "toshiba_screen_1_even"), () -> new Block(new ToshibaScreen1Even()), CreativeModeTabs.YTE_LIFT_FIXTURES);
+        TOSHIBA_SCREEN_2_ODD = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "toshiba_screen_2_odd"), () -> new Block(new ToshibaScreen2Odd()), CreativeModeTabs.YTE_LIFT_FIXTURES);
+        TOSHIBA_SCREEN_2_EVEN = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "toshiba_screen_2_even"), () -> new Block(new ToshibaScreen2Even()), CreativeModeTabs.YTE_LIFT_FIXTURES);
 
         PAT_P01_TICKET_BARRIER_ENTRANCE = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "pat_p01_ticket_barrier_entrance"), () -> new Block(new PATTicketBarrier(true)), CreativeModeTabs.YTE_RAILWAY_FACILITIES);
         PAT_P01_TICKET_BARRIER_EXIT = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "pat_p01_ticket_barrier_exit"), () -> new Block(new PATTicketBarrier(false)), CreativeModeTabs.YTE_RAILWAY_FACILITIES);

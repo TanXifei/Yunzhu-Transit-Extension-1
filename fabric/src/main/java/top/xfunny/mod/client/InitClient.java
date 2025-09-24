@@ -252,6 +252,11 @@ public final class InitClient {
         REGISTRY_CLIENT.registerBlockEntityRenderer(BlockEntityTypes.TONIC_DM_SCREEN_1_RED_ODD, dispatcher -> new top.xfunny.mod.client.render.RenderTonicDMScreen1<>(dispatcher, true, RenderTonicDMScreen1.renderTonicDMScreen1Color.RED));
         REGISTRY_CLIENT.registerBlockEntityRenderer(BlockEntityTypes.TONIC_DM_SCREEN_1_RED_EVEN, dispatcher -> new top.xfunny.mod.client.render.RenderTonicDMScreen1<>(dispatcher, false, RenderTonicDMScreen1.renderTonicDMScreen1Color.RED));
 
+        REGISTRY_CLIENT.registerBlockEntityRenderer(BlockEntityTypes.TOSHIBA_BUTTON_1, RenderToshibaButton1::new);
+        REGISTRY_CLIENT.registerBlockEntityRenderer(BlockEntityTypes.TOSHIBA_SCREEN_1_ODD, dispatcher -> new top.xfunny.mod.client.render.RenderToshibaScreen1<>(dispatcher, true));
+        REGISTRY_CLIENT.registerBlockEntityRenderer(BlockEntityTypes.TOSHIBA_SCREEN_1_EVEN, dispatcher -> new top.xfunny.mod.client.render.RenderToshibaScreen1<>(dispatcher, false));
+        REGISTRY_CLIENT.registerBlockEntityRenderer(BlockEntityTypes.TOSHIBA_SCREEN_2_ODD, dispatcher -> new top.xfunny.mod.client.render.RenderToshibaScreen2<>(dispatcher, true));
+        REGISTRY_CLIENT.registerBlockEntityRenderer(BlockEntityTypes.TOSHIBA_SCREEN_2_EVEN, dispatcher -> new top.xfunny.mod.client.render.RenderToshibaScreen2<>(dispatcher, false));
 
         REGISTRY_CLIENT.registerBlockEntityRenderer(BlockEntityTypes.HITACHI_B85_DOOR_1, dispatcher -> new top.xfunny.mod.client.render.RenderLiftDoor<>(dispatcher, 7));
         REGISTRY_CLIENT.registerBlockEntityRenderer(BlockEntityTypes.KONE_M_DOOR_1, dispatcher -> new top.xfunny.mod.client.render.RenderLiftDoor<>(dispatcher, 6));

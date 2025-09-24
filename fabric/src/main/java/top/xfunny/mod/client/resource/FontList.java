@@ -70,6 +70,8 @@ public class FontList {
             loadFont("ryoden-led", "font/ryoden-led.ttf");
             loadFont("ryoden-led-small", "font/ryoden-led-small.ttf");
             loadFont("helvetica", "font/helvetica.ttf");
+            loadFont("toshiba_segmented", "font/toshiba-segmented.ttf");
+            loadFont("toshiba_segmented_1", "font/toshiba-segmented-1.ttf");
             fontsLoaded = true;
         }
     }

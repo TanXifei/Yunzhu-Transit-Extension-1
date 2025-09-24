@@ -54,5 +54,37 @@
         "pitch": 1.0
       }
     ]
+  },
+  "toshiba_lantern_1_up": {
+    "sounds": [
+      {
+        "name": "yte:toshiba_lantern_1_up",
+        "pitch": 1.0
+      }
+    ]
+  },
+  "toshiba_lantern_1_down": {
+    "sounds": [
+      {
+        "name": "yte:toshiba_lantern_1_down",
+        "pitch": 1.0
+      }
+    ]
+  },
+  "kone_m_lantern_1_up": {
+    "sounds": [
+      {
+        "name": "yte:kone_m_lantern_1_up",
+        "pitch": 1.0
+      }
+    ]
+  },
+  "kone_m_lantern_1_down": {
+    "sounds": [
+      {
+        "name": "yte:kone_m_lantern_1_down",
+        "pitch": 1.0
+      }
+    ]
   }
 }

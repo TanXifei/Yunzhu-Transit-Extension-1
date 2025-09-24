@@ -80,6 +80,49 @@ public final class SoundsHelper {
                         1.0F,
                         1.0F
                 );
+                break;
+            case "toshiba_lantern_1_up":
+                serverPlayerEntity.getEntityWorld().playSound(
+                        null,
+                        blockPos,
+                        SoundEvents.TOSHIBA_LANTERN_1_UP.get(),
+                        SoundCategory.BLOCKS,
+                        1.0F,
+                        1.0F
+                );
+                break;
+
+            case "toshiba_lantern_1_down":
+                serverPlayerEntity.getEntityWorld().playSound(
+                        null,
+                        blockPos,
+                        SoundEvents.TOSHIBA_LANTERN_1_DOWN.get(),
+                        SoundCategory.BLOCKS,
+                        1.0F,
+                        1.0F
+                );
+                break;
+            case "kone_m_lantern_1_up":
+                serverPlayerEntity.getEntityWorld().playSound(
+                        null,
+                        blockPos,
+                        SoundEvents.KONE_M_LANTERN_1_UP.get(),
+                        SoundCategory.BLOCKS,
+                        1.0F,
+                        1.0F
+                );
+                break;
+
+            case "kone_m_lantern_1_down":
+                serverPlayerEntity.getEntityWorld().playSound(
+                        null,
+                        blockPos,
+                        SoundEvents.KONE_M_LANTERN_1_DOWN.get(),
+                        SoundCategory.BLOCKS,
+                        1.0F,
+                        1.0F
+                );
+                break;
         }
     }
 }
