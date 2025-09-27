@@ -230,6 +230,8 @@ public class BlockEntityTypes {
     public static final BlockEntityTypeRegistryObject<TonicDMScreen1YellowEven.BlockEntity> TONIC_DM_SCREEN_1_YELLOW_EVEN;
 
     public static final BlockEntityTypeRegistryObject<ToshibaButton1.BlockEntity> TOSHIBA_BUTTON_1;
+    public static final BlockEntityTypeRegistryObject<ToshibaLantern1Odd.BlockEntity> TOSHIBA_LANTERN_1_ODD;
+    public static final BlockEntityTypeRegistryObject<ToshibaLantern1Even.BlockEntity> TOSHIBA_LANTERN_1_EVEN;
     public static final BlockEntityTypeRegistryObject<ToshibaScreen1Odd.BlockEntity> TOSHIBA_SCREEN_1_ODD;
     public static final BlockEntityTypeRegistryObject<ToshibaScreen1Even.BlockEntity> TOSHIBA_SCREEN_1_EVEN;
     public static final BlockEntityTypeRegistryObject<ToshibaScreen2Odd.BlockEntity> TOSHIBA_SCREEN_2_ODD;
@@ -477,6 +479,8 @@ public class BlockEntityTypes {
         TONIC_DM_SCREEN_1_YELLOW_EVEN = Init.REGISTRY.registerBlockEntityType(new Identifier(Init.MOD_ID, "tonic_dm_screen_1_yellow_even"), TonicDMScreen1YellowEven.BlockEntity::new, Blocks.TONIC_DM_SCREEN_1_YELLOW_EVEN::get);
 
         TOSHIBA_BUTTON_1 = Init.REGISTRY.registerBlockEntityType(new Identifier(Init.MOD_ID, "toshiba_button_1"), ToshibaButton1.BlockEntity::new, Blocks.TOSHIBA_BUTTON_1::get);
+        TOSHIBA_LANTERN_1_ODD = Init.REGISTRY.registerBlockEntityType(new Identifier(Init.MOD_ID, "toshiba_lantern_1_odd"), ToshibaLantern1Odd.BlockEntity::new, Blocks.TOSHIBA_LANTERN_1_ODD::get);
+        TOSHIBA_LANTERN_1_EVEN = Init.REGISTRY.registerBlockEntityType(new Identifier(Init.MOD_ID, "toshiba_lantern_1_even"), ToshibaLantern1Even.BlockEntity::new, Blocks.TOSHIBA_LANTERN_1_EVEN::get);
         TOSHIBA_SCREEN_1_ODD = Init.REGISTRY.registerBlockEntityType(new Identifier(Init.MOD_ID, "toshiba_screen_1_odd"), ToshibaScreen1Odd.BlockEntity::new, Blocks.TOSHIBA_SCREEN_1_ODD::get);
         TOSHIBA_SCREEN_1_EVEN = Init.REGISTRY.registerBlockEntityType(new Identifier(Init.MOD_ID, "toshiba_screen_1_even"), ToshibaScreen1Even.BlockEntity::new, Blocks.TOSHIBA_SCREEN_1_EVEN::get);
         TOSHIBA_SCREEN_2_ODD = Init.REGISTRY.registerBlockEntityType(new Identifier(Init.MOD_ID, "toshiba_screen_2_odd"), ToshibaScreen2Odd.BlockEntity::new, Blocks.TOSHIBA_SCREEN_2_ODD::get);

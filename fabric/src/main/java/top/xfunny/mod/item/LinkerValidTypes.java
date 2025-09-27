@@ -228,6 +228,8 @@ public class LinkerValidTypes {
             TonicDMScreen1YellowOdd.class,
             TonicDMScreen1YellowEven.class,
             ToshibaButton1.class,
+            ToshibaLantern1Odd.class,
+            ToshibaLantern1Even.class,
             ToshibaScreen1Odd.class,
             ToshibaScreen1Even.class,
             ToshibaScreen2Odd.class,

@@ -215,6 +215,8 @@
   "block.yte.tonic_dm_screen_1_yellow_odd": "通力电子DM侯梯楼层显示器（类型1，黄色，占一格）",
   "block.yte.tonic_dm_screen_1_yellow_even": "通力电子DM侯梯楼层显示器（类型1，黄色，占两格）",
   "block.yte.toshiba_button_1": "东芝呼梯面板（类型1）",
+  "block.yte.toshiba_lantern_1_odd": "东芝到站灯（类型1，占一格）",
+  "block.yte.toshiba_lantern_1_even": "东芝到站灯（类型1，占两格）",
   "block.yte.toshiba_screen_1_odd": "东芝侯梯楼层显示器（类型1，占一格）",
   "block.yte.toshiba_screen_1_even": "东芝侯梯楼层显示器（类型1，占两格）",
   "block.yte.toshiba_screen_2_odd": "东芝侯梯楼层显示器（类型2，占一格）",
