@@ -226,6 +226,8 @@
   "block.yte.pat_p01_ticket_barrier_exit": "PAT P01检票闸机（出口）",
   "block.yte.pat_p01_ticket_barrier_bare": "PAT P01检票闸机（侧壳）",
   "block.yte.pat_tm01_ticket_machine": "PAT TM01售票机",
+  "block.yte.pat_rs01_railway_sign": "PAT RS01指示牌",
+  "block.yte.pat_rs01_railway_sign_pole": "PAT RS01指示牌柱",
   "block.yte.hitachi_b85_door_1": "日立B85电梯门（类型1）",
   "block.yte.kone_m_door_1": "通力M系列电梯门（类型1）",
   "block.yte.schindler_qks9_door_1": "迅达QKS9电梯门（类型1）",

@@ -222,6 +222,8 @@
   "block.yte.pat_p01_ticket_barrier_exit": "PAT P01 Ticket Barrier(Exit)",
   "block.yte.pat_p01_ticket_barrier_bare": "PAT P01 Ticket Barrier(Bare)",
   "block.yte.pat_tm01_ticket_machine": "PAT TM01 Ticket Machine",
+  "block.yte.pat_rs01_railway_sign": "PAT RS01 Railway Sign",
+  "block.yte.pat_rs01_railway_sign_pole": "PAT RS01 Railway Sign Pole",
   "block.yte.hitachi_b85_door_1": "Hitachi B85 Door(Type 1)",
   "block.yte.kone_m_door_1": "Kone M Door(Type 1)",
   "block.yte.schindler_qks9_door_1": "Schindler QKS9 Door(Type 1)",

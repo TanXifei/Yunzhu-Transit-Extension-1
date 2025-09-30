@@ -109,7 +109,7 @@ public class PATRS01RailwaySign extends BlockExtension implements IBlock, Direct
     @Nonnull
     @Override
     public String getTranslationKey2() {
-        return "block.mtr.railway_sign";//todo
+        return "block.yte.pat_rs01_railway_sign";//todo
     }
 
     @Override
