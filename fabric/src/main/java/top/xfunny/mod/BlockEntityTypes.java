@@ -217,6 +217,10 @@ public class BlockEntityTypes {
     public static final BlockEntityTypeRegistryObject<HitachiB85Button1.BlockEntity> HITACHI_B85_BUTTON_1;
     public static final BlockEntityTypeRegistryObject<HitachiB85Button1WithoutScreen.BlockEntity> HITACHI_B85_BUTTON_1_WITHOUT_SCREEN;
     public static final BlockEntityTypeRegistryObject<HitachiB85Button2.BlockEntity> HITACHI_B85_BUTTON_2;
+    public static final BlockEntityTypeRegistryObject<HitachiB85Screen1VerticalEven.BlockEntity> HITACHI_B85_SCREEN_1_VERTICAL_EVEN;
+    public static final BlockEntityTypeRegistryObject<HitachiB85Screen1VerticalOdd.BlockEntity> HITACHI_B85_SCREEN_1_VERTICAL_ODD;
+    public static final BlockEntityTypeRegistryObject<HitachiB85Screen1HorizontalEven.BlockEntity> HITACHI_B85_SCREEN_1_HORIZONTAL_EVEN;
+    public static final BlockEntityTypeRegistryObject<HitachiB85Screen1HorizontalOdd.BlockEntity> HITACHI_B85_SCREEN_1_HORIZONTAL_ODD;
 
     public static final BlockEntityTypeRegistryObject<HitachiButtonPAFC.BlockEntity> HITACHI_BUTTON_PAFC;
 
@@ -467,6 +471,10 @@ public class BlockEntityTypes {
         HITACHI_B85_BUTTON_1 = Init.REGISTRY.registerBlockEntityType(new Identifier(Init.MOD_ID, "hitachi_b85_button_1"), HitachiB85Button1.BlockEntity::new, Blocks.HITACHI_B85_BUTTON_1::get);
         HITACHI_B85_BUTTON_1_WITHOUT_SCREEN = Init.REGISTRY.registerBlockEntityType(new Identifier(Init.MOD_ID, "hitachi_b85_button_1_without_screen"), HitachiB85Button1WithoutScreen.BlockEntity::new, Blocks.HITACHI_B85_BUTTON_1_WITHOUT_SCREEN::get);
         HITACHI_B85_BUTTON_2 = Init.REGISTRY.registerBlockEntityType(new Identifier(Init.MOD_ID, "hitachi_b85_button_2"), HitachiB85Button2.BlockEntity::new, Blocks.HITACHI_B85_BUTTON_2::get);
+        HITACHI_B85_SCREEN_1_VERTICAL_ODD = Init.REGISTRY.registerBlockEntityType(new Identifier(Init.MOD_ID, "hitachi_b85_screen_1_vertical_odd"), HitachiB85Screen1VerticalOdd.BlockEntity::new, Blocks.HITACHI_B85_SCREEN_1_VERTICAL_ODD::get);
+        HITACHI_B85_SCREEN_1_VERTICAL_EVEN = Init.REGISTRY.registerBlockEntityType(new Identifier(Init.MOD_ID, "hitachi_b85_screen_1_vertical_even"), HitachiB85Screen1VerticalEven.BlockEntity::new, Blocks.HITACHI_B85_SCREEN_1_VERTICAL_EVEN::get);
+        HITACHI_B85_SCREEN_1_HORIZONTAL_ODD = Init.REGISTRY.registerBlockEntityType(new Identifier(Init.MOD_ID, "hitachi_b85_screen_1_horizontal_odd"), HitachiB85Screen1HorizontalOdd.BlockEntity::new, Blocks.HITACHI_B85_SCREEN_1_HORIZONTAL_ODD::get);
+        HITACHI_B85_SCREEN_1_HORIZONTAL_EVEN = Init.REGISTRY.registerBlockEntityType(new Identifier(Init.MOD_ID, "hitachi_b85_screen_1_horizontal_even"), HitachiB85Screen1HorizontalEven.BlockEntity::new, Blocks.HITACHI_B85_SCREEN_1_HORIZONTAL_EVEN::get);
         HITACHI_BUTTON_PAFC = Init.REGISTRY.registerBlockEntityType(new Identifier(Init.MOD_ID, "hitachi_button_pafc"), HitachiButtonPAFC.BlockEntity::new, Blocks.HITACHI_BUTTON_PAFC::get);
 
         TONIC_DS_SCREEN_1_ODD = Init.REGISTRY.registerBlockEntityType(new Identifier(Init.MOD_ID, "tonic_ds_screen_1_odd"), TonicDSScreen1Odd.BlockEntity::new, Blocks.TONIC_DS_SCREEN_1_ODD::get);

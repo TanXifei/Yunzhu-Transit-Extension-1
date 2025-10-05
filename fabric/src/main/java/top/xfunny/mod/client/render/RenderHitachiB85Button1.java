@@ -32,7 +32,7 @@ import java.util.Comparator;
 
 public class RenderHitachiB85Button1 extends BlockEntityRenderer<HitachiB85Button1.BlockEntity> implements DirectionHelper, IGui, IBlock {
 
-    private static final int HOVER_COLOR = 0xFFCCFFDD;
+    private static final int HOVER_COLOR = 0xFFCCAA44;
     private static final int PRESSED_COLOR = 0xFFFFCC66;
     private static final int DEFAULT_COLOR = 0xFF452D15;
     private static final Identifier ARROW_TEXTURE = new Identifier(top.xfunny.mod.Init.MOD_ID, "textures/block/hitachi_b85_arrow_1.png");
