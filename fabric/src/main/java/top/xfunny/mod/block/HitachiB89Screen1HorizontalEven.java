@@ -10,8 +10,8 @@ import top.xfunny.mod.block.base.LiftPanelBase;
 import javax.annotation.Nonnull;
 import java.util.List;
 
-public class HitachiB85Screen1HorizontalEven extends LiftPanelBase {
-    public HitachiB85Screen1HorizontalEven() {
+public class HitachiB89Screen1HorizontalEven extends LiftPanelBase {
+    public HitachiB89Screen1HorizontalEven() {
         super(false);
     }
 
@@ -32,7 +32,7 @@ public class HitachiB85Screen1HorizontalEven extends LiftPanelBase {
     @Nonnull
     @Override
     public BlockEntityExtension createBlockEntity(BlockPos blockPos, BlockState blockState) {
-        return new HitachiB85Screen1HorizontalEven.BlockEntity(blockPos, blockState);
+        return new HitachiB89Screen1HorizontalEven.BlockEntity(blockPos, blockState);
     }
 
     @Override
@@ -45,7 +45,7 @@ public class HitachiB85Screen1HorizontalEven extends LiftPanelBase {
     public static class BlockEntity extends BlockEntityBase {
 
         public BlockEntity(BlockPos pos, BlockState state) {
-            super(BlockEntityTypes.HITACHI_B85_SCREEN_1_HORIZONTAL_EVEN.get(), pos, state);
+            super(BlockEntityTypes.HITACHI_B89_SCREEN_1_HORIZONTAL_EVEN.get(), pos, state);
         }
     }
 

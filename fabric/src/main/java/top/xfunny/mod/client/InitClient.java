@@ -245,6 +245,13 @@ public final class InitClient {
         REGISTRY_CLIENT.registerBlockEntityRenderer(BlockEntityTypes.HITACHI_B85_SCREEN_1_VERTICAL_EVEN, dispatcher -> new RenderHitachiB85Screen1Vertical<>(dispatcher, false));
         REGISTRY_CLIENT.registerBlockEntityRenderer(BlockEntityTypes.HITACHI_B85_SCREEN_1_HORIZONTAL_ODD, dispatcher -> new RenderHitachiB85Screen1Horizontal<>(dispatcher, true));
         REGISTRY_CLIENT.registerBlockEntityRenderer(BlockEntityTypes.HITACHI_B85_SCREEN_1_HORIZONTAL_EVEN, dispatcher -> new RenderHitachiB85Screen1Horizontal<>(dispatcher, false));
+        REGISTRY_CLIENT.registerBlockEntityRenderer(BlockEntityTypes.HITACHI_B89_BUTTON_1, RenderHitachiB89Button1::new);
+        REGISTRY_CLIENT.registerBlockEntityRenderer(BlockEntityTypes.HITACHI_B89_BUTTON_1_WITHOUT_SCREEN, RenderHitachiB89Button1WithoutScreen::new);
+        REGISTRY_CLIENT.registerBlockEntityRenderer(BlockEntityTypes.HITACHI_B89_BUTTON_2, RenderHitachiB89Button2::new);
+        REGISTRY_CLIENT.registerBlockEntityRenderer(BlockEntityTypes.HITACHI_B89_SCREEN_1_VERTICAL_ODD, dispatcher -> new RenderHitachiB89Screen1Vertical<>(dispatcher, true));
+        REGISTRY_CLIENT.registerBlockEntityRenderer(BlockEntityTypes.HITACHI_B89_SCREEN_1_VERTICAL_EVEN, dispatcher -> new RenderHitachiB89Screen1Vertical<>(dispatcher, false));
+        REGISTRY_CLIENT.registerBlockEntityRenderer(BlockEntityTypes.HITACHI_B89_SCREEN_1_HORIZONTAL_ODD, dispatcher -> new RenderHitachiB89Screen1Horizontal<>(dispatcher, true));
+        REGISTRY_CLIENT.registerBlockEntityRenderer(BlockEntityTypes.HITACHI_B89_SCREEN_1_HORIZONTAL_EVEN, dispatcher -> new RenderHitachiB89Screen1Horizontal<>(dispatcher, false));
         REGISTRY_CLIENT.registerBlockEntityRenderer(BlockEntityTypes.HITACHI_BUTTON_PAFC, RenderHitachiButtonPAFC::new);
 
         REGISTRY_CLIENT.registerBlockEntityRenderer(BlockEntityTypes.TONIC_DS_SCREEN_1_ODD, dispatcher -> new top.xfunny.mod.client.render.RenderTonicDSScreen1<>(dispatcher, true));

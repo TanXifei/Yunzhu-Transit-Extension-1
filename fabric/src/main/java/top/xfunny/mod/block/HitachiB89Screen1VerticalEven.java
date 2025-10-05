@@ -10,8 +10,8 @@ import top.xfunny.mod.block.base.LiftPanelBase;
 import javax.annotation.Nonnull;
 import java.util.List;
 
-public class HitachiB85Screen1HorizontalEven extends LiftPanelBase {
-    public HitachiB85Screen1HorizontalEven() {
+public class HitachiB89Screen1VerticalEven extends LiftPanelBase {
+    public HitachiB89Screen1VerticalEven() {
         super(false);
     }
 
@@ -20,9 +20,9 @@ public class HitachiB85Screen1HorizontalEven extends LiftPanelBase {
     public VoxelShape getOutlineShape2(BlockState state, BlockView world, BlockPos pos, ShapeContext context) {
         switch (IBlock.getStatePropertySafe(state, SIDE)) {
             case LEFT:
-                return IBlock.getVoxelShapeByDirection(12.5, 10.825, 0, 16, 13.175, 0.1, IBlock.getStatePropertySafe(state, FACING));
+                return IBlock.getVoxelShapeByDirection(14.5, 9.625, 0, 16, 14.325, 0.1, IBlock.getStatePropertySafe(state, FACING));
             case RIGHT:
-                return IBlock.getVoxelShapeByDirection(0, 10.825, 0, 3.5, 13.175, 0.1, IBlock.getStatePropertySafe(state, FACING));
+                return IBlock.getVoxelShapeByDirection(0, 9.625, 0, 1.5, 14.325, 0.1, IBlock.getStatePropertySafe(state, FACING));
             default:
                 return VoxelShapes.empty();
         }
@@ -32,7 +32,7 @@ public class HitachiB85Screen1HorizontalEven extends LiftPanelBase {
     @Nonnull
     @Override
     public BlockEntityExtension createBlockEntity(BlockPos blockPos, BlockState blockState) {
-        return new HitachiB85Screen1HorizontalEven.BlockEntity(blockPos, blockState);
+        return new HitachiB89Screen1VerticalEven.BlockEntity(blockPos, blockState);
     }
 
     @Override
@@ -45,7 +45,7 @@ public class HitachiB85Screen1HorizontalEven extends LiftPanelBase {
     public static class BlockEntity extends BlockEntityBase {
 
         public BlockEntity(BlockPos pos, BlockState state) {
-            super(BlockEntityTypes.HITACHI_B85_SCREEN_1_HORIZONTAL_EVEN.get(), pos, state);
+            super(BlockEntityTypes.HITACHI_B89_SCREEN_1_VERTICAL_EVEN.get(), pos, state);
         }
     }
 

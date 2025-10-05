@@ -183,6 +183,13 @@ public class Blocks {
     public static final BlockRegistryObject HITACHI_B85_SCREEN_1_VERTICAL_EVEN;
     public static final BlockRegistryObject HITACHI_B85_SCREEN_1_HORIZONTAL_ODD;
     public static final BlockRegistryObject HITACHI_B85_SCREEN_1_HORIZONTAL_EVEN;
+    public static final BlockRegistryObject HITACHI_B89_BUTTON_1;
+    public static final BlockRegistryObject HITACHI_B89_BUTTON_1_WITHOUT_SCREEN;
+    public static final BlockRegistryObject HITACHI_B89_BUTTON_2;
+    public static final BlockRegistryObject HITACHI_B89_SCREEN_1_VERTICAL_ODD;
+    public static final BlockRegistryObject HITACHI_B89_SCREEN_1_VERTICAL_EVEN;
+    public static final BlockRegistryObject HITACHI_B89_SCREEN_1_HORIZONTAL_ODD;
+    public static final BlockRegistryObject HITACHI_B89_SCREEN_1_HORIZONTAL_EVEN;
 
     public static final BlockRegistryObject HITACHI_BUTTON_PAFC;
 
@@ -494,6 +501,13 @@ public class Blocks {
         HITACHI_B85_SCREEN_1_VERTICAL_EVEN = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "hitachi_b85_screen_1_vertical_even"), () -> new Block(new HitachiB85Screen1VerticalEven()), CreativeModeTabs.YTE_LIFT_FIXTURES);
         HITACHI_B85_SCREEN_1_HORIZONTAL_ODD = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "hitachi_b85_screen_1_horizontal_odd"), () -> new Block(new HitachiB85Screen1HorizontalOdd()), CreativeModeTabs.YTE_LIFT_FIXTURES);
         HITACHI_B85_SCREEN_1_HORIZONTAL_EVEN = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "hitachi_b85_screen_1_horizontal_even"), () -> new Block(new HitachiB85Screen1HorizontalEven()), CreativeModeTabs.YTE_LIFT_FIXTURES);
+        HITACHI_B89_BUTTON_1 = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "hitachi_b89_button_1"), () -> new Block(new HitachiB89Button1()), CreativeModeTabs.YTE_LIFT_FIXTURES);
+        HITACHI_B89_BUTTON_1_WITHOUT_SCREEN = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "hitachi_b89_button_1_without_screen"), () -> new Block(new HitachiB89Button1WithoutScreen()), CreativeModeTabs.YTE_LIFT_FIXTURES);
+        HITACHI_B89_BUTTON_2 = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "hitachi_b89_button_2"), () -> new Block(new HitachiB89Button2()), CreativeModeTabs.YTE_LIFT_FIXTURES);
+        HITACHI_B89_SCREEN_1_VERTICAL_ODD = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "hitachi_b89_screen_1_vertical_odd"), () -> new Block(new HitachiB89Screen1VerticalOdd()), CreativeModeTabs.YTE_LIFT_FIXTURES);
+        HITACHI_B89_SCREEN_1_VERTICAL_EVEN = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "hitachi_b89_screen_1_vertical_even"), () -> new Block(new HitachiB89Screen1VerticalEven()), CreativeModeTabs.YTE_LIFT_FIXTURES);
+        HITACHI_B89_SCREEN_1_HORIZONTAL_ODD = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "hitachi_b89_screen_1_horizontal_odd"), () -> new Block(new HitachiB89Screen1HorizontalOdd()), CreativeModeTabs.YTE_LIFT_FIXTURES);
+        HITACHI_B89_SCREEN_1_HORIZONTAL_EVEN = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "hitachi_b89_screen_1_horizontal_even"), () -> new Block(new HitachiB89Screen1HorizontalEven()), CreativeModeTabs.YTE_LIFT_FIXTURES);
         HITACHI_BUTTON_PAFC = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "hitachi_button_pafc"), () -> new Block(new HitachiButtonPAFC()), CreativeModeTabs.YTE_LIFT_FIXTURES);
 
         TONIC_DS_SCREEN_1_ODD = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "tonic_ds_screen_1_odd"), () -> new Block(new TonicDSScreen1Odd()), CreativeModeTabs.YTE_LIFT_FIXTURES);
