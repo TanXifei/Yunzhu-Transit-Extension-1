@@ -101,7 +101,7 @@ public class RenderHitachiB89Screen1Horizontal<T extends LiftPanelBase.BlockEnti
                 liftFloorDisplayView.setTextAlign(TextView.HorizontalTextAlign.CENTER);
                 liftFloorDisplayView.setLetterSpacing(0);
                 liftFloorDisplayView.setDisplayLength(2, 0);
-                liftFloorDisplayView.setMargin(liftDirection != LiftDirection.NONE ? 2.175F/16 : 1.6875F/16, 5.875F / 16, 0, 0);
+                liftFloorDisplayView.setMargin(liftDirection != LiftDirection.NONE ? 2.175F/16 : 1.7F/16, 5.875F / 16, 0, 0);
                 liftFloorDisplayView.addStoredMatrixTransformations(graphicsHolder -> graphicsHolder.translate(0, 0, -SMALL_OFFSET));
 
                 final LiftArrowView liftArrowView_left = new LiftArrowView();

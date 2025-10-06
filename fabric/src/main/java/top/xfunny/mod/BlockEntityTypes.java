@@ -207,6 +207,7 @@ public class BlockEntityTypes {
     public static final BlockEntityTypeRegistryObject<SchindlerFIGSTouchButton1.BlockEntity> SCHINDLER_FI_GS_TOUCH_BUTTON_1;
     public static final BlockEntityTypeRegistryObject<SchindlerFIGSTouchButton1WithoutScreen.BlockEntity> SCHINDLER_FI_GS_TOUCH_BUTTON_1_WITHOUT_SCREEN;
     public static final BlockEntityTypeRegistryObject<SchindlerFIGSButton1Steel.BlockEntity> SCHINDLER_FI_GS_BUTTON_1_STEEL;
+    public static final BlockEntityTypeRegistryObject<SchindlerFIGSButton1WithoutScreen.BlockEntity> SCHINDLER_FI_GS_BUTTON_1_WITHOUT_SCREEN;
     public static final BlockEntityTypeRegistryObject<SchindlerFIGSScreen1SteelOdd.BlockEntity> SCHINDLER_FI_GS_SCREEN_1_STEEL_ODD;
     public static final BlockEntityTypeRegistryObject<SchindlerFIGSScreen1SteelEven.BlockEntity> SCHINDLER_FI_GS_SCREEN_1_STEEL_EVEN;
     public static final BlockEntityTypeRegistryObject<SchindlerFIGSScreen1BlackOdd.BlockEntity> SCHINDLER_FI_GS_SCREEN_1_BLACK_ODD;
@@ -420,6 +421,7 @@ public class BlockEntityTypes {
         SCHINDLER_FI_GS_TOUCH_BUTTON_1 = Init.REGISTRY.registerBlockEntityType(new Identifier(Init.MOD_ID, "schindler_fi_gs_touch_button_1"), SchindlerFIGSTouchButton1.BlockEntity::new, Blocks.SCHINDLER_FI_GS_TOUCH_BUTTON_1::get);
         SCHINDLER_FI_GS_TOUCH_BUTTON_1_WITHOUT_SCREEN = Init.REGISTRY.registerBlockEntityType(new Identifier(Init.MOD_ID, "schindler_fi_gs_touch_button_1_without_screen"), SchindlerFIGSTouchButton1WithoutScreen.BlockEntity::new, Blocks.SCHINDLER_FI_GS_TOUCH_BUTTON_1_WITHOUT_SCREEN::get);
         SCHINDLER_FI_GS_BUTTON_1_STEEL = Init.REGISTRY.registerBlockEntityType(new Identifier(Init.MOD_ID, "schindler_fi_gs_button_1_steel"), SchindlerFIGSButton1Steel.BlockEntity::new, Blocks.SCHINDLER_FI_GS_BUTTON_1_STEEL::get);
+        SCHINDLER_FI_GS_BUTTON_1_WITHOUT_SCREEN = Init.REGISTRY.registerBlockEntityType(new Identifier(Init.MOD_ID, "schindler_fi_gs_button_1_without_screen"), SchindlerFIGSButton1WithoutScreen.BlockEntity::new, Blocks.SCHINDLER_FI_GS_BUTTON_1_WITHOUT_SCREEN::get);
         SCHINDLER_FI_GS_SCREEN_1_STEEL_ODD = Init.REGISTRY.registerBlockEntityType(new Identifier(Init.MOD_ID, "schindler_fi_gs_screen_1_steel_odd"), SchindlerFIGSScreen1SteelOdd.BlockEntity::new, Blocks.SCHINDLER_FI_GS_SCREEN_1_STEEL_ODD::get);
         SCHINDLER_FI_GS_SCREEN_1_STEEL_EVEN = Init.REGISTRY.registerBlockEntityType(new Identifier(Init.MOD_ID, "schindler_fi_gs_screen_1_steel_even"), SchindlerFIGSScreen1SteelEven.BlockEntity::new, Blocks.SCHINDLER_FI_GS_SCREEN_1_STEEL_EVEN::get);
         SCHINDLER_FI_GS_SCREEN_1_BLACK_ODD = Init.REGISTRY.registerBlockEntityType(new Identifier(Init.MOD_ID, "schindler_fi_gs_screen_1_black_odd"), SchindlerFIGSScreen1BlackOdd.BlockEntity::new, Blocks.SCHINDLER_FI_GS_SCREEN_1_BLACK_ODD::get);

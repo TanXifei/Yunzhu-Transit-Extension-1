@@ -166,6 +166,7 @@ public class Blocks {
     public static final BlockRegistryObject SCHINDLER_FI_GS_TOUCH_BUTTON_1;
     public static final BlockRegistryObject SCHINDLER_FI_GS_TOUCH_BUTTON_1_WITHOUT_SCREEN;
     public static final BlockRegistryObject SCHINDLER_FI_GS_BUTTON_1_STEEL;
+    public static final BlockRegistryObject SCHINDLER_FI_GS_BUTTON_1_WITHOUT_SCREEN;
     public static final BlockRegistryObject SCHINDLER_FI_GS_SCREEN_1_STEEL_ODD;
     public static final BlockRegistryObject SCHINDLER_FI_GS_SCREEN_1_STEEL_EVEN;
     public static final BlockRegistryObject SCHINDLER_FI_GS_SCREEN_1_BLACK_ODD;
@@ -440,6 +441,7 @@ public class Blocks {
         SCHINDLER_FI_GS_TOUCH_BUTTON_1 = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "schindler_fi_gs_touch_button_1"), () -> new Block(new SchindlerFIGSTouchButton1()), CreativeModeTabs.YTE_LIFT_FIXTURES);
         SCHINDLER_FI_GS_TOUCH_BUTTON_1_WITHOUT_SCREEN = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "schindler_fi_gs_touch_button_1_without_screen"), () -> new Block(new SchindlerFIGSTouchButton1WithoutScreen()), CreativeModeTabs.YTE_LIFT_FIXTURES);
         SCHINDLER_FI_GS_BUTTON_1_STEEL = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "schindler_fi_gs_button_1_steel"), () -> new Block(new SchindlerFIGSButton1Steel()), CreativeModeTabs.YTE_LIFT_FIXTURES);
+        SCHINDLER_FI_GS_BUTTON_1_WITHOUT_SCREEN = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "schindler_fi_gs_button_1_without_screen"), () -> new Block(new SchindlerFIGSButton1WithoutScreen()), CreativeModeTabs.YTE_LIFT_FIXTURES);
         SCHINDLER_FI_GS_SCREEN_1_STEEL_ODD = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "schindler_fi_gs_screen_1_steel_odd"), () -> new Block(new SchindlerFIGSScreen1SteelOdd()), CreativeModeTabs.YTE_LIFT_FIXTURES);
         SCHINDLER_FI_GS_SCREEN_1_STEEL_EVEN = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "schindler_fi_gs_screen_1_steel_even"), () -> new Block(new SchindlerFIGSScreen1SteelEven()), CreativeModeTabs.YTE_LIFT_FIXTURES);
         SCHINDLER_FI_GS_SCREEN_1_BLACK_ODD = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "schindler_fi_gs_screen_1_black_odd"), () -> new Block(new SchindlerFIGSScreen1BlackOdd()), CreativeModeTabs.YTE_LIFT_FIXTURES);

@@ -181,6 +181,7 @@ public class LinkerValidTypes {
             SchindlerMSeriesScreen4Even.class,
             SchindlerSSeriesGreyButton.class,
             SchindlerFIGSButton1.class,
+            SchindlerFIGSButton1WithoutScreen.class,
             SchindlerFIGSButton1Steel.class,
             SchindlerFIGSTouchButton1.class,
             SchindlerFIGSTouchButton1WithoutScreen.class,
