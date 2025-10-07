@@ -4,7 +4,7 @@
 	"texture_size": [225, 950],
 	"textures": {
 		"0": "yte:block/hitachi_vib221",
-		"1": "yte:block/hitachi_vib681_screen",
+		"2": "yte:block/hitachi_vib681",
 		"particle": "yte:block/hitachi_vib221"
 	},
 	"elements": [
@@ -15,7 +15,7 @@
 			"faces": {
 				"north": {"uv": [0, 1.43459, 12.76429, 6.33308], "texture": "#0"},
 				"east": {"uv": [12.44444, 0, 16, 16], "texture": "#0"},
-				"south": {"uv": [3.55556, 0.84211, 12.44444, 15.15789], "texture": "#0"},
+				"south": {"uv": [0, 0, 16, 16], "texture": "#2"},
 				"west": {"uv": [0, 0.84211, 3.55556, 15.15789], "texture": "#0"},
 				"up": {"uv": [4.45714, 1.16278, 16, 0.73985], "texture": "#0"},
 				"down": {"uv": [0, 9.72181, 1.06194, 10.2547], "rotation": 270, "texture": "#0"}
@@ -101,18 +101,6 @@
 				"east": {"uv": [12.44444, 15.15789, 16, 16], "texture": "#0"},
 				"west": {"uv": [0, 15.15789, 3.55556, 16], "rotation": 270, "texture": "#0"},
 				"down": {"uv": [3.55556, 15.15789, 12.44444, 16], "texture": "#0"}
-			}
-		},
-		{
-			"from": [6.175, 8.25, 0.475],
-			"to": [9.825, 12.75, 0.475],
-			"rotation": {"angle": 0, "axis": "y", "origin": [7, 10.25, 0.475]},
-			"faces": {
-				"east": {"uv": [0, 0, 0, 0.06737], "texture": "#missing"},
-				"south": {"uv": [0, 0, 16, 16], "texture": "#1"},
-				"west": {"uv": [0, 0, 0, 0.06737], "texture": "#missing"},
-				"up": {"uv": [0, 0, 0.15289, 0], "texture": "#missing"},
-				"down": {"uv": [0, 0, 0.15289, 0], "texture": "#missing"}
 			}
 		}
 	],
