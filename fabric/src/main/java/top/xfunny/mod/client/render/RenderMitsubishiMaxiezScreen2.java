@@ -64,7 +64,7 @@ public class RenderMitsubishiMaxiezScreen2<T extends LiftPanelBase.BlockEntityBa
         parentLayout.setBasicsAttributes(world, blockPos);
         parentLayout.setStoredMatrixTransformations(storedMatrixTransformations1);
         parentLayout.setParentDimensions(3.75F / 16, 2.75F / 16);
-        parentLayout.setPosition(isOdd ? -1.875F / 16 : -9.875F / 16, 10.375F / 16);
+        parentLayout.setPosition(isOdd ? -1.875F / 16 : -9.875F / 16, 10.125F / 16);
         parentLayout.setWidth(LayoutSize.MATCH_PARENT);
         parentLayout.setHeight(LayoutSize.MATCH_PARENT);
 
@@ -72,7 +72,7 @@ public class RenderMitsubishiMaxiezScreen2<T extends LiftPanelBase.BlockEntityBa
         numberLayout.setBasicsAttributes(world, blockPos);
         numberLayout.setWidth(LayoutSize.WRAP_CONTENT);
         numberLayout.setHeight(LayoutSize.WRAP_CONTENT);
-        numberLayout.setMargin(0.34F / 16, 0.6F / 16, 0, 0);
+        numberLayout.setMargin(0.34F / 16, 0.6F / 16, 0, -.2F/16);
 
 
         final LineComponent line = new LineComponent();
@@ -183,12 +183,12 @@ public class RenderMitsubishiMaxiezScreen2<T extends LiftPanelBase.BlockEntityBa
 
                 final TextView textView = new TextView();
                 textView.setId("textView");
-                textView.setBasicsAttributes(world, blockPos, FontList.instance.getFont("wqy-microhei"), 3, 0xFFBBBBBB);
+                textView.setBasicsAttributes(world, blockPos, FontList.instance.getFont("wqy-microhei"), 4, 0xFFBBBBBB);
                 textView.setTextureId(String.format("mitsubishi_maxiez_screen_1_date_display_%d_%s", i, blockEntity.getPos2().asLong()))
                 ;
                 textView.setText(text);
                 textView.setWidth(4F / 16);
-                textView.setHeight(1F / 16);
+                textView.setHeight(0.7F / 16);
                 textView.setDisplayLength(20, 0);
                 textView.setTextAlign(TextView.HorizontalTextAlign.CENTER);
                 textView.setGravity(Gravity.CENTER_HORIZONTAL);

@@ -18,7 +18,7 @@ public class MitsubishiMaxiezScreen2Odd extends LiftPanelBase {
     @Nonnull
     @Override
     public VoxelShape getOutlineShape2(BlockState state, BlockView world, BlockPos pos, ShapeContext context) {
-        return IBlock.getVoxelShapeByDirection(5.725, 9.5, 0, 10.275, 13, 0.1, IBlock.getStatePropertySafe(state, FACING));
+        return IBlock.getVoxelShapeByDirection(5.6, 9.5, 0, 10.4, 13, 0.1, IBlock.getStatePropertySafe(state, FACING));
     }
 
     @Nonnull

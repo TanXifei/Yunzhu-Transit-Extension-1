@@ -106,6 +106,8 @@ public class BlockEntityTypes {
     public static final BlockEntityTypeRegistryObject<MitsubishiButtonSHT.BlockEntity> MITSUBISHI_BUTTON_SHT;
     public static final BlockEntityTypeRegistryObject<MitsubishiMaxiezButton1Gold.BlockEntity> MITSUBISHI_MAXIEZ_BUTTON_1_GOLD;
     public static final BlockEntityTypeRegistryObject<MitsubishiMaxiezButton1Silver.BlockEntity> MITSUBISHI_MAXIEZ_BUTTON_1_SILVER;
+    public static final BlockEntityTypeRegistryObject<MitsubishiMaxiezButton2WithoutScreen.BlockEntity> MITSUBISHI_MAXIEZ_BUTTON_2_WITHOUT_SCREEN;
+    public static final BlockEntityTypeRegistryObject<MitsubishiMaxiezButton3WithoutScreen.BlockEntity> MITSUBISHI_MAXIEZ_BUTTON_3_WITHOUT_SCREEN;
     public static final BlockEntityTypeRegistryObject<MitsubishiNexWayLantern1HorizontalEven.BlockEntity> MITSUBISHI_NEXWAY_LANTERN_1_HORIZONTAL_EVEN;
     public static final BlockEntityTypeRegistryObject<MitsubishiNexWayLantern1HorizontalOdd.BlockEntity> MITSUBISHI_NEXWAY_LANTERN_1_HORIZONTAL_ODD;
     public static final BlockEntityTypeRegistryObject<MitsubishiNexWayLantern1VerticalEven.BlockEntity> MITSUBISHI_NEXWAY_LANTERN_1_VERTICAL_EVEN;
@@ -336,6 +338,8 @@ public class BlockEntityTypes {
         MITSUBISHI_BUTTON_SHT = Init.REGISTRY.registerBlockEntityType(new Identifier(Init.MOD_ID, "mitsubishi_button_sht"), MitsubishiButtonSHT.BlockEntity::new, Blocks.MITSUBISHI_BUTTON_SHT::get);
         MITSUBISHI_MAXIEZ_BUTTON_1_GOLD = Init.REGISTRY.registerBlockEntityType(new Identifier(Init.MOD_ID, "mitsubishi_maxiez_button_1_gold"), MitsubishiMaxiezButton1Gold.BlockEntity::new, Blocks.MITSUBISHI_MAXIEZ_BUTTON_1_GOLD::get);
         MITSUBISHI_MAXIEZ_BUTTON_1_SILVER = Init.REGISTRY.registerBlockEntityType(new Identifier(Init.MOD_ID, "mitsubishi_maxiez_button_1_silver"), MitsubishiMaxiezButton1Silver.BlockEntity::new, Blocks.MITSUBISHI_MAXIEZ_BUTTON_1_SILVER::get);
+        MITSUBISHI_MAXIEZ_BUTTON_2_WITHOUT_SCREEN = Init.REGISTRY.registerBlockEntityType(new Identifier(Init.MOD_ID, "mitsubishi_maxiez_button_2_without_screen"), MitsubishiMaxiezButton2WithoutScreen.BlockEntity::new, Blocks.MITSUBISHI_MAXIEZ_BUTTON_2_WITHOUT_SCREEN::get);
+        MITSUBISHI_MAXIEZ_BUTTON_3_WITHOUT_SCREEN = Init.REGISTRY.registerBlockEntityType(new Identifier(Init.MOD_ID, "mitsubishi_maxiez_button_3_without_screen"), MitsubishiMaxiezButton3WithoutScreen.BlockEntity::new, Blocks.MITSUBISHI_MAXIEZ_BUTTON_3_WITHOUT_SCREEN::get);
         MITSUBISHI_NEXWAY_LANTERN_1_HORIZONTAL_EVEN = Init.REGISTRY.registerBlockEntityType(new Identifier(Init.MOD_ID, "mitsubishi_nexway_lantern_1_horizontal_even"), MitsubishiNexWayLantern1HorizontalEven.BlockEntity::new, Blocks.MITSUBISHI_NEXWAY_LANTERN_1_HORIZONTAL_EVEN::get);
         MITSUBISHI_NEXWAY_LANTERN_1_HORIZONTAL_ODD = Init.REGISTRY.registerBlockEntityType(new Identifier(Init.MOD_ID, "mitsubishi_nexway_lantern_1_horizontal_odd"), MitsubishiNexWayLantern1HorizontalOdd.BlockEntity::new, Blocks.MITSUBISHI_NEXWAY_LANTERN_1_HORIZONTAL_ODD::get);
         MITSUBISHI_NEXWAY_LANTERN_1_VERTICAL_EVEN = Init.REGISTRY.registerBlockEntityType(new Identifier(Init.MOD_ID, "mitsubishi_nexway_lantern_1_vertical_even"), MitsubishiNexWayLantern1VerticalEven.BlockEntity::new, Blocks.MITSUBISHI_NEXWAY_LANTERN_1_VERTICAL_EVEN::get);
