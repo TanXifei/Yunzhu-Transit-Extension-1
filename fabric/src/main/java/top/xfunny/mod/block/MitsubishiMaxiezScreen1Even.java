@@ -10,8 +10,8 @@ import top.xfunny.mod.block.base.LiftPanelBase;
 import javax.annotation.Nonnull;
 import java.util.List;
 
-public class MitsubishiNexWayScreen2Even extends LiftPanelBase {
-    public MitsubishiNexWayScreen2Even() {
+public class MitsubishiMaxiezScreen1Even extends LiftPanelBase {
+    public MitsubishiMaxiezScreen1Even() {
         super(false);
     }
 
@@ -32,7 +32,7 @@ public class MitsubishiNexWayScreen2Even extends LiftPanelBase {
     @Nonnull
     @Override
     public BlockEntityExtension createBlockEntity(BlockPos blockPos, BlockState blockState) {
-        return new MitsubishiNexWayScreen2Even.BlockEntity(blockPos, blockState);
+        return new MitsubishiMaxiezScreen1Even.BlockEntity(blockPos, blockState);
     }
 
     @Override
@@ -45,7 +45,7 @@ public class MitsubishiNexWayScreen2Even extends LiftPanelBase {
     public static class BlockEntity extends BlockEntityBase {
 
         public BlockEntity(BlockPos pos, BlockState state) {
-            super(BlockEntityTypes.MITSUBISHI_NEXWAY_SCREEN_2_EVEN.get(), pos, state);
+            super(BlockEntityTypes.MITSUBISHI_MAXIEZ_SCREEN_1_EVEN.get(), pos, state);
         }
     }
 }

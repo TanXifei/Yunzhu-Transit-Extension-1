@@ -44,6 +44,7 @@ public class FontList {
             loadFont("hitachi_b85_2_left", "font/hitachi_b85_2_1_left.ttf");
             loadFont("nimbus_sans_bold", "font/nimbus_sans_bold.ttf");
             loadFont("gill_sans_mt", "font/gill_sans_mt.ttf");
+            loadFont("gill_sans_mt_light", "font/gill_sans_mt_light.ttf");
             loadFont("hitachi_modern", "font/hitachi_modern.ttf");
             loadFont("kone-lcd-segment", "font/kone-lcd-segment.ttf");
             loadFont("otis_series_3", "font/otis_series_3.ttf");

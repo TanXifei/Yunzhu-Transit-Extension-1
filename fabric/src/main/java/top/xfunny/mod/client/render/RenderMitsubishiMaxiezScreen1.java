@@ -11,7 +11,7 @@ import org.mtr.mod.data.IGui;
 import org.mtr.mod.render.QueuedRenderLayer;
 import org.mtr.mod.render.StoredMatrixTransformations;
 import top.xfunny.mod.Init;
-import top.xfunny.mod.block.MitsubishiNexWayScreen2Even;
+import top.xfunny.mod.block.MitsubishiMaxiezScreen1Even;
 import top.xfunny.mod.block.base.LiftPanelBase;
 import top.xfunny.mod.client.resource.FontList;
 import top.xfunny.mod.client.view.*;
@@ -23,10 +23,10 @@ import java.text.SimpleDateFormat;
 import java.util.Comparator;
 import java.util.Date;
 
-public class    RenderMitsubishiNexWayScreen2<T extends LiftPanelBase.BlockEntityBase> extends BlockEntityRenderer<T> implements DirectionHelper, IGui, IBlock {
+public class RenderMitsubishiMaxiezScreen1<T extends LiftPanelBase.BlockEntityBase> extends BlockEntityRenderer<T> implements DirectionHelper, IGui, IBlock {
     private final boolean isOdd;
 
-    public RenderMitsubishiNexWayScreen2(Argument dispatcher, Boolean isOdd) {
+    public RenderMitsubishiMaxiezScreen1(Argument dispatcher, Boolean isOdd) {
         super(dispatcher);
         this.isOdd = isOdd;
     }
@@ -79,7 +79,7 @@ public class    RenderMitsubishiNexWayScreen2<T extends LiftPanelBase.BlockEntit
 
         blockEntity.forEachTrackPosition(trackPosition -> {
             line.RenderLine(holdingLinker, trackPosition);
-            MitsubishiNexWayScreen2Even.LiftCheck(trackPosition, (floorIndex, lift) -> sortedPositionsAndLifts.add(new ObjectObjectImmutablePair<>(trackPosition, lift)));
+            MitsubishiMaxiezScreen1Even.LiftCheck(trackPosition, (floorIndex, lift) -> sortedPositionsAndLifts.add(new ObjectObjectImmutablePair<>(trackPosition, lift)));
         });
 
         sortedPositionsAndLifts.sort(Comparator.comparingInt(sortedPositionAndLift -> blockPos.getManhattanDistance(new Vector3i(sortedPositionAndLift.left().data))));
@@ -94,8 +94,8 @@ public class    RenderMitsubishiNexWayScreen2<T extends LiftPanelBase.BlockEntit
                         sortedPositionsAndLifts.get(i).right(),
                         FontList.instance.getFont("gill_sans_mt"),
                         16,
-                        0xFFFFFFFF);
-                liftFloorDisplayView.setTextureId(String.format("mitsubishi_nexway_screen_2_display_%d_%s", i, blockEntity.getPos2().asLong()))
+                        0xFF000000);
+                liftFloorDisplayView.setTextureId(String.format("mitsubishi_maxiez_screen_1_display_%d_%s", i, blockEntity.getPos2().asLong()))
 ;
                 liftFloorDisplayView.setWidth(1.9F / 16);
                 liftFloorDisplayView.setHeight(1.5F / 16);
@@ -113,7 +113,7 @@ public class    RenderMitsubishiNexWayScreen2<T extends LiftPanelBase.BlockEntit
 
                 final LiftArrowView liftArrowView = new LiftArrowView();
                 liftArrowView.setBasicsAttributes(world, blockPos, sortedPositionsAndLifts.get(i).right(), LiftArrowView.ArrowType.AUTO);
-                liftArrowView.setTexture(new Identifier(Init.MOD_ID, "textures/block/mitsubishi_nexway_2_lcd_arrow_1.png"));
+                liftArrowView.setTexture(new Identifier(Init.MOD_ID, "textures/block/mitsubishi_maxiez_1_lcd_arrow_1.png"));
                 liftArrowView.setDimension(1.5F / 16);
                 liftArrowView.setGravity(Gravity.CENTER_VERTICAL);
                 liftArrowView.setQueuedRenderLayer(QueuedRenderLayer.LIGHT_TRANSLUCENT);
@@ -142,8 +142,8 @@ public class    RenderMitsubishiNexWayScreen2<T extends LiftPanelBase.BlockEntit
 
                 final TextView textView = new TextView();
                 textView.setId("textView");
-                textView.setBasicsAttributes(world, blockPos, FontList.instance.getFont("wqy-microhei"), 5, 0xFFFFFFFF);
-                textView.setTextureId(String.format("mitsubishi_nexway_screen_2_date_display_%d_%s", i, blockEntity.getPos2().asLong()))
+                textView.setBasicsAttributes(world, blockPos, FontList.instance.getFont("wqy-microhei"), 5, 0xFF000000);
+                textView.setTextureId(String.format("mitsubishi_maxiez_screen_1_date_display_%d_%s", i, blockEntity.getPos2().asLong()))
 ;
                 textView.setText(text);
                 textView.setWidth(4F / 16);

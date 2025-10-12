@@ -110,6 +110,12 @@ public class BlockEntityTypes {
     public static final BlockEntityTypeRegistryObject<MitsubishiNexWayLantern1HorizontalOdd.BlockEntity> MITSUBISHI_NEXWAY_LANTERN_1_HORIZONTAL_ODD;
     public static final BlockEntityTypeRegistryObject<MitsubishiNexWayLantern1VerticalEven.BlockEntity> MITSUBISHI_NEXWAY_LANTERN_1_VERTICAL_EVEN;
     public static final BlockEntityTypeRegistryObject<MitsubishiNexWayLantern1VerticalOdd.BlockEntity> MITSUBISHI_NEXWAY_LANTERN_1_VERTICAL_ODD;
+    public static final BlockEntityTypeRegistryObject<MitsubishiNexWayLantern2HorizontalEven.BlockEntity> MITSUBISHI_NEXWAY_LANTERN_2_HORIZONTAL_EVEN;
+    public static final BlockEntityTypeRegistryObject<MitsubishiNexWayLantern2HorizontalOdd.BlockEntity> MITSUBISHI_NEXWAY_LANTERN_2_HORIZONTAL_ODD;
+    public static final BlockEntityTypeRegistryObject<MitsubishiNexWayLantern2VerticalEven.BlockEntity> MITSUBISHI_NEXWAY_LANTERN_2_VERTICAL_EVEN;
+    public static final BlockEntityTypeRegistryObject<MitsubishiNexWayLantern2VerticalOdd.BlockEntity> MITSUBISHI_NEXWAY_LANTERN_2_VERTICAL_ODD;
+    public static final BlockEntityTypeRegistryObject<MitsubishiNexWayLantern3Even.BlockEntity> MITSUBISHI_NEXWAY_LANTERN_3_EVEN;
+    public static final BlockEntityTypeRegistryObject<MitsubishiNexWayLantern3Odd.BlockEntity> MITSUBISHI_NEXWAY_LANTERN_3_ODD;
     public static final BlockEntityTypeRegistryObject<MitsubishiNexWayScreen1Even.BlockEntity> MITSUBISHI_NEXWAY_SCREEN_1_EVEN;
     public static final BlockEntityTypeRegistryObject<MitsubishiNexWayScreen1Odd.BlockEntity> MITSUBISHI_NEXWAY_SCREEN_1_ODD;
     public static final BlockEntityTypeRegistryObject<MitsubishiNexWayScreen1SegmentedEven.BlockEntity> MITSUBISHI_NEXWAY_SCREEN_1_SEGMENTED_EVEN;
@@ -120,6 +126,10 @@ public class BlockEntityTypes {
     public static final BlockEntityTypeRegistryObject<MitsubishiNexWayScreen3Odd.BlockEntity> MITSUBISHI_NEXWAY_SCREEN_3_ODD;
     public static final BlockEntityTypeRegistryObject<MitsubishiNexWayScreen3SegmentedEven.BlockEntity> MITSUBISHI_NEXWAY_SCREEN_3_SEGMENTED_EVEN;
     public static final BlockEntityTypeRegistryObject<MitsubishiNexWayScreen3SegmentedOdd.BlockEntity> MITSUBISHI_NEXWAY_SCREEN_3_SEGMENTED_ODD;
+    public static final BlockEntityTypeRegistryObject<MitsubishiMaxiezScreen1Even.BlockEntity> MITSUBISHI_MAXIEZ_SCREEN_1_EVEN;
+    public static final BlockEntityTypeRegistryObject<MitsubishiMaxiezScreen1Odd.BlockEntity> MITSUBISHI_MAXIEZ_SCREEN_1_ODD;
+    public static final BlockEntityTypeRegistryObject<MitsubishiMaxiezScreen2Even.BlockEntity> MITSUBISHI_MAXIEZ_SCREEN_2_EVEN;
+    public static final BlockEntityTypeRegistryObject<MitsubishiMaxiezScreen2Odd.BlockEntity> MITSUBISHI_MAXIEZ_SCREEN_2_ODD;
     public static final BlockEntityTypeRegistryObject<MitsubishiMPVFButton1.BlockEntity> MITSUBISHI_MPVF_BUTTON_1;
     public static final BlockEntityTypeRegistryObject<MitsubishiMPVFScreen1VerticalOdd.BlockEntity> MITSUBISHI_MPVF_SCREEN_1_VERTICAL_ODD;
     public static final BlockEntityTypeRegistryObject<MitsubishiMPVFScreen1VerticalEven.BlockEntity> MITSUBISHI_MPVF_SCREEN_1_VERTICAL_EVEN;
@@ -330,6 +340,12 @@ public class BlockEntityTypes {
         MITSUBISHI_NEXWAY_LANTERN_1_HORIZONTAL_ODD = Init.REGISTRY.registerBlockEntityType(new Identifier(Init.MOD_ID, "mitsubishi_nexway_lantern_1_horizontal_odd"), MitsubishiNexWayLantern1HorizontalOdd.BlockEntity::new, Blocks.MITSUBISHI_NEXWAY_LANTERN_1_HORIZONTAL_ODD::get);
         MITSUBISHI_NEXWAY_LANTERN_1_VERTICAL_EVEN = Init.REGISTRY.registerBlockEntityType(new Identifier(Init.MOD_ID, "mitsubishi_nexway_lantern_1_vertical_even"), MitsubishiNexWayLantern1VerticalEven.BlockEntity::new, Blocks.MITSUBISHI_NEXWAY_LANTERN_1_VERTICAL_EVEN::get);
         MITSUBISHI_NEXWAY_LANTERN_1_VERTICAL_ODD = Init.REGISTRY.registerBlockEntityType(new Identifier(Init.MOD_ID, "mitsubishi_nexway_lantern_1_vertical_odd"), MitsubishiNexWayLantern1VerticalOdd.BlockEntity::new, Blocks.MITSUBISHI_NEXWAY_LANTERN_1_VERTICAL_ODD::get);
+        MITSUBISHI_NEXWAY_LANTERN_2_HORIZONTAL_EVEN = Init.REGISTRY.registerBlockEntityType(new Identifier(Init.MOD_ID, "mitsubishi_nexway_lantern_2_horizontal_even"), MitsubishiNexWayLantern2HorizontalEven.BlockEntity::new, Blocks.MITSUBISHI_NEXWAY_LANTERN_2_HORIZONTAL_EVEN::get);
+        MITSUBISHI_NEXWAY_LANTERN_2_HORIZONTAL_ODD = Init.REGISTRY.registerBlockEntityType(new Identifier(Init.MOD_ID, "mitsubishi_nexway_lantern_2_horizontal_odd"), MitsubishiNexWayLantern2HorizontalOdd.BlockEntity::new, Blocks.MITSUBISHI_NEXWAY_LANTERN_2_HORIZONTAL_ODD::get);
+        MITSUBISHI_NEXWAY_LANTERN_2_VERTICAL_EVEN = Init.REGISTRY.registerBlockEntityType(new Identifier(Init.MOD_ID, "mitsubishi_nexway_lantern_2_vertical_even"), MitsubishiNexWayLantern2VerticalEven.BlockEntity::new, Blocks.MITSUBISHI_NEXWAY_LANTERN_2_VERTICAL_EVEN::get);
+        MITSUBISHI_NEXWAY_LANTERN_2_VERTICAL_ODD = Init.REGISTRY.registerBlockEntityType(new Identifier(Init.MOD_ID, "mitsubishi_nexway_lantern_2_vertical_odd"), MitsubishiNexWayLantern2VerticalOdd.BlockEntity::new, Blocks.MITSUBISHI_NEXWAY_LANTERN_2_VERTICAL_ODD::get);
+        MITSUBISHI_NEXWAY_LANTERN_3_EVEN = Init.REGISTRY.registerBlockEntityType(new Identifier(Init.MOD_ID, "mitsubishi_nexway_lantern_3_even"), MitsubishiNexWayLantern3Even.BlockEntity::new, Blocks.MITSUBISHI_NEXWAY_LANTERN_3_EVEN::get);
+        MITSUBISHI_NEXWAY_LANTERN_3_ODD = Init.REGISTRY.registerBlockEntityType(new Identifier(Init.MOD_ID, "mitsubishi_nexway_lantern_3_odd"), MitsubishiNexWayLantern3Odd.BlockEntity::new, Blocks.MITSUBISHI_NEXWAY_LANTERN_3_ODD::get);
         MITSUBISHI_NEXWAY_SCREEN_1_EVEN = Init.REGISTRY.registerBlockEntityType(new Identifier(Init.MOD_ID, "mitsubishi_nexway_screen_1_even"), MitsubishiNexWayScreen1Even.BlockEntity::new, Blocks.MITSUBISHI_NEXWAY_SCREEN_1_EVEN::get);
         MITSUBISHI_NEXWAY_SCREEN_1_ODD = Init.REGISTRY.registerBlockEntityType(new Identifier(Init.MOD_ID, "mitsubishi_nexway_screen_1_odd"), MitsubishiNexWayScreen1Odd.BlockEntity::new, Blocks.MITSUBISHI_NEXWAY_SCREEN_1_ODD::get);
         MITSUBISHI_NEXWAY_SCREEN_1_SEGMENTED_EVEN = Init.REGISTRY.registerBlockEntityType(new Identifier(Init.MOD_ID, "mitsubishi_nexway_screen_1_segmented_even"), MitsubishiNexWayScreen1SegmentedEven.BlockEntity::new, Blocks.MITSUBISHI_NEXWAY_SCREEN_1_SEGMENTED_EVEN::get);
@@ -340,6 +356,10 @@ public class BlockEntityTypes {
         MITSUBISHI_NEXWAY_SCREEN_3_ODD = Init.REGISTRY.registerBlockEntityType(new Identifier(Init.MOD_ID, "mitsubishi_nexway_screen_3_odd"), MitsubishiNexWayScreen3Odd.BlockEntity::new, Blocks.MITSUBISHI_NEXWAY_SCREEN_3_ODD::get);
         MITSUBISHI_NEXWAY_SCREEN_3_SEGMENTED_EVEN = Init.REGISTRY.registerBlockEntityType(new Identifier(Init.MOD_ID, "mitsubishi_nexway_screen_3_segmented_even"), MitsubishiNexWayScreen3SegmentedEven.BlockEntity::new, Blocks.MITSUBISHI_NEXWAY_SCREEN_3_SEGMENTED_EVEN::get);
         MITSUBISHI_NEXWAY_SCREEN_3_SEGMENTED_ODD = Init.REGISTRY.registerBlockEntityType(new Identifier(Init.MOD_ID, "mitsubishi_nexway_screen_3_segmented_odd"), MitsubishiNexWayScreen3SegmentedOdd.BlockEntity::new, Blocks.MITSUBISHI_NEXWAY_SCREEN_3_SEGMENTED_ODD::get);
+        MITSUBISHI_MAXIEZ_SCREEN_1_EVEN = Init.REGISTRY.registerBlockEntityType(new Identifier(Init.MOD_ID, "mitsubishi_maxiez_screen_1_even"), MitsubishiMaxiezScreen1Even.BlockEntity::new, Blocks.MITSUBISHI_MAXIEZ_SCREEN_1_EVEN::get);
+        MITSUBISHI_MAXIEZ_SCREEN_1_ODD = Init.REGISTRY.registerBlockEntityType(new Identifier(Init.MOD_ID, "mitsubishi_maxiez_screen_1_odd"), MitsubishiMaxiezScreen1Odd.BlockEntity::new, Blocks.MITSUBISHI_MAXIEZ_SCREEN_1_ODD::get);
+        MITSUBISHI_MAXIEZ_SCREEN_2_EVEN = Init.REGISTRY.registerBlockEntityType(new Identifier(Init.MOD_ID, "mitsubishi_maxiez_screen_2_even"), MitsubishiMaxiezScreen2Even.BlockEntity::new, Blocks.MITSUBISHI_MAXIEZ_SCREEN_2_EVEN::get);
+        MITSUBISHI_MAXIEZ_SCREEN_2_ODD = Init.REGISTRY.registerBlockEntityType(new Identifier(Init.MOD_ID, "mitsubishi_maxiez_screen_2_odd"), MitsubishiMaxiezScreen2Odd.BlockEntity::new, Blocks.MITSUBISHI_MAXIEZ_SCREEN_2_ODD::get);
         MITSUBISHI_MPVF_BUTTON_1 = Init.REGISTRY.registerBlockEntityType(new Identifier(Init.MOD_ID, "mitsubishi_mpvf_button_1"), MitsubishiMPVFButton1.BlockEntity::new, Blocks.MITSUBISHI_MPVF_BUTTON_1::get);
         MITSUBISHI_MPVF_SCREEN_1_VERTICAL_ODD = Init.REGISTRY.registerBlockEntityType(new Identifier(Init.MOD_ID, "mitsubishi_mpvf_screen_1_vertical_odd"), MitsubishiMPVFScreen1VerticalOdd.BlockEntity::new, Blocks.MITSUBISHI_MPVF_SCREEN_1_VERTICAL_ODD::get);
         MITSUBISHI_MPVF_SCREEN_1_VERTICAL_EVEN = Init.REGISTRY.registerBlockEntityType(new Identifier(Init.MOD_ID, "mitsubishi_mpvf_screen_1_vertical_even"), MitsubishiMPVFScreen1VerticalEven.BlockEntity::new, Blocks.MITSUBISHI_MPVF_SCREEN_1_VERTICAL_EVEN::get);

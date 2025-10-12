@@ -11,7 +11,8 @@ import org.mtr.mod.data.IGui;
 import org.mtr.mod.render.QueuedRenderLayer;
 import org.mtr.mod.render.StoredMatrixTransformations;
 import top.xfunny.mod.Init;
-import top.xfunny.mod.block.MitsubishiNexWayScreen2Even;
+import top.xfunny.mod.block.MitsubishiMaxiezScreen2Even;
+import top.xfunny.mod.block.ShanghaiMitsubishiLehy3Screen1Even;
 import top.xfunny.mod.block.base.LiftPanelBase;
 import top.xfunny.mod.client.resource.FontList;
 import top.xfunny.mod.client.view.*;
@@ -22,11 +23,13 @@ import top.xfunny.mod.item.YteLiftButtonsLinker;
 import java.text.SimpleDateFormat;
 import java.util.Comparator;
 import java.util.Date;
+// 确保导入 java.util.Locale 以便设置 SimpleDateFormat 的本地化
+import java.util.Locale;
 
-public class    RenderMitsubishiNexWayScreen2<T extends LiftPanelBase.BlockEntityBase> extends BlockEntityRenderer<T> implements DirectionHelper, IGui, IBlock {
+public class RenderMitsubishiMaxiezScreen2<T extends LiftPanelBase.BlockEntityBase> extends BlockEntityRenderer<T> implements DirectionHelper, IGui, IBlock {
     private final boolean isOdd;
 
-    public RenderMitsubishiNexWayScreen2(Argument dispatcher, Boolean isOdd) {
+    public RenderMitsubishiMaxiezScreen2(Argument dispatcher, Boolean isOdd) {
         super(dispatcher);
         this.isOdd = isOdd;
     }
@@ -61,7 +64,7 @@ public class    RenderMitsubishiNexWayScreen2<T extends LiftPanelBase.BlockEntit
         parentLayout.setBasicsAttributes(world, blockPos);
         parentLayout.setStoredMatrixTransformations(storedMatrixTransformations1);
         parentLayout.setParentDimensions(3.75F / 16, 2.75F / 16);
-        parentLayout.setPosition(isOdd ? -1.875F / 16 : -9.875F / 16, 9.75F / 16);
+        parentLayout.setPosition(isOdd ? -1.875F / 16 : -9.875F / 16, 10.375F / 16);
         parentLayout.setWidth(LayoutSize.MATCH_PARENT);
         parentLayout.setHeight(LayoutSize.MATCH_PARENT);
 
@@ -69,7 +72,7 @@ public class    RenderMitsubishiNexWayScreen2<T extends LiftPanelBase.BlockEntit
         numberLayout.setBasicsAttributes(world, blockPos);
         numberLayout.setWidth(LayoutSize.WRAP_CONTENT);
         numberLayout.setHeight(LayoutSize.WRAP_CONTENT);
-        numberLayout.setMargin(0.16F / 16, 0.35F / 16, 0, 0);
+        numberLayout.setMargin(0.34F / 16, 0.6F / 16, 0, 0);
 
 
         final LineComponent line = new LineComponent();
@@ -79,7 +82,7 @@ public class    RenderMitsubishiNexWayScreen2<T extends LiftPanelBase.BlockEntit
 
         blockEntity.forEachTrackPosition(trackPosition -> {
             line.RenderLine(holdingLinker, trackPosition);
-            MitsubishiNexWayScreen2Even.LiftCheck(trackPosition, (floorIndex, lift) -> sortedPositionsAndLifts.add(new ObjectObjectImmutablePair<>(trackPosition, lift)));
+            MitsubishiMaxiezScreen2Even.LiftCheck(trackPosition, (floorIndex, lift) -> sortedPositionsAndLifts.add(new ObjectObjectImmutablePair<>(trackPosition, lift)));
         });
 
         sortedPositionsAndLifts.sort(Comparator.comparingInt(sortedPositionAndLift -> blockPos.getManhattanDistance(new Vector3i(sortedPositionAndLift.left().data))));
@@ -92,20 +95,19 @@ public class    RenderMitsubishiNexWayScreen2<T extends LiftPanelBase.BlockEntit
                 liftFloorDisplayView.setBasicsAttributes(world,
                         blockPos,
                         sortedPositionsAndLifts.get(i).right(),
-                        FontList.instance.getFont("gill_sans_mt"),
-                        16,
-                        0xFFFFFFFF);
-                liftFloorDisplayView.setTextureId(String.format("mitsubishi_nexway_screen_2_display_%d_%s", i, blockEntity.getPos2().asLong()))
-;
+                        FontList.instance.getFont("gill_sans_mt_light"),
+                        12,
+                        0xFFBBBBBB);
+                liftFloorDisplayView.setTextureId("mitsubishi_maxiez_screen_2_display_%d_%s");
                 liftFloorDisplayView.setWidth(1.9F / 16);
                 liftFloorDisplayView.setHeight(1.5F / 16);
                 liftFloorDisplayView.setGravity(Gravity.CENTER_VERTICAL);
                 liftFloorDisplayView.setTextAlign(TextView.HorizontalTextAlign.CENTER);
                 liftFloorDisplayView.setLetterSpacing(0);
-                liftFloorDisplayView.setMargin(0.02F / 16, 0, 0, 0);
+                liftFloorDisplayView.setMargin(0.2F / 16, 0.2F / 16, 0, 0);
                 liftFloorDisplayView.addStoredMatrixTransformations(graphicsHolder -> graphicsHolder.translate(0, 0, -SMALL_OFFSET));
                 if (liftFloorDisplayView.getTextLength() >= 3) {
-                    liftFloorDisplayView.setMargin(0F / 16, 0, 0, 0);
+                    liftFloorDisplayView.setMargin(0.15F / 16, 0.2F / 16, 0, 0);
                     liftFloorDisplayView.setAdaptMode(LiftFloorDisplayView.AdaptMode.FORCE_FIT_WIDTH);
                 } else {
                     liftFloorDisplayView.setAdaptMode(LiftFloorDisplayView.AdaptMode.ASPECT_FILL);
@@ -113,14 +115,14 @@ public class    RenderMitsubishiNexWayScreen2<T extends LiftPanelBase.BlockEntit
 
                 final LiftArrowView liftArrowView = new LiftArrowView();
                 liftArrowView.setBasicsAttributes(world, blockPos, sortedPositionsAndLifts.get(i).right(), LiftArrowView.ArrowType.AUTO);
-                liftArrowView.setTexture(new Identifier(Init.MOD_ID, "textures/block/mitsubishi_nexway_2_lcd_arrow_1.png"));
-                liftArrowView.setDimension(1.5F / 16);
+                liftArrowView.setTexture(new Identifier(Init.MOD_ID, "textures/block/mitsubishi_maxiez_2_lcd_arrow_1.png"));
+                liftArrowView.setDimension(0.875F / 16);
+                liftArrowView.setMargin(0,0.1F / 16,0,0);
                 liftArrowView.setGravity(Gravity.CENTER_VERTICAL);
                 liftArrowView.setQueuedRenderLayer(QueuedRenderLayer.LIGHT_TRANSLUCENT);
-                liftArrowView.setColor(0xFFFFFFFE);
+                liftArrowView.setColor(0xFFFFFFFF);
+                liftArrowView.setAnimationYawRotation(true, 0.075F);
 
-
-                //时间显示
                 final long time = WorldHelper.getTimeOfDay(world);
                 Date day = new Date();
 
@@ -130,21 +132,60 @@ public class    RenderMitsubishiNexWayScreen2<T extends LiftPanelBase.BlockEntit
                 int hours24 = (totalSeconds / 3600 + 6) % 24; // 从06:00开始
                 int minutes = (totalSeconds % 3600) / 60;
 
-                int hours12 = hours24 % 12;
+                SimpleDateFormat dateFormat = new SimpleDateFormat("M月d日", Locale.CHINESE);
+                String dateStr = dateFormat.format(day);
 
-                SimpleDateFormat dateFormat = new SimpleDateFormat("M月 d日");
-                String timeStr = dateFormat.format(day);
-                String timePeriod = hours24 < 12 ? "AM" : "PM";
-                // 移除"%02d"中的'0'，讓小時數不帶前導零
-                String formattedTime = String.format("%d:%02d", hours12, minutes);
-                String text = timeStr + " " + formattedTime + timePeriod;
+                // 2. 格式化星期部分： 使用 EEEE 获取完整的 "星期日" 或 "星期一"
+                SimpleDateFormat dayOfWeekFormat = new SimpleDateFormat("EEEE", Locale.CHINESE);
+                String fullDayOfWeek = dayOfWeekFormat.format(day);
 
+                // 3. 手动替换为单字缩写
+                String shortDayOfWeek;
+                switch (fullDayOfWeek) {
+                    case "星期日":
+                    case "周日":
+                        shortDayOfWeek = "日";
+                        break;
+                    case "星期一":
+                    case "周一":
+                        shortDayOfWeek = "一";
+                        break;
+                    case "星期二":
+                    case "周二":
+                        shortDayOfWeek = "二";
+                        break;
+                    case "星期三":
+                    case "周三":
+                        shortDayOfWeek = "三";
+                        break;
+                    case "星期四":
+                    case "周四":
+                        shortDayOfWeek = "四";
+                        break;
+                    case "星期五":
+                    case "周五":
+                        shortDayOfWeek = "五";
+                        break;
+                    case "星期六":
+                    case "周六":
+                        shortDayOfWeek = "六";
+                        break;
+                    default:
+                        shortDayOfWeek = "?"; // 无法识别时使用问号或保持原样
+                        break;
+                }
+
+                // 4. 格式化游戏时间为 24 小时制 HH:mm
+                String formattedTime = String.format("%02d:%02d", hours24, minutes);
+
+                // 5. 组合最终文本： 10月12日(日) 12:00
+                String text = String.format("%s(%s) %s", dateStr, shortDayOfWeek, formattedTime);
 
                 final TextView textView = new TextView();
                 textView.setId("textView");
-                textView.setBasicsAttributes(world, blockPos, FontList.instance.getFont("wqy-microhei"), 5, 0xFFFFFFFF);
-                textView.setTextureId(String.format("mitsubishi_nexway_screen_2_date_display_%d_%s", i, blockEntity.getPos2().asLong()))
-;
+                textView.setBasicsAttributes(world, blockPos, FontList.instance.getFont("wqy-microhei"), 3, 0xFFBBBBBB);
+                textView.setTextureId(String.format("mitsubishi_maxiez_screen_1_date_display_%d_%s", i, blockEntity.getPos2().asLong()))
+                ;
                 textView.setText(text);
                 textView.setWidth(4F / 16);
                 textView.setHeight(1F / 16);

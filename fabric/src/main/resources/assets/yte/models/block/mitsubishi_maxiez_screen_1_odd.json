@@ -4,15 +4,15 @@
 	"parent": "block/block",
 	"textures": {
 		"2": "yte:block/steel",
-		"3": "yte:block/mitsubishi_nexway_button_lcd_1",
-		"4": "yte:block/gray",
+		"3": "yte:block/mitsubishi_maxiez_button_lcd_1_screen",
+		"4": "yte:block/mitsubishi_maxiez_button_lcd_1",
 		"particle": "yte:block/mitsubishi_lantern_arrow"
 	},
 	"elements": [
 		{
-			"from": [4.725, 10.875, 0],
-			"to": [11.275, 15.125, 0.1],
-			"rotation": {"angle": 0, "axis": "y", "origin": [1, 10.25, -0.25]},
+			"from": [4.725, 9, 0],
+			"to": [11.275, 13.25, 0.1],
+			"rotation": {"angle": 0, "axis": "y", "origin": [1, 8.375, -0.25]},
 			"faces": {
 				"north": {"uv": [0, 0, 16, 2.3125], "texture": "#2"},
 				"east": {"uv": [0, 0, 0.25, 13], "texture": "#2"},
@@ -23,9 +23,9 @@
 			}
 		},
 		{
-			"from": [5.625, 11.375, 0.11],
-			"to": [10.375, 14.625, 0.11],
-			"rotation": {"angle": 0, "axis": "y", "origin": [6.25, 13, 0.1]},
+			"from": [5.625, 9.5, 0.11],
+			"to": [10.375, 12.75, 0.11],
+			"rotation": {"angle": 0, "axis": "y", "origin": [6.25, 11.125, 0.1]},
 			"faces": {
 				"north": {"uv": [0, 0, 2, 2], "texture": "#missing"},
 				"east": {"uv": [0, 0, 2, 2], "texture": "#missing"},
@@ -36,9 +36,9 @@
 			}
 		},
 		{
-			"from": [6.125, 11.625, 0.12],
-			"to": [9.875, 14.375, 0.12],
-			"rotation": {"angle": 0, "axis": "y", "origin": [6.25, 13, 0.1]},
+			"from": [6.125, 9.75, 0.12],
+			"to": [9.875, 12.5, 0.12],
+			"rotation": {"angle": 0, "axis": "y", "origin": [6.25, 11.125, 0.1]},
 			"faces": {
 				"north": {"uv": [0, 0, 2, 2], "texture": "#missing"},
 				"east": {"uv": [0, 0, 2, 2], "texture": "#missing"},
