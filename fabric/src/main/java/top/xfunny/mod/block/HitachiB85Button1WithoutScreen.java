@@ -18,7 +18,7 @@ public class HitachiB85Button1WithoutScreen extends LiftButtonsBase {
     @Nonnull
     @Override
     public VoxelShape getOutlineShape2(BlockState state, BlockView world, BlockPos pos, ShapeContext context) {
-        return IBlock.getVoxelShapeByDirection(6.4, 0, 0, 9.6, 5.5, 0.1, IBlock.getStatePropertySafe(state, FACING));
+        return IBlock.getVoxelShapeByDirection(7, 0, 0, 9, 4.7, 0.1, IBlock.getStatePropertySafe(state, FACING));
     }
 
     @Nonnull

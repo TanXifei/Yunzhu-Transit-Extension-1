@@ -276,7 +276,7 @@ public class TextView implements RenderView {
     }
 
 
-    public void setBasicsAttributes(World world, BlockPos blockPos, Font font, int fontSize, int color) {
+    public void setBasicsAttributes(World world, BlockPos blockPos, Font font, float fontSize, int color) {
         this.world = world;
         this.blockPos = blockPos;
         this.font = font;

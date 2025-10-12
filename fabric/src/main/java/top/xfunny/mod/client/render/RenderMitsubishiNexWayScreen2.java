@@ -61,7 +61,7 @@ public class    RenderMitsubishiNexWayScreen2<T extends LiftPanelBase.BlockEntit
         parentLayout.setBasicsAttributes(world, blockPos);
         parentLayout.setStoredMatrixTransformations(storedMatrixTransformations1);
         parentLayout.setParentDimensions(3.75F / 16, 2.75F / 16);
-        parentLayout.setPosition(isOdd ? -1.875F / 16 : -9.875F / 16, 9.875F / 16);
+        parentLayout.setPosition(isOdd ? -1.875F / 16 : -9.875F / 16, 9.75F / 16);
         parentLayout.setWidth(LayoutSize.MATCH_PARENT);
         parentLayout.setHeight(LayoutSize.MATCH_PARENT);
 
