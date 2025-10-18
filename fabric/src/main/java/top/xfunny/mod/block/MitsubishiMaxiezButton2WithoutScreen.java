@@ -18,7 +18,7 @@ public class MitsubishiMaxiezButton2WithoutScreen extends LiftButtonsBase {
     @Nonnull
     @Override
     public VoxelShape getOutlineShape2(BlockState state, BlockView world, BlockPos pos, ShapeContext context) {
-        return IBlock.getVoxelShapeByDirection(6.95, 1.1, 0, 9.05, 6.9, 0.05, IBlock.getStatePropertySafe(state, FACING));
+        return IBlock.getVoxelShapeByDirection(6.825, 1.1, 0, 9.175, 6.9, 0.05, IBlock.getStatePropertySafe(state, FACING));
     }
 
     @Nonnull

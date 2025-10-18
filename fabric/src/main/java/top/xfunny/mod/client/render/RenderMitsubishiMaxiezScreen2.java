@@ -179,7 +179,7 @@ public class RenderMitsubishiMaxiezScreen2<T extends LiftPanelBase.BlockEntityBa
                 String formattedTime = String.format("%02d:%02d", hours24, minutes);
 
                 // 5. 组合最终文本： 10月12日(日) 12:00
-                String text = String.format("%s(%s) %s", dateStr, shortDayOfWeek, formattedTime);
+                String text = String.format("%s(%s)  %s", dateStr, shortDayOfWeek, formattedTime);
 
                 final TextView textView = new TextView();
                 textView.setId("textView");

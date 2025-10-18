@@ -32,6 +32,7 @@ public class FontList {
             loadFont("mitsubishi_small_regular", "font/mitsubishi-dot-matrix-small-generic.ttf");
             loadFont("mitsubishi_small_sht", "font/mitsubishi-dot-matrix-small-shanghai-tower.ttf");
             loadFont("mitsubishi_seg_universal", "font/mitsubishi_seg_universal.ttf");
+            loadFont("mitsubishi_maxiez_lcd_1", "font/mitsubishi_maxiez_lcd_1.ttf");
             loadFont("kone-m-series", "font/kone-m-series.ttf");
             loadFont("otis_series1", "font/series1.otf");
             loadFont("schindler_lcd", "font/schindler_lcd.ttf");
