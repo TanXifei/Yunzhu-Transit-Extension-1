@@ -75,6 +75,8 @@ public class BlockEntityTypes {
     public static final BlockEntityTypeRegistryObject<KoneMButton2.BlockEntity> KONE_M_BUTTON_2;
     public static final BlockEntityTypeRegistryObject<KoneMScreen1Odd.BlockEntity> KONE_M_SCREEN_1_ODD;
     public static final BlockEntityTypeRegistryObject<KoneMScreen1Even.BlockEntity> KONE_M_SCREEN_1_EVEN;
+    public static final BlockEntityTypeRegistryObject<KoneMScreen1SmallOdd.BlockEntity> KONE_M_SCREEN_1_SMALL_ODD;
+    public static final BlockEntityTypeRegistryObject<KoneMScreen1SmallEven.BlockEntity> KONE_M_SCREEN_1_SMALL_EVEN;
 
     public static final BlockEntityTypeRegistryObject<MitsubishiGPSButton1.BlockEntity> MITSUBISHI_GPS_BUTTON_1;
     public static final BlockEntityTypeRegistryObject<MitsubishiGPSButton1WithoutScreen.BlockEntity> MITSUBISHI_GPS_BUTTON_1_WITHOUT_SCREEN;
@@ -312,6 +314,8 @@ public class BlockEntityTypes {
         KONE_M_BUTTON_2 = Init.REGISTRY.registerBlockEntityType(new Identifier(Init.MOD_ID, "kone_m_button_2"), KoneMButton2.BlockEntity::new, Blocks.KONE_M_BUTTON_2::get);
         KONE_M_SCREEN_1_ODD = Init.REGISTRY.registerBlockEntityType(new Identifier(Init.MOD_ID, "kone_m_screen_1_odd"), KoneMScreen1Odd.BlockEntity::new, Blocks.KONE_M_SCREEN_1_ODD::get);
         KONE_M_SCREEN_1_EVEN = Init.REGISTRY.registerBlockEntityType(new Identifier(Init.MOD_ID, "kone_m_screen_1_even"), KoneMScreen1Even.BlockEntity::new, Blocks.KONE_M_SCREEN_1_EVEN::get);
+        KONE_M_SCREEN_1_SMALL_ODD = Init.REGISTRY.registerBlockEntityType(new Identifier(Init.MOD_ID, "kone_m_screen_1_small_odd"), KoneMScreen1SmallOdd.BlockEntity::new, Blocks.KONE_M_SCREEN_1_SMALL_ODD::get);
+        KONE_M_SCREEN_1_SMALL_EVEN = Init.REGISTRY.registerBlockEntityType(new Identifier(Init.MOD_ID, "kone_m_screen_1_small_even"), KoneMScreen1SmallEven.BlockEntity::new, Blocks.KONE_M_SCREEN_1_SMALL_EVEN::get);
         MITSUBISHI_GPS_BUTTON_1 = Init.REGISTRY.registerBlockEntityType(new Identifier(Init.MOD_ID, "mitsubishi_gps_button_1"), MitsubishiGPSButton1.BlockEntity::new, Blocks.MITSUBISHI_GPS_BUTTON_1::get);
         MITSUBISHI_GPS_BUTTON_1_WITHOUT_SCREEN = Init.REGISTRY.registerBlockEntityType(new Identifier(Init.MOD_ID, "mitsubishi_gps_button_1_without_screen"), MitsubishiGPSButton1WithoutScreen.BlockEntity::new, Blocks.MITSUBISHI_GPS_BUTTON_1_WITHOUT_SCREEN::get);
         MITSUBISHI_BUTTON_SHUN_HING_SQUARE = Init.REGISTRY.registerBlockEntityType(new Identifier(Init.MOD_ID, "mitsubishi_button_shun_hing_square"), MitsubishiButtonShunHingSquare.BlockEntity::new, Blocks.MITSUBISHI_BUTTON_SHUN_HING_SQUARE::get);

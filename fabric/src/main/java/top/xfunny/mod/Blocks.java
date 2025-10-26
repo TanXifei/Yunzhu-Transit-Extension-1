@@ -37,6 +37,8 @@ public class Blocks {
     public static final BlockRegistryObject KONE_M_BUTTON_2;
     public static final BlockRegistryObject KONE_M_SCREEN_1_ODD;
     public static final BlockRegistryObject KONE_M_SCREEN_1_EVEN;
+    public static final BlockRegistryObject KONE_M_SCREEN_1_SMALL_ODD;
+    public static final BlockRegistryObject KONE_M_SCREEN_1_SMALL_EVEN;
 
     public static final BlockRegistryObject OTIS_SERIES_1_BUTTON_1;
     public static final BlockRegistryObject OTIS_SERIES_1_BUTTON_2;
@@ -322,6 +324,8 @@ public class Blocks {
         KONE_M_BUTTON_2 = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "kone_m_button_2"), () -> new Block(new KoneMButton2()), CreativeModeTabs.YTE_LIFT_FIXTURES);
         KONE_M_SCREEN_1_ODD = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "kone_m_screen_1_odd"), () -> new Block(new KoneMScreen1Odd()), CreativeModeTabs.YTE_LIFT_FIXTURES);
         KONE_M_SCREEN_1_EVEN = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "kone_m_screen_1_even"), () -> new Block(new KoneMScreen1Even()), CreativeModeTabs.YTE_LIFT_FIXTURES);
+        KONE_M_SCREEN_1_SMALL_ODD = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "kone_m_screen_1_small_odd"), () -> new Block(new KoneMScreen1SmallOdd()), CreativeModeTabs.YTE_LIFT_FIXTURES);
+        KONE_M_SCREEN_1_SMALL_EVEN = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "kone_m_screen_1_small_even"), () -> new Block(new KoneMScreen1SmallEven()), CreativeModeTabs.YTE_LIFT_FIXTURES);
 
         MITSUBISHI_GPS_BUTTON_1 = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "mitsubishi_gps_button_1"), () -> new Block(new MitsubishiGPSButton1()), CreativeModeTabs.YTE_LIFT_FIXTURES);
         MITSUBISHI_GPS_BUTTON_1_WITHOUT_SCREEN = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "mitsubishi_gps_button_1_without_screen"), () -> new Block(new MitsubishiGPSButton1WithoutScreen()), CreativeModeTabs.YTE_LIFT_FIXTURES);

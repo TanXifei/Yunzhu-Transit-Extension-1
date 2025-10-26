@@ -54,6 +54,8 @@ public final class InitClient {
         REGISTRY_CLIENT.registerBlockEntityRenderer(BlockEntityTypes.KONE_M_BUTTON_2, RenderKoneMButton2::new);
         REGISTRY_CLIENT.registerBlockEntityRenderer(BlockEntityTypes.KONE_M_SCREEN_1_ODD, dispatcher -> new top.xfunny.mod.client.render.RenderKoneMScreen1<>(dispatcher, true));
         REGISTRY_CLIENT.registerBlockEntityRenderer(BlockEntityTypes.KONE_M_SCREEN_1_EVEN, dispatcher -> new top.xfunny.mod.client.render.RenderKoneMScreen1<>(dispatcher, false));
+        REGISTRY_CLIENT.registerBlockEntityRenderer(BlockEntityTypes.KONE_M_SCREEN_1_SMALL_ODD, dispatcher -> new top.xfunny.mod.client.render.RenderKoneMScreen1Small<>(dispatcher, true));
+        REGISTRY_CLIENT.registerBlockEntityRenderer(BlockEntityTypes.KONE_M_SCREEN_1_SMALL_EVEN, dispatcher -> new top.xfunny.mod.client.render.RenderKoneMScreen1Small<>(dispatcher, false));
 
         REGISTRY_CLIENT.registerBlockEntityRenderer(BlockEntityTypes.MITSUBISHI_GPS_BUTTON_1, RenderMitsubishiGPSButton1::new);
         REGISTRY_CLIENT.registerBlockEntityRenderer(BlockEntityTypes.MITSUBISHI_GPS_BUTTON_1_WITHOUT_SCREEN, RenderMitsubishiGPSButton1WithoutScreen::new);

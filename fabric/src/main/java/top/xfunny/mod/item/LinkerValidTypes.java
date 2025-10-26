@@ -101,6 +101,8 @@ public class LinkerValidTypes {
             KoneMButton1.class,
             KoneMButton2.class,
             KoneMScreen1Odd.class,
+            KoneMScreen1SmallEven.class,
+            KoneMScreen1SmallOdd.class,
             KoneMScreen1Even.class,
             MitsubishiGPSButton1.class,
             MitsubishiGPSButton1WithoutScreen.class,
