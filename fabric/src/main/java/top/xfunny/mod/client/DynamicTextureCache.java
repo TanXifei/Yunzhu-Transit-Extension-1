@@ -235,8 +235,10 @@ public class DynamicTextureCache {
             return defaultRenderingColor.dynamicResource;
         }
 
+        long start = System.currentTimeMillis();// 计时调试
         MainRenderer.WORKER_THREAD.scheduleDynamicTextures(() -> {
             final NativeImage nativeImage = supplier.get();
+            long gen = System.currentTimeMillis();// 计时调试
             resourceRegistryQueue.put(() -> {
                 final DynamicResource staticTextureProviderOld = dynamicResources.get(key);
                 if (staticTextureProviderOld != null) {
@@ -254,6 +256,10 @@ public class DynamicTextureCache {
                     putLastResource(idOnly, originalText, dynamicResourceNew);
                 }
                 generatingResources.remove(key);
+
+                long reg = System.currentTimeMillis();// 计时调试
+                Init.LOGGER.info("Generated in {}ms, registered in {}ms", (gen - start), (reg - gen));
+
             });
         });
 
