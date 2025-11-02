@@ -20,6 +20,7 @@ import top.xfunny.mod.block.base.LiftButtonsBase;
 import top.xfunny.mod.client.InitClient;
 import top.xfunny.mod.client.resource.FontList;
 import top.xfunny.mod.client.view.*;
+import top.xfunny.mod.client.view.view_group.FrameLayout;
 import top.xfunny.mod.client.view.view_group.LinearLayout;
 import top.xfunny.mod.item.YteGroupLiftButtonsLinker;
 import top.xfunny.mod.item.YteLiftButtonsLinker;
@@ -67,14 +68,20 @@ public class RenderKoneMScreen1Small<T extends LiftButtonsBase.BlockEntityBase> 
 
         // 1. 设置 parentLayout 宽度和居中
         // 增大 parentLayout 宽度，并设置 CENTER_HORIZONTAL 居中
-        final LinearLayout parentLayout = new LinearLayout(false);
+        final FrameLayout parentLayout = new FrameLayout();
         parentLayout.setBasicsAttributes(world, blockPos);
         parentLayout.setStoredMatrixTransformations(storedMatrixTransformations1);
-        parentLayout.setParentDimensions(16F / 16, 3.25F / 16); // 增加宽度
-        parentLayout.setPosition(-12.35F / 16, 10F / 16); // 调整起始位置
+        parentLayout.setParentDimensions(9F / 16, 3.25F / 16); // 增加宽度
+        parentLayout.setPosition(-4.5F / 16, 10F / 16); // 调整起始位置
         parentLayout.setWidth(LayoutSize.MATCH_PARENT);
         parentLayout.setHeight(LayoutSize.MATCH_PARENT);
-        parentLayout.setGravity(Gravity.CENTER_HORIZONTAL); // 关键：使子组件在父布局中居中
+
+        final LinearLayout lanternAndScreen = new LinearLayout(false);
+        lanternAndScreen.setBasicsAttributes(world, blockPos);
+        lanternAndScreen.setStoredMatrixTransformations(storedMatrixTransformations1);
+        lanternAndScreen.setWidth(LayoutSize.WRAP_CONTENT);
+        lanternAndScreen.setHeight(LayoutSize.WRAP_CONTENT);
+        lanternAndScreen.setGravity(Gravity.CENTER);
 
         ButtonView upLantern = new ButtonView();
         upLantern.setBasicsAttributes(world, blockPos);
@@ -84,8 +91,6 @@ public class RenderKoneMScreen1Small<T extends LiftButtonsBase.BlockEntityBase> 
         upLantern.setLight(light);
         upLantern.setDefaultColor(0xFFFFFFFF);
         upLantern.setPressedColor(PRESSED_COLOR);
-        // 2. 调整上箭头边距：左侧不留白，右侧留出 3/16 间隔给显示屏
-        upLantern.setMargin(0, 0, 1F / 16, 0);
 
         ButtonView upLantern1 = new ButtonView();
         upLantern1.setBasicsAttributes(world, blockPos);
@@ -95,8 +100,6 @@ public class RenderKoneMScreen1Small<T extends LiftButtonsBase.BlockEntityBase> 
         upLantern1.setLight(light);
         upLantern1.setDefaultColor(0xFFFFFFFF);
         upLantern1.setPressedColor(PRESSED_COLOR);
-        // 2. 调整上箭头1边距：左侧不留白，右侧留出 3/16 间隔给显示屏
-        upLantern1.setMargin(0, 0, 1F / 16, 0);
 
         ButtonView downLantern = new ButtonView();
         downLantern.setBasicsAttributes(world, blockPos);
@@ -106,9 +109,6 @@ public class RenderKoneMScreen1Small<T extends LiftButtonsBase.BlockEntityBase> 
         downLantern.setLight(light);
         downLantern.setDefaultColor(0xFFFFFFFF);
         downLantern.setPressedColor(PRESSED_COLOR);
-        // 2. 调整下箭头边距：左侧不留白，右侧留出 3/16 间隔给显示屏
-        downLantern.setMargin(0, 0, 1F / 16, 0);
-        downLantern.setFlip(false, true);
 
         ButtonView downLantern1 = new ButtonView();
         downLantern1.setBasicsAttributes(world, blockPos);
@@ -119,8 +119,6 @@ public class RenderKoneMScreen1Small<T extends LiftButtonsBase.BlockEntityBase> 
         downLantern1.setDefaultColor(0xFFFFFFFF);
         downLantern1.setPressedColor(PRESSED_COLOR);
         downLantern1.setFlip(false, true);
-        // 2. 调整下箭头1边距：左侧不留白，右侧留出 3/16 间隔给显示屏
-        downLantern1.setMargin(0, 0, 1F / 16, 0);
 
         final LineComponent line = new LineComponent();
         line.setBasicsAttributes(world, blockPos);
@@ -248,29 +246,29 @@ public class RenderKoneMScreen1Small<T extends LiftButtonsBase.BlockEntityBase> 
                 // 3. 设置楼层显示对齐方式为居中
                 liftFloorDisplayView.setTextAlign(TextView.HorizontalTextAlign.RIGHT);
                 // 3. 设置楼层显示左右边距，与两侧箭头留出 3/16 的间隔
-                liftFloorDisplayView.setMargin(0.25F / 16, 0, 0.25F / 16, 0);
+                liftFloorDisplayView.setMargin(0, 0, 0, 0);
             }
         }
 
         // 4. 调整子组件添加顺序：箭头 -> 楼层显示 -> 箭头
         if (buttonDescriptor.hasDownButton() && buttonDescriptor.hasUpButton()) {
-            parentLayout.addChild(upLantern);
+            lanternAndScreen.addChild(upLantern);
             if (!sortedPositionsAndLifts.isEmpty()) {
-                parentLayout.addChild(liftFloorDisplayView);
+                lanternAndScreen.addChild(liftFloorDisplayView);
             }
-            parentLayout.addChild(downLantern1);
+            lanternAndScreen.addChild(downLantern1);
         } else if (buttonDescriptor.hasDownButton()) {
-            parentLayout.addChild(downLantern);
+            lanternAndScreen.addChild(downLantern);
             if (!sortedPositionsAndLifts.isEmpty()) {
-                parentLayout.addChild(liftFloorDisplayView);
+                lanternAndScreen.addChild(liftFloorDisplayView);
             }
-            parentLayout.addChild(downLantern1);
+            lanternAndScreen.addChild(downLantern1);
         } else if (buttonDescriptor.hasUpButton()) {
-            parentLayout.addChild(upLantern);
+            lanternAndScreen.addChild(upLantern);
             if (!sortedPositionsAndLifts.isEmpty()) {
-                parentLayout.addChild(liftFloorDisplayView);
+                lanternAndScreen.addChild(liftFloorDisplayView);
             }
-            parentLayout.addChild(upLantern1);
+            lanternAndScreen.addChild(upLantern1);
         }
 
         blockEntity.forEachLiftButtonPosition(buttonPosition -> {
@@ -278,6 +276,7 @@ public class RenderKoneMScreen1Small<T extends LiftButtonsBase.BlockEntityBase> 
         });
 
 
+        parentLayout.addChild(lanternAndScreen);
         parentLayout.render();
     }
 }
