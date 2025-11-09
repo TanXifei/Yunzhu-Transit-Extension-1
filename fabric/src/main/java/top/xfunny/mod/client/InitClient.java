@@ -5,7 +5,6 @@ import org.mtr.mapping.holder.Identifier;
 import org.mtr.mapping.holder.RenderLayer;
 import org.mtr.mapping.registry.RegistryClient;
 import org.mtr.mod.client.MinecraftClientData;
-import org.mtr.mod.item.ItemBlockClickingBase;
 import top.xfunny.mod.BlockEntityTypes;
 import top.xfunny.mod.Blocks;
 import top.xfunny.mod.Init;
