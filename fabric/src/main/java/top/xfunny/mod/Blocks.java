@@ -147,6 +147,7 @@ public class Blocks {
     public static final BlockRegistryObject SCHINDLER_M_SERIES_TOUCH_BUTTON;
     public static final BlockRegistryObject SCHINDLER_M_SERIES_ROUND_TOUCH_BUTTON;
     public static final BlockRegistryObject SCHINDLER_S_SERIES_GREY_BUTTON;
+    public static final BlockRegistryObject SCHINDLER_R_SERIES_ROUND_BUTTON;
     public static final BlockRegistryObject SCHINDLER_M_SERIES_ROUND_LANTERN_1_ODD;
     public static final BlockRegistryObject SCHINDLER_M_SERIES_ROUND_LANTERN_1_EVEN;
     public static final BlockRegistryObject SCHINDLER_M_SERIES_SCREEN_1;
@@ -156,6 +157,8 @@ public class Blocks {
     public static final BlockRegistryObject SCHINDLER_M_SERIES_SCREEN_3_EVEN;
     public static final BlockRegistryObject SCHINDLER_M_SERIES_SCREEN_4_ODD;
     public static final BlockRegistryObject SCHINDLER_M_SERIES_SCREEN_4_EVEN;
+    public static final BlockRegistryObject SCHINDLER_R_SERIES_SCREEN_1_ODD;
+    public static final BlockRegistryObject SCHINDLER_R_SERIES_SCREEN_1_EVEN;
     public static final BlockRegistryObject SCHINDLER_LINEA_BUTTON_1_WHITE;
     public static final BlockRegistryObject SCHINDLER_LINEA_BUTTON_1_WHITE_WITHOUT_SCREEN;
     public static final BlockRegistryObject SCHINDLER_LINEA_BUTTON_1_BLACK;
@@ -449,6 +452,9 @@ public class Blocks {
         SCHINDLER_M_SERIES_SCREEN_4_ODD = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "schindler_m_series_screen_4_odd"), () -> new Block(new SchindlerMSeriesScreen4Odd()), CreativeModeTabs.YTE_LIFT_FIXTURES);
         SCHINDLER_M_SERIES_SCREEN_4_EVEN = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "schindler_m_series_screen_4_even"), () -> new Block(new SchindlerMSeriesScreen4Even()), CreativeModeTabs.YTE_LIFT_FIXTURES);
         SCHINDLER_S_SERIES_GREY_BUTTON = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "schindler_s_series_grey_button"), () -> new Block(new SchindlerSSeriesGreyButton()), CreativeModeTabs.YTE_LIFT_FIXTURES);
+        SCHINDLER_R_SERIES_ROUND_BUTTON = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "schindler_r_series_round_button"), () -> new Block(new SchindlerRSeriesRoundButton()), CreativeModeTabs.YTE_LIFT_FIXTURES);
+        SCHINDLER_R_SERIES_SCREEN_1_ODD = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "schindler_r_series_screen_1_odd"), () -> new Block(new SchindlerRSeriesScreen1Odd()), CreativeModeTabs.YTE_LIFT_FIXTURES);
+        SCHINDLER_R_SERIES_SCREEN_1_EVEN = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "schindler_r_series_screen_1_even"), () -> new Block(new SchindlerRSeriesScreen1Even()), CreativeModeTabs.YTE_LIFT_FIXTURES);
         SCHINDLER_LINEA_BUTTON_1_WHITE = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "schindler_linea_button_1_white"), () -> new Block(new SchindlerLineaButton1White()), CreativeModeTabs.YTE_LIFT_FIXTURES);
         SCHINDLER_LINEA_BUTTON_1_WHITE_WITHOUT_SCREEN = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "schindler_linea_button_1_white_without_screen"), () -> new Block(new SchindlerLineaButton1WhiteWithoutScreen()), CreativeModeTabs.YTE_LIFT_FIXTURES);
         SCHINDLER_LINEA_BUTTON_1_BLACK = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "schindler_linea_button_1_black"), () -> new Block(new SchindlerLineaButton1Black()), CreativeModeTabs.YTE_LIFT_FIXTURES);

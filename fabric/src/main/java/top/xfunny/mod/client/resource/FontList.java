@@ -68,6 +68,7 @@ public class FontList {
             loadFont("shanghai_mitsubishi_segmented_1_sp","font/shanghai_mitsubishi_segmented_1_sp.ttf");
             loadFont("shanghai_mitsubishi_lcd_1","font/shanghai_mitsubishi_lcd_1.ttf");
             loadFont("schindler_m_series_segment", "font/schindler_m_series_segment.ttf");
+            loadFont("schindler_r_series_led", "font/schindler_r_series_led.otf");
             loadFont("tonic-led", "font/tonic-led.ttf");
             loadFont("tonic-led-thin", "font/tonic-thin.ttf");
             loadFont("mitsubishi_old_segmented_1", "font/mitsubishi_old_segmented_1.ttf");

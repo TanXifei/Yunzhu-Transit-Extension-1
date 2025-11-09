@@ -1,13 +1,18 @@
+plugins {
+    id 'java'
+}
+
 repositories {
     mavenCentral()
     maven { url "https://jitpack.io" }
 }
 
 dependencies {
-    implementation "com.google.code.gson:gson:+"
-    implementation "it.unimi.dsi:fastutil:+"
-    implementation "commons-io:commons-io:+"
-    implementation "org.apache.httpcomponents:httpmime:+"
+    // 明确版本，避免解析异常（可按需升级）
+    implementation "com.google.code.gson:gson:2.10.1"
+    implementation "it.unimi.dsi:fastutil:8.5.6"
+    implementation "commons-io:commons-io:2.11.0"
+    implementation "org.apache.httpcomponents:httpmime:4.5.13"
     implementation "com.github.jonafanho:Minecraft-Mod-API-Tools:master-SNAPSHOT"
 }
 

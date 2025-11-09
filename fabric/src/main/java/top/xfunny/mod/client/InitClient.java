@@ -174,7 +174,10 @@ public final class InitClient {
         REGISTRY_CLIENT.registerBlockEntityRenderer(BlockEntityTypes.SCHINDLER_M_SERIES_SCREEN_3_EVEN, dispatcher -> new top.xfunny.mod.client.render.RenderSchindlerMSeriesScreen3<>(dispatcher, false));
         REGISTRY_CLIENT.registerBlockEntityRenderer(BlockEntityTypes.SCHINDLER_M_SERIES_SCREEN_4_ODD, dispatcher -> new top.xfunny.mod.client.render.RenderSchindlerMSeriesScreen4<>(dispatcher, true));
         REGISTRY_CLIENT.registerBlockEntityRenderer(BlockEntityTypes.SCHINDLER_M_SERIES_SCREEN_4_EVEN, dispatcher -> new top.xfunny.mod.client.render.RenderSchindlerMSeriesScreen4<>(dispatcher, false));
+        REGISTRY_CLIENT.registerBlockEntityRenderer(BlockEntityTypes.SCHINDLER_R_SERIES_SCREEN_1_ODD, dispatcher -> new top.xfunny.mod.client.render.RenderSchindlerRSeriesScreen1<>(dispatcher, true));
+        REGISTRY_CLIENT.registerBlockEntityRenderer(BlockEntityTypes.SCHINDLER_R_SERIES_SCREEN_1_EVEN, dispatcher -> new top.xfunny.mod.client.render.RenderSchindlerRSeriesScreen1<>(dispatcher, false));
         REGISTRY_CLIENT.registerBlockEntityRenderer(BlockEntityTypes.SCHINDLER_S_SERIES_GREY_BUTTON, RenderSchindlerSSeriesGreyButton::new);
+        REGISTRY_CLIENT.registerBlockEntityRenderer(BlockEntityTypes.SCHINDLER_R_SERIES_ROUND_BUTTON, RenderSchindlerRSeriesRoundButton::new);
         REGISTRY_CLIENT.registerBlockEntityRenderer(BlockEntityTypes.SCHINDLER_LINEA_BUTTON_1_WHITE, RenderSchindlerLineaButton1White::new);
         REGISTRY_CLIENT.registerBlockEntityRenderer(BlockEntityTypes.SCHINDLER_LINEA_BUTTON_1_BLACK, RenderSchindlerLineaButton1Black::new);
         REGISTRY_CLIENT.registerBlockEntityRenderer(BlockEntityTypes.SCHINDLER_LINEA_BUTTON_2_WHITE, RenderSchindlerLineaButton2White::new);

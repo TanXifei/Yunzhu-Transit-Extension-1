@@ -197,6 +197,9 @@ public class BlockEntityTypes {
     public static final BlockEntityTypeRegistryObject<SchindlerMSeriesScreen4Odd.BlockEntity> SCHINDLER_M_SERIES_SCREEN_4_ODD;
     public static final BlockEntityTypeRegistryObject<SchindlerMSeriesScreen4Even.BlockEntity> SCHINDLER_M_SERIES_SCREEN_4_EVEN;
     public static final BlockEntityTypeRegistryObject<SchindlerSSeriesGreyButton.BlockEntity> SCHINDLER_S_SERIES_GREY_BUTTON;
+    public static final BlockEntityTypeRegistryObject<SchindlerRSeriesRoundButton.BlockEntity> SCHINDLER_R_SERIES_ROUND_BUTTON;
+    public static final BlockEntityTypeRegistryObject<SchindlerRSeriesScreen1Odd.BlockEntity> SCHINDLER_R_SERIES_SCREEN_1_ODD;
+    public static final BlockEntityTypeRegistryObject<SchindlerRSeriesScreen1Even.BlockEntity> SCHINDLER_R_SERIES_SCREEN_1_EVEN;
     public static final BlockEntityTypeRegistryObject<SchindlerLineaButton1White.BlockEntity> SCHINDLER_LINEA_BUTTON_1_WHITE;
     public static final BlockEntityTypeRegistryObject<SchindlerLineaButton1WhiteWithoutScreen.BlockEntity> SCHINDLER_LINEA_BUTTON_1_WHITE_WITHOUT_SCREEN;
     public static final BlockEntityTypeRegistryObject<SchindlerLineaButton1Black.BlockEntity> SCHINDLER_LINEA_BUTTON_1_BLACK;
@@ -429,6 +432,9 @@ public class BlockEntityTypes {
         SCHINDLER_M_SERIES_SCREEN_4_ODD = Init.REGISTRY.registerBlockEntityType(new Identifier(Init.MOD_ID, "schindler_m_series_screen_4_odd"), SchindlerMSeriesScreen4Odd.BlockEntity::new, Blocks.SCHINDLER_M_SERIES_SCREEN_4_ODD::get);
         SCHINDLER_M_SERIES_SCREEN_4_EVEN = Init.REGISTRY.registerBlockEntityType(new Identifier(Init.MOD_ID, "schindler_m_series_screen_4_even"), SchindlerMSeriesScreen4Even.BlockEntity::new, Blocks.SCHINDLER_M_SERIES_SCREEN_4_EVEN::get);
         SCHINDLER_S_SERIES_GREY_BUTTON = Init.REGISTRY.registerBlockEntityType(new Identifier(Init.MOD_ID, "schindler_s_series_grey_button"), SchindlerSSeriesGreyButton.BlockEntity::new, Blocks.SCHINDLER_S_SERIES_GREY_BUTTON::get);
+        SCHINDLER_R_SERIES_ROUND_BUTTON = Init.REGISTRY.registerBlockEntityType(new Identifier(Init.MOD_ID, "schindler_r_series_round_button"), SchindlerRSeriesRoundButton.BlockEntity::new, Blocks.SCHINDLER_R_SERIES_ROUND_BUTTON::get);
+        SCHINDLER_R_SERIES_SCREEN_1_ODD = Init.REGISTRY.registerBlockEntityType(new Identifier(Init.MOD_ID, "schindler_r_series_screen_1_odd"), SchindlerRSeriesScreen1Odd.BlockEntity::new, Blocks.SCHINDLER_R_SERIES_SCREEN_1_ODD::get);
+        SCHINDLER_R_SERIES_SCREEN_1_EVEN = Init.REGISTRY.registerBlockEntityType(new Identifier(Init.MOD_ID, "schindler_r_series_screen_1_even"), SchindlerRSeriesScreen1Even.BlockEntity::new, Blocks.SCHINDLER_R_SERIES_SCREEN_1_EVEN::get);
         SCHINDLER_LINEA_BUTTON_1_WHITE = Init.REGISTRY.registerBlockEntityType(new Identifier(Init.MOD_ID, "schindler_linea_button_1_white"), SchindlerLineaButton1White.BlockEntity::new, Blocks.SCHINDLER_LINEA_BUTTON_1_WHITE::get);
         SCHINDLER_LINEA_BUTTON_1_BLACK = Init.REGISTRY.registerBlockEntityType(new Identifier(Init.MOD_ID, "schindler_linea_button_1_black"), SchindlerLineaButton1Black.BlockEntity::new, Blocks.SCHINDLER_LINEA_BUTTON_1_BLACK::get);
         SCHINDLER_LINEA_BUTTON_2_WHITE = Init.REGISTRY.registerBlockEntityType(new Identifier(Init.MOD_ID, "schindler_linea_button_2_white"), SchindlerLineaButton2White.BlockEntity::new, Blocks.SCHINDLER_LINEA_BUTTON_2_WHITE::get);
