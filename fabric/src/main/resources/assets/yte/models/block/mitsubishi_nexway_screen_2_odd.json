@@ -3,7 +3,7 @@
 	"credit": "Made with Blockbench",
 	"parent": "block/block",
 	"textures": {
-		"2": "yte:block/steel",
+		"2": "yte:block/steel_2",
 		"3": "yte:block/mitsubishi_nexway_button_lcd_1",
 		"4": "yte:block/gray",
 		"particle": "yte:block/mitsubishi_lantern_arrow"

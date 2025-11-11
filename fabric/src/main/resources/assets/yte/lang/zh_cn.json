@@ -93,6 +93,8 @@
   "block.yte.mitsubishi_mpvf_screen_1_vertical_odd": "三菱MP-VF候梯楼层显示器（类型1，占一格）",
   "block.yte.mitsubishi_mpvf_screen_1_vertical_even": "三菱MP-VF候梯楼层显示器（类型1，占两格）",
   "block.yte.mitsubishi_mpvf_button_1": "三菱MP-VF呼梯面板（类型1）",
+  "block.yte.mitsubishi_mp_button_1": "三菱MP呼梯面板（类型1）",
+  "block.yte.mitsubishi_mp_button_1_touch": "三菱MP触摸呼梯面板（类型1）",
   "block.yte.mitsubishi_gps3_button_1": "三菱PIM-A110呼梯面板",
   "block.yte.mitsubishi_gps3_button_1_without_screen": "三菱HBM-A110呼梯面板",
   "block.yte.mitsubishi_gps3_button_2": "三菱PIN-A11呼梯面板",

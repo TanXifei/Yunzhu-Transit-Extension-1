@@ -123,6 +123,8 @@ public class Blocks {
     public static final BlockRegistryObject MITSUBISHI_MPVF_BUTTON_1;
     public static final BlockRegistryObject MITSUBISHI_MPVF_SCREEN_1_VERTICAL_ODD;
     public static final BlockRegistryObject MITSUBISHI_MPVF_SCREEN_1_VERTICAL_EVEN;
+    public static final BlockRegistryObject MITSUBISHI_MP_BUTTON_1;
+    public static final BlockRegistryObject MITSUBISHI_MP_BUTTON_1_TOUCH;
 
     public static final BlockRegistryObject SHANGHAI_MITSUBISHI_NEXWAY_CR_BUTTON_1;
     public static final BlockRegistryObject SHANGHAI_MITSUBISHI_LEHY_3_BUTTON_1;
@@ -393,6 +395,8 @@ public class Blocks {
         MITSUBISHI_MPVF_BUTTON_1 = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "mitsubishi_mpvf_button_1"), () -> new Block(new MitsubishiMPVFButton1()), CreativeModeTabs.YTE_LIFT_FIXTURES);
         MITSUBISHI_MPVF_SCREEN_1_VERTICAL_ODD = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "mitsubishi_mpvf_screen_1_vertical_odd"), () -> new Block(new MitsubishiMPVFScreen1VerticalOdd()), CreativeModeTabs.YTE_LIFT_FIXTURES);
         MITSUBISHI_MPVF_SCREEN_1_VERTICAL_EVEN = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "mitsubishi_mpvf_screen_1_vertical_even"), () -> new Block(new MitsubishiMPVFScreen1VerticalEven()), CreativeModeTabs.YTE_LIFT_FIXTURES);
+        MITSUBISHI_MP_BUTTON_1 = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "mitsubishi_mp_button_1"), () -> new Block(new MitsubishiMPButton1()), CreativeModeTabs.YTE_LIFT_FIXTURES);
+        MITSUBISHI_MP_BUTTON_1_TOUCH = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "mitsubishi_mp_button_1_touch"), () -> new Block(new MitsubishiMPButton1Touch()), CreativeModeTabs.YTE_LIFT_FIXTURES);
         SHANGHAI_MITSUBISHI_NEXWAY_CR_BUTTON_1 = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "shanghai_mitsubishi_nexway_cr_button_1"), () -> new Block(new ShanghaiMitsubishiNexWayCRButton1()), CreativeModeTabs.YTE_LIFT_FIXTURES);
         SHANGHAI_MITSUBISHI_LEHY_3_BUTTON_1 = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "shanghai_mitsubishi_lehy_3_button_1"), () -> new Block(new ShanghaiMitsubishiLehy3Button1()), CreativeModeTabs.YTE_LIFT_FIXTURES);
         SHANGHAI_MITSUBISHI_LEHY_3_BUTTON_1_WITHOUT_SCREEN = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "shanghai_mitsubishi_lehy_3_button_1_without_screen"), () -> new Block(new ShanghaiMitsubishiLehy3Button1WithoutScreen()), CreativeModeTabs.YTE_LIFT_FIXTURES);

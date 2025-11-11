@@ -3,10 +3,9 @@
 	"credit": "Made with Blockbench",
 	"parent": "block/block",
 	"textures": {
-		"2": "yte:block/steel",
+		"2": "yte:block/steel_2",
 		"3": "yte:block/mitsubishi_maxiez_button_lcd_1_screen",
-		"4": "yte:block/mitsubishi_maxiez_button_lcd_1",
-		"particle": "yte:block/mitsubishi_lantern_arrow"
+		"4": "yte:block/mitsubishi_maxiez_button_lcd_1"
 	},
 	"elements": [
 		{

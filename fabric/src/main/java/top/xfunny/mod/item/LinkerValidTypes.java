@@ -140,6 +140,8 @@ public class LinkerValidTypes {
             MitsubishiMaxiezButton3.class,
             MitsubishiMaxiezButton3LCD.class,
             MitsubishiMaxiezButton3WithoutScreen.class,
+            MitsubishiMPButton1.class,
+            MitsubishiMPButton1Touch.class,
             MitsubishiMPVFButton1.class,
             MitsubishiMPVFScreen1VerticalOdd.class,
             MitsubishiMPVFScreen1VerticalEven.class,

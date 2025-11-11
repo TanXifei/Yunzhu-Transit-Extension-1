@@ -3,9 +3,9 @@
 	"credit": "Made with Blockbench",
 	"textures": {
 		"2": "yte:block/metal",
-		"4": "yte:block/steel",
+		"4": "yte:block/steel_2",
 		"5": "yte:block/black",
-		"particle": "yte:block/steel"
+		"particle": "yte:block/steel_2"
 	},
 	"elements": [
 		{

@@ -2,9 +2,9 @@
 	"format_version": "1.21.6",
 	"credit": "Made with Blockbench",
 	"textures": {
-		"2": "yte:block/steel",
+		"2": "yte:block/steel_2",
 		"3": "yte:block/metal",
-		"particle": "yte:block/steel"
+		"particle": "yte:block/steel_2"
 	},
 	"elements": [
 		{
