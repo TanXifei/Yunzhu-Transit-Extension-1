@@ -114,7 +114,7 @@ public class RenderSchindlerRSeriesRoundButton extends BlockEntityRenderer<Schin
         buttonDown.setDimension(0.75F / 16);
         buttonDown.setGravity(Gravity.CENTER);
         buttonDown.setLight(light);
-        buttonDown.setFlip(false, true);
+        buttonDown.setFlip(false, false);
 
         ButtonView buttonDownLight = new ButtonView();
         buttonDownLight.setId("down");
