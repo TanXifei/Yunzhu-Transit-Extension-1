@@ -1,5 +1,6 @@
 package top.xfunny.mod.client;
 
+
 import org.mtr.core.servlet.MessageQueue;
 import org.mtr.core.tool.Utilities;
 import org.mtr.libraries.it.unimi.dsi.fastutil.objects.Object2LongArrayMap;
@@ -19,6 +20,7 @@ import java.util.Locale;
 import java.util.Random;
 import java.util.function.Supplier;
 
+
 public class DynamicTextureCache {
     private static final int COOL_DOWN_TIME = 10000;
     private static final Identifier DEFAULT_BLACK_RESOURCE = new Identifier(Init.MOD_ID, "textures/block/black.png");
@@ -29,35 +31,24 @@ public class DynamicTextureCache {
     private final Object2LongArrayMap<Identifier> deletedResources = new Object2LongArrayMap<>();
     private final ObjectOpenHashSet<String> generatingResources = new ObjectOpenHashSet<>();
     private final MessageQueue<Runnable> resourceRegistryQueue = new MessageQueue<>();
-
-    // 添加字符级别缓存
-    private final Object2ObjectLinkedOpenHashMap<String, NativeImage> charImageCache = new Object2ObjectLinkedOpenHashMap<>();
-    private final Object2ObjectLinkedOpenHashMap<String, int[]> charDimensionCache = new Object2ObjectLinkedOpenHashMap<>();
+    public int totalWidth;
 
     // 最近的贴图缓存：最多保留两个 id
     // 外层：id
     // 内层：每个 id 对应一个 LRU Map，最多缓存 2 个 originalText
     private final Object2ObjectLinkedOpenHashMap<String, Object2ObjectLinkedOpenHashMap<String, DynamicResource>> lastResourceById = new Object2ObjectLinkedOpenHashMap<>();
 
-    public int totalWidth;
 
     public void reload() {
-        FontList.instance.FlonList();
         FontList.instance.FontReload();
         dynamicResources.values().forEach(dynamicResource -> dynamicResource.needsRefresh = true);
         generatingResources.clear();
-
-        // 清空字符缓存
-        charImageCache.clear();
-        charDimensionCache.clear();
-
-        // 清空 lastResourceById
         lastResourceById.clear();
     }
 
     public void tick() {
         final ObjectArrayList<String> keysToRemove = new ObjectArrayList<>();
-        dynamicResources.forEach((checkKey, checkDynamicResource) -> {// 检查每个资源，如果过期则删除
+        dynamicResources.forEach((checkKey, checkDynamicResource) -> {
             String idOnly = checkKey.contains("$") ? checkKey.substring(0, checkKey.indexOf("$")) : checkKey;
             String originalText = checkKey.contains("$") ? checkKey.substring(checkKey.indexOf("$") + 1) : checkKey;
 
@@ -78,20 +69,15 @@ public class DynamicTextureCache {
         keysToRemove.forEach(dynamicResources::remove);
 
         final ObjectArrayList<Identifier> deletedResourcesToRemove = new ObjectArrayList<>();
-        deletedResources.forEach((identifier, expiryTime) -> {// 检查每个资源，如果过期则删除
+        deletedResources.forEach((identifier, expiryTime) -> {
             if (expiryTime < System.currentTimeMillis()) {
                 MinecraftClient.getInstance().getTextureManager().destroyTexture(identifier);
                 deletedResourcesToRemove.add(identifier);
             }
         });
-        deletedResourcesToRemove.forEach(deletedResources::removeLong);// 删除
-
-        // 清理字符缓存
-        if (charImageCache.size() > 1000) {
-            charImageCache.remove(charImageCache.firstKey());
-            charDimensionCache.remove(charDimensionCache.firstKey());
-        }
+        deletedResourcesToRemove.forEach(deletedResources::removeLong);
     }
+
 
     public byte[] getTextPixels(String text, int[] dimensions, int maxWidth, float fontSize, int padding, Font font, int letterSpacing) {
         if (maxWidth <= 0) {
@@ -100,19 +86,6 @@ public class DynamicTextureCache {
             return new byte[0];
         }
         totalWidth = 0;
-
-        // 尝试从缓存获取字符图像
-        if (letterSpacing == 0 && text.length() == 1) {
-            String cacheKey = font.getName() + "_" + fontSize + "_" + text;
-            NativeImage cachedImage = charImageCache.get(cacheKey);
-            int[] cachedDims = charDimensionCache.get(cacheKey);
-
-            if (cachedImage != null && cachedDims != null) {
-                dimensions[0] = cachedDims[0];
-                dimensions[1] = cachedDims[1];
-                return getPixelsFromNativeImage(cachedImage);
-            }
-        }
 
         try {
             BufferedImage textImage = new BufferedImage(1, 1, BufferedImage.TYPE_BYTE_GRAY);
@@ -163,54 +136,13 @@ public class DynamicTextureCache {
             byte[] pixels = ((DataBufferByte) textImage.getRaster().getDataBuffer()).getData();
             textImage.flush();
 
-            if (letterSpacing == 0 && text.length() == 1) {
-                String cacheKey = font.getName() + "_" + fontSize + "_" + text;
-                NativeImage charImage = createNativeImageFromPixels(pixels, dimensions[0], dimensions[1]);
-                charImageCache.put(cacheKey, charImage);
-                charDimensionCache.put(cacheKey, new int[]{dimensions[0], dimensions[1]});
-            }
-
             return pixels;
+
         } catch (Exception e) {
             dimensions[0] = 0;
             dimensions[1] = 0;
             return new byte[0];
         }
-    }
-
-    private byte[] getPixelsFromNativeImage(NativeImage nativeImage) {
-        byte[] pixels = new byte[nativeImage.getWidth() * nativeImage.getHeight()];
-        for (int y = 0; y < nativeImage.getHeight(); y++) {
-            for (int x = 0; x < nativeImage.getWidth(); x++) {
-                int color = nativeImage.getColor(x, y);
-                pixels[y * nativeImage.getWidth() + x] = (byte) ((color >> 24) & 0xFF);
-            }
-        }
-        return pixels;
-    }
-
-    private NativeImage createNativeImageFromPixels(byte[] pixels, int width, int height) {
-        try {
-            NativeImage nativeImage = new NativeImage(NativeImageFormat.getAbgrMapped(), width, height, true);
-            for (int y = 0; y < height; y++) {
-                for (int x = 0; x < width; x++) {
-                    int alpha = pixels[y * width + x] & 0xFF;
-                    nativeImage.setPixelColor(x, y, (alpha << 24) | 0x00FFFFFF);
-                }
-            }
-            return nativeImage;
-        } catch (Exception e) {
-            return null;
-        }
-    }
-
-
-    // 只保留每个id下的两个originalText缓存
-    private void putLastResource(String id, String originalText, DynamicResource resource) {
-        Object2ObjectLinkedOpenHashMap<String, DynamicResource> pool =
-                lastResourceById.computeIfAbsent(id, k -> new Object2ObjectLinkedOpenHashMap<>());
-        pool.clear(); // 只存一个
-        pool.put(originalText, resource);
     }
 
 
@@ -235,10 +167,10 @@ public class DynamicTextureCache {
             return defaultRenderingColor.dynamicResource;
         }
 
-        long start = System.currentTimeMillis();// 计时调试
+        //long start = System.currentTimeMillis();// 计时调试
         MainRenderer.WORKER_THREAD.scheduleDynamicTextures(() -> {
             final NativeImage nativeImage = supplier.get();
-            long gen = System.currentTimeMillis();// 计时调试
+            //long gen = System.currentTimeMillis();// 计时调试
             resourceRegistryQueue.put(() -> {
                 final DynamicResource staticTextureProviderOld = dynamicResources.get(key);
                 if (staticTextureProviderOld != null) {
@@ -257,8 +189,8 @@ public class DynamicTextureCache {
                 }
                 generatingResources.remove(key);
 
-                long reg = System.currentTimeMillis();// 计时调试
-                Init.LOGGER.info("Generated in {}ms, registered in {}ms", (gen - start), (reg - gen));
+                //long reg = System.currentTimeMillis();// 计时调试
+                //Init.LOGGER.info("Generated in {}ms, registered in {}ms", (gen - start), (reg - gen));
 
             });
         });
@@ -279,10 +211,19 @@ public class DynamicTextureCache {
         }
     }
 
+    // 只保留每个id下的两个originalText缓存
+    private void putLastResource(String id, String originalText, DynamicResource resource) {
+        Object2ObjectLinkedOpenHashMap<String, DynamicResource> pool =
+                lastResourceById.computeIfAbsent(id, k -> new Object2ObjectLinkedOpenHashMap<>());
+        pool.clear(); // 只存一个
+        pool.put(originalText, resource);
+    }
 
     public enum DefaultRenderingColor {
         BLACK(DEFAULT_BLACK_RESOURCE),
         WHITE(DEFAULT_WHITE_RESOURCE),
+
+
         TRANSPARENT(DEFAULT_TRANSPARENT_RESOURCE);
 
         private final DynamicResource dynamicResource;
@@ -293,6 +234,7 @@ public class DynamicTextureCache {
     }
 
     public static class DynamicResource {
+
         public final int width;
         public final int height;
         public final Identifier identifier;
@@ -316,9 +258,12 @@ public class DynamicTextureCache {
             }
         }
 
+
         private void remove() {
             MinecraftClient.getInstance().getTextureManager().destroyTexture(identifier);
             MainRenderer.cancelRender(identifier);
         }
     }
+
+
 }
