@@ -95,6 +95,12 @@ public final class InitClient {
         REGISTRY_CLIENT.registerBlockEntityRenderer(BlockEntityTypes.MITSUBISHI_MPVF_BUTTON_1, RenderMitsubishiMPVFButton1::new);
         REGISTRY_CLIENT.registerBlockEntityRenderer(BlockEntityTypes.MITSUBISHI_MPVF_SCREEN_1_VERTICAL_ODD, dispatcher -> new top.xfunny.mod.client.render.RenderMitsubishiMPVFScreen1Vertical<>(dispatcher, true));
         REGISTRY_CLIENT.registerBlockEntityRenderer(BlockEntityTypes.MITSUBISHI_MPVF_SCREEN_1_VERTICAL_EVEN, dispatcher -> new top.xfunny.mod.client.render.RenderMitsubishiMPVFScreen1Vertical<>(dispatcher, false));
+        REGISTRY_CLIENT.registerBlockEntityRenderer(BlockEntityTypes.MITSUBISHI_MPVF_SCREEN_1_HORIZONTAL_ODD, dispatcher -> new top.xfunny.mod.client.render.RenderMitsubishiMPVFScreen1Horizontal<>(dispatcher, true));
+        REGISTRY_CLIENT.registerBlockEntityRenderer(BlockEntityTypes.MITSUBISHI_MPVF_SCREEN_1_HORIZONTAL_EVEN, dispatcher -> new top.xfunny.mod.client.render.RenderMitsubishiMPVFScreen1Horizontal<>(dispatcher, false));
+        REGISTRY_CLIENT.registerBlockEntityRenderer(BlockEntityTypes.MITSUBISHI_MPVF_LANTERN_1_VERTICAL_ODD, dispatcher -> new top.xfunny.mod.client.render.RenderMitsubishiMPVFLantern1Vertical<>(dispatcher, true));
+        REGISTRY_CLIENT.registerBlockEntityRenderer(BlockEntityTypes.MITSUBISHI_MPVF_LANTERN_1_VERTICAL_EVEN, dispatcher -> new top.xfunny.mod.client.render.RenderMitsubishiMPVFLantern1Vertical<>(dispatcher, false));
+        REGISTRY_CLIENT.registerBlockEntityRenderer(BlockEntityTypes.MITSUBISHI_MPVF_LANTERN_1_HORIZONTAL_ODD, dispatcher -> new top.xfunny.mod.client.render.RenderMitsubishiMPVFLantern1Horizontal<>(dispatcher, true));
+        REGISTRY_CLIENT.registerBlockEntityRenderer(BlockEntityTypes.MITSUBISHI_MPVF_LANTERN_1_HORIZONTAL_EVEN, dispatcher -> new top.xfunny.mod.client.render.RenderMitsubishiMPVFLantern1Horizontal<>(dispatcher, false));
         REGISTRY_CLIENT.registerBlockEntityRenderer(BlockEntityTypes.MITSUBISHI_MP_BUTTON_1, RenderMitsubishiMPButton1::new);
         REGISTRY_CLIENT.registerBlockEntityRenderer(BlockEntityTypes.MITSUBISHI_MP_BUTTON_1_TOUCH, RenderMitsubishiMPButton1Touch::new);
         REGISTRY_CLIENT.registerBlockEntityRenderer(BlockEntityTypes.MITSUBISHI_NEXWAY_LANTERN_1_HORIZONTAL_EVEN, dispatcher -> new top.xfunny.mod.client.render.RenderMitsubishiNexWayLantern1Horizontal<>(dispatcher, false));

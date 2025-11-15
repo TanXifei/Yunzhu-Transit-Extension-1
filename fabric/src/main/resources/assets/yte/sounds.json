@@ -86,5 +86,13 @@
         "pitch": 1.0
       }
     ]
+  },
+  "mitsubishi_mp_lantern_1": {
+    "sounds": [
+      {
+        "name": "yte:mitsubishi_mp_lantern_1",
+        "pitch": 1.0
+      }
+    ]
   }
 }

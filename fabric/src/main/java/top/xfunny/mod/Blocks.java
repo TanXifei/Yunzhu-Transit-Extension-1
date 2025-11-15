@@ -121,8 +121,14 @@ public class Blocks {
     public static final BlockRegistryObject MITSUBISHI_NEXWAY_SCREEN_3_SEGMENTED_EVEN;
     public static final BlockRegistryObject MITSUBISHI_NEXWAY_SCREEN_3_SEGMENTED_ODD;
     public static final BlockRegistryObject MITSUBISHI_MPVF_BUTTON_1;
+    public static final BlockRegistryObject MITSUBISHI_MPVF_SCREEN_1_HORIZONTAL_ODD;
+    public static final BlockRegistryObject MITSUBISHI_MPVF_SCREEN_1_HORIZONTAL_EVEN;
     public static final BlockRegistryObject MITSUBISHI_MPVF_SCREEN_1_VERTICAL_ODD;
     public static final BlockRegistryObject MITSUBISHI_MPVF_SCREEN_1_VERTICAL_EVEN;
+    public static final BlockRegistryObject MITSUBISHI_MPVF_LANTERN_1_HORIZONTAL_ODD;
+    public static final BlockRegistryObject MITSUBISHI_MPVF_LANTERN_1_HORIZONTAL_EVEN;
+    public static final BlockRegistryObject MITSUBISHI_MPVF_LANTERN_1_VERTICAL_ODD;
+    public static final BlockRegistryObject MITSUBISHI_MPVF_LANTERN_1_VERTICAL_EVEN;
     public static final BlockRegistryObject MITSUBISHI_MP_BUTTON_1;
     public static final BlockRegistryObject MITSUBISHI_MP_BUTTON_1_TOUCH;
 
@@ -393,8 +399,14 @@ public class Blocks {
         MITSUBISHI_MAXIEZ_SCREEN_2_ODD = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "mitsubishi_maxiez_screen_2_odd"), () -> new Block(new MitsubishiMaxiezScreen2Odd()), CreativeModeTabs.YTE_LIFT_FIXTURES);
         MITSUBISHI_MAXIEZ_SCREEN_2_EVEN = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "mitsubishi_maxiez_screen_2_even"), () -> new Block(new MitsubishiMaxiezScreen2Even()), CreativeModeTabs.YTE_LIFT_FIXTURES);
         MITSUBISHI_MPVF_BUTTON_1 = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "mitsubishi_mpvf_button_1"), () -> new Block(new MitsubishiMPVFButton1()), CreativeModeTabs.YTE_LIFT_FIXTURES);
+        MITSUBISHI_MPVF_SCREEN_1_HORIZONTAL_ODD = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "mitsubishi_mpvf_screen_1_horizontal_odd"), () -> new Block(new MitsubishiMPVFScreen1HorizontalOdd()), CreativeModeTabs.YTE_LIFT_FIXTURES);
+        MITSUBISHI_MPVF_SCREEN_1_HORIZONTAL_EVEN = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "mitsubishi_mpvf_screen_1_horizontal_even"), () -> new Block(new MitsubishiMPVFScreen1HorizontalEven()), CreativeModeTabs.YTE_LIFT_FIXTURES);
         MITSUBISHI_MPVF_SCREEN_1_VERTICAL_ODD = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "mitsubishi_mpvf_screen_1_vertical_odd"), () -> new Block(new MitsubishiMPVFScreen1VerticalOdd()), CreativeModeTabs.YTE_LIFT_FIXTURES);
         MITSUBISHI_MPVF_SCREEN_1_VERTICAL_EVEN = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "mitsubishi_mpvf_screen_1_vertical_even"), () -> new Block(new MitsubishiMPVFScreen1VerticalEven()), CreativeModeTabs.YTE_LIFT_FIXTURES);
+        MITSUBISHI_MPVF_LANTERN_1_HORIZONTAL_ODD = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "mitsubishi_mpvf_lantern_1_horizontal_odd"), () -> new Block(new MitsubishiMPVFLantern1HorizontalOdd()), CreativeModeTabs.YTE_LIFT_FIXTURES);
+        MITSUBISHI_MPVF_LANTERN_1_HORIZONTAL_EVEN = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "mitsubishi_mpvf_lantern_1_horizontal_even"), () -> new Block(new MitsubishiMPVFLantern1HorizontalEven()), CreativeModeTabs.YTE_LIFT_FIXTURES);
+        MITSUBISHI_MPVF_LANTERN_1_VERTICAL_ODD = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "mitsubishi_mpvf_lantern_1_vertical_odd"), () -> new Block(new MitsubishiMPVFLantern1VerticalOdd()), CreativeModeTabs.YTE_LIFT_FIXTURES);
+        MITSUBISHI_MPVF_LANTERN_1_VERTICAL_EVEN = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "mitsubishi_mpvf_lantern_1_vertical_even"), () -> new Block(new MitsubishiMPVFLantern1VerticalEven()), CreativeModeTabs.YTE_LIFT_FIXTURES);
         MITSUBISHI_MP_BUTTON_1 = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "mitsubishi_mp_button_1"), () -> new Block(new MitsubishiMPButton1()), CreativeModeTabs.YTE_LIFT_FIXTURES);
         MITSUBISHI_MP_BUTTON_1_TOUCH = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "mitsubishi_mp_button_1_touch"), () -> new Block(new MitsubishiMPButton1Touch()), CreativeModeTabs.YTE_LIFT_FIXTURES);
         SHANGHAI_MITSUBISHI_NEXWAY_CR_BUTTON_1 = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "shanghai_mitsubishi_nexway_cr_button_1"), () -> new Block(new ShanghaiMitsubishiNexWayCRButton1()), CreativeModeTabs.YTE_LIFT_FIXTURES);

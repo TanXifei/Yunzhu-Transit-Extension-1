@@ -16,6 +16,7 @@ public class SoundEvents {
     public static final SoundEventRegistryObject TOSHIBA_LANTERN_1_DOWN;
     public static final SoundEventRegistryObject KONE_M_LANTERN_1_UP;
     public static final SoundEventRegistryObject KONE_M_LANTERN_1_DOWN;
+    public static final SoundEventRegistryObject MITSUBISHI_MP_LANTERN_1;
 
     static {
         OTIS_SERIES_1_LANTERN_1_UP = Init.REGISTRY.registerSoundEvent(new Identifier(Init.MOD_ID, "otis_series_1_lantern_1_up"));
@@ -29,6 +30,7 @@ public class SoundEvents {
         TOSHIBA_LANTERN_1_DOWN = Init.REGISTRY.registerSoundEvent(new Identifier(Init.MOD_ID, "toshiba_lantern_1_down"));
         KONE_M_LANTERN_1_UP = Init.REGISTRY.registerSoundEvent(new Identifier(Init.MOD_ID, "kone_m_lantern_1_up"));
         KONE_M_LANTERN_1_DOWN = Init.REGISTRY.registerSoundEvent(new Identifier(Init.MOD_ID, "kone_m_lantern_1_down"));
+        MITSUBISHI_MP_LANTERN_1 = Init.REGISTRY.registerSoundEvent(new Identifier(Init.MOD_ID, "mitsubishi_mp_lantern_1"));
     }
 
     public static void init() {

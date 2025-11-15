@@ -123,6 +123,16 @@ public final class SoundsHelper {
                         1.0F
                 );
                 break;
+            case "mitsubishi_mp_lantern_1":
+                serverPlayerEntity.getEntityWorld().playSound(
+                        null,
+                        blockPos,
+                        SoundEvents.MITSUBISHI_MP_LANTERN_1.get(),
+                        SoundCategory.BLOCKS,
+                        1.0F,
+                        1.0F
+                );
+                break;
         }
     }
 }
