@@ -15,6 +15,7 @@ import org.mtr.mod.data.IGui;
 import org.mtr.mod.render.RenderLifts;
 import org.mtr.mod.render.StoredMatrixTransformations;
 import top.xfunny.mod.Init;
+import top.xfunny.mod.block.OtisSeries1Lantern1Even;
 import top.xfunny.mod.block.SchindlerMSeriesRoundLantern1Even;
 import top.xfunny.mod.block.base.LiftButtonsBase;
 import top.xfunny.mod.client.InitClient;
@@ -126,15 +127,12 @@ public class RenderOtisSeries1Lantern1 <T extends LiftButtonsBase.BlockEntityBas
         blockEntity.forEachTrackPosition(trackPosition -> {
             line.RenderLine(holdingLinker, trackPosition);
 
-            SchindlerMSeriesRoundLantern1Even.hasButtonsClient(
+            OtisSeries1Lantern1Even.hasButtonsClient(
                     trackPosition, buttonDescriptor, (floorIndex, lift) -> {
 
                         LiftDirection pressedButtonDirection = blockEntity.getPressedButtonDirection();
 
-                        String floorNumber = ClientGetLiftDetails
-                                .getLiftDetails(world, lift, org.mtr.mod.Init.positionToBlockPos(
-                                        lift.getCurrentFloor().getPosition()
-                                )).right().left();
+                        String floorNumber = ClientGetLiftDetails.getLiftDetails(world, lift, org.mtr.mod.Init.positionToBlockPos(lift.getCurrentFloor().getPosition())).right().left();
 
                         String currentFloorNumber = RenderLifts
                                 .getLiftDetails(world, lift, trackPosition).right().left();
@@ -148,10 +146,7 @@ public class RenderOtisSeries1Lantern1 <T extends LiftButtonsBase.BlockEntityBas
                             middleLantern.resetLanternSound();
                         }
 
-                        if (instructionDirections.isEmpty()
-                                && pressedButtonDirection != null
-                                && lift.getDoorValue() != 0
-                                && floorNumber.equals(currentFloorNumber)) {
+                        if (instructionDirections.isEmpty() && pressedButtonDirection != null && lift.getDoorValue() != 0 && floorNumber.equals(currentFloorNumber)) {
 
                             switch (pressedButtonDirection) {
                                 case DOWN:
