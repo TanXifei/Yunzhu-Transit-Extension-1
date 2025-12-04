@@ -12,7 +12,7 @@
 
 ## 功能特色
 
-- 电梯装饰组件
+- 电梯装饰组件 (更多外呼、电梯门，到站灯，智能分配)
 - 地铁站美化内容
 
 ---
@@ -48,9 +48,14 @@
 | ces-14x7                                 | Creative Commons Attribution License 3.0            |
 | DSEG7 Classic Bold Italic                | SIL Open Font License 1.1                           |
 | Hitachi Modern Regular                   | Creative Commons Attribution License 3.0            |
+| Hitachi Dot Matrix Regular               | Creative Commons Attribution Non-Commercial License |
+| Hitachi Dot Matrix Small                 | Creative Commons Attribution Non-Commercial License |
 | DSEG14 Classic Light Italic              | SIL Open Font License 1.1                           |
 | KONE M-Series Regular                    | FontStruct Non-Commercial License                   |
 | Mitsubishi Modern V2                     | Creative Commons Attribution License 3.0            |
 | Schindler Led Regular                    | Creative Commons Attribution License 3.0            |
 | Schindler M-Line LED Regular             | Creative Commons Attribution Share Alike License    |
 | Schindler M-Series LOP (NZ Thin #1) BETA | Creative Commons Attribution Non-Commercial License |
+| Tonic LED                                | Creative Commons Attribution License 3.0            |
+| Tonic LED Small                          | Creative Commons Attribution License 3.0            |
+| Nimbus Sans L                            | GNU General Public License Version 2+               |

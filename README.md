@@ -1,10 +1,9 @@
-`# Yunzhu Transit Extension Mod
+# Yunzhu Transit Extension Mod
 
 [简体中文](./README_zh-cn.md) | **[English](./README.md)**
 
 **Yunzhu Transit Extension** is a decorative add-on for
-the [Minecraft Transit Railway Mod](https://github.com/jonafanho/Minecraft-Transit-Railway), providing stylish *
-*elevator** and **metro station** elements to enhance your transit builds.
+the [Minecraft Transit Railway Mod](https://github.com/jonafanho/Minecraft-Transit-Railway), providing stylish **elevator** and **metro station** elements to enhance your transit builds.
 
 <img src="http://image.yunzhu.host/i/2025/05/01/681363e498172.webp" style="width: 200px; height: auto;" />
 
@@ -13,8 +12,7 @@ the [Minecraft Transit Railway Mod](https://github.com/jonafanho/Minecraft-Trans
 
 ## Features
 
-- Elevator decorations
-
+- Elevator decorations (Enhanced Call Buttons, More Doors, Hall Lanterns and Destination Dispatch)
 - Metro station enhancements
 
 ---
@@ -52,9 +50,14 @@ the [MIT License](https://raw.githubusercontent.com/X-Funny/Yunzhu-Transit-Exten
 | ces-14x7                                 | Creative Commons Attribution License 3.0            |
 | DSEG7 Classic Bold Italic                | SIL Open Font License 1.1                           |
 | Hitachi Modern Regular                   | Creative Commons Attribution License 3.0            |
+| Hitachi Dot Matrix Regular               | Creative Commons Attribution Non-Commercial License |
+| Hitachi Dot Matrix Small                 | Creative Commons Attribution Non-Commercial License |
 | DSEG14 Classic Light Italic              | SIL Open Font License 1.1                           |
 | KONE M-Series Regular                    | FontStruct Non-Commercial License                   |
 | Mitsubishi Modern V2                     | Creative Commons Attribution License 3.0            |
 | Schindler Led Regular                    | Creative Commons Attribution License 3.0            |
 | Schindler M-Line LED Regular             | Creative Commons Attribution Share Alike License    |
 | Schindler M-Series LOP (NZ Thin #1) BETA | Creative Commons Attribution Non-Commercial License |
+| Tonic LED                                | Creative Commons Attribution License 3.0            |
+| Tonic LED Small                          | Creative Commons Attribution License 3.0            |
+| Nimbus Sans L                            | GNU General Public License Version 2+               |
