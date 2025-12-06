@@ -54,7 +54,8 @@ public class FontList {
             loadFont("hitachi-led-seg", "font/hitachi-cip71-led.ttf");
             loadFont("hitachi-led-seg-fix", "font/hitachi-cip71-led-left.ttf");
             loadFont("hitachi-led-dot_matrix", "font/hitachi-dot-matrix-regular.ttf"); // 待弃用
-            loadFont("hitachi-led-dot_matrix_small", "font/hitachi-dot-matrix-small.ttf"); // 待弃用
+            loadFont("hitachi-led-dot_matrix_small_pafc", "font/hitachi-dot-matrix-small-pafc.ttf"); // 待弃用
+            loadFont("hitachi-led-dot_matrix_small", "font/hitachi-dot-matrix-small-generic.ttf"); // 待弃用
             loadFont("hitachi-bxsclc5", "font/hitachi-bxsclc5-led.ttf"); // 暂不可用
             loadFont("hitachi-bxsclc5-compact", "font/hitachi-bxsclc5-led-compact.ttf"); // 暂不可用
             loadFont("hitachi-bxsclc5-pafc-compact", "font/hitachi-bxsclc5-led-pafc-compact.ttf"); // 深圳 PAFC 使用，暂不可用
