@@ -51,7 +51,8 @@ the [MIT License](https://raw.githubusercontent.com/X-Funny/Yunzhu-Transit-Exten
 | DSEG7 Classic Bold Italic                | SIL Open Font License 1.1                           |
 | Hitachi Modern Regular                   | Creative Commons Attribution License 3.0            |
 | Hitachi Dot Matrix Regular               | Creative Commons Attribution Non-Commercial License |
-| Hitachi Dot Matrix Small                 | Creative Commons Attribution Non-Commercial License |
+| Hitachi Dot Matrix Small Generic         | Creative Commons Attribution Non-Commercial License |
+| Hitachi Dot Matrix Small PAFC            | Creative Commons Attribution Non-Commercial License |
 | DSEG14 Classic Light Italic              | SIL Open Font License 1.1                           |
 | KONE M-Series Regular                    | FontStruct Non-Commercial License                   |
 | Mitsubishi Modern V2                     | Creative Commons Attribution License 3.0            |
