@@ -3,7 +3,7 @@
   "credit": "Made with Blockbench",
   "textures": {
     "1": "yte:block/black",
-    "2": "yte:block/steel",
+    "2": "yte:block/steel_2",
     "particle": "yte:block/black"
   },
   "elements": [

@@ -210,7 +210,7 @@ public class RenderHitachiButtonPAFC extends BlockEntityRenderer<HitachiButtonPA
                     liftFloorDisplayView.setBasicsAttributes(world,
                             blockPos,
                             sortedPositionsAndLifts.get(i).right(),
-                            FontList.instance.getFont("hitachi-led-dot_matrix_small"),
+                            FontList.instance.getFont("hitachi-led-dot_matrix_small_pafc"),
                             4.5F,
                             0xFFFF4800);
                     liftFloorDisplayView.setMargin(0.01F, 0.7F / 16, 0, 0);

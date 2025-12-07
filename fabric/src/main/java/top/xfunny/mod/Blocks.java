@@ -27,6 +27,10 @@ public class Blocks {
     public static final BlockRegistryObject DEWHURST_US91_BUTTON_1;
     public static final BlockRegistryObject DEWHURST_US91_BUTTON_1_BRAILLE;
 
+    public static final BlockRegistryObject DOVER_IMPULSE_BUTTON_1;
+    public static final BlockRegistryObject DOVER_IMPULSE_LANTERN_1_HORIZONTAL_ODD;
+    public static final BlockRegistryObject DOVER_IMPULSE_LANTERN_1_HORIZONTAL_EVEN;
+
     public static final BlockRegistryObject KONE_KDS330_BUTTON_1;
     public static final BlockRegistryObject KONE_KDS330_BUTTON_1_WITHOUT_SCREEN;
     public static final BlockRegistryObject KONE_KDS330_LANTERN_1;
@@ -327,6 +331,9 @@ public class Blocks {
         DEWHURST_US89_BUTTON_1 = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "dewhurst_us89_button_1"), () -> new Block(new DewhurstUS89Button1()), CreativeModeTabs.YTE_LIFT_FIXTURES);
         DEWHURST_US91_BUTTON_1 = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "dewhurst_us91_button_1"), () -> new Block(new DewhurstUS91Button1()), CreativeModeTabs.YTE_LIFT_FIXTURES);
         DEWHURST_US91_BUTTON_1_BRAILLE = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "dewhurst_us91_button_1_braille"), () -> new Block(new DewhurstUS91Button1Braille()), CreativeModeTabs.YTE_LIFT_FIXTURES);
+        DOVER_IMPULSE_BUTTON_1 = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "dover_impulse_button_1"), () -> new Block(new DoverImpulseButton1()), CreativeModeTabs.YTE_LIFT_FIXTURES);
+        DOVER_IMPULSE_LANTERN_1_HORIZONTAL_ODD = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "dover_impulse_lantern_1_horizontal_odd"), () -> new Block(new DoverImpulseLantern1HorizontalOdd()), CreativeModeTabs.YTE_LIFT_FIXTURES);
+        DOVER_IMPULSE_LANTERN_1_HORIZONTAL_EVEN = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "dover_impulse_lantern_1_horizontal_even"), () -> new Block(new DoverImpulseLantern1HorizontalEven()), CreativeModeTabs.YTE_LIFT_FIXTURES);
 
         KONE_KDS330_BUTTON_1 = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "kone_kds330_surface_button_1"), () -> new Block(new KoneKDS330Button1()), CreativeModeTabs.YTE_LIFT_FIXTURES);
         KONE_KDS330_BUTTON_1_WITHOUT_SCREEN = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "kone_kds330_surface_button_1_without_screen"), () -> new Block(new KoneKDS330Button1WithoutScreen()), CreativeModeTabs.YTE_LIFT_FIXTURES);

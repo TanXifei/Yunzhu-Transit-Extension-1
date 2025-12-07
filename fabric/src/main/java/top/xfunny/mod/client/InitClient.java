@@ -42,6 +42,10 @@ public final class InitClient {
         REGISTRY_CLIENT.registerBlockEntityRenderer(BlockEntityTypes.DEWHURST_US91_BUTTON_1, RenderDewhurstUS91Button1::new);
         REGISTRY_CLIENT.registerBlockEntityRenderer(BlockEntityTypes.DEWHURST_US91_BUTTON_1_BRAILLE, RenderDewhurstUS91Button1Braille::new);
 
+        REGISTRY_CLIENT.registerBlockEntityRenderer(BlockEntityTypes.DOVER_IMPULSE_BUTTON_1, RenderDoverImpulseButton1::new);
+        REGISTRY_CLIENT.registerBlockEntityRenderer(BlockEntityTypes.DOVER_IMPULSE_LANTERN_1_HORIZONTAL_ODD, dispatcher -> new top.xfunny.mod.client.render.RenderDoverImpulseLantern1Horizontal<>(dispatcher, true));
+        REGISTRY_CLIENT.registerBlockEntityRenderer(BlockEntityTypes.DOVER_IMPULSE_LANTERN_1_HORIZONTAL_EVEN, dispatcher -> new top.xfunny.mod.client.render.RenderDoverImpulseLantern1Horizontal<>(dispatcher, false));
+
         REGISTRY_CLIENT.registerBlockEntityRenderer(BlockEntityTypes.KONE_KDS330_BUTTON_1, RenderKoneKDS330Button1::new);
         REGISTRY_CLIENT.registerBlockEntityRenderer(BlockEntityTypes.KONE_KDS330_BUTTON_1_WITHOUT_SCREEN, RenderKoneKDS330Button1WithoutScreen::new);
         REGISTRY_CLIENT.registerBlockEntityRenderer(BlockEntityTypes.KONE_KDS330_LANTERN_1, RenderKoneKDS330Lantern1::new);

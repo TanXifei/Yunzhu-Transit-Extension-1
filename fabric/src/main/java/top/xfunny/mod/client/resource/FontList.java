@@ -44,8 +44,6 @@ public class FontList {
             loadFont("hitachi_b85_2", "font/hitachi_b85_2.ttf");
             loadFont("hitachi_b85_2_left", "font/hitachi_b85_2_1_left.ttf");
             loadFont("nimbus_sans_bold", "font/nimbus_sans_bold.ttf");
-            loadFont("gill_sans_mt", "font/gill_sans_mt.ttf");
-            loadFont("gill_sans_mt_light", "font/gill_sans_mt_light.ttf");
             loadFont("hitachi_modern", "font/hitachi_modern.ttf");
             loadFont("kone-lcd-segment", "font/kone-lcd-segment.ttf");
             loadFont("otis_series_3", "font/otis_series_3.ttf");
@@ -55,11 +53,12 @@ public class FontList {
             loadFont("kone-kss", "font/kone-kss-800-signalization.ttf");
             loadFont("hitachi-led-seg", "font/hitachi-cip71-led.ttf");
             loadFont("hitachi-led-seg-fix", "font/hitachi-cip71-led-left.ttf");
-            loadFont("hitachi-led-dot_matrix", "font/hitachi-dot-matrix-regular.ttf"); // 已弃用
-            loadFont("hitachi-led-dot_matrix_small", "font/hitachi-dot-matrix-small.ttf"); // 已弃用
-            loadFont("hitachi-bxsclc5", "font/hitachi-bxsclc5-led.ttf");
-            loadFont("hitachi-bxsclc5-compact", "font/hitachi-bxsclc5-led-compact.ttf");
-            loadFont("hitachi-bxsclc5-pafc-compact", "font/hitachi-bxsclc5-led-pafc-compact.ttf"); // 深圳 PAFC 使用
+            loadFont("hitachi-led-dot_matrix", "font/hitachi-dot-matrix-regular.ttf"); // 待弃用
+            loadFont("hitachi-led-dot_matrix_small_pafc", "font/hitachi-dot-matrix-small-pafc.ttf"); // 待弃用
+            loadFont("hitachi-led-dot_matrix_small", "font/hitachi-dot-matrix-small-generic.ttf"); // 待弃用
+            loadFont("hitachi-bxsclc5", "font/hitachi-bxsclc5-led.ttf"); // 暂不可用
+            loadFont("hitachi-bxsclc5-compact", "font/hitachi-bxsclc5-led-compact.ttf"); // 暂不可用
+            loadFont("hitachi-bxsclc5-pafc-compact", "font/hitachi-bxsclc5-led-pafc-compact.ttf"); // 深圳 PAFC 使用，暂不可用
             loadFont("hitachi-lcd-seg", "font/hitachi-hip31-lcd.ttf");
             loadFont("hitachi-japan-lcd", "font/hitachi-hip32-lcd.ttf");
             loadFont("hitachi-hip43", "font/hitachi-hip43-lcd.ttf");
@@ -74,7 +73,6 @@ public class FontList {
             loadFont("mitsubishi_old_segmented_1", "font/mitsubishi_old_segmented_1.ttf");
             loadFont("ryoden-led", "font/ryoden-led.ttf");
             loadFont("ryoden-led-small", "font/ryoden-led-small.ttf");
-            loadFont("helvetica", "font/helvetica.ttf");
             loadFont("toshiba_segmented", "font/toshiba-segmented.ttf");
             loadFont("toshiba_segmented_1", "font/toshiba-segmented-1.ttf");
             fontsLoaded = true;
@@ -97,18 +95,21 @@ public class FontList {
         Font font = fonts.get(fontId);
         if (font != null) {
             return font;
+        } else if (Objects.equals(fontId, "Arial")) {
+            return new Font("Arial", Font.PLAIN, 12);
+        } else if (Objects.equals(fontId, "gill_sans_mt")) {
+            return new Font("Gill Sans MT", Font.PLAIN, 12);
+        } else if (Objects.equals(fontId, "gill_sans_mt_light")) {
+            return new Font("Gill Sans MT Light", Font.PLAIN, 12);
+        } else if (Objects.equals(fontId, "helvetica")) {
+            return new Font("Helvetica", Font.PLAIN, 12);
         } else {
-            if (Objects.equals(fontId, "Arial")) {
-                return new Font("Arial", Font.PLAIN, 12);
-            } else {
-                FlonList();
-                font = fonts.get(fontId);
-                if (font != null) {
-                    return font;
-                } else {
-                    return new Font("Arial", Font.PLAIN, 12);
-                }
+            FlonList();
+            font = fonts.get(fontId);
+            if (font != null) {
+                return font;
             }
         }
+        return new Font("Arial", Font.PLAIN, 12);
     }
 }
