@@ -14,7 +14,7 @@ import org.mtr.mod.block.IBlock;
 import org.mtr.mod.data.IGui;
 import org.mtr.mod.render.StoredMatrixTransformations;
 import top.xfunny.mod.Init;
-import top.xfunny.mod.block.SchindlerSSeriesGreyButton;
+import top.xfunny.mod.block.DewhurstUS81Button1;
 import top.xfunny.mod.block.base.LiftButtonsBase;
 import top.xfunny.mod.client.view.*;
 import top.xfunny.mod.client.view.view_group.FrameLayout;
@@ -23,22 +23,21 @@ import top.xfunny.mod.item.YteGroupLiftButtonsLinker;
 import top.xfunny.mod.item.YteLiftButtonsLinker;
 import top.xfunny.mod.keymapping.DefaultButtonsKeyMapping;
 
-public class RenderSchindlerSSeriesGreyButton extends BlockEntityRenderer<SchindlerSSeriesGreyButton.BlockEntity> implements DirectionHelper, IGui, IBlock {
+public class RenderDewhurstUS81Button1 extends BlockEntityRenderer<DewhurstUS81Button1.BlockEntity> implements DirectionHelper, IGui, IBlock {
 
-    private static final int HOVER_COLOR = 0xFF90FF90;
-    private static final int PRESSED_COLOR = 0xFF00FF00;
-    private static final int DEFAULT_COLOR = 0xFF000000;
-    private final Identifier BUTTON_TEXTURE = new Identifier(Init.MOD_ID, "textures/block/schindler_s_series_grey_button.png");
-    private final Identifier BUTTON_LIGHT_TEXTURE = new Identifier(Init.MOD_ID, "textures/block/schindler_s_series_grey_button_light.png");
-    private final Identifier LOGO = new Identifier(Init.MOD_ID, "textures/block/schindler_m_series_logo_1.png");
+    private static final int HOVER_COLOR = 0xFFFF6B6B;
+    private static final int PRESSED_COLOR = 0xFFEE0000;
+    private static final int DEFAULT_COLOR = 0xFF333333;
+    private static final Identifier BUTTON_TEXTURE = new Identifier(Init.MOD_ID, "textures/block/dewhurst_us81_button_1.png");
+    private static final Identifier ARROW_TEXTURE = new Identifier(Init.MOD_ID, "textures/block/dewhurst_us81_button_1_arrow.png");
+    private static final Identifier BUTTON_LIGHT_TEXTURE = new Identifier(Init.MOD_ID, "textures/block/dewhurst_us81_button_1_light.png");
 
-
-    public RenderSchindlerSSeriesGreyButton(Argument dispatcher) {
+    public RenderDewhurstUS81Button1(Argument dispatcher) {
         super(dispatcher);
     }
 
     @Override
-    public void render(SchindlerSSeriesGreyButton.BlockEntity blockEntity, float tickDelta, GraphicsHolder graphicsHolder1, int light, int overlay) {
+    public void render(DewhurstUS81Button1.BlockEntity blockEntity, float tickDelta, GraphicsHolder graphicsHolder1, int light, int overlay) {
         final World world = blockEntity.getWorld2();
         if (world == null) {
             return;
@@ -51,14 +50,15 @@ public class RenderSchindlerSSeriesGreyButton extends BlockEntityRenderer<Schind
 
         final DefaultButtonsKeyMapping keyMapping = blockEntity.getKeyMapping();
 
+
+        final boolean holdingLinker = PlayerHelper.isHolding(PlayerEntity.cast(clientPlayerEntity), item -> item.data instanceof YteLiftButtonsLinker || item.data instanceof YteGroupLiftButtonsLinker);
         final BlockPos blockPos = blockEntity.getPos2();
         final BlockState blockState = world.getBlockState(blockPos);
-        final Direction facing = IBlock.getStatePropertySafe(blockState, FACING);
-        final boolean holdingLinker = PlayerHelper.isHolding(PlayerEntity.cast(clientPlayerEntity), item -> item.data instanceof YteLiftButtonsLinker || item.data instanceof YteGroupLiftButtonsLinker);
+        Direction facing = IBlock.getStatePropertySafe(blockState, FACING);
         LiftButtonsBase.LiftButtonDescriptor buttonDescriptor = new LiftButtonsBase.LiftButtonDescriptor(false, false);
 
-
-        final StoredMatrixTransformations storedMatrixTransformations1 = new StoredMatrixTransformations(blockPos.getX() + 0.5, blockPos.getY(), blockPos.getZ() + 0.5);
+        final StoredMatrixTransformations storedMatrixTransformations = new StoredMatrixTransformations(blockPos.getX() + 0.5, blockPos.getY(), blockPos.getZ() + 0.5);
+        StoredMatrixTransformations storedMatrixTransformations1 = storedMatrixTransformations.copy();
         storedMatrixTransformations1.add(graphicsHolder -> {
             graphicsHolder.rotateYDegrees(-facing.asRotation());
             graphicsHolder.translate(0, 0, 7.9F / 16 - SMALL_OFFSET);
@@ -67,17 +67,10 @@ public class RenderSchindlerSSeriesGreyButton extends BlockEntityRenderer<Schind
         final FrameLayout parentLayout = new FrameLayout();
         parentLayout.setBasicsAttributes(world, blockPos);
         parentLayout.setStoredMatrixTransformations(storedMatrixTransformations1);
-        parentLayout.setParentDimensions(3.5F / 16, 7.5F / 16);
-        parentLayout.setPosition(-0.109375F, 0);
+        parentLayout.setParentDimensions(2.7F / 16, 6.25F / 16);
+        parentLayout.setPosition(-1.35F / 16, 0);
         parentLayout.setWidth(LayoutSize.MATCH_PARENT);
         parentLayout.setHeight(LayoutSize.MATCH_PARENT);
-
-        final ImageView schindlerLogo = new ImageView();
-        schindlerLogo.setBasicsAttributes(world, blockEntity.getPos2());
-        schindlerLogo.setTexture(LOGO);
-        schindlerLogo.setDimension(0.2F / 16, 16);
-        schindlerLogo.setMargin(0, 0, 1.1F / 16, 0);
-        schindlerLogo.setGravity(Gravity.END);
 
         final LinearLayout buttonContainer = new LinearLayout(true);
         buttonContainer.setBasicsAttributes(world, blockPos);
@@ -102,41 +95,53 @@ public class RenderSchindlerSSeriesGreyButton extends BlockEntityRenderer<Schind
         ImageView buttonUp = new ImageView();
         buttonUp.setBasicsAttributes(world, blockPos);
         buttonUp.setTexture(BUTTON_TEXTURE);
-        buttonUp.setDimension(1.425F / 16);
+        buttonUp.setDimension(0.9F / 16);
         buttonUp.setGravity(Gravity.CENTER);
         buttonUp.setLight(light);
+
+        ImageView buttonUpArrow = new ImageView();
+        buttonUpArrow.setBasicsAttributes(world, blockPos);
+        buttonUpArrow.setTexture(ARROW_TEXTURE);
+        buttonUpArrow.setDimension(0.9F / 16);
+        buttonUpArrow.setGravity(Gravity.CENTER);
+        buttonUpArrow.setLight(light);
 
         ButtonView buttonUpLight = new ButtonView();
         buttonUpLight.setId("up");
         buttonUpLight.setBasicsAttributes(world, blockPos, keyMapping);
         buttonUpLight.setTexture(BUTTON_LIGHT_TEXTURE);
-        buttonUpLight.setDimension(1.425F / 16);
+        buttonUpLight.setDimension(0.9F / 16);
         buttonUpLight.setGravity(Gravity.CENTER);
         buttonUpLight.setLight(light);
-        buttonUpLight.setDefaultColor(ARGB_WHITE);
+        buttonUpLight.setDefaultColor(DEFAULT_COLOR);
         buttonUpLight.setHoverColor(HOVER_COLOR);
         buttonUpLight.setPressedColor(PRESSED_COLOR);
-        buttonUpLight.setDefaultColor(DEFAULT_COLOR);
 
         ImageView buttonDown = new ImageView();
         buttonDown.setBasicsAttributes(world, blockPos);
         buttonDown.setTexture(BUTTON_TEXTURE);
-        buttonDown.setDimension(1.425F / 16);
+        buttonDown.setDimension(0.9F / 16);
         buttonDown.setGravity(Gravity.CENTER);
         buttonDown.setLight(light);
-        buttonDown.setFlip(false, true);
+
+        ImageView buttonDownArrow = new ImageView();
+        buttonDownArrow.setBasicsAttributes(world, blockPos);
+        buttonDownArrow.setTexture(ARROW_TEXTURE);
+        buttonDownArrow.setDimension(0.9F / 16);
+        buttonDownArrow.setGravity(Gravity.CENTER);
+        buttonDownArrow.setLight(light);
+        buttonDownArrow.setFlip(false, true);
 
         ButtonView buttonDownLight = new ButtonView();
         buttonDownLight.setId("down");
         buttonDownLight.setBasicsAttributes(world, blockPos, keyMapping);
         buttonDownLight.setTexture(BUTTON_LIGHT_TEXTURE);
-        buttonDownLight.setDimension(1.425F / 16);
+        buttonDownLight.setDimension(0.9F / 16);
         buttonDownLight.setGravity(Gravity.CENTER);
         buttonDownLight.setLight(light);
-        buttonDownLight.setDefaultColor(ARGB_WHITE);
+        buttonDownLight.setDefaultColor(DEFAULT_COLOR);
         buttonDownLight.setHoverColor(HOVER_COLOR);
         buttonDownLight.setPressedColor(PRESSED_COLOR);
-        buttonDownLight.setDefaultColor(DEFAULT_COLOR);
 
         final LineComponent line = new LineComponent();
         line.setBasicsAttributes(world, blockPos);
@@ -146,7 +151,7 @@ public class RenderSchindlerSSeriesGreyButton extends BlockEntityRenderer<Schind
         blockEntity.forEachTrackPosition(trackPosition -> {
             line.RenderLine(holdingLinker, trackPosition);
 
-            SchindlerSSeriesGreyButton.hasButtonsClient(trackPosition, buttonDescriptor, (floorIndex, lift) -> {
+            DewhurstUS81Button1.hasButtonsClient(trackPosition, buttonDescriptor, (floorIndex, lift) -> {
                 sortedPositionsAndLifts.add(new ObjectObjectImmutablePair<>(trackPosition, lift));
                 final ObjectArraySet<LiftDirection> instructionDirections = lift.hasInstruction(floorIndex);
                 instructionDirections.forEach(liftDirection -> {
@@ -161,10 +166,11 @@ public class RenderSchindlerSSeriesGreyButton extends BlockEntityRenderer<Schind
                 });
             });
         });
-
         upButtonGroup.addChild(buttonUp);
+        upButtonGroup.addChild(buttonUpArrow);
         upButtonGroup.addChild(buttonUpLight);
         downButtonGroup.addChild(buttonDown);
+        downButtonGroup.addChild(buttonDownArrow);
         downButtonGroup.addChild(buttonDownLight);
 
         if (buttonDescriptor.hasUpButton()) {
@@ -173,14 +179,12 @@ public class RenderSchindlerSSeriesGreyButton extends BlockEntityRenderer<Schind
 
         if (buttonDescriptor.hasDownButton()) {
             if (buttonDescriptor.hasUpButton()) {
-                downButtonGroup.setMargin(0, 1.35F / 16, 0, 0);
+                downButtonGroup.setMargin(0, 0.9F / 16, 0, 0);
             }
             buttonContainer.addChild(downButtonGroup);
         }
 
         parentLayout.addChild(buttonContainer);
-        parentLayout.addChild(schindlerLogo);
-
         parentLayout.render();
     }
 }

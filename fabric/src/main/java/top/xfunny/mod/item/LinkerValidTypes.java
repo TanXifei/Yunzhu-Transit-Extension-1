@@ -18,6 +18,7 @@ public class LinkerValidTypes {
 
             CESScreen1Odd.class,
             CESScreen1Even.class,
+            DewhurstUS81Button1.class,
             DewhurstUS89Button1.class,
             DewhurstUS91Button1.class,
             DewhurstUS91Button1Braille.class,
@@ -206,6 +207,8 @@ public class LinkerValidTypes {
             SchindlerMSeriesScreen4Odd.class,
             SchindlerMSeriesScreen4Even.class,
             SchindlerSSeriesGreyButton.class,
+            SchindlerSSeriesDarkGreyButton.class,
+            SchindlerSSeriesBlueButton.class,
             SchindlerRSeriesRoundButton.class,
             SchindlerRSeriesScreen1Odd.class,
             SchindlerRSeriesScreen1Even.class,

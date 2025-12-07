@@ -3,8 +3,8 @@
 	"credit": "Made with Blockbench",
 	"parent": "block/block",
 	"textures": {
-		"1": "yte:block/schindler_s_series_panel_grey",
-		"particle": "yte:block/schindler_s_series_panel_grey"
+		"1": "yte:block/schindler_s_series_panel_dark_grey",
+		"particle": "yte:block/schindler_s_series_panel_dark_grey"
 	},
 	"elements": [
 		{

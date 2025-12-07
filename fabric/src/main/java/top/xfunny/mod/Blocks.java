@@ -22,6 +22,7 @@ public class Blocks {
     public static final BlockRegistryObject CES_SCREEN_1_ODD;
     public static final BlockRegistryObject CES_SCREEN_1_EVEN;
 
+    public static final BlockRegistryObject DEWHURST_US81_BUTTON_1;
     public static final BlockRegistryObject DEWHURST_US89_BUTTON_1;
     public static final BlockRegistryObject DEWHURST_US91_BUTTON_1;
     public static final BlockRegistryObject DEWHURST_US91_BUTTON_1_BRAILLE;
@@ -155,6 +156,8 @@ public class Blocks {
     public static final BlockRegistryObject SCHINDLER_M_SERIES_TOUCH_BUTTON;
     public static final BlockRegistryObject SCHINDLER_M_SERIES_ROUND_TOUCH_BUTTON;
     public static final BlockRegistryObject SCHINDLER_S_SERIES_GREY_BUTTON;
+    public static final BlockRegistryObject SCHINDLER_S_SERIES_DARK_GREY_BUTTON;
+    public static final BlockRegistryObject SCHINDLER_S_SERIES_BLUE_BUTTON;
     public static final BlockRegistryObject SCHINDLER_R_SERIES_ROUND_BUTTON;
     public static final BlockRegistryObject SCHINDLER_M_SERIES_ROUND_LANTERN_1_ODD;
     public static final BlockRegistryObject SCHINDLER_M_SERIES_ROUND_LANTERN_1_EVEN;
@@ -319,6 +322,8 @@ public class Blocks {
 
         CES_SCREEN_1_ODD = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "ces_screen_1_odd"), () -> new Block(new CESScreen1Odd()), CreativeModeTabs.YTE_LIFT_FIXTURES);
         CES_SCREEN_1_EVEN = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "ces_screen_1_even"), () -> new Block(new CESScreen1Even()), CreativeModeTabs.YTE_LIFT_FIXTURES);
+
+        DEWHURST_US81_BUTTON_1 = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "dewhurst_us81_button_1"), () -> new Block(new DewhurstUS81Button1()), CreativeModeTabs.YTE_LIFT_FIXTURES);
         DEWHURST_US89_BUTTON_1 = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "dewhurst_us89_button_1"), () -> new Block(new DewhurstUS89Button1()), CreativeModeTabs.YTE_LIFT_FIXTURES);
         DEWHURST_US91_BUTTON_1 = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "dewhurst_us91_button_1"), () -> new Block(new DewhurstUS91Button1()), CreativeModeTabs.YTE_LIFT_FIXTURES);
         DEWHURST_US91_BUTTON_1_BRAILLE = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "dewhurst_us91_button_1_braille"), () -> new Block(new DewhurstUS91Button1Braille()), CreativeModeTabs.YTE_LIFT_FIXTURES);
@@ -468,6 +473,8 @@ public class Blocks {
         SCHINDLER_M_SERIES_SCREEN_4_ODD = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "schindler_m_series_screen_4_odd"), () -> new Block(new SchindlerMSeriesScreen4Odd()), CreativeModeTabs.YTE_LIFT_FIXTURES);
         SCHINDLER_M_SERIES_SCREEN_4_EVEN = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "schindler_m_series_screen_4_even"), () -> new Block(new SchindlerMSeriesScreen4Even()), CreativeModeTabs.YTE_LIFT_FIXTURES);
         SCHINDLER_S_SERIES_GREY_BUTTON = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "schindler_s_series_grey_button"), () -> new Block(new SchindlerSSeriesGreyButton()), CreativeModeTabs.YTE_LIFT_FIXTURES);
+        SCHINDLER_S_SERIES_DARK_GREY_BUTTON = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "schindler_s_series_dark_grey_button"), () -> new Block(new SchindlerSSeriesDarkGreyButton()), CreativeModeTabs.YTE_LIFT_FIXTURES);
+        SCHINDLER_S_SERIES_BLUE_BUTTON = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "schindler_s_series_blue_button"), () -> new Block(new SchindlerSSeriesBlueButton()), CreativeModeTabs.YTE_LIFT_FIXTURES);
         SCHINDLER_R_SERIES_ROUND_BUTTON = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "schindler_r_series_round_button"), () -> new Block(new SchindlerRSeriesRoundButton()), CreativeModeTabs.YTE_LIFT_FIXTURES);
         SCHINDLER_R_SERIES_SCREEN_1_ODD = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "schindler_r_series_screen_1_odd"), () -> new Block(new SchindlerRSeriesScreen1Odd()), CreativeModeTabs.YTE_LIFT_FIXTURES);
         SCHINDLER_R_SERIES_SCREEN_1_EVEN = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "schindler_r_series_screen_1_even"), () -> new Block(new SchindlerRSeriesScreen1Even()), CreativeModeTabs.YTE_LIFT_FIXTURES);

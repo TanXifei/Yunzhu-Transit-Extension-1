@@ -10,8 +10,8 @@ import top.xfunny.mod.block.base.LiftButtonsBase;
 import javax.annotation.Nonnull;
 import java.util.List;
 
-public class SchindlerSSeriesGreyButton extends LiftButtonsBase {
-    public SchindlerSSeriesGreyButton() {
+public class SchindlerSSeriesDarkGreyButton extends LiftButtonsBase {
+    public SchindlerSSeriesDarkGreyButton() {
         super(true, true);
     }
 
@@ -24,7 +24,7 @@ public class SchindlerSSeriesGreyButton extends LiftButtonsBase {
     @Nonnull
     @Override
     public BlockEntityExtension createBlockEntity(BlockPos blockPos, BlockState blockState) {
-        return new SchindlerSSeriesGreyButton.BlockEntity(blockPos, blockState);
+        return new SchindlerSSeriesDarkGreyButton.BlockEntity(blockPos, blockState);
     }
 
     @Override
@@ -36,7 +36,7 @@ public class SchindlerSSeriesGreyButton extends LiftButtonsBase {
 
     public static class BlockEntity extends BlockEntityBase {
         public BlockEntity(BlockPos pos, BlockState state) {
-            super(BlockEntityTypes.SCHINDLER_S_SERIES_GREY_BUTTON.get(), pos, state);
+            super(BlockEntityTypes.SCHINDLER_S_SERIES_DARK_GREY_BUTTON.get(), pos, state);
         }
     }
 }
