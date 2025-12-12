@@ -1,6 +1,5 @@
 package top.xfunny.mod.client.render;
 
-import org.apache.commons.lang3.NotImplementedException;
 import org.mtr.core.data.Lift;
 import org.mtr.core.data.LiftDirection;
 import org.mtr.libraries.it.unimi.dsi.fastutil.objects.ObjectArrayList;
@@ -13,23 +12,17 @@ import org.mtr.mapping.mapper.GraphicsHolder;
 import org.mtr.mapping.mapper.PlayerHelper;
 import org.mtr.mod.block.IBlock;
 import org.mtr.mod.data.IGui;
-import org.mtr.mod.render.QueuedRenderLayer;
 import org.mtr.mod.render.StoredMatrixTransformations;
 import top.xfunny.mod.block.DewhurstUS91Button1;
 import top.xfunny.mod.block.DoverImpulseButton1;
-import top.xfunny.mod.block.HitachiB85Button1;
-import top.xfunny.mod.block.HitachiButtonPAFC;
 import top.xfunny.mod.block.base.LiftButtonsBase;
-import top.xfunny.mod.client.resource.FontList;
 import top.xfunny.mod.client.view.*;
 import top.xfunny.mod.client.view.view_group.FrameLayout;
 import top.xfunny.mod.client.view.view_group.LinearLayout;
 import top.xfunny.mod.item.YteGroupLiftButtonsLinker;
 import top.xfunny.mod.item.YteLiftButtonsLinker;
 import top.xfunny.mod.keymapping.DefaultButtonsKeyMapping;
-import top.xfunny.mod.util.ReverseRendering;
 
-import java.util.Comparator;
 
 public class RenderDoverImpulseButton1 extends BlockEntityRenderer<DoverImpulseButton1.BlockEntity> implements DirectionHelper, IGui, IBlock {
     private static final int HOVER_COLOR = 0xFFFCDE6F;
