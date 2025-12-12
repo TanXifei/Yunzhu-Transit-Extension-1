@@ -259,7 +259,7 @@ public class RenderHitachiButtonPAFC extends BlockEntityRenderer<HitachiButtonPA
 
         if (buttonDescriptor.hasDownButton()) {
             if (buttonDescriptor.hasUpButton()) {
-                downButtonGroup.setMargin(0, 0.5F / 16, 0, 0);
+                downButtonGroup.setMargin(0, 0.2F / 16, 0, 0);
             }
             buttonContainer.addChild(downButtonGroup);
         }
