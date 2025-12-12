@@ -18,7 +18,7 @@ public class DoverImpulseButton1 extends LiftButtonsBase {
     @Nonnull
     @Override
     public VoxelShape getOutlineShape2(BlockState state, BlockView world, BlockPos pos, ShapeContext context) {
-        return IBlock.getVoxelShapeByDirection(7, 0, 0, 9, 4.7, 0.1, IBlock.getStatePropertySafe(state, FACING));
+        return IBlock.getVoxelShapeByDirection(6.936, 0.638, 0, 9.064, 6.37, 0.1, IBlock.getStatePropertySafe(state, FACING));
     }
 
     @Nonnull

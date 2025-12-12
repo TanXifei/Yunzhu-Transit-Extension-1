@@ -22,6 +22,7 @@ public class LinkerValidTypes {
             DewhurstUS89Button1.class,
             DewhurstUS91Button1.class,
             DewhurstUS91Button1Braille.class,
+            DoverImpulseButton1.class,
             BlockLiftTrackFloor.class,
             TestLiftButtons.class,
             TestLiftButtonsWithoutScreen.class,
