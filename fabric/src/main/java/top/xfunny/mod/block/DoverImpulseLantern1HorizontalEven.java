@@ -1,14 +1,17 @@
 package top.xfunny.mod.block;
 
+import org.jetbrains.annotations.NotNull;
 import org.mtr.core.data.Lift;
 import org.mtr.mapping.holder.*;
 import org.mtr.mapping.mapper.BlockEntityExtension;
+import org.mtr.mapping.mapper.TextHelper;
 import org.mtr.mapping.tool.HolderBase;
 import org.mtr.mod.block.IBlock;
 import top.xfunny.mod.BlockEntityTypes;
 import top.xfunny.mod.block.base.LiftButtonsBase;
 
 import javax.annotation.Nonnull;
+import javax.annotation.Nullable;
 import java.util.List;
 
 public class DoverImpulseLantern1HorizontalEven extends LiftButtonsBase {
@@ -40,6 +43,10 @@ public class DoverImpulseLantern1HorizontalEven extends LiftButtonsBase {
     public void addBlockProperties(List<HolderBase<?>> properties) {
         properties.add(FACING);
         properties.add(SIDE);
+    }
+
+    public void addTooltips(@NotNull ItemStack stack, @Nullable BlockView world, List<MutableText> tooltip, @NotNull TooltipContext options) {
+        tooltip.add(TextHelper.translatable("tooltip.warning_block_testing").formatted(TextFormatting.RED));
     }
 
     public static class BlockEntity extends LiftButtonsBase.BlockEntityBase {

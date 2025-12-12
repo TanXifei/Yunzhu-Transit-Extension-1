@@ -54,10 +54,6 @@ public class HitachiButtonPAFC extends LiftButtonsBase {
         properties.add(SINGLE);
     }
 
-    public void addTooltips(@NotNull ItemStack stack, @Nullable BlockView world, List<MutableText> tooltip, @NotNull TooltipContext options) {
-        tooltip.add(TextHelper.translatable("tooltip.warning_block_testing").formatted(TextFormatting.RED));
-    }
-
     /**
      * 表示一个可追踪位置的方块实体，扩展自BlockEntityExtension
      * 主要功能是通过CompoundTag来读取和写入特定位置集合
