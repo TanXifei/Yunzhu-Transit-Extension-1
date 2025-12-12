@@ -32,7 +32,6 @@ public class RenderMitsubishiNexWayButton2LCD1 extends BlockEntityRenderer<Mitsu
 
     private static final int HOVER_COLOR = 0xFFAAAAAA;
     private static final int PRESSED_COLOR = 0xFFFFFFFF;
-    private static final Identifier ARROW_TEXTURE = new Identifier(top.xfunny.mod.Init.MOD_ID, "textures/block/mitsubishi_nexway_2_lcd_arrow_1.png");
     private static final Identifier BUTTON_TEXTURE = new Identifier(top.xfunny.mod.Init.MOD_ID, "textures/block/mitsubishi_nexway_button_1.png");
     private static final Identifier BUTTON_LIGHT_TEXTURE = new Identifier(top.xfunny.mod.Init.MOD_ID, "textures/block/mitsubishi_nexway_button_1_light.png");
 
@@ -212,7 +211,7 @@ public class RenderMitsubishiNexWayButton2LCD1 extends BlockEntityRenderer<Mitsu
 
                 final LiftArrowView liftArrowView = new LiftArrowView();
                 liftArrowView.setBasicsAttributes(world, blockPos, sortedPositionsAndLifts.get(i).right(), LiftArrowView.ArrowType.AUTO);
-                liftArrowView.setTexture(ARROW_TEXTURE);
+                liftArrowView.setAnimatedTexture("yte", "textures/block/mitsubishi_nexway_2_lcd_arrow_1/mitsubishi_nexway_2_lcd_arrow_1_", 6, 3.3f);
                 liftArrowView.setQueuedRenderLayer(QueuedRenderLayer.LIGHT_TRANSLUCENT);
                 liftArrowView.setDimension(0.75F / 16);
                 liftArrowView.setMargin(0, 1.67F / 16, 0, 0);
