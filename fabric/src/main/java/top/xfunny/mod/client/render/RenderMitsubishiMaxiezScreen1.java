@@ -113,7 +113,7 @@ public class RenderMitsubishiMaxiezScreen1<T extends LiftPanelBase.BlockEntityBa
 
                 final LiftArrowView liftArrowView = new LiftArrowView();
                 liftArrowView.setBasicsAttributes(world, blockPos, sortedPositionsAndLifts.get(i).right(), LiftArrowView.ArrowType.AUTO);
-                liftArrowView.setTexture(new Identifier(Init.MOD_ID, "textures/block/mitsubishi_maxiez_1_lcd_arrow_1.png"));
+                liftArrowView.setAnimatedTexture("yte", "textures/block/mitsubishi_maxiez_1_lcd_arrow_1/mitsubishi_maxiez_1_lcd_arrow_1_", 6, 3.3f);
                 liftArrowView.setDimension(1.5F / 16);
                 liftArrowView.setGravity(Gravity.CENTER_VERTICAL);
                 liftArrowView.setQueuedRenderLayer(QueuedRenderLayer.LIGHT_TRANSLUCENT);
