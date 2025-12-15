@@ -320,7 +320,7 @@
   "tooltip.shanghai_mitsubishi_display_zlhh-101ag02": "Display: ZLHH-101AG02",
   "tooltip.shanghai_mitsubishi_button_a11": "Button：A11",
   "tooltip.shanghai_mitsubishi_button_a12": "Button：A12",
-  "tooltip.warning_block_testing": "!!!Warning: This block is being tested and is not recommended",
+  "tooltip.warning_block_testing": "!!!Warning: This block is under development and is not recommended to use.",
   "gui.yte.watermark": "The beta version does not represent the final quality.",
   "gui.yte.watermark_1": "Build %s.%s",
   "gui.yte.hide_watermark": "Hide Test Watermark"
