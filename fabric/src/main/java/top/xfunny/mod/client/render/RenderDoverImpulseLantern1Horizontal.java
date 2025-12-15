@@ -16,9 +16,11 @@ import org.mtr.mod.data.IGui;
 import org.mtr.mod.render.RenderLifts;
 import org.mtr.mod.render.StoredMatrixTransformations;
 import top.xfunny.mod.Init;
+import top.xfunny.mod.block.KoneMScreen1Even;
 import top.xfunny.mod.block.MitsubishiNexWayScreen1Even;
 import top.xfunny.mod.block.base.LiftButtonsBase;
 import top.xfunny.mod.client.InitClient;
+import top.xfunny.mod.client.resource.FontList;
 import top.xfunny.mod.client.view.*;
 import top.xfunny.mod.client.view.view_group.FrameLayout;
 import top.xfunny.mod.client.view.view_group.LinearLayout;
@@ -70,8 +72,8 @@ public class RenderDoverImpulseLantern1Horizontal<T extends LiftButtonsBase.Bloc
         final FrameLayout parentLayout = new FrameLayout();
         parentLayout.setBasicsAttributes(world, blockPos);
         parentLayout.setStoredMatrixTransformations(storedMatrixTransformations1);
-        parentLayout.setParentDimensions(15.5F / 16, 4.5F / 16);
-        parentLayout.setPosition(isOdd ? -7.75F / 16 : -15.75F / 16, 9F / 16);
+        parentLayout.setParentDimensions(15.5F / 16, 4F / 16);
+        parentLayout.setPosition(isOdd ? -7.75F / 16 : -15.75F / 16, 7.3F / 16);
         parentLayout.setWidth(LayoutSize.MATCH_PARENT);
         parentLayout.setHeight(LayoutSize.MATCH_PARENT);
 
@@ -96,21 +98,21 @@ public class RenderDoverImpulseLantern1Horizontal<T extends LiftButtonsBase.Bloc
         final ImageView lanternArrowUpLeft = new ImageView();
         lanternArrowUpLeft.setBasicsAttributes(world, blockPos);
         lanternArrowUpLeft.setTexture(ARROW_TEXTURE);
-        lanternArrowUpLeft.setDimension(2.75F / 16);
+        lanternArrowUpLeft.setDimension(1.5F / 16);
         lanternArrowUpLeft.setGravity(Gravity.CENTER);
         lanternArrowUpLeft.setLight(light);
 
         final ImageView lanternArrowUpRight = new ImageView();
         lanternArrowUpRight.setBasicsAttributes(world, blockPos);
         lanternArrowUpRight.setTexture(ARROW_TEXTURE);
-        lanternArrowUpRight.setDimension(2.75F / 16);
+        lanternArrowUpRight.setDimension(1.5F / 16);
         lanternArrowUpRight.setGravity(Gravity.CENTER);
         lanternArrowUpRight.setLight(light);
 
         final ImageView lanternArrowDownLeft = new ImageView();
         lanternArrowDownLeft.setBasicsAttributes(world, blockPos);
         lanternArrowDownLeft.setTexture(ARROW_TEXTURE);
-        lanternArrowDownLeft.setDimension(2.75F / 16);
+        lanternArrowDownLeft.setDimension(1.5F / 16);
         lanternArrowDownLeft.setGravity(Gravity.CENTER);
         lanternArrowDownLeft.setLight(light);
         lanternArrowDownLeft.setFlip(false, true);
@@ -118,7 +120,7 @@ public class RenderDoverImpulseLantern1Horizontal<T extends LiftButtonsBase.Bloc
         final ImageView lanternArrowDownRight = new ImageView();
         lanternArrowDownRight.setBasicsAttributes(world, blockPos);
         lanternArrowDownRight.setTexture(ARROW_TEXTURE);
-        lanternArrowDownRight.setDimension(2.75F / 16);
+        lanternArrowDownRight.setDimension(1.5F / 16);
         lanternArrowDownRight.setGravity(Gravity.CENTER);
         lanternArrowDownRight.setLight(light);
         lanternArrowDownRight.setFlip(false, true);
@@ -126,7 +128,7 @@ public class RenderDoverImpulseLantern1Horizontal<T extends LiftButtonsBase.Bloc
         final ButtonView downLanternLeft = new ButtonView();
         downLanternLeft.setBasicsAttributes(world, blockPos);
         downLanternLeft.setTexture(BUTTON_TEXTURE);
-        downLanternLeft.setDimension(2.75F / 16);
+        downLanternLeft.setDimension(1.5F / 16);
         downLanternLeft.setGravity(Gravity.CENTER);
         downLanternLeft.setLight(light);
         downLanternLeft.setDefaultColor(DEFAULT_COLOR);
@@ -135,7 +137,7 @@ public class RenderDoverImpulseLantern1Horizontal<T extends LiftButtonsBase.Bloc
         final ButtonView downLanternRight = new ButtonView();
         downLanternRight.setBasicsAttributes(world, blockPos);
         downLanternRight.setTexture(BUTTON_TEXTURE);
-        downLanternRight.setDimension(2.75F / 16);
+        downLanternRight.setDimension(1.5F / 16);
         downLanternRight.setGravity(Gravity.CENTER);
         downLanternRight.setLight(light);
         downLanternRight.setDefaultColor(DEFAULT_COLOR);
@@ -144,7 +146,7 @@ public class RenderDoverImpulseLantern1Horizontal<T extends LiftButtonsBase.Bloc
         final ButtonView upLanternLeft = new ButtonView();
         upLanternLeft.setBasicsAttributes(world, blockPos);
         upLanternLeft.setTexture(BUTTON_TEXTURE);
-        upLanternLeft.setDimension(2.75F / 16);
+        upLanternLeft.setDimension(1.5F / 16);
         upLanternLeft.setGravity(Gravity.CENTER);
         upLanternLeft.setLight(light);
         upLanternLeft.setDefaultColor(DEFAULT_COLOR);
@@ -153,7 +155,7 @@ public class RenderDoverImpulseLantern1Horizontal<T extends LiftButtonsBase.Bloc
         final ButtonView upLanternRight = new ButtonView();
         upLanternRight.setBasicsAttributes(world, blockPos);
         upLanternRight.setTexture(BUTTON_TEXTURE);
-        upLanternRight.setDimension(2.75F / 16);
+        upLanternRight.setDimension(1.5F / 16);
         upLanternRight.setGravity(Gravity.CENTER);
         upLanternRight.setLight(light);
         upLanternRight.setDefaultColor(DEFAULT_COLOR);
@@ -197,7 +199,7 @@ public class RenderDoverImpulseLantern1Horizontal<T extends LiftButtonsBase.Bloc
                                 downLanternRight.activate();
                             }
                             if (!blockEntity.lastDownActive) {
-                                InitClient.REGISTRY_CLIENT.sendPacketToServer(new PacketLanternSoundInstruction(blockPos, "mitsubishi_nexway_lantern_1_down"));
+                                //InitClient.REGISTRY_CLIENT.sendPacketToServer(new PacketLanternSoundInstruction(blockPos, "mitsubishi_nexway_lantern_1_down"));
                                 blockEntity.lastDownActive = true;
                                 blockEntity.lastUpActive = true;
                             }
@@ -208,7 +210,7 @@ public class RenderDoverImpulseLantern1Horizontal<T extends LiftButtonsBase.Bloc
                                 upLanternRight.activate();
                             }
                             if (!blockEntity.lastDownActive) {
-                                InitClient.REGISTRY_CLIENT.sendPacketToServer(new PacketLanternSoundInstruction(blockPos, "mitsubishi_nexway_lantern_1_down"));
+                                //InitClient.REGISTRY_CLIENT.sendPacketToServer(new PacketLanternSoundInstruction(blockPos, "mitsubishi_nexway_lantern_1_down"));
                                 blockEntity.lastDownActive = true;
                                 blockEntity.lastUpActive = true;
                             }
@@ -227,7 +229,7 @@ public class RenderDoverImpulseLantern1Horizontal<T extends LiftButtonsBase.Bloc
                                             downLanternRight.activate();
                                         }
                                         if (!blockEntity.lastDownActive) {
-                                            InitClient.REGISTRY_CLIENT.sendPacketToServer(new PacketLanternSoundInstruction(blockPos, "mitsubishi_nexway_lantern_1_down"));
+                                            //InitClient.REGISTRY_CLIENT.sendPacketToServer(new PacketLanternSoundInstruction(blockPos, "mitsubishi_nexway_lantern_1_down"));
                                             blockEntity.lastDownActive = true;
                                             blockEntity.lastUpActive = true;
                                         }
@@ -238,7 +240,7 @@ public class RenderDoverImpulseLantern1Horizontal<T extends LiftButtonsBase.Bloc
                                             upLanternRight.activate();
                                         }
                                         if (!blockEntity.lastDownActive) {
-                                            InitClient.REGISTRY_CLIENT.sendPacketToServer(new PacketLanternSoundInstruction(blockPos, "mitsubishi_nexway_lantern_1_down"));
+                                            //InitClient.REGISTRY_CLIENT.sendPacketToServer(new PacketLanternSoundInstruction(blockPos, "mitsubishi_nexway_lantern_1_down"));
                                             blockEntity.lastDownActive = true;
                                             blockEntity.lastUpActive = true;
                                         }
@@ -251,7 +253,7 @@ public class RenderDoverImpulseLantern1Horizontal<T extends LiftButtonsBase.Bloc
                                     downLanternLeft.activate();
                                     downLanternRight.activate();
                                     if (!blockEntity.lastDownActive) {
-                                        InitClient.REGISTRY_CLIENT.sendPacketToServer(new PacketLanternSoundInstruction(blockPos, "mitsubishi_nexway_lantern_1_down"));
+                                        //InitClient.REGISTRY_CLIENT.sendPacketToServer(new PacketLanternSoundInstruction(blockPos, "mitsubishi_nexway_lantern_1_down"));
                                         blockEntity.lastDownActive = true;
                                         blockEntity.lastUpActive = true;
                                     }
@@ -260,7 +262,7 @@ public class RenderDoverImpulseLantern1Horizontal<T extends LiftButtonsBase.Bloc
                                     upLanternLeft.activate();
                                     upLanternRight.activate();
                                     if (!blockEntity.lastDownActive) {
-                                        InitClient.REGISTRY_CLIENT.sendPacketToServer(new PacketLanternSoundInstruction(blockPos, "mitsubishi_nexway_lantern_1_down"));
+                                        //InitClient.REGISTRY_CLIENT.sendPacketToServer(new PacketLanternSoundInstruction(blockPos, "mitsubishi_nexway_lantern_1_down"));
                                         blockEntity.lastDownActive = true;
                                         blockEntity.lastUpActive = true;
                                     }
@@ -281,21 +283,29 @@ public class RenderDoverImpulseLantern1Horizontal<T extends LiftButtonsBase.Bloc
 
         if (buttonDescriptor.hasDownButton() && buttonDescriptor.hasUpButton()) {
             lanternGroupLeft.setMargin(0, 0, 0.5F / 16, 0);
-            lanternGroupLeft.addChild(downLanternLeft);
-            lanternGroupLeft.addChild(lanternArrowDownLeft);
-            lanternGroupRight.addChild(upLanternRight);
-            lanternGroupRight.addChild(lanternArrowUpRight);
+            lanternGroupLeft.addChild(upLanternLeft);
+            lanternGroupLeft.addChild(lanternArrowUpLeft);
+            lanternGroupRight.addChild(downLanternRight);
+            lanternGroupRight.addChild(lanternArrowDownRight);
             linearLayout.addChild(lanternGroupLeft);
             linearLayout.addChild(lanternGroupRight);
 
         } else if (buttonDescriptor.hasDownButton()) {
-            lanternGroupLeft.addChild(downLanternLeft);
-            lanternGroupLeft.addChild(lanternArrowDownLeft);
+            lanternGroupLeft.setMargin(0, 0, 0.5F / 16, 0);
+            lanternGroupLeft.addChild(upLanternLeft);
+            lanternGroupLeft.addChild(lanternArrowUpLeft);
+            lanternGroupRight.addChild(downLanternRight);
+            lanternGroupRight.addChild(lanternArrowDownRight);
             linearLayout.addChild(lanternGroupLeft);
+            linearLayout.addChild(lanternGroupRight);
 
         } else if (buttonDescriptor.hasUpButton()) {
-            lanternGroupRight.addChild(upLanternRight);
-            lanternGroupRight.addChild(lanternArrowUpRight);
+            lanternGroupLeft.setMargin(0, 0, 0.5F / 16, 0);
+            lanternGroupLeft.addChild(upLanternLeft);
+            lanternGroupLeft.addChild(lanternArrowUpLeft);
+            lanternGroupRight.addChild(downLanternRight);
+            lanternGroupRight.addChild(lanternArrowDownRight);
+            linearLayout.addChild(lanternGroupLeft);
             linearLayout.addChild(lanternGroupRight);
         }
 
