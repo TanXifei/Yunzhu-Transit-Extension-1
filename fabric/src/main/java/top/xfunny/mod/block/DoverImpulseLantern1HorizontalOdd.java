@@ -21,7 +21,7 @@ public class DoverImpulseLantern1HorizontalOdd extends LiftButtonsBase {
     @Nonnull
     @Override
     public VoxelShape getOutlineShape2(BlockState state, BlockView world, BlockPos pos, ShapeContext context) {
-        return IBlock.getVoxelShapeByDirection(5.25, 7.9, 0, 10.75, 10.7, 0.1, IBlock.getStatePropertySafe(state, FACING)); // Alignment TBD
+        return IBlock.getVoxelShapeByDirection(5.25, 7.9, 0, 10.75, 10.7, 0.1, IBlock.getStatePropertySafe(state, FACING));
 
     }
 
@@ -35,10 +35,6 @@ public class DoverImpulseLantern1HorizontalOdd extends LiftButtonsBase {
     public void addBlockProperties(List<HolderBase<?>> properties) {
         properties.add(FACING);
         properties.add(SIDE);
-    }
-
-    public void addTooltips(@NotNull ItemStack stack, @Nullable BlockView world, List<MutableText> tooltip, @NotNull TooltipContext options) {
-        tooltip.add(TextHelper.translatable("tooltip.warning_block_testing").formatted(TextFormatting.RED));
     }
 
     public static class BlockEntity extends LiftButtonsBase.BlockEntityBase {
