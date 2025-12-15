@@ -21,7 +21,7 @@ public class DoverImpulseLantern1HorizontalOdd extends LiftButtonsBase {
     @Nonnull
     @Override
     public VoxelShape getOutlineShape2(BlockState state, BlockView world, BlockPos pos, ShapeContext context) {
-        return IBlock.getVoxelShapeByDirection(5.75, 7, 0, 10.25, 15.5, 0.1, IBlock.getStatePropertySafe(state, FACING)); // Alignment TBD
+        return IBlock.getVoxelShapeByDirection(5.25, 7.9, 0, 10.75, 10.7, 0.1, IBlock.getStatePropertySafe(state, FACING)); // Alignment TBD
 
     }
 
