@@ -46,6 +46,15 @@ public final class InitClient {
         REGISTRY_CLIENT.registerBlockEntityRenderer(BlockEntityTypes.DOVER_IMPULSE_LANTERN_1_HORIZONTAL_ODD, dispatcher -> new top.xfunny.mod.client.render.RenderDoverImpulseLantern1Horizontal<>(dispatcher, true));
         REGISTRY_CLIENT.registerBlockEntityRenderer(BlockEntityTypes.DOVER_IMPULSE_LANTERN_1_HORIZONTAL_EVEN, dispatcher -> new top.xfunny.mod.client.render.RenderDoverImpulseLantern1Horizontal<>(dispatcher, false));
 
+        REGISTRY_CLIENT.registerBlockEntityRenderer(BlockEntityTypes.FUJITEC_MIC400_BUTTON_1, RenderFujitecMIC400Button1::new);
+        REGISTRY_CLIENT.registerBlockEntityRenderer(BlockEntityTypes.FUJITEC_MIC400_BUTTON_1_WITHOUT_SCREEN, RenderFujitecMIC400Button1WithoutScreen::new);
+        REGISTRY_CLIENT.registerBlockEntityRenderer(BlockEntityTypes.FUJITEC_MIC400_BUTTON_1_OLD, RenderFujitecMIC400Button1Old::new);
+        REGISTRY_CLIENT.registerBlockEntityRenderer(BlockEntityTypes.FUJITEC_MIC400_BUTTON_1_OLD_WITHOUT_SCREEN, RenderFujitecMIC400Button1OldWithoutScreen::new);
+        REGISTRY_CLIENT.registerBlockEntityRenderer(BlockEntityTypes.FUJITEC_MIC400_SCREEN_1_HORIZONTAL_ODD, dispatcher -> new RenderFujitecMIC400Screen1Horizontal<>(dispatcher, true));
+        REGISTRY_CLIENT.registerBlockEntityRenderer(BlockEntityTypes.FUJITEC_MIC400_SCREEN_1_HORIZONTAL_EVEN, dispatcher -> new RenderFujitecMIC400Screen1Horizontal<>(dispatcher, false));
+        REGISTRY_CLIENT.registerBlockEntityRenderer(BlockEntityTypes.FUJITEC_MIC400_SCREEN_1_VERTICAL_ODD, dispatcher -> new RenderFujitecMIC400Screen1Vertical<>(dispatcher, true));
+        REGISTRY_CLIENT.registerBlockEntityRenderer(BlockEntityTypes.FUJITEC_MIC400_SCREEN_1_VERTICAL_EVEN, dispatcher -> new RenderFujitecMIC400Screen1Vertical<>(dispatcher, false));
+
         REGISTRY_CLIENT.registerBlockEntityRenderer(BlockEntityTypes.KONE_KDS330_BUTTON_1, RenderKoneKDS330Button1::new);
         REGISTRY_CLIENT.registerBlockEntityRenderer(BlockEntityTypes.KONE_KDS330_BUTTON_1_WITHOUT_SCREEN, RenderKoneKDS330Button1WithoutScreen::new);
         REGISTRY_CLIENT.registerBlockEntityRenderer(BlockEntityTypes.KONE_KDS330_LANTERN_1, RenderKoneKDS330Lantern1::new);

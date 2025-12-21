@@ -31,6 +31,15 @@ public class Blocks {
     public static final BlockRegistryObject DOVER_IMPULSE_LANTERN_1_HORIZONTAL_ODD;
     public static final BlockRegistryObject DOVER_IMPULSE_LANTERN_1_HORIZONTAL_EVEN;
 
+    public static final BlockRegistryObject FUJITEC_MIC400_BUTTON_1;
+    public static final BlockRegistryObject FUJITEC_MIC400_BUTTON_1_WITHOUT_SCREEN;
+    public static final BlockRegistryObject FUJITEC_MIC400_BUTTON_1_OLD;
+    public static final BlockRegistryObject FUJITEC_MIC400_BUTTON_1_OLD_WITHOUT_SCREEN;
+    public static final BlockRegistryObject FUJITEC_MIC400_SCREEN_1_VERTICAL_ODD;
+    public static final BlockRegistryObject FUJITEC_MIC400_SCREEN_1_VERTICAL_EVEN;
+    public static final BlockRegistryObject FUJITEC_MIC400_SCREEN_1_HORIZONTAL_ODD;
+    public static final BlockRegistryObject FUJITEC_MIC400_SCREEN_1_HORIZONTAL_EVEN;
+
     public static final BlockRegistryObject KONE_KDS330_BUTTON_1;
     public static final BlockRegistryObject KONE_KDS330_BUTTON_1_WITHOUT_SCREEN;
     public static final BlockRegistryObject KONE_KDS330_LANTERN_1;
@@ -334,6 +343,15 @@ public class Blocks {
         DOVER_IMPULSE_BUTTON_1 = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "dover_impulse_button_1"), () -> new Block(new DoverImpulseButton1()), CreativeModeTabs.YTE_LIFT_FIXTURES);
         DOVER_IMPULSE_LANTERN_1_HORIZONTAL_ODD = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "dover_impulse_lantern_1_horizontal_odd"), () -> new Block(new DoverImpulseLantern1HorizontalOdd()), CreativeModeTabs.YTE_LIFT_FIXTURES);
         DOVER_IMPULSE_LANTERN_1_HORIZONTAL_EVEN = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "dover_impulse_lantern_1_horizontal_even"), () -> new Block(new DoverImpulseLantern1HorizontalEven()), CreativeModeTabs.YTE_LIFT_FIXTURES);
+
+        FUJITEC_MIC400_BUTTON_1 = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "fujitec_mic400_button_1"), () -> new Block(new FujitecMIC400Button1()), CreativeModeTabs.YTE_LIFT_FIXTURES);
+        FUJITEC_MIC400_BUTTON_1_WITHOUT_SCREEN = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "fujitec_mic400_button_1_without_screen"), () -> new Block(new FujitecMIC400Button1WithoutScreen()), CreativeModeTabs.YTE_LIFT_FIXTURES);
+        FUJITEC_MIC400_BUTTON_1_OLD = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "fujitec_mic400_button_1_old"), () -> new Block(new FujitecMIC400Button1Old()), CreativeModeTabs.YTE_LIFT_FIXTURES);
+        FUJITEC_MIC400_BUTTON_1_OLD_WITHOUT_SCREEN = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "fujitec_mic400_button_1_old_without_screen"), () -> new Block(new FujitecMIC400Button1OldWithoutScreen()), CreativeModeTabs.YTE_LIFT_FIXTURES);
+        FUJITEC_MIC400_SCREEN_1_HORIZONTAL_ODD = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "fujitec_mic400_screen_1_horizontal_odd"), () -> new Block(new FujitecMIC400Screen1HorizontalOdd()), CreativeModeTabs.YTE_LIFT_FIXTURES);
+        FUJITEC_MIC400_SCREEN_1_HORIZONTAL_EVEN = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "fujitec_mic400_screen_1_horizontal_even"), () -> new Block(new FujitecMIC400Screen1HorizontalEven()), CreativeModeTabs.YTE_LIFT_FIXTURES);
+        FUJITEC_MIC400_SCREEN_1_VERTICAL_ODD = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "fujitec_mic400_screen_1_vertical_odd"), () -> new Block(new FujitecMIC400Screen1VerticalOdd()), CreativeModeTabs.YTE_LIFT_FIXTURES);
+        FUJITEC_MIC400_SCREEN_1_VERTICAL_EVEN = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "fujitec_mic400_screen_1_vertical_even"), () -> new Block(new FujitecMIC400Screen1VerticalEven()), CreativeModeTabs.YTE_LIFT_FIXTURES);
 
         KONE_KDS330_BUTTON_1 = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "kone_kds330_surface_button_1"), () -> new Block(new KoneKDS330Button1()), CreativeModeTabs.YTE_LIFT_FIXTURES);
         KONE_KDS330_BUTTON_1_WITHOUT_SCREEN = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "kone_kds330_surface_button_1_without_screen"), () -> new Block(new KoneKDS330Button1WithoutScreen()), CreativeModeTabs.YTE_LIFT_FIXTURES);

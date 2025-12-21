@@ -75,6 +75,7 @@ public class FontList {
             loadFont("ryoden-led-small", "font/ryoden-led-small.ttf");
             loadFont("toshiba_segmented", "font/toshiba-segmented.ttf");
             loadFont("toshiba_segmented_1", "font/toshiba-segmented-1.ttf");
+            loadFont("fujitec_computer_control", "font/fujitec_computer_control.ttf");
             fontsLoaded = true;
         }
     }

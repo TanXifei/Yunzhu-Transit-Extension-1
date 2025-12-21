@@ -22,6 +22,15 @@ public class BlockEntityTypes {
     public static final BlockEntityTypeRegistryObject<DoverImpulseLantern1HorizontalOdd.BlockEntity> DOVER_IMPULSE_LANTERN_1_HORIZONTAL_ODD;
     public static final BlockEntityTypeRegistryObject<DoverImpulseLantern1HorizontalEven.BlockEntity> DOVER_IMPULSE_LANTERN_1_HORIZONTAL_EVEN;
 
+    public static final BlockEntityTypeRegistryObject<FujitecMIC400Button1.BlockEntity> FUJITEC_MIC400_BUTTON_1;
+    public static final BlockEntityTypeRegistryObject<FujitecMIC400Button1WithoutScreen.BlockEntity> FUJITEC_MIC400_BUTTON_1_WITHOUT_SCREEN;
+    public static final BlockEntityTypeRegistryObject<FujitecMIC400Button1Old.BlockEntity> FUJITEC_MIC400_BUTTON_1_OLD;
+    public static final BlockEntityTypeRegistryObject<FujitecMIC400Button1OldWithoutScreen.BlockEntity> FUJITEC_MIC400_BUTTON_1_OLD_WITHOUT_SCREEN;
+    public static final BlockEntityTypeRegistryObject<FujitecMIC400Screen1HorizontalEven.BlockEntity> FUJITEC_MIC400_SCREEN_1_HORIZONTAL_EVEN;
+    public static final BlockEntityTypeRegistryObject<FujitecMIC400Screen1HorizontalOdd.BlockEntity> FUJITEC_MIC400_SCREEN_1_HORIZONTAL_ODD;
+    public static final BlockEntityTypeRegistryObject<FujitecMIC400Screen1VerticalEven.BlockEntity> FUJITEC_MIC400_SCREEN_1_VERTICAL_EVEN;
+    public static final BlockEntityTypeRegistryObject<FujitecMIC400Screen1VerticalOdd.BlockEntity> FUJITEC_MIC400_SCREEN_1_VERTICAL_ODD;
+
     public static final BlockEntityTypeRegistryObject<HitachiVIB320Button.BlockEntity> HITACHI_VIB320_BUTTON;
     public static final BlockEntityTypeRegistryObject<HitachiVIB320ButtonDotMatrix.BlockEntity> HITACHI_VIB320_BUTTON_DOT_MATRIX;
     public static final BlockEntityTypeRegistryObject<HitachiVIB320ButtonHIP43.BlockEntity> HITACHI_VIB320_BUTTON_HIP43;
@@ -326,6 +335,15 @@ public class BlockEntityTypes {
         DOVER_IMPULSE_BUTTON_1 = Init.REGISTRY.registerBlockEntityType(new Identifier(Init.MOD_ID, "dover_impulse_button_1"), DoverImpulseButton1.BlockEntity::new, Blocks.DOVER_IMPULSE_BUTTON_1::get);
         DOVER_IMPULSE_LANTERN_1_HORIZONTAL_ODD = Init.REGISTRY.registerBlockEntityType(new Identifier(Init.MOD_ID, "dover_impulse_lantern_1_horizontal_odd"), DoverImpulseLantern1HorizontalOdd.BlockEntity::new, Blocks.DOVER_IMPULSE_LANTERN_1_HORIZONTAL_ODD::get);
         DOVER_IMPULSE_LANTERN_1_HORIZONTAL_EVEN = Init.REGISTRY.registerBlockEntityType(new Identifier(Init.MOD_ID, "dover_impulse_lantern_1_horizontal_even"), DoverImpulseLantern1HorizontalEven.BlockEntity::new, Blocks.DOVER_IMPULSE_LANTERN_1_HORIZONTAL_EVEN::get);
+
+        FUJITEC_MIC400_BUTTON_1 = Init.REGISTRY.registerBlockEntityType(new Identifier(Init.MOD_ID, "fujitec_mic400_button_1"), FujitecMIC400Button1.BlockEntity::new, Blocks.FUJITEC_MIC400_BUTTON_1::get);
+        FUJITEC_MIC400_BUTTON_1_WITHOUT_SCREEN = Init.REGISTRY.registerBlockEntityType(new Identifier(Init.MOD_ID, "fujitec_mic400_button_1_without_screen"), FujitecMIC400Button1WithoutScreen.BlockEntity::new, Blocks.FUJITEC_MIC400_BUTTON_1_WITHOUT_SCREEN::get);
+        FUJITEC_MIC400_BUTTON_1_OLD = Init.REGISTRY.registerBlockEntityType(new Identifier(Init.MOD_ID, "fujitec_mic400_button_1_old"), FujitecMIC400Button1Old.BlockEntity::new, Blocks.FUJITEC_MIC400_BUTTON_1_OLD::get);
+        FUJITEC_MIC400_BUTTON_1_OLD_WITHOUT_SCREEN = Init.REGISTRY.registerBlockEntityType(new Identifier(Init.MOD_ID, "fujitec_mic400_button_1_old_without_screen"), FujitecMIC400Button1OldWithoutScreen.BlockEntity::new, Blocks.FUJITEC_MIC400_BUTTON_1_OLD_WITHOUT_SCREEN::get);
+        FUJITEC_MIC400_SCREEN_1_HORIZONTAL_ODD = Init.REGISTRY.registerBlockEntityType(new Identifier(Init.MOD_ID, "fujitec_mic400_screen_1_horizontal_odd"), FujitecMIC400Screen1HorizontalOdd.BlockEntity::new, Blocks.FUJITEC_MIC400_SCREEN_1_HORIZONTAL_ODD::get);
+        FUJITEC_MIC400_SCREEN_1_HORIZONTAL_EVEN = Init.REGISTRY.registerBlockEntityType(new Identifier(Init.MOD_ID, "fujitec_mic400_screen_1_horizontal_even"), FujitecMIC400Screen1HorizontalEven.BlockEntity::new, Blocks.FUJITEC_MIC400_SCREEN_1_HORIZONTAL_EVEN::get);
+        FUJITEC_MIC400_SCREEN_1_VERTICAL_ODD = Init.REGISTRY.registerBlockEntityType(new Identifier(Init.MOD_ID, "fujitec_mic400_screen_1_vertical_odd"), FujitecMIC400Screen1VerticalOdd.BlockEntity::new, Blocks.FUJITEC_MIC400_SCREEN_1_VERTICAL_ODD::get);
+        FUJITEC_MIC400_SCREEN_1_VERTICAL_EVEN = Init.REGISTRY.registerBlockEntityType(new Identifier(Init.MOD_ID, "fujitec_mic400_screen_1_vertical_even"), FujitecMIC400Screen1VerticalEven.BlockEntity::new, Blocks.FUJITEC_MIC400_SCREEN_1_VERTICAL_EVEN::get);
 
         KONE_KDS330_BUTTON_1 = Init.REGISTRY.registerBlockEntityType(new Identifier(Init.MOD_ID, "kone_kds330_surface_button_1"), KoneKDS330Button1.BlockEntity::new, Blocks.KONE_KDS330_BUTTON_1::get);
         KONE_KDS330_BUTTON_1_WITHOUT_SCREEN = Init.REGISTRY.registerBlockEntityType(new Identifier(Init.MOD_ID, "kone_kds330_surface_button_1_without_screen"), KoneKDS330Button1WithoutScreen.BlockEntity::new, Blocks.KONE_KDS330_BUTTON_1_WITHOUT_SCREEN::get);
