@@ -203,11 +203,16 @@ public class RenderMitsubishiMaxiezButton2LCD extends BlockEntityRenderer<Mitsub
                         0xFFBBBBBB);
                 //liftFloorDisplayView.setDisplayLength(2, 0.05F);
                 liftFloorDisplayView.setTextureId(String.format("mitsubishi_maxiez_button_2_lcd_display_%d_%s", i, blockEntity.getPos2().asLong()));
-                liftFloorDisplayView.setWidth(1.3F / 16);
+                liftFloorDisplayView.setWidth(1.25F / 16);
                 liftFloorDisplayView.setHeight(1.7F / 16);
                 liftFloorDisplayView.setMargin(0.1F/16, 0, 0.1F/16, 0);
                 liftFloorDisplayView.setTextAlign(TextView.HorizontalTextAlign.CENTER);
                 liftFloorDisplayView.addStoredMatrixTransformations(graphicsHolder -> graphicsHolder.translate(0, 0, -SMALL_OFFSET));
+                if (liftFloorDisplayView.getTextLength() >= 3) {
+                    liftFloorDisplayView.setAdaptMode(LiftFloorDisplayView.AdaptMode.FORCE_FIT_WIDTH);
+                } else {
+                    liftFloorDisplayView.setAdaptMode(LiftFloorDisplayView.AdaptMode.ASPECT_FILL);
+                }
 
 
                 final LiftArrowView liftArrowView = new LiftArrowView();
