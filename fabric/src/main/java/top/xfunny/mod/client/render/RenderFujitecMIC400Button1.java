@@ -134,7 +134,6 @@ public class RenderFujitecMIC400Button1 extends BlockEntityRenderer<FujitecMIC40
         buttonDown.setDimension(0.7F / 16);
         buttonDown.setGravity(Gravity.CENTER);
         buttonDown.setLight(light);
-        buttonDown.setFlip(false, true);
 
         ButtonView buttonDownLight = new ButtonView();
         buttonDownLight.setId("down");
@@ -197,7 +196,7 @@ public class RenderFujitecMIC400Button1 extends BlockEntityRenderer<FujitecMIC40
                         0xFFE71F1B);
                 liftFloorDisplayView.setDisplayLength(2, 0);
                 liftFloorDisplayView.setTextureId(String.format("fujitec_mic400_button_1_display_%d_%s", i, blockEntity.getPos2().asLong()));
-                liftFloorDisplayView.setWidth(1.4F / 16);
+                liftFloorDisplayView.setWidth(1.5F / 16);
                 liftFloorDisplayView.setHeight(1.7F / 16);
                 liftFloorDisplayView.setMargin(-0.035F / 16, 0, 0.33F / 16, 0);
                 liftFloorDisplayView.setTextAlign(TextView.HorizontalTextAlign.RIGHT);
