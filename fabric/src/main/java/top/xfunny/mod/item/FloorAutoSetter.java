@@ -84,13 +84,21 @@ public class FloorAutoSetter extends ItemExtension implements DirectionHelper {
 
             if (number == pathFinder.getMark().size()) {
                 if (playerEntity != null) {
-                    playerEntity.sendMessage(Text.cast(TextHelper.translatable("message.floor_auto_setter_status_finished", floorCount)), true);
+                    playerEntity.sendMessage(Text.cast(TextHelper.translatable("message.floor_auto_setter_status_finished", floorCount+1)), true);
                 }
                 break;
             }
             number++;//循环计数器
 
             if (world.getBlockState(pos.up(1)).getBlock().data instanceof BlockLiftTrackFloor) {
+                floorNumber++;
+            } else if (world.getBlockState(pos.west(1)).getBlock().data instanceof BlockLiftTrackFloor) {
+                floorNumber++;
+            } else if (world.getBlockState(pos.east(1)).getBlock().data instanceof BlockLiftTrackFloor) {
+                floorNumber++;
+            } else if (world.getBlockState(pos.north(1)).getBlock().data instanceof BlockLiftTrackFloor) {
+                floorNumber++;
+            } else if (world.getBlockState(pos.south(1)).getBlock().data instanceof BlockLiftTrackFloor) {
                 floorNumber++;
             }
         }
