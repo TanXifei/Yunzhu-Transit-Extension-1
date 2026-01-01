@@ -221,7 +221,7 @@ public class RenderHitachiVIB221ButtonDotMatrix extends BlockEntityRenderer<Hita
                 liftArrowView.setBasicsAttributes(world, blockPos, sortedPositionsAndLifts.get(i).right(), LiftArrowView.ArrowType.AUTO);
                 liftArrowView.setTexture(ARROW_TEXTURE);
                 liftArrowView.setDimension(0.48F / 16, 384, 512);
-                liftArrowView.setMargin(0.6F / 16, 1.75F / 16, 0, -0.3F/16);
+                liftArrowView.setMargin(0.48F / 16, 1.75F / 16, 0, -0.3F/16);
                 liftArrowView.setQueuedRenderLayer(QueuedRenderLayer.LIGHT_TRANSLUCENT);
                 if (unlocked) {
                     liftArrowView.setColor(0xFFFFFFFF);
