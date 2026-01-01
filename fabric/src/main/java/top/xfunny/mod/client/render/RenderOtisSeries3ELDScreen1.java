@@ -13,6 +13,7 @@ import org.mtr.mapping.mapper.GraphicsHolder;
 import org.mtr.mapping.mapper.PlayerHelper;
 import org.mtr.mod.block.IBlock;
 import org.mtr.mod.data.IGui;
+import org.mtr.mod.render.QueuedRenderLayer;
 import org.mtr.mod.render.RenderLifts;
 import org.mtr.mod.render.StoredMatrixTransformations;
 import top.xfunny.mod.Init;
@@ -220,7 +221,19 @@ public class RenderOtisSeries3ELDScreen1<T extends LiftButtonsBase.BlockEntityBa
                 liftFloorDisplayView.setMargin(5F / 16, 0, 0, 0);
                 liftFloorDisplayView.addStoredMatrixTransformations(graphicsHolder -> graphicsHolder.translate(0, 0, -SMALL_OFFSET));
 
+                final LiftArrowView liftArrowView = new LiftArrowView();
+                liftArrowView.setBasicsAttributes(world, blockEntity.getPos2(), sortedPositionsAndLifts.get(i).right(), LiftArrowView.ArrowType.AUTO);
+                liftArrowView.setTexture(new Identifier(Init.MOD_ID, "textures/block/otis_s3_eld_arrow_1.png"));
+                liftArrowView.setDimension(0.65F / 16);
+                liftArrowView.setQueuedRenderLayer(QueuedRenderLayer.LIGHT_TRANSLUCENT);
+                liftArrowView.setMargin(0.425F / 16, 2.5F / 16, 0, 0);
+                liftArrowView.setColor(0xFFB29B3C);
+
                 if (!parentLayout.getChildren().contains(upLantern) && !parentLayout.getChildren().contains(downLantern)) {
+                    parentLayout.addChild(liftFloorDisplayView);
+                    parentLayout.addChild(liftArrowView);
+                }
+                if (!parentLayout.getChildren().contains(upLantern) && !parentLayout.getChildren().contains(downLantern) && liftFloorDisplayView.getTextLength() >= 4) {
                     parentLayout.addChild(liftFloorDisplayView);
                 }
 

@@ -45,10 +45,6 @@ public class DoverImpulseLantern1HorizontalEven extends LiftButtonsBase {
         properties.add(SIDE);
     }
 
-    public void addTooltips(@NotNull ItemStack stack, @Nullable BlockView world, List<MutableText> tooltip, @NotNull TooltipContext options) {
-        tooltip.add(TextHelper.translatable("tooltip.warning_block_testing").formatted(TextFormatting.RED));
-    }
-
     public static class BlockEntity extends LiftButtonsBase.BlockEntityBase {
         public BlockEntity(BlockPos pos, BlockState state) {
             super(BlockEntityTypes.DOVER_IMPULSE_LANTERN_1_HORIZONTAL_EVEN.get(), pos, state);
