@@ -23,7 +23,7 @@ public class KoneMScreen1SmallEven extends LiftButtonsBase {
                 return IBlock.getVoxelShapeByDirection(11.5, 10, 0, 16, 13.25, 0.1, IBlock.getStatePropertySafe(state, FACING));
 
             case RIGHT:
-                return IBlock.getVoxelShapeByDirection(0, 10, 0, 3.5, 13.25, 0.1, IBlock.getStatePropertySafe(state, FACING));
+                return IBlock.getVoxelShapeByDirection(0, 10, 0, 4.5, 13.25, 0.1, IBlock.getStatePropertySafe(state, FACING));
 
         }
         return VoxelShapes.empty();

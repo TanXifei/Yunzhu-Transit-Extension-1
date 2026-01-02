@@ -72,7 +72,7 @@ public class RenderKoneMScreen1Small<T extends LiftButtonsBase.BlockEntityBase> 
         parentLayout.setBasicsAttributes(world, blockPos);
         parentLayout.setStoredMatrixTransformations(storedMatrixTransformations1);
         parentLayout.setParentDimensions(9F / 16, 3.25F / 16); // 增加宽度
-        parentLayout.setPosition(-4.5F / 16, 10F / 16); // 调整起始位置
+        parentLayout.setPosition(isOdd ? -4.5F / 16 : -12.5F / 16, 10F / 16);
         parentLayout.setWidth(LayoutSize.MATCH_PARENT);
         parentLayout.setHeight(LayoutSize.MATCH_PARENT);
 
