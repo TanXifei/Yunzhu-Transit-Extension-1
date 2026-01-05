@@ -10,7 +10,7 @@ import org.mtr.mod.client.IDrawing;
 import org.mtr.mod.render.MainRenderer;
 import org.mtr.mod.render.QueuedRenderLayer;
 import org.mtr.mod.render.StoredMatrixTransformations;
-import top.xfunny.mod.client.DynamicTextureCache;
+import top.xfunny.mod.client.DynamicResource;
 import top.xfunny.mod.client.resource.TextureList;
 
 import java.awt.*;
@@ -37,7 +37,7 @@ public class TextView implements RenderView {
     protected float fontSize;
     protected float gameTick;
     protected String text;
-    protected DynamicTextureCache.DynamicResource texture;
+    protected DynamicResource texture;
     protected float fixedWidth;
     protected float textWidth;
     protected float textHeight;

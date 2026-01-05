@@ -20,7 +20,6 @@ import org.mtr.mod.render.MainRenderer;
 import org.mtr.mod.render.QueuedRenderLayer;
 import org.mtr.mod.render.StoredMatrixTransformations;
 import top.xfunny.mod.block.TestLiftPanel;
-import top.xfunny.mod.client.DynamicTextureCache;
 import top.xfunny.mod.client.resource.TextureList;
 import top.xfunny.mod.item.YteGroupLiftButtonsLinker;
 import top.xfunny.mod.item.YteLiftButtonsLinker;
@@ -30,7 +29,7 @@ import top.xfunny.mod.util.ReverseRendering;
 import java.util.Comparator;
 
 public class RenderTestLiftPanel extends BlockEntityRenderer<TestLiftPanel.BlockEntity> implements DirectionHelper, IGui, IBlock {
-
+//已弃用
     private static final float ARROW_SPEED = 0.04F;
     private static final Identifier ARROW_TEXTURE = new Identifier(Init.MOD_ID, "textures/block/lift_arrow.png");
     private final boolean isOdd;
@@ -163,11 +162,11 @@ public class RenderTestLiftPanel extends BlockEntityRenderer<TestLiftPanel.Block
 
             if (text.length() > 2) {
                 float scrollSpeed = 24F;
-                float scaledSpeed = scrollSpeed * (width1 / DynamicTextureCache.instance.totalWidth); // 根据显示宽度和纹理总宽度缩放速度
-                offset1 = (gameTick * scaledSpeed) % DynamicTextureCache.instance.totalWidth;
+                float scaledSpeed = scrollSpeed * (width1 / 1); // 根据显示宽度和纹理总宽度缩放速度
+                offset1 = (gameTick * scaledSpeed) % 1;
                 // 如果走马灯移动到末端，回到起始位置
-                if (offset1 > DynamicTextureCache.instance.totalWidth - width1) {
-                    offset1 = offset1 - DynamicTextureCache.instance.totalWidth;
+                if (offset1 > 1) {
+                    offset1 = offset1 - 1;
 
                 }
                 float finalOffset = offset1;

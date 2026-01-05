@@ -344,11 +344,10 @@ public final class InitClient {
 
         REGISTRY_CLIENT.eventRegistryClient.registerClientJoin(() -> {
             MinecraftClientData.reset();
-            DynamicTextureCache.instance = new DynamicTextureCache();
             lastMillis = System.currentTimeMillis();
             gameMillis = 0;
 
-            DynamicTextureCache.instance.reload();
+            FontResourceGenerator.getInstance().reload();
         });
 
         // TODO: 发布前请注释此行代码。
