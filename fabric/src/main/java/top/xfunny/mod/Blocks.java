@@ -134,6 +134,10 @@ public class Blocks {
     public static final BlockRegistryObject MITSUBISHI_NEXWAY_SCREEN_3_ODD;
     public static final BlockRegistryObject MITSUBISHI_NEXWAY_SCREEN_3_SEGMENTED_EVEN;
     public static final BlockRegistryObject MITSUBISHI_NEXWAY_SCREEN_3_SEGMENTED_ODD;
+    public static final BlockRegistryObject MITSUBISHI_NEXWAY_SCREEN_3_WIDE_EVEN;
+    public static final BlockRegistryObject MITSUBISHI_NEXWAY_SCREEN_3_WIDE_ODD;
+    public static final BlockRegistryObject MITSUBISHI_NEXWAY_SCREEN_3_WIDE_SEGMENTED_EVEN;
+    public static final BlockRegistryObject MITSUBISHI_NEXWAY_SCREEN_3_WIDE_SEGMENTED_ODD;
     public static final BlockRegistryObject MITSUBISHI_MPVF_BUTTON_1;
     public static final BlockRegistryObject MITSUBISHI_MPVF_SCREEN_1_HORIZONTAL_ODD;
     public static final BlockRegistryObject MITSUBISHI_MPVF_SCREEN_1_HORIZONTAL_EVEN;
@@ -424,6 +428,10 @@ public class Blocks {
         MITSUBISHI_NEXWAY_SCREEN_3_EVEN = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "mitsubishi_nexway_screen_3_even"), () -> new Block(new MitsubishiNexWayScreen3Even()), CreativeModeTabs.YTE_LIFT_FIXTURES);
         MITSUBISHI_NEXWAY_SCREEN_3_SEGMENTED_ODD = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "mitsubishi_nexway_screen_3_segmented_odd"), () -> new Block(new MitsubishiNexWayScreen3SegmentedOdd()), CreativeModeTabs.YTE_LIFT_FIXTURES);
         MITSUBISHI_NEXWAY_SCREEN_3_SEGMENTED_EVEN = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "mitsubishi_nexway_screen_3_segmented_even"), () -> new Block(new MitsubishiNexWayScreen3SegmentedEven()), CreativeModeTabs.YTE_LIFT_FIXTURES);
+        MITSUBISHI_NEXWAY_SCREEN_3_WIDE_ODD = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "mitsubishi_nexway_screen_3_wide_odd"), () -> new Block(new MitsubishiNexWayScreen3WideOdd()), CreativeModeTabs.YTE_LIFT_FIXTURES);
+        MITSUBISHI_NEXWAY_SCREEN_3_WIDE_EVEN = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "mitsubishi_nexway_screen_3_wide_even"), () -> new Block(new MitsubishiNexWayScreen3WideEven()), CreativeModeTabs.YTE_LIFT_FIXTURES);
+        MITSUBISHI_NEXWAY_SCREEN_3_WIDE_SEGMENTED_ODD = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "mitsubishi_nexway_screen_3_wide_segmented_odd"), () -> new Block(new MitsubishiNexWayScreen3WideSegmentedOdd()), CreativeModeTabs.YTE_LIFT_FIXTURES);
+        MITSUBISHI_NEXWAY_SCREEN_3_WIDE_SEGMENTED_EVEN = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "mitsubishi_nexway_screen_3_wide_segmented_even"), () -> new Block(new MitsubishiNexWayScreen3WideSegmentedEven()), CreativeModeTabs.YTE_LIFT_FIXTURES);
         MITSUBISHI_MAXIEZ_SCREEN_1_ODD = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "mitsubishi_maxiez_screen_1_odd"), () -> new Block(new MitsubishiMaxiezScreen1Odd()), CreativeModeTabs.YTE_LIFT_FIXTURES);
         MITSUBISHI_MAXIEZ_SCREEN_1_EVEN = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "mitsubishi_maxiez_screen_1_even"), () -> new Block(new MitsubishiMaxiezScreen1Even()), CreativeModeTabs.YTE_LIFT_FIXTURES);
         MITSUBISHI_MAXIEZ_SCREEN_2_ODD = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "mitsubishi_maxiez_screen_2_odd"), () -> new Block(new MitsubishiMaxiezScreen2Odd()), CreativeModeTabs.YTE_LIFT_FIXTURES);
