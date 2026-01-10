@@ -7,22 +7,35 @@ import java.io.IOException;
 
 public class ImageGenerator {
 
+    private static final int MAX_FILES = 10;
 
     public static void saveNativeImageAsPng(NativeImage image, String outputPath) {
         try {
-            // 创建输出文件对象
             File file = new File(outputPath);
+            File parent = file.getParentFile();
+            if (parent != null && !parent.exists()) {
+                parent.mkdirs();
+            }
 
-            // 调用 NativeImage 的 writeToFile 方法，将图片保存为 PNG 文件
+            if (parent != null) {
+                File[] files = parent.listFiles((dir, name) ->
+                        name.toLowerCase().endsWith(".png")
+                );
+
+                if (files != null && files.length >= MAX_FILES) {
+                    // 超过上限，直接放弃生成
+                    return;
+                }
+            }
+
             image.writeTo(file);
 
-            System.out.println("PNG 图像已成功保存到: " + outputPath);
+            System.out.println("PNG 图像已成功保存到: " + file.getAbsolutePath());
+
         } catch (IOException e) {
-            System.err.println("保存 PNG 文件时出错: " + e.getMessage());
+            e.printStackTrace();
         } finally {
-            // 释放 NativeImage 占用的内存
             image.close();
         }
     }
-
 }
