@@ -34,9 +34,10 @@ public class RenderKoneKSS280Button1 extends BlockEntityRenderer<KoneKSS280Butto
     private static final int HOVER_COLOR = 0xFFCCCCCC;
     private static final int PRESSED_COLOR = 0xFFFFFFFF;
     private static final int DEFAULT_COLOR = 0xFF000000;
-    private static final Identifier ARROW_TEXTURE = new Identifier(Init.MOD_ID, "textures/block/kone_arrow_light.png");
+    private static final Identifier ARROW_TEXTURE = new Identifier(Init.MOD_ID, "textures/block/kone_kds330_arrow.png");
     private static final BooleanProperty UNLOCKED = BooleanProperty.of("unlocked");
     private final Identifier BUTTON_TEXTURE = new Identifier(Init.MOD_ID, "textures/block/kone_kss280_button_1.png");//todo
+    private final Identifier LOGO = new Identifier(Init.MOD_ID, "textures/block/kone_logo_2.png");
 
     public RenderKoneKSS280Button1(Argument dispatcher) {
         super(dispatcher);
@@ -136,6 +137,14 @@ public class RenderKoneKSS280Button1 extends BlockEntityRenderer<KoneKSS280Butto
         buttonDownLight.setPressedColor(PRESSED_COLOR);
         buttonDownLight.setFlip(false, true);
 
+        ImageView koneLogo = new ImageView();
+        koneLogo.setBasicsAttributes(world, blockPos);
+        koneLogo.setTexture(LOGO);
+        koneLogo.setDimension(0.5F / 16 ,854,372);
+        koneLogo.setLight(light);
+        koneLogo.setMargin(0, 2.11F / 16, 1F / 16, 0);
+        koneLogo.setGravity(Gravity.END);
+
         //添加外呼与楼层轨道的连线
         final LineComponent line = new LineComponent();
         line.setBasicsAttributes(world, blockPos);
@@ -196,6 +205,7 @@ public class RenderKoneKSS280Button1 extends BlockEntityRenderer<KoneKSS280Butto
                 liftArrowView.setDimension(0.6F / 16);
                 liftArrowView.setMargin(0, -1F / 16, 0, 0.5F / 16);
                 liftArrowView.setGravity(Gravity.CENTER_HORIZONTAL);
+                liftArrowView.setFlip(false,true);
                 liftArrowView.setQueuedRenderLayer(QueuedRenderLayer.LIGHT_TRANSLUCENT);
                 // If unlocked, display the arrow.
                 if (unlocked) {
@@ -223,6 +233,7 @@ public class RenderKoneKSS280Button1 extends BlockEntityRenderer<KoneKSS280Butto
         }
 
         screenContainer.addChild(screenLayout);
+        screenContainer.addChild(koneLogo);
 
         if (buttonDescriptor.hasUpButton()) {
             buttonUpGroup.addChild(buttonUpLight);

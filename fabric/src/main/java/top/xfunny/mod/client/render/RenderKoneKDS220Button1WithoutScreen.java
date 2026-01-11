@@ -14,8 +14,7 @@ import org.mtr.mod.block.IBlock;
 import org.mtr.mod.data.IGui;
 import org.mtr.mod.render.StoredMatrixTransformations;
 import top.xfunny.mod.Init;
-import top.xfunny.mod.block.KoneKDS330Button1WithoutScreen;
-import top.xfunny.mod.block.SchindlerMSeriesButton;
+import top.xfunny.mod.block.KoneKDS220Button1WithoutScreen;
 import top.xfunny.mod.block.base.LiftButtonsBase;
 import top.xfunny.mod.client.view.*;
 import top.xfunny.mod.client.view.view_group.FrameLayout;
@@ -23,23 +22,21 @@ import top.xfunny.mod.item.YteGroupLiftButtonsLinker;
 import top.xfunny.mod.item.YteLiftButtonsLinker;
 import top.xfunny.mod.keymapping.DefaultButtonsKeyMapping;
 
-public class RenderKoneKDS330Button1WithoutScreen extends BlockEntityRenderer<KoneKDS330Button1WithoutScreen.BlockEntity> implements DirectionHelper, IGui, IBlock {
+public class RenderKoneKDS220Button1WithoutScreen extends BlockEntityRenderer<KoneKDS220Button1WithoutScreen.BlockEntity> implements DirectionHelper, IGui, IBlock {
 
     private static final int HOVER_COLOR = 0xFFCCCCCC;
     private static final int PRESSED_COLOR = 0xFFFFFFFF;
     private static final int DEFAULT_COLOR = 0xFFFFFFFF;
-    private final Identifier BUTTON_TEXTURE_UP = new Identifier(Init.MOD_ID, "textures/block/kone_kds330_up_button.png");
-    private final Identifier BUTTON_TEXTURE_DOWN = new Identifier(Init.MOD_ID, "textures/block/kone_kds330_up_button.png");//todo
-    private final Identifier BUTTON_LIGHT_TEXTURE_UP = new Identifier(Init.MOD_ID, "textures/block/kone_kds330_up_button_light.png");
-    private final Identifier BUTTON_LIGHT_TEXTURE_DOWN = new Identifier(Init.MOD_ID, "textures/block/kone_kds330_up_button_light.png");//todo
+    private final Identifier BUTTON_TEXTURE = new Identifier(Init.MOD_ID, "textures/block/kone_kds220_button_1.png");
+    private final Identifier BUTTON_LIGHT_TEXTURE = new Identifier(Init.MOD_ID, "textures/block/kone_kds220_button_1_light.png");
     private final Identifier LOGO = new Identifier(Init.MOD_ID, "textures/block/kone_logo_2.png");
 
-    public RenderKoneKDS330Button1WithoutScreen(Argument dispatcher) {
+    public RenderKoneKDS220Button1WithoutScreen(Argument dispatcher) {
         super(dispatcher);
     }
 
     @Override
-    public void render(KoneKDS330Button1WithoutScreen.BlockEntity blockEntity, float tickDelta, GraphicsHolder graphicsHolder1, int light, int overlay) {
+    public void render(KoneKDS220Button1WithoutScreen.BlockEntity blockEntity, float tickDelta, GraphicsHolder graphicsHolder1, int light, int overlay) {
         final World world = blockEntity.getWorld2();
         if (world == null) {
             return;
@@ -104,7 +101,7 @@ public class RenderKoneKDS330Button1WithoutScreen extends BlockEntityRenderer<Ko
 
         ImageView buttonUp = new ImageView();
         buttonUp.setBasicsAttributes(world, blockPos);
-        buttonUp.setTexture(BUTTON_TEXTURE_UP);
+        buttonUp.setTexture(BUTTON_TEXTURE);
         buttonUp.setDimension(0.9F / 16);
         buttonUp.setGravity(Gravity.CENTER);
         buttonUp.setLight(light);
@@ -112,7 +109,7 @@ public class RenderKoneKDS330Button1WithoutScreen extends BlockEntityRenderer<Ko
         ButtonView buttonUpLight = new ButtonView();
         buttonUpLight.setId("up");
         buttonUpLight.setBasicsAttributes(world, blockPos, keyMapping);
-        buttonUpLight.setTexture(BUTTON_LIGHT_TEXTURE_UP);
+        buttonUpLight.setTexture(BUTTON_LIGHT_TEXTURE);
         buttonUpLight.setDimension(0.9F / 16);
         buttonUpLight.setGravity(Gravity.CENTER);
         buttonUpLight.setLight(light);
@@ -122,7 +119,7 @@ public class RenderKoneKDS330Button1WithoutScreen extends BlockEntityRenderer<Ko
 
         ImageView buttonDown = new ImageView();
         buttonDown.setBasicsAttributes(world, blockPos);
-        buttonDown.setTexture(BUTTON_TEXTURE_DOWN);
+        buttonDown.setTexture(BUTTON_TEXTURE);
         buttonDown.setDimension(0.9F / 16);
         buttonDown.setGravity(Gravity.CENTER);
         buttonDown.setLight(light);
@@ -131,7 +128,7 @@ public class RenderKoneKDS330Button1WithoutScreen extends BlockEntityRenderer<Ko
         ButtonView buttonDownLight = new ButtonView();
         buttonDownLight.setId("down");
         buttonDownLight.setBasicsAttributes(world, blockPos, keyMapping);
-        buttonDownLight.setTexture(BUTTON_LIGHT_TEXTURE_DOWN);
+        buttonDownLight.setTexture(BUTTON_LIGHT_TEXTURE);
         buttonDownLight.setDimension(0.9F / 16);
         buttonDownLight.setGravity(Gravity.CENTER);
         buttonDownLight.setLight(light);
@@ -158,7 +155,7 @@ public class RenderKoneKDS330Button1WithoutScreen extends BlockEntityRenderer<Ko
         blockEntity.forEachTrackPosition(trackPosition -> {
             line.RenderLine(holdingLinker, trackPosition);
 
-            KoneKDS330Button1WithoutScreen.hasButtonsClient(trackPosition, buttonDescriptor, (floorIndex, lift) -> {
+            KoneKDS220Button1WithoutScreen.hasButtonsClient(trackPosition, buttonDescriptor, (floorIndex, lift) -> {
                 sortedPositionsAndLifts.add(new ObjectObjectImmutablePair<>(trackPosition, lift));
                 final ObjectArraySet<LiftDirection> instructionDirections = lift.hasInstruction(floorIndex);
                 instructionDirections.forEach(liftDirection -> {

@@ -2,6 +2,7 @@ package top.xfunny.mod.client.render;
 
 
 import org.mtr.core.data.Lift;
+import org.mtr.core.data.LiftDirection;
 import org.mtr.libraries.it.unimi.dsi.fastutil.objects.ObjectArrayList;
 import org.mtr.libraries.it.unimi.dsi.fastutil.objects.ObjectObjectImmutablePair;
 import org.mtr.mapping.holder.*;
@@ -14,20 +15,22 @@ import org.mtr.mod.data.IGui;
 import org.mtr.mod.render.QueuedRenderLayer;
 import org.mtr.mod.render.StoredMatrixTransformations;
 import top.xfunny.mod.Init;
-import top.xfunny.mod.block.KoneKSS280Screen1Even;
+import top.xfunny.mod.block.HitachiB85Screen1HorizontalEven;
+import top.xfunny.mod.block.KoneKDS330Screen1Even;
 import top.xfunny.mod.block.base.LiftPanelBase;
 import top.xfunny.mod.client.resource.FontList;
 import top.xfunny.mod.client.view.*;
 import top.xfunny.mod.client.view.view_group.LinearLayout;
 import top.xfunny.mod.item.YteGroupLiftButtonsLinker;
 import top.xfunny.mod.item.YteLiftButtonsLinker;
+import top.xfunny.mod.util.ClientGetLiftDetails;
 
 import java.util.Comparator;
 
-public class RenderKoneKSS280Screen1<T extends LiftPanelBase.BlockEntityBase> extends BlockEntityRenderer<T> implements DirectionHelper, IGui, IBlock {
+public class RenderKoneKDS330Screen1<T extends LiftPanelBase.BlockEntityBase> extends BlockEntityRenderer<T> implements DirectionHelper, IGui, IBlock {
     private final boolean isOdd;
 
-    public RenderKoneKSS280Screen1(Argument dispatcher, Boolean isOdd) {
+    public RenderKoneKDS330Screen1(Argument dispatcher, Boolean isOdd) {
         super(dispatcher);
         this.isOdd = isOdd;
     }
@@ -60,7 +63,7 @@ public class RenderKoneKSS280Screen1<T extends LiftPanelBase.BlockEntityBase> ex
         parentLayout.setBasicsAttributes(world, blockPos);
         parentLayout.setStoredMatrixTransformations(storedMatrixTransformations1);
         parentLayout.setParentDimensions(7.5F / 16, 5F / 16);
-        parentLayout.setPosition(isOdd ? -0.284375F : -0.784375F, 0.5875F);
+        parentLayout.setPosition(isOdd ? -0.284375F : -0.784375F, 0.8925F);
         parentLayout.setWidth(LayoutSize.MATCH_PARENT);
         parentLayout.setHeight(LayoutSize.MATCH_PARENT);
 
@@ -72,7 +75,7 @@ public class RenderKoneKSS280Screen1<T extends LiftPanelBase.BlockEntityBase> ex
 
         blockEntity.forEachTrackPosition(trackPosition -> {
             line.RenderLine(holdingLinker, trackPosition);
-            KoneKSS280Screen1Even.LiftCheck(trackPosition, (floorIndex, lift) -> sortedPositionsAndLifts.add(new ObjectObjectImmutablePair<>(trackPosition, lift)));
+            KoneKDS330Screen1Even.LiftCheck(trackPosition, (floorIndex, lift) -> sortedPositionsAndLifts.add(new ObjectObjectImmutablePair<>(trackPosition, lift)));
         });
 
         sortedPositionsAndLifts.sort(Comparator.comparingInt(sortedPositionAndLift -> blockPos.getManhattanDistance(new Vector3i(sortedPositionAndLift.left().data))));
@@ -81,20 +84,25 @@ public class RenderKoneKSS280Screen1<T extends LiftPanelBase.BlockEntityBase> ex
             final int count = 1;
 
             for (int i = 0; i < count; i++) {
+                final Lift lift = sortedPositionsAndLifts.get(i).right();
+                ObjectObjectImmutablePair<LiftDirection, ObjectObjectImmutablePair<String, String>> liftDetails = ClientGetLiftDetails.getLiftDetails(world, lift, org.mtr.mod.Init.positionToBlockPos(lift.getCurrentFloor().getPosition()));
+                String floorNumber = liftDetails.right().left();
+                final LiftDirection liftDirection = liftDetails.left();
                 final LiftFloorDisplayView liftFloorDisplayView = new LiftFloorDisplayView();
                 liftFloorDisplayView.setBasicsAttributes(world,
                         blockPos,
                         sortedPositionsAndLifts.get(i).right(),
                         FontList.instance.getFont("kone-lcd-segment"),
-                        3.5F,
+                        5.1F,
                         0xFFFFFFFF);
-                liftFloorDisplayView.setTextureId(String.format("kone_kss_280_screen_lcd_segment_display_%d_%s", i, blockEntity.getPos2().asLong()));
+                liftFloorDisplayView.setTextureId(String.format("kone_kds_330_screen_lcd_segment_display_%d_%s", i, blockEntity.getPos2().asLong()))
+;
                 liftFloorDisplayView.setWidth(2.6F / 16);
                 liftFloorDisplayView.setHeight(2.8F / 16);
-                liftFloorDisplayView.setGravity(Gravity.CENTER_VERTICAL);
                 liftFloorDisplayView.setTextAlign(TextView.HorizontalTextAlign.RIGHT);
+                liftFloorDisplayView.setLetterSpacing(0);
                 liftFloorDisplayView.setDisplayLength(2, 0);
-                liftFloorDisplayView.setMargin(0.075F / 16, 0, 0, 0);
+                liftFloorDisplayView.setMargin(1.7F/16, 6F / 16, 0, 0);
                 liftFloorDisplayView.addStoredMatrixTransformations(graphicsHolder -> graphicsHolder.translate(0, 0, -SMALL_OFFSET));
 
                 final LiftArrowView liftArrowView_left = new LiftArrowView();
@@ -102,7 +110,7 @@ public class RenderKoneKSS280Screen1<T extends LiftPanelBase.BlockEntityBase> ex
                 liftArrowView_left.setTexture(new Identifier(Init.MOD_ID, "textures/block/kone_kds330_arrow.png"));
                 liftArrowView_left.setAnimationScrolling(false, 0.05F);
                 liftArrowView_left.setDimension(1F / 16);
-                liftArrowView_left.setMargin(0.25F / 16, 1.875F / 16, 0, 0);
+                liftArrowView_left.setMargin(-2.675F/16 , 6.8F / 16, 0, 0);
                 liftArrowView_left.setQueuedRenderLayer(QueuedRenderLayer.LIGHT_TRANSLUCENT);
                 liftArrowView_left.setFlip(false,true);
                 liftArrowView_left.setColor(0xFFFFFFFF);

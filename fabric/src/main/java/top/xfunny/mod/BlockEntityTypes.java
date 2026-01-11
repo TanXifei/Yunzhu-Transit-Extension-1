@@ -77,9 +77,15 @@ public class BlockEntityTypes {
     public static final BlockEntityTypeRegistryObject<HitachiVIB182AButton.BlockEntity> HITACHI_VIB182A_BUTTON;
     public static final BlockEntityTypeRegistryObject<HitachiHB181AButton.BlockEntity> HITACHI_HB181A_BUTTON;
 
+    public static final BlockEntityTypeRegistryObject<KoneKDS220Button1.BlockEntity> KONE_KDS220_BUTTON_1;
+    public static final BlockEntityTypeRegistryObject<KoneKDS220Button1WithoutScreen.BlockEntity> KONE_KDS220_BUTTON_1_WITHOUT_SCREEN;
     public static final BlockEntityTypeRegistryObject<KoneKDS330Button1.BlockEntity> KONE_KDS330_BUTTON_1;
     public static final BlockEntityTypeRegistryObject<KoneKDS330Button1WithoutScreen.BlockEntity> KONE_KDS330_BUTTON_1_WITHOUT_SCREEN;
+    public static final BlockEntityTypeRegistryObject<KoneKDS330Button1Touch.BlockEntity> KONE_KDS330_BUTTON_1_TOUCH;
+    public static final BlockEntityTypeRegistryObject<KoneKDS330Button1TouchWithoutScreen.BlockEntity> KONE_KDS330_BUTTON_1_TOUCH_WITHOUT_SCREEN;
     public static final BlockEntityTypeRegistryObject<KoneKDS330Lantern1.BlockEntity> KONE_KDS330_LANTERN_1;
+    public static final BlockEntityTypeRegistryObject<KoneKDS330Screen1Odd.BlockEntity> KONE_KDS330_SCREEN_1_ODD;
+    public static final BlockEntityTypeRegistryObject<KoneKDS330Screen1Even.BlockEntity> KONE_KDS330_SCREEN_1_EVEN;
     public static final BlockEntityTypeRegistryObject<KoneKSS280Button1.BlockEntity> KONE_KSS280_BUTTON_1;
     public static final BlockEntityTypeRegistryObject<KoneKSS280Button1WithoutScreen.BlockEntity> KONE_KSS280_BUTTON_1_WITHOUT_SCREEN;
     public static final BlockEntityTypeRegistryObject<KoneKSS280Screen1Odd.BlockEntity> KONE_KSS280_SCREEN_1_ODD;
@@ -349,9 +355,15 @@ public class BlockEntityTypes {
         FUJITEC_MIC400_SCREEN_1_VERTICAL_ODD = Init.REGISTRY.registerBlockEntityType(new Identifier(Init.MOD_ID, "fujitec_mic400_screen_1_vertical_odd"), FujitecMIC400Screen1VerticalOdd.BlockEntity::new, Blocks.FUJITEC_MIC400_SCREEN_1_VERTICAL_ODD::get);
         FUJITEC_MIC400_SCREEN_1_VERTICAL_EVEN = Init.REGISTRY.registerBlockEntityType(new Identifier(Init.MOD_ID, "fujitec_mic400_screen_1_vertical_even"), FujitecMIC400Screen1VerticalEven.BlockEntity::new, Blocks.FUJITEC_MIC400_SCREEN_1_VERTICAL_EVEN::get);
 
+        KONE_KDS220_BUTTON_1 = Init.REGISTRY.registerBlockEntityType(new Identifier(Init.MOD_ID, "kone_kds220_surface_button_1"), KoneKDS220Button1.BlockEntity::new, Blocks.KONE_KDS220_BUTTON_1::get);
+        KONE_KDS220_BUTTON_1_WITHOUT_SCREEN = Init.REGISTRY.registerBlockEntityType(new Identifier(Init.MOD_ID, "kone_kds220_surface_button_1_without_screen"), KoneKDS220Button1WithoutScreen.BlockEntity::new, Blocks.KONE_KDS220_BUTTON_1_WITHOUT_SCREEN::get);
         KONE_KDS330_BUTTON_1 = Init.REGISTRY.registerBlockEntityType(new Identifier(Init.MOD_ID, "kone_kds330_surface_button_1"), KoneKDS330Button1.BlockEntity::new, Blocks.KONE_KDS330_BUTTON_1::get);
         KONE_KDS330_BUTTON_1_WITHOUT_SCREEN = Init.REGISTRY.registerBlockEntityType(new Identifier(Init.MOD_ID, "kone_kds330_surface_button_1_without_screen"), KoneKDS330Button1WithoutScreen.BlockEntity::new, Blocks.KONE_KDS330_BUTTON_1_WITHOUT_SCREEN::get);
+        KONE_KDS330_BUTTON_1_TOUCH = Init.REGISTRY.registerBlockEntityType(new Identifier(Init.MOD_ID, "kone_kds330_surface_button_1_touch"), KoneKDS330Button1Touch.BlockEntity::new, Blocks.KONE_KDS330_BUTTON_1_TOUCH::get);
+        KONE_KDS330_BUTTON_1_TOUCH_WITHOUT_SCREEN = Init.REGISTRY.registerBlockEntityType(new Identifier(Init.MOD_ID, "kone_kds330_surface_button_1_touch_without_screen"), KoneKDS330Button1TouchWithoutScreen.BlockEntity::new, Blocks.KONE_KDS330_BUTTON_1_TOUCH_WITHOUT_SCREEN::get);
         KONE_KDS330_LANTERN_1 = Init.REGISTRY.registerBlockEntityType(new Identifier(Init.MOD_ID, "kone_kds330_surface_lantern_1"), KoneKDS330Lantern1.BlockEntity::new, Blocks.KONE_KDS330_LANTERN_1::get);
+        KONE_KDS330_SCREEN_1_ODD = Init.REGISTRY.registerBlockEntityType(new Identifier(Init.MOD_ID, "kone_kds330_surface_screen_1_odd"), KoneKDS330Screen1Odd.BlockEntity::new, Blocks.KONE_KDS330_SCREEN_1_ODD::get);
+        KONE_KDS330_SCREEN_1_EVEN = Init.REGISTRY.registerBlockEntityType(new Identifier(Init.MOD_ID, "kone_kds330_surface_screen_1_even"), KoneKDS330Screen1Even.BlockEntity::new, Blocks.KONE_KDS330_SCREEN_1_EVEN::get);
         KONE_KSS280_BUTTON_1 = Init.REGISTRY.registerBlockEntityType(new Identifier(Init.MOD_ID, "kone_kss280_surface_button_1"), KoneKSS280Button1.BlockEntity::new, Blocks.KONE_KSS280_BUTTON_1::get);
         KONE_KSS280_BUTTON_1_WITHOUT_SCREEN = Init.REGISTRY.registerBlockEntityType(new Identifier(Init.MOD_ID, "kone_kss280_surface_button_1_without_screen"), KoneKSS280Button1WithoutScreen.BlockEntity::new, Blocks.KONE_KSS280_BUTTON_1_WITHOUT_SCREEN::get);
         KONE_KSS280_SCREEN_1_ODD = Init.REGISTRY.registerBlockEntityType(new Identifier(Init.MOD_ID, "kone_kss280_surface_screen_1_odd"), KoneKSS280Screen1Odd.BlockEntity::new, Blocks.KONE_KSS280_SCREEN_1_ODD::get);

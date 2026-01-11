@@ -14,6 +14,8 @@ import org.mtr.mod.block.IBlock;
 import org.mtr.mod.data.IGui;
 import org.mtr.mod.render.StoredMatrixTransformations;
 import top.xfunny.mod.Init;
+import top.xfunny.mod.block.KoneKDS330Button1Touch;
+import top.xfunny.mod.block.KoneKDS330Button1TouchWithoutScreen;
 import top.xfunny.mod.block.KoneKDS330Button1WithoutScreen;
 import top.xfunny.mod.block.SchindlerMSeriesButton;
 import top.xfunny.mod.block.base.LiftButtonsBase;
@@ -23,23 +25,22 @@ import top.xfunny.mod.item.YteGroupLiftButtonsLinker;
 import top.xfunny.mod.item.YteLiftButtonsLinker;
 import top.xfunny.mod.keymapping.DefaultButtonsKeyMapping;
 
-public class RenderKoneKDS330Button1WithoutScreen extends BlockEntityRenderer<KoneKDS330Button1WithoutScreen.BlockEntity> implements DirectionHelper, IGui, IBlock {
+public class RenderKoneKDS330Button1TouchWithoutScreen extends BlockEntityRenderer<KoneKDS330Button1TouchWithoutScreen.BlockEntity> implements DirectionHelper, IGui, IBlock {
 
     private static final int HOVER_COLOR = 0xFFCCCCCC;
     private static final int PRESSED_COLOR = 0xFFFFFFFF;
     private static final int DEFAULT_COLOR = 0xFFFFFFFF;
-    private final Identifier BUTTON_TEXTURE_UP = new Identifier(Init.MOD_ID, "textures/block/kone_kds330_up_button.png");
-    private final Identifier BUTTON_TEXTURE_DOWN = new Identifier(Init.MOD_ID, "textures/block/kone_kds330_up_button.png");//todo
-    private final Identifier BUTTON_LIGHT_TEXTURE_UP = new Identifier(Init.MOD_ID, "textures/block/kone_kds330_up_button_light.png");
-    private final Identifier BUTTON_LIGHT_TEXTURE_DOWN = new Identifier(Init.MOD_ID, "textures/block/kone_kds330_up_button_light.png");//todo
+    private final Identifier BUTTON_LIGHT_TEXTURE_UP = new Identifier(Init.MOD_ID, "textures/block/kone_kds330_up_button_touch.png");
+    private final Identifier BUTTON_LIGHT_TEXTURE_DOWN = new Identifier(Init.MOD_ID, "textures/block/kone_kds330_up_button_touch.png");//todo
+    private final Identifier TIPS = new Identifier(Init.MOD_ID, "textures/block/kone_kds330_touch_tip.png");
     private final Identifier LOGO = new Identifier(Init.MOD_ID, "textures/block/kone_logo_2.png");
 
-    public RenderKoneKDS330Button1WithoutScreen(Argument dispatcher) {
+    public RenderKoneKDS330Button1TouchWithoutScreen(Argument dispatcher) {
         super(dispatcher);
     }
 
     @Override
-    public void render(KoneKDS330Button1WithoutScreen.BlockEntity blockEntity, float tickDelta, GraphicsHolder graphicsHolder1, int light, int overlay) {
+    public void render(KoneKDS330Button1TouchWithoutScreen.BlockEntity blockEntity, float tickDelta, GraphicsHolder graphicsHolder1, int light, int overlay) {
         final World world = blockEntity.getWorld2();
         if (world == null) {
             return;
@@ -102,13 +103,6 @@ public class RenderKoneKDS330Button1WithoutScreen extends BlockEntityRenderer<Ko
         buttonDownGroup.setHeight(LayoutSize.WRAP_CONTENT);
         buttonDownGroup.setGravity(Gravity.CENTER);
 
-        ImageView buttonUp = new ImageView();
-        buttonUp.setBasicsAttributes(world, blockPos);
-        buttonUp.setTexture(BUTTON_TEXTURE_UP);
-        buttonUp.setDimension(0.9F / 16);
-        buttonUp.setGravity(Gravity.CENTER);
-        buttonUp.setLight(light);
-
         ButtonView buttonUpLight = new ButtonView();
         buttonUpLight.setId("up");
         buttonUpLight.setBasicsAttributes(world, blockPos, keyMapping);
@@ -119,14 +113,6 @@ public class RenderKoneKDS330Button1WithoutScreen extends BlockEntityRenderer<Ko
         buttonUpLight.setDefaultColor(DEFAULT_COLOR);
         buttonUpLight.setHoverColor(HOVER_COLOR);
         buttonUpLight.setPressedColor(PRESSED_COLOR);
-
-        ImageView buttonDown = new ImageView();
-        buttonDown.setBasicsAttributes(world, blockPos);
-        buttonDown.setTexture(BUTTON_TEXTURE_DOWN);
-        buttonDown.setDimension(0.9F / 16);
-        buttonDown.setGravity(Gravity.CENTER);
-        buttonDown.setLight(light);
-        buttonDown.setFlip(false, true);
 
         ButtonView buttonDownLight = new ButtonView();
         buttonDownLight.setId("down");
@@ -148,7 +134,21 @@ public class RenderKoneKDS330Button1WithoutScreen extends BlockEntityRenderer<Ko
         koneLogo.setMargin(0, 2.11F / 16, 2F / 16, 0);
         koneLogo.setGravity(Gravity.END);
 
+        ImageView useTipUp = new ImageView();
+        useTipUp.setBasicsAttributes(world, blockPos);
+        useTipUp.setTexture(TIPS);
+        useTipUp.setDimension(1F / 16 ,256,125);
+        useTipUp.setMargin(0,1.5F / 16,0,0);
+        useTipUp.setLight(light);
+        useTipUp.setGravity(Gravity.END);
 
+        ImageView useTipDown = new ImageView();
+        useTipDown.setBasicsAttributes(world, blockPos);
+        useTipDown.setTexture(TIPS);
+        useTipDown.setDimension(1F / 16 ,256,125);
+        useTipDown.setMargin(0,1.5F / 16,0,0);
+        useTipDown.setLight(light);
+        useTipDown.setGravity(Gravity.END);
 
         final LineComponent line = new LineComponent();
         line.setBasicsAttributes(world, blockPos);
@@ -158,7 +158,7 @@ public class RenderKoneKDS330Button1WithoutScreen extends BlockEntityRenderer<Ko
         blockEntity.forEachTrackPosition(trackPosition -> {
             line.RenderLine(holdingLinker, trackPosition);
 
-            KoneKDS330Button1WithoutScreen.hasButtonsClient(trackPosition, buttonDescriptor, (floorIndex, lift) -> {
+            KoneKDS330Button1TouchWithoutScreen.hasButtonsClient(trackPosition, buttonDescriptor, (floorIndex, lift) -> {
                 sortedPositionsAndLifts.add(new ObjectObjectImmutablePair<>(trackPosition, lift));
                 final ObjectArraySet<LiftDirection> instructionDirections = lift.hasInstruction(floorIndex);
                 instructionDirections.forEach(liftDirection -> {
@@ -179,14 +179,14 @@ public class RenderKoneKDS330Button1WithoutScreen extends BlockEntityRenderer<Ko
         logoContainer.addChild(koneLogo);
 
         if (buttonDescriptor.hasUpButton()) {
-            buttonUpGroup.addChild(buttonUp);
             buttonUpGroup.addChild(buttonUpLight);
+            buttonUpGroup.addChild(useTipUp);
             buttonUpLayout.addChild(buttonUpGroup);
         }
 
         if (buttonDescriptor.hasDownButton()) {
-            buttonDownGroup.addChild(buttonDown);
             buttonDownGroup.addChild(buttonDownLight);
+            buttonDownGroup.addChild(useTipDown);
             buttonDownLayout.addChild(buttonDownGroup);
         }
 

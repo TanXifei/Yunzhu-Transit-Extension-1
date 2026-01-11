@@ -55,9 +55,15 @@ public final class InitClient {
         REGISTRY_CLIENT.registerBlockEntityRenderer(BlockEntityTypes.FUJITEC_MIC400_SCREEN_1_VERTICAL_ODD, dispatcher -> new RenderFujitecMIC400Screen1Vertical<>(dispatcher, true));
         REGISTRY_CLIENT.registerBlockEntityRenderer(BlockEntityTypes.FUJITEC_MIC400_SCREEN_1_VERTICAL_EVEN, dispatcher -> new RenderFujitecMIC400Screen1Vertical<>(dispatcher, false));
 
+        REGISTRY_CLIENT.registerBlockEntityRenderer(BlockEntityTypes.KONE_KDS220_BUTTON_1, RenderKoneKDS220Button1::new);
+        REGISTRY_CLIENT.registerBlockEntityRenderer(BlockEntityTypes.KONE_KDS220_BUTTON_1_WITHOUT_SCREEN, RenderKoneKDS220Button1WithoutScreen::new);
         REGISTRY_CLIENT.registerBlockEntityRenderer(BlockEntityTypes.KONE_KDS330_BUTTON_1, RenderKoneKDS330Button1::new);
         REGISTRY_CLIENT.registerBlockEntityRenderer(BlockEntityTypes.KONE_KDS330_BUTTON_1_WITHOUT_SCREEN, RenderKoneKDS330Button1WithoutScreen::new);
+        REGISTRY_CLIENT.registerBlockEntityRenderer(BlockEntityTypes.KONE_KDS330_BUTTON_1_TOUCH, RenderKoneKDS330Button1Touch::new);
+        REGISTRY_CLIENT.registerBlockEntityRenderer(BlockEntityTypes.KONE_KDS330_BUTTON_1_TOUCH_WITHOUT_SCREEN, RenderKoneKDS330Button1TouchWithoutScreen::new);
         REGISTRY_CLIENT.registerBlockEntityRenderer(BlockEntityTypes.KONE_KDS330_LANTERN_1, RenderKoneKDS330Lantern1::new);
+        REGISTRY_CLIENT.registerBlockEntityRenderer(BlockEntityTypes.KONE_KDS330_SCREEN_1_ODD, dispatcher -> new top.xfunny.mod.client.render.RenderKoneKDS330Screen1<>(dispatcher, true));
+        REGISTRY_CLIENT.registerBlockEntityRenderer(BlockEntityTypes.KONE_KDS330_SCREEN_1_EVEN, dispatcher -> new top.xfunny.mod.client.render.RenderKoneKDS330Screen1<>(dispatcher, false));
         REGISTRY_CLIENT.registerBlockEntityRenderer(BlockEntityTypes.KONE_KSS280_BUTTON_1, RenderKoneKSS280Button1::new);
         REGISTRY_CLIENT.registerBlockEntityRenderer(BlockEntityTypes.KONE_KSS280_BUTTON_1_WITHOUT_SCREEN, RenderKoneKSS280Button1WithoutScreen::new);
         REGISTRY_CLIENT.registerBlockEntityRenderer(BlockEntityTypes.KONE_KSS280_SCREEN_1_ODD, dispatcher -> new top.xfunny.mod.client.render.RenderKoneKSS280Screen1<>(dispatcher, true));

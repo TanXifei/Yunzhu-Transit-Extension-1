@@ -40,9 +40,15 @@ public class Blocks {
     public static final BlockRegistryObject FUJITEC_MIC400_SCREEN_1_HORIZONTAL_ODD;
     public static final BlockRegistryObject FUJITEC_MIC400_SCREEN_1_HORIZONTAL_EVEN;
 
+    public static final BlockRegistryObject KONE_KDS220_BUTTON_1;
+    public static final BlockRegistryObject KONE_KDS220_BUTTON_1_WITHOUT_SCREEN;
     public static final BlockRegistryObject KONE_KDS330_BUTTON_1;
     public static final BlockRegistryObject KONE_KDS330_BUTTON_1_WITHOUT_SCREEN;
+    public static final BlockRegistryObject KONE_KDS330_BUTTON_1_TOUCH;
+    public static final BlockRegistryObject KONE_KDS330_BUTTON_1_TOUCH_WITHOUT_SCREEN;
     public static final BlockRegistryObject KONE_KDS330_LANTERN_1;
+    public static final BlockRegistryObject KONE_KDS330_SCREEN_1_ODD;
+    public static final BlockRegistryObject KONE_KDS330_SCREEN_1_EVEN;
     public static final BlockRegistryObject KONE_KSS280_BUTTON_1;
     public static final BlockRegistryObject KONE_KSS280_BUTTON_1_WITHOUT_SCREEN;
     public static final BlockRegistryObject KONE_KSS280_SCREEN_1_ODD;
@@ -357,9 +363,15 @@ public class Blocks {
         FUJITEC_MIC400_SCREEN_1_VERTICAL_ODD = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "fujitec_mic400_screen_1_vertical_odd"), () -> new Block(new FujitecMIC400Screen1VerticalOdd()), CreativeModeTabs.YTE_LIFT_FIXTURES);
         FUJITEC_MIC400_SCREEN_1_VERTICAL_EVEN = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "fujitec_mic400_screen_1_vertical_even"), () -> new Block(new FujitecMIC400Screen1VerticalEven()), CreativeModeTabs.YTE_LIFT_FIXTURES);
 
+        KONE_KDS220_BUTTON_1 = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "kone_kds220_surface_button_1"), () -> new Block(new KoneKDS220Button1()), CreativeModeTabs.YTE_LIFT_FIXTURES);
+        KONE_KDS220_BUTTON_1_WITHOUT_SCREEN = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "kone_kds220_surface_button_1_without_screen"), () -> new Block(new KoneKDS220Button1WithoutScreen()), CreativeModeTabs.YTE_LIFT_FIXTURES);
         KONE_KDS330_BUTTON_1 = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "kone_kds330_surface_button_1"), () -> new Block(new KoneKDS330Button1()), CreativeModeTabs.YTE_LIFT_FIXTURES);
         KONE_KDS330_BUTTON_1_WITHOUT_SCREEN = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "kone_kds330_surface_button_1_without_screen"), () -> new Block(new KoneKDS330Button1WithoutScreen()), CreativeModeTabs.YTE_LIFT_FIXTURES);
+        KONE_KDS330_BUTTON_1_TOUCH = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "kone_kds330_surface_button_1_touch"), () -> new Block(new KoneKDS330Button1Touch()), CreativeModeTabs.YTE_LIFT_FIXTURES);
+        KONE_KDS330_BUTTON_1_TOUCH_WITHOUT_SCREEN = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "kone_kds330_surface_button_1_touch_without_screen"), () -> new Block(new KoneKDS330Button1TouchWithoutScreen()), CreativeModeTabs.YTE_LIFT_FIXTURES);
         KONE_KDS330_LANTERN_1 = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "kone_kds330_surface_lantern_1"), () -> new Block(new KoneKDS330Lantern1()), CreativeModeTabs.YTE_LIFT_FIXTURES);
+        KONE_KDS330_SCREEN_1_ODD = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "kone_kds330_surface_screen_1_odd"), () -> new Block(new KoneKDS330Screen1Odd()), CreativeModeTabs.YTE_LIFT_FIXTURES);
+        KONE_KDS330_SCREEN_1_EVEN = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "kone_kds330_surface_screen_1_even"), () -> new Block(new KoneKDS330Screen1Even()), CreativeModeTabs.YTE_LIFT_FIXTURES);
         KONE_KSS280_BUTTON_1 = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "kone_kss280_surface_button_1"), () -> new Block(new KoneKSS280Button1()), CreativeModeTabs.YTE_LIFT_FIXTURES);
         KONE_KSS280_BUTTON_1_WITHOUT_SCREEN = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "kone_kss280_surface_button_1_without_screen"), () -> new Block(new KoneKSS280Button1WithoutScreen()), CreativeModeTabs.YTE_LIFT_FIXTURES);
         KONE_KSS280_SCREEN_1_ODD = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "kone_kss280_surface_screen_1_odd"), () -> new Block(new KoneKSS280Screen1Odd()), CreativeModeTabs.YTE_LIFT_FIXTURES);

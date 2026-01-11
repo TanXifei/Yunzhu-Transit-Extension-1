@@ -46,6 +46,7 @@ public class FontList {
             loadFont("nimbus_sans_bold", "font/nimbus_sans_bold.ttf");
             loadFont("hitachi_modern", "font/hitachi_modern.ttf");
             loadFont("kone-lcd-segment", "font/kone-lcd-segment.ttf");
+            loadFont("kone-kds220-segment", "font/kone_kds220_segment.ttf");
             loadFont("otis_series_3", "font/otis_series_3.ttf");
             loadFont("otis-segmented", "font/otis-segmented.ttf");
             loadFont("wqy-microhei", "font/wqy-microhei.ttc");
