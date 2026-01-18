@@ -79,6 +79,8 @@ public class BlockEntityTypes {
 
     public static final BlockEntityTypeRegistryObject<KoneKDS220Button1.BlockEntity> KONE_KDS220_BUTTON_1;
     public static final BlockEntityTypeRegistryObject<KoneKDS220Button1WithoutScreen.BlockEntity> KONE_KDS220_BUTTON_1_WITHOUT_SCREEN;
+    public static final BlockEntityTypeRegistryObject<KoneKDS220Screen1Odd.BlockEntity> KONE_KDS220_SCREEN_1_ODD;
+    public static final BlockEntityTypeRegistryObject<KoneKDS220Screen1Even.BlockEntity> KONE_KDS220_SCREEN_1_EVEN;
     public static final BlockEntityTypeRegistryObject<KoneKDS330Button1.BlockEntity> KONE_KDS330_BUTTON_1;
     public static final BlockEntityTypeRegistryObject<KoneKDS330Button1WithoutScreen.BlockEntity> KONE_KDS330_BUTTON_1_WITHOUT_SCREEN;
     public static final BlockEntityTypeRegistryObject<KoneKDS330Button1Touch.BlockEntity> KONE_KDS330_BUTTON_1_TOUCH;
@@ -357,6 +359,8 @@ public class BlockEntityTypes {
 
         KONE_KDS220_BUTTON_1 = Init.REGISTRY.registerBlockEntityType(new Identifier(Init.MOD_ID, "kone_kds220_surface_button_1"), KoneKDS220Button1.BlockEntity::new, Blocks.KONE_KDS220_BUTTON_1::get);
         KONE_KDS220_BUTTON_1_WITHOUT_SCREEN = Init.REGISTRY.registerBlockEntityType(new Identifier(Init.MOD_ID, "kone_kds220_surface_button_1_without_screen"), KoneKDS220Button1WithoutScreen.BlockEntity::new, Blocks.KONE_KDS220_BUTTON_1_WITHOUT_SCREEN::get);
+        KONE_KDS220_SCREEN_1_ODD = Init.REGISTRY.registerBlockEntityType(new Identifier(Init.MOD_ID, "kone_kds220_surface_screen_1_odd"), KoneKDS220Screen1Odd.BlockEntity::new, Blocks.KONE_KDS220_SCREEN_1_ODD::get);
+        KONE_KDS220_SCREEN_1_EVEN = Init.REGISTRY.registerBlockEntityType(new Identifier(Init.MOD_ID, "kone_kds220_surface_screen_1_even"), KoneKDS220Screen1Even.BlockEntity::new, Blocks.KONE_KDS220_SCREEN_1_EVEN::get);
         KONE_KDS330_BUTTON_1 = Init.REGISTRY.registerBlockEntityType(new Identifier(Init.MOD_ID, "kone_kds330_surface_button_1"), KoneKDS330Button1.BlockEntity::new, Blocks.KONE_KDS330_BUTTON_1::get);
         KONE_KDS330_BUTTON_1_WITHOUT_SCREEN = Init.REGISTRY.registerBlockEntityType(new Identifier(Init.MOD_ID, "kone_kds330_surface_button_1_without_screen"), KoneKDS330Button1WithoutScreen.BlockEntity::new, Blocks.KONE_KDS330_BUTTON_1_WITHOUT_SCREEN::get);
         KONE_KDS330_BUTTON_1_TOUCH = Init.REGISTRY.registerBlockEntityType(new Identifier(Init.MOD_ID, "kone_kds330_surface_button_1_touch"), KoneKDS330Button1Touch.BlockEntity::new, Blocks.KONE_KDS330_BUTTON_1_TOUCH::get);

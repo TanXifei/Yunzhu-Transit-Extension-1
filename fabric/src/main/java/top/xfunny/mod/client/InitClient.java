@@ -57,6 +57,8 @@ public final class InitClient {
 
         REGISTRY_CLIENT.registerBlockEntityRenderer(BlockEntityTypes.KONE_KDS220_BUTTON_1, RenderKoneKDS220Button1::new);
         REGISTRY_CLIENT.registerBlockEntityRenderer(BlockEntityTypes.KONE_KDS220_BUTTON_1_WITHOUT_SCREEN, RenderKoneKDS220Button1WithoutScreen::new);
+        REGISTRY_CLIENT.registerBlockEntityRenderer(BlockEntityTypes.KONE_KDS220_SCREEN_1_ODD, dispatcher -> new top.xfunny.mod.client.render.RenderKoneKDS220Screen1<>(dispatcher, true));
+        REGISTRY_CLIENT.registerBlockEntityRenderer(BlockEntityTypes.KONE_KDS220_SCREEN_1_EVEN, dispatcher -> new top.xfunny.mod.client.render.RenderKoneKDS220Screen1<>(dispatcher, false));
         REGISTRY_CLIENT.registerBlockEntityRenderer(BlockEntityTypes.KONE_KDS330_BUTTON_1, RenderKoneKDS330Button1::new);
         REGISTRY_CLIENT.registerBlockEntityRenderer(BlockEntityTypes.KONE_KDS330_BUTTON_1_WITHOUT_SCREEN, RenderKoneKDS330Button1WithoutScreen::new);
         REGISTRY_CLIENT.registerBlockEntityRenderer(BlockEntityTypes.KONE_KDS330_BUTTON_1_TOUCH, RenderKoneKDS330Button1Touch::new);

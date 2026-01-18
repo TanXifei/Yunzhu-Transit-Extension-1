@@ -42,6 +42,8 @@ public class Blocks {
 
     public static final BlockRegistryObject KONE_KDS220_BUTTON_1;
     public static final BlockRegistryObject KONE_KDS220_BUTTON_1_WITHOUT_SCREEN;
+    public static final BlockRegistryObject KONE_KDS220_SCREEN_1_ODD;
+    public static final BlockRegistryObject KONE_KDS220_SCREEN_1_EVEN;
     public static final BlockRegistryObject KONE_KDS330_BUTTON_1;
     public static final BlockRegistryObject KONE_KDS330_BUTTON_1_WITHOUT_SCREEN;
     public static final BlockRegistryObject KONE_KDS330_BUTTON_1_TOUCH;
@@ -365,6 +367,8 @@ public class Blocks {
 
         KONE_KDS220_BUTTON_1 = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "kone_kds220_surface_button_1"), () -> new Block(new KoneKDS220Button1()), CreativeModeTabs.YTE_LIFT_FIXTURES);
         KONE_KDS220_BUTTON_1_WITHOUT_SCREEN = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "kone_kds220_surface_button_1_without_screen"), () -> new Block(new KoneKDS220Button1WithoutScreen()), CreativeModeTabs.YTE_LIFT_FIXTURES);
+        KONE_KDS220_SCREEN_1_ODD = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "kone_kds220_surface_screen_1_odd"), () -> new Block(new KoneKDS220Screen1Odd()), CreativeModeTabs.YTE_LIFT_FIXTURES);
+        KONE_KDS220_SCREEN_1_EVEN = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "kone_kds220_surface_screen_1_even"), () -> new Block(new KoneKDS220Screen1Even()), CreativeModeTabs.YTE_LIFT_FIXTURES);
         KONE_KDS330_BUTTON_1 = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "kone_kds330_surface_button_1"), () -> new Block(new KoneKDS330Button1()), CreativeModeTabs.YTE_LIFT_FIXTURES);
         KONE_KDS330_BUTTON_1_WITHOUT_SCREEN = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "kone_kds330_surface_button_1_without_screen"), () -> new Block(new KoneKDS330Button1WithoutScreen()), CreativeModeTabs.YTE_LIFT_FIXTURES);
         KONE_KDS330_BUTTON_1_TOUCH = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "kone_kds330_surface_button_1_touch"), () -> new Block(new KoneKDS330Button1Touch()), CreativeModeTabs.YTE_LIFT_FIXTURES);

@@ -88,7 +88,7 @@ public class RenderSchindlerFIGSScreen1Black<T extends LiftPanelBase.BlockEntity
                         FontList.instance.getFont("helvetica"),
                         7F,
                         0xFFFF0000);
-                liftFloorDisplayView.setTextureId("schindler_fi_gs_700_lcd_screen_display");
+                liftFloorDisplayView.setTextureId("schindler_fi_gs_700_lcd_screen_display_red");
                 liftFloorDisplayView.setWidth(2.6F / 16);
                 liftFloorDisplayView.setHeight(2.8F / 16);
                 liftFloorDisplayView.setTextAlign(TextView.HorizontalTextAlign.CENTER);

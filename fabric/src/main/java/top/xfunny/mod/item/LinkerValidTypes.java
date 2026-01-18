@@ -105,6 +105,8 @@ public class LinkerValidTypes {
             HitachiButtonPAFC.class,
             KoneKDS220Button1.class,
             KoneKDS220Button1WithoutScreen.class,
+            KoneKDS220Screen1Odd.class,
+            KoneKDS220Screen1Even.class,
             KoneKDS330Button1.class,
             KoneKDS330Button1WithoutScreen.class,
             KoneKDS330Button1Touch.class,
