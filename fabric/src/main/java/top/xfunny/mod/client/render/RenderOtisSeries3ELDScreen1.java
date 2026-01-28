@@ -210,7 +210,7 @@ public class RenderOtisSeries3ELDScreen1<T extends LiftButtonsBase.BlockEntityBa
                         FontList.instance.getFont("nimbus_sans_bold"),
                         6,
                         0xFFB29B3C);
-                liftFloorDisplayView.setTextureId(String.format("otis_series_3_eld_1_screen_display_%d_%s", i, blockEntity.getPos2().asLong()))
+                liftFloorDisplayView.setTextureId(String.format("otis_series_3_eld_1_screen_display_%d", i))
 ;
                 liftFloorDisplayView.setWidth((float) 3 / 16);
                 liftFloorDisplayView.setHeight((float) 2.3 / 16);

@@ -192,7 +192,7 @@ public class RenderKoneKSS280Button1 extends BlockEntityRenderer<KoneKSS280Butto
                         FontList.instance.getFont("kone-lcd-segment"),//字体
                         3,//字号
                         0xFFFFFFFF);//字体颜色
-                liftFloorDisplayView.setTextureId(String.format("kone_kss_280_lcd_segment_display_%d_%s", i, blockEntity.getPos2().asLong()));//字体贴图id，不能与其他显示屏的重复
+                liftFloorDisplayView.setTextureId(String.format("kone_kss_280_lcd_segment_display_%d", i));//字体贴图id，不能与其他显示屏的重复
                 liftFloorDisplayView.setWidth(1.3F / 16);//显示屏宽度
                 liftFloorDisplayView.setHeight(1.7F / 16);//显示屏高度
                 liftFloorDisplayView.setMargin(-0.625F / 16, -0.6F / 16, 0.1F / 16, 0);

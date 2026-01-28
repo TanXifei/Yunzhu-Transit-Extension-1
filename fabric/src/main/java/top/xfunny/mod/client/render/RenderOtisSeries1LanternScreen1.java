@@ -259,7 +259,7 @@ public class RenderOtisSeries1LanternScreen1<T extends LiftButtonsBase.BlockEnti
                         FontList.instance.getFont("otis_series1"),
                         5,
                         0xFF1D953F);
-                liftFloorDisplayView.setTextureId(String.format("otis_series1_screen_display_%d_%s", i, blockEntity.getPos2().asLong()));
+                liftFloorDisplayView.setTextureId(String.format("otis_series1_screen_display_%d", i));
                 liftFloorDisplayView.setWidth(1.3F / 16);
                 liftFloorDisplayView.setHeight(1.75F / 16);
                 liftFloorDisplayView.setMargin(0.15F / 16, 0.1F / 16, 0.35F / 16, 0.1F / 16);

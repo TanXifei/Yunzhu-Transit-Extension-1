@@ -21,7 +21,7 @@ public class LiftSpeed {
 
         float lastUpdateTick = tickCache.getOrDefault(liftId, 0f);
 
-        if (gameTick < publicLatestGameTick) {
+        if (gameTick < publicLatestGameTick) {//重新进存档，则清除缓存
             publicLatestGameTick = gameTick;
             speedCache.clear();
             tickCache.clear();

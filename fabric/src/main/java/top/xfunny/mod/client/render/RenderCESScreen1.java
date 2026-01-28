@@ -108,9 +108,8 @@ public class RenderCESScreen1<T extends LiftPanelBase.BlockEntityBase> extends B
                         0xFFFF8800
                 );
                 liftFloorDisplayView.setTextureId(String.format(
-                        "ces_screen_1_display_%d_%s",
-                        i,
-                        blockEntity.getPos2().asLong()
+                        "ces_screen_1_display_%d",
+                        i
                 ));
                 liftFloorDisplayView.setWidth(2.6F / 16);
                 liftFloorDisplayView.setHeight(2.8F / 16);

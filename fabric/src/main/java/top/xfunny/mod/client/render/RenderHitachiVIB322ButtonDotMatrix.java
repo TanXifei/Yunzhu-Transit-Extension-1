@@ -198,7 +198,7 @@ public class RenderHitachiVIB322ButtonDotMatrix extends BlockEntityRenderer<Hita
                         FontList.instance.getFont("hitachi-led-dot_matrix"),
                         5F,
                         0xFFFF4800);
-                liftFloorDisplayView.setTextureId(String.format("hitachi_vib_322_dot_matrix_display_%d_%s", i, blockEntity.getPos2().asLong()));
+                liftFloorDisplayView.setTextureId(String.format("hitachi_vib_322_dot_matrix_display_%d", i));
                 liftFloorDisplayView.setWidth(1.23F / 16);
                 liftFloorDisplayView.setHeight(1.7F / 16);
 

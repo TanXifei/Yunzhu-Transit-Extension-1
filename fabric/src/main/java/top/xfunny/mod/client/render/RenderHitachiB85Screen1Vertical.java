@@ -94,7 +94,7 @@ public class RenderHitachiB85Screen1Vertical<T extends LiftPanelBase.BlockEntity
                         FontList.instance.getFont(floorNumber.matches("^(-1|1)$")?"hitachi_b85_2_left":"hitachi_b85_2"),
                         5F,
                         0xFFCC0000);
-                liftFloorDisplayView.setTextureId(String.format("hitachi_b85_screen_1_vertical_display_%d_%s", i, blockEntity.getPos2().asLong()))
+                liftFloorDisplayView.setTextureId(String.format("hitachi_b85_screen_1_vertical_display_%d", i))
 ;
                 liftFloorDisplayView.setWidth(2.6F / 16);
                 liftFloorDisplayView.setHeight(2.8F / 16);

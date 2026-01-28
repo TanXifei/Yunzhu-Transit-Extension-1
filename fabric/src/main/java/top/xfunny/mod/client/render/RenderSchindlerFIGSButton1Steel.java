@@ -195,7 +195,7 @@ public class RenderSchindlerFIGSButton1Steel extends BlockEntityRenderer<Schindl
                         7,
                         0xFFFFFFFF);
                 liftFloorDisplayView.setDisplayLength(2, 0.05F);
-                liftFloorDisplayView.setTextureId(String.format("schindler_fi_gs_1_steel_display_%d_%s", i, blockEntity.getPos2().asLong()))
+                liftFloorDisplayView.setTextureId(String.format("schindler_fi_gs_1_steel_display_%d", i))
 ;
                 liftFloorDisplayView.setWidth(1.4F / 16);
                 liftFloorDisplayView.setHeight(1.7F / 16);

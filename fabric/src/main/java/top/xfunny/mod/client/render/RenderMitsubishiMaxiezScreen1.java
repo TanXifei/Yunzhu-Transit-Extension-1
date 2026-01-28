@@ -95,7 +95,7 @@ public class RenderMitsubishiMaxiezScreen1<T extends LiftPanelBase.BlockEntityBa
                         FontList.instance.getFont("gill_sans_mt"),
                         16,
                         0xFF000000);
-                liftFloorDisplayView.setTextureId(String.format("mitsubishi_maxiez_screen_1_display_%d_%s", i, blockEntity.getPos2().asLong()))
+                liftFloorDisplayView.setTextureId(String.format("mitsubishi_maxiez_screen_1_display_%d", i))
 ;
                 liftFloorDisplayView.setWidth(1.9F / 16);
                 liftFloorDisplayView.setHeight(1.5F / 16);
@@ -143,7 +143,7 @@ public class RenderMitsubishiMaxiezScreen1<T extends LiftPanelBase.BlockEntityBa
                 final TextView textView = new TextView();
                 textView.setId("textView");
                 textView.setBasicsAttributes(world, blockPos, FontList.instance.getFont("wqy-microhei"), 5, 0xFF000000);
-                textView.setTextureId(String.format("mitsubishi_maxiez_screen_1_date_display_%d_%s", i, blockEntity.getPos2().asLong()))
+                textView.setTextureId(String.format("mitsubishi_maxiez_screen_1_date_display_%d", i))
 ;
                 textView.setText(text);
                 textView.setWidth(4F / 16);

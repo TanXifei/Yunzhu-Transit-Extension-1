@@ -9,7 +9,9 @@ import top.xfunny.mod.BlockEntityTypes;
 import top.xfunny.mod.Blocks;
 import top.xfunny.mod.Init;
 import top.xfunny.mod.Items;
+import top.xfunny.mod.client.client_data.DynamicResourceTextCache;
 import top.xfunny.mod.client.render.*;
+import top.xfunny.mod.client.resource.FontList;
 import top.xfunny.mod.config.ClientConfig;
 import top.xfunny.mod.item.YTEItemBlockClickingBase;
 
@@ -357,11 +359,13 @@ public final class InitClient {
             lastMillis = System.currentTimeMillis();
             gameMillis = 0;
 
-            FontResourceGenerator.getInstance().reload();
+            DynamicTextureCache.instance.reload();
+            DynamicResourceTextCache.instance.reload();
+            FontList.instance.FontReload();
         });
 
         // TODO: 发布前请注释此行代码。
-        REGISTRY_CLIENT.eventRegistryClient.registerGuiRendering(RenderWatermark::render);
+        //REGISTRY_CLIENT.eventRegistryClient.registerGuiRendering(RenderWatermark::render);
 
         REGISTRY_CLIENT.init();
     }

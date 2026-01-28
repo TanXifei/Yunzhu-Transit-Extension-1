@@ -198,7 +198,7 @@ public class RenderHitachiVIB322Button extends BlockEntityRenderer<HitachiVIB322
                         7F,
                         0xFFFF4800);
 
-                liftFloorDisplayView.setTextureId(String.format("hitachi_vib_322_display_%d_%s", i, blockEntity.getPos2().asLong()));
+                liftFloorDisplayView.setTextureId(String.format("hitachi_vib_322_display_%d", i));
                 liftFloorDisplayView.setWidth(1.4F / 16);
                 liftFloorDisplayView.setHeight(1.7F / 16);
 

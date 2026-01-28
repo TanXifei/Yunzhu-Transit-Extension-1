@@ -94,7 +94,7 @@ public class RenderHitachiB89Screen1Horizontal<T extends LiftPanelBase.BlockEnti
                         FontList.instance.getFont("hitachi_modern"),
                         5F,
                         0xFFCC0000);
-                liftFloorDisplayView.setTextureId(String.format("hitachi_b89_screen_1_horizontal_display_%d_%s", i, blockEntity.getPos2().asLong()))
+                liftFloorDisplayView.setTextureId(String.format("hitachi_b89_screen_1_horizontal_display_%d", i))
 ;
                 liftFloorDisplayView.setWidth(2.6F / 16);
                 liftFloorDisplayView.setHeight(2.8F / 16);

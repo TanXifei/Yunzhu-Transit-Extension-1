@@ -89,7 +89,7 @@ public class RenderSchindlerLineaScreen1BlackHorizontal<T extends LiftPanelBase.
                         FontList.instance.getFont("schindler_linea_large"),
                         5.5F,
                         0xFFFF0000);
-                liftFloorDisplayView.setTextureId(String.format("schindler_linea_300_screen_display_%d_%s", i, blockEntity.getPos2().asLong()))
+                liftFloorDisplayView.setTextureId(String.format("schindler_linea_300_screen_display_%d", i))
 ;
                 liftFloorDisplayView.setWidth(2.6F / 16);
                 liftFloorDisplayView.setHeight(2.8F / 16);

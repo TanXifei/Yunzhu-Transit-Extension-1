@@ -4,7 +4,7 @@ import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
-import top.xfunny.mod.client.FontResourceGenerator;
+import top.xfunny.mod.client.DynamicTextureCache;
 
 @Mixin(org.mtr.mod.client.DynamicTextureCache.class)
 public abstract class MixinDynamicTextureCache {
@@ -12,7 +12,7 @@ public abstract class MixinDynamicTextureCache {
             method = "tick",
             remap = false)
     private void afterTick(CallbackInfo ci) {
-        FontResourceGenerator.getInstance().tick();
+        DynamicTextureCache.instance.tick();
     }
 
 }

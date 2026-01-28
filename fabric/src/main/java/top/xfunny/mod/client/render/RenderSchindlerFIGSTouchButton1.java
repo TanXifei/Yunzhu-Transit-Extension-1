@@ -191,7 +191,7 @@ public class RenderSchindlerFIGSTouchButton1 extends BlockEntityRenderer<Schindl
                         5,
                         0xFFFF0000);
                 liftFloorDisplayView.setDisplayLength(2, 0.05F);
-                liftFloorDisplayView.setTextureId(String.format("schindler_fi_gs_touch_1_display_%d_%s", i, blockEntity.getPos2().asLong()))
+                liftFloorDisplayView.setTextureId(String.format("schindler_fi_gs_touch_1_display_%d", i))
 ;
                 liftFloorDisplayView.setWidth(1.4F / 16);
                 liftFloorDisplayView.setHeight(1.7F / 16);
