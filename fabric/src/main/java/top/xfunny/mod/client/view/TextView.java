@@ -10,7 +10,9 @@ import org.mtr.mod.client.IDrawing;
 import org.mtr.mod.render.MainRenderer;
 import org.mtr.mod.render.QueuedRenderLayer;
 import org.mtr.mod.render.StoredMatrixTransformations;
-import top.xfunny.mod.client.DynamicResource;
+import top.xfunny.mod.client.DynamicTextureCache;
+import top.xfunny.mod.client.client_data.DynamicResource;
+import top.xfunny.mod.client.client_data.DynamicResourceTextCache;
 import top.xfunny.mod.client.resource.TextureList;
 
 import java.awt.*;
@@ -64,6 +66,8 @@ public class TextView implements RenderView {
         calculateTextPositionX();
         calculateTextPositionY();
 
+        DynamicResourceTextCache.instance.updateText(blockPos.asLong(), text);
+
         BlockState blockState = world.getBlockState(blockPos);
         this.facing = IBlock.getStatePropertySafe(blockState, FACING);
         storedMatrixTransformations1 = storedMatrixTransformations.copy();
@@ -103,7 +107,7 @@ public class TextView implements RenderView {
 
     protected void calculateSize() {
         this.gameTick = org.mtr.mod.InitClient.getGameTick();
-        this.texture = TextureList.instance.renderFont(textureId, text, color, font, fontSize, letterSpacing);
+        this.texture = TextureList.instance.renderFont(textureId, blockPos.asLong(), text, color, font, fontSize, letterSpacing);
         int rawTextWidth = texture.width;
         int rawTextHeight = texture.height;
         float scale = (float) rawTextHeight / height;

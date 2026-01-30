@@ -1,10 +1,12 @@
-package top.xfunny.mod.client;
+package top.xfunny.mod.client.client_data;
 
 import org.mtr.mapping.holder.Identifier;
 import org.mtr.mapping.holder.MinecraftClient;
 import org.mtr.mapping.holder.NativeImage;
 import org.mtr.mapping.holder.NativeImageBackedTexture;
 import org.mtr.mod.render.MainRenderer;
+import top.xfunny.mod.Init;
+import top.xfunny.mod.client.DynamicTextureCache;
 
 import javax.annotation.Nullable;
 
@@ -12,10 +14,10 @@ public class DynamicResource {
     public final int width;
     public final int height;
     public final Identifier identifier;
-    long expiryTime;
-    boolean needsRefresh;
+    public long expiryTime;
+    public boolean needsRefresh;
 
-    DynamicResource(Identifier identifier, @Nullable NativeImageBackedTexture nativeImageBackedTexture) {
+    public DynamicResource(Identifier identifier, @Nullable NativeImageBackedTexture nativeImageBackedTexture) {
         this.identifier = identifier;
         if (nativeImageBackedTexture != null) {
             final NativeImage nativeImage = nativeImageBackedTexture.getImage();
@@ -33,7 +35,8 @@ public class DynamicResource {
     }
 
 
-    void remove() {
+    public void remove() {
+        Init.LOGGER.info("删除: " + identifier);
         MinecraftClient.getInstance().getTextureManager().destroyTexture(identifier);
         MainRenderer.cancelRender(identifier);
     }

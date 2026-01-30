@@ -184,7 +184,7 @@ public class RenderMitsubishiMaxiezScreen2<T extends LiftPanelBase.BlockEntityBa
                 final TextView textView = new TextView();
                 textView.setId("textView");
                 textView.setBasicsAttributes(world, blockPos, FontList.instance.getFont("wqy-microhei"), 4, 0xFFBBBBBB);
-                textView.setTextureId(String.format("mitsubishi_maxiez_screen_1_date_display_%d_%s", i, blockEntity.getPos2().asLong()))
+                textView.setTextureId(String.format("mitsubishi_maxiez_screen_1_date_display_%d", i))
                 ;
                 textView.setText(text);
                 textView.setWidth(4F / 16);

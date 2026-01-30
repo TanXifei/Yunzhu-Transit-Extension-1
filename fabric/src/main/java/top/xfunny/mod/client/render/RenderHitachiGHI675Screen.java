@@ -88,7 +88,7 @@ public class RenderHitachiGHI675Screen<T extends LiftPanelBase.BlockEntityBase> 
                         FontList.instance.getFont("hitachi-led-dot_matrix"),
                         5.5F,
                         0xFFFF4800);
-                liftFloorDisplayView.setTextureId(String.format("hitachi_ghi675_screen_display_%d_%s", i, blockEntity.getPos2().asLong()));
+                liftFloorDisplayView.setTextureId(String.format("hitachi_ghi675_screen_display_%d", i));
                 liftFloorDisplayView.setWidth(2.32F / 16);
                 liftFloorDisplayView.setHeight(2.8F / 16);
                 liftFloorDisplayView.setTextAlign(TextView.HorizontalTextAlign.CENTER);

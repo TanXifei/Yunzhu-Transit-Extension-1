@@ -21,8 +21,10 @@ public final class Init {
     public static void init() {
         //UpdateCheckerUtil.init();
         SoundEvents.init();
+
         Blocks.init();
         BlockEntityTypes.init();
+
         Items.init();
         CreativeModeTabs.init();
 
@@ -41,10 +43,6 @@ public final class Init {
 
     public static BlockPos positionToBlockPos(Position position) {
         return new BlockPos((int) position.getX(), (int) position.getY(), (int) position.getZ());
-    }
-
-    public static BlockPos newBlockPos(double x, double y, double z) {
-        return new BlockPos(MathHelper.floor(x), MathHelper.floor(y), MathHelper.floor(z));
     }
 }
 

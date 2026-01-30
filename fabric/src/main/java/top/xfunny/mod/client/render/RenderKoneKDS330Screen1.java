@@ -95,7 +95,7 @@ public class RenderKoneKDS330Screen1<T extends LiftPanelBase.BlockEntityBase> ex
                         FontList.instance.getFont("kone-lcd-segment"),
                         5.1F,
                         0xFFFFFFFF);
-                liftFloorDisplayView.setTextureId(String.format("kone_kds_330_screen_lcd_segment_display_%d_%s", i, blockEntity.getPos2().asLong()))
+                liftFloorDisplayView.setTextureId(String.format("kone_kds_330_screen_lcd_segment_display_%d", i))
 ;
                 liftFloorDisplayView.setWidth(2.6F / 16);
                 liftFloorDisplayView.setHeight(2.8F / 16);

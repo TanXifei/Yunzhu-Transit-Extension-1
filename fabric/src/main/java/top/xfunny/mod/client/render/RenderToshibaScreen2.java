@@ -94,7 +94,7 @@ public class RenderToshibaScreen2<T extends LiftPanelBase.BlockEntityBase> exten
                         FontList.instance.getFont(floorNumber.matches("^(-1|1)$")?"toshiba_segmented_1":"toshiba_segmented"),
                         6.5F,
                         0xFFFF0000);
-                liftFloorDisplayView.setTextureId(String.format("toshiba_screen_2_display_%d_%s", i, blockEntity.getPos2().asLong()));
+                liftFloorDisplayView.setTextureId(String.format("toshiba_screen_2_display_%d", i));
                 liftFloorDisplayView.setWidth(2.6F / 16);
                 liftFloorDisplayView.setHeight(2.8F / 16);
                 liftFloorDisplayView.setGravity(Gravity.CENTER_VERTICAL);

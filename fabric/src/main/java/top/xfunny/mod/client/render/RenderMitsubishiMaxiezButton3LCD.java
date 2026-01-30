@@ -202,7 +202,7 @@ public class RenderMitsubishiMaxiezButton3LCD extends BlockEntityRenderer<Mitsub
                         6.75F,
                         0xFFBBBBBB);
                 //liftFloorDisplayView.setDisplayLength(2, 0.05F);
-                liftFloorDisplayView.setTextureId(String.format("mitsubishi_maxiez_button_3_lcd_display_%d_%s", i, blockEntity.getPos2().asLong()));
+                liftFloorDisplayView.setTextureId(String.format("mitsubishi_maxiez_button_3_lcd_display_%d", i));
                 liftFloorDisplayView.setWidth(1.25F / 16);
                 liftFloorDisplayView.setHeight(1.7F / 16);
                 liftFloorDisplayView.setMargin(0.1F/16, 0, 0.1F/16, 0);

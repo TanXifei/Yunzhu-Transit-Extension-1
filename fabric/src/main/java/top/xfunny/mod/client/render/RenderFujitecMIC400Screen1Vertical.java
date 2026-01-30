@@ -87,7 +87,7 @@ public class RenderFujitecMIC400Screen1Vertical<T extends LiftPanelBase.BlockEnt
                         FontList.instance.getFont("fujitec_computer_control"),
                         2.8F,
                         0xFFFF0000);
-                liftFloorDisplayView.setTextureId(String.format("fujitec_mic400_screen_1_vertical_%d_%s", i, blockEntity.getPos2().asLong()));
+                liftFloorDisplayView.setTextureId(String.format("fujitec_mic400_screen_1_vertical_%d", i));
                 liftFloorDisplayView.setWidth(2.6F / 16);
                 liftFloorDisplayView.setHeight(2.8F / 16);
                 liftFloorDisplayView.setTextAlign(TextView.HorizontalTextAlign.RIGHT);

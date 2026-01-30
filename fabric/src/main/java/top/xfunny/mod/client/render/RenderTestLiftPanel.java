@@ -170,7 +170,7 @@ public class RenderTestLiftPanel extends BlockEntityRenderer<TestLiftPanel.Block
 
                 }
                 float finalOffset = offset1;
-                MainRenderer.scheduleRender(TextureList.instance.getTestLiftPanelDisplay(text, 0xFFAA00).identifier, false, QueuedRenderLayer.LIGHT_TRANSLUCENT, (graphicsHolder, offset) -> {
+                MainRenderer.scheduleRender(TextureList.instance.getTestLiftPanelDisplay(text,0 ,0xFFAA00).identifier, false, QueuedRenderLayer.LIGHT_TRANSLUCENT, (graphicsHolder, offset) -> {
                     storedMatrixTransformations.transform(graphicsHolder, offset);
                     // 绘制楼层信息纹理
                     IDrawing.drawTexture(graphicsHolder, -width + 0.9F, y - 0.07F, width1, height1, finalOffset, 0, finalOffset + (float) 1 / text.length() + 0.0001F * text.length(), 1F, Direction.UP, ARGB_WHITE, GraphicsHolder.getDefaultLight());//楼层数字尺寸设置
@@ -178,7 +178,7 @@ public class RenderTestLiftPanel extends BlockEntityRenderer<TestLiftPanel.Block
                 });
             } else {
                 // 如果不需要走马灯，保持位置不变
-                MainRenderer.scheduleRender(TextureList.instance.getTestLiftPanelDisplay(text, 0xFFAA00).identifier, false, QueuedRenderLayer.LIGHT_TRANSLUCENT, (graphicsHolder, offset) -> {
+                MainRenderer.scheduleRender(TextureList.instance.getTestLiftPanelDisplay(text,0, 0xFFAA00).identifier, false, QueuedRenderLayer.LIGHT_TRANSLUCENT, (graphicsHolder, offset) -> {
                     storedMatrixTransformations.transform(graphicsHolder, offset);
                     // 绘制楼层信息纹理
                     IDrawing.drawTexture(graphicsHolder, -width + 0.9F, y - 0.07F, width1, height1, 0, 0, 1, 1F, Direction.UP, ARGB_WHITE, GraphicsHolder.getDefaultLight());//楼层数字尺寸设置
