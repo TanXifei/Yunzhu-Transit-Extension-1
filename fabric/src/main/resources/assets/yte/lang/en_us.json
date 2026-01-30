@@ -201,6 +201,7 @@
   "block.yte.otis_series_3_eld_screen_1_even": "OTIS Series 3 ELD Hall Floor Indicator(Type 1) Even",
   "block.yte.otis_series_3_lantern_1_arrow_odd": "OTIS Series 3 Hall Lantern(Type 1, With Arrow) Odd",
   "block.yte.otis_series_3_lantern_1_arrow_even": "OTIS Series 3 Hall Lantern(Type 1, With Arrow) Even",
+  "block.yte.otis_gen3_button_1": "OTIS HF023 Call Panel(Type 1)",
   "block.yte.otis_spec_60_button_1": "OTIS SPEC 60 Call Panel(Type 1)",
   "block.yte.otis_spec_90_button_1_black": "OTIS SPEC 90 Call Panel(Type 1, Black)",
   "block.yte.otis_spec_90_button_1_white": "OTIS SPEC 90 Call Panel(Type 1, White)",

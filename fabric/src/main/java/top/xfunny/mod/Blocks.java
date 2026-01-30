@@ -62,6 +62,7 @@ public class Blocks {
     public static final BlockRegistryObject KONE_M_SCREEN_1_SMALL_ODD;
     public static final BlockRegistryObject KONE_M_SCREEN_1_SMALL_EVEN;
 
+    public static final BlockRegistryObject OTIS_GEN3_BUTTON_1;
     public static final BlockRegistryObject OTIS_SERIES_1_BUTTON_1;
     public static final BlockRegistryObject OTIS_SERIES_1_BUTTON_2;
     public static final BlockRegistryObject OTIS_SERIES_1_SCREEN_1;
@@ -480,6 +481,7 @@ public class Blocks {
 
         THYSSENKRUPP_TEGL1_BUTTON_1 = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "thyssenkrupp_te_gl1_button_1"), () -> new Block(new ThyssenkruppTEGL1Button1()));
 
+        OTIS_GEN3_BUTTON_1 = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "otis_gen3_button_1"), () -> new Block(new OtisGen3Button1()), CreativeModeTabs.YTE_LIFT_FIXTURES);
         OTIS_SERIES_1_BUTTON_1 = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "otis_series_1_button_1"), () -> new Block(new OtisSeries1Button()), CreativeModeTabs.YTE_LIFT_FIXTURES);
         OTIS_SERIES_1_BUTTON_2 = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "otis_series_1_button_2"), () -> new Block(new OtisSeries1Button()));
         OTIS_SERIES_1_SCREEN_1 = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "otis_series_1_screen_1"), () -> new Block(new OtisSeries1Screen()), CreativeModeTabs.YTE_LIFT_FIXTURES);

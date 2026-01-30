@@ -165,6 +165,7 @@ public final class InitClient {
 
         REGISTRY_CLIENT.registerBlockEntityRenderer(BlockEntityTypes.THYSSENKRUPP_TEGL1_BUTTON_1, RenderThyssenkruppTEGL1Button1::new);
 
+        REGISTRY_CLIENT.registerBlockEntityRenderer(BlockEntityTypes.OTIS_GEN3_BUTTON_1, RenderOtisGen3Button1::new);
         REGISTRY_CLIENT.registerBlockEntityRenderer(BlockEntityTypes.OTIS_SERIES_1_BUTTON_1, RenderOtisSeries1Button::new);
         REGISTRY_CLIENT.registerBlockEntityRenderer(BlockEntityTypes.OTIS_SERIES_1_BUTTON_2, RenderOtisSeries1Button::new);
         REGISTRY_CLIENT.registerBlockEntityRenderer(BlockEntityTypes.OTIS_SERIES_1_SCREEN_1, dispatcher -> new top.xfunny.mod.client.render.RenderOtisSeries1Screen(dispatcher, true));
