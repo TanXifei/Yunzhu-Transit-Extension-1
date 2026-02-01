@@ -54,7 +54,7 @@ public class RenderMitsubishiNexWayScreen3WideSegmented<T extends LiftPanelBase.
         StoredMatrixTransformations storedMatrixTransformations1 = storedMatrixTransformations.copy();
         storedMatrixTransformations1.add(graphicsHolder -> {
             graphicsHolder.rotateYDegrees(-facing.asRotation());
-            graphicsHolder.translate(0, 0, 7.45F / 16 - SMALL_OFFSET);
+            graphicsHolder.translate(0, 0, 7.44F / 16 - SMALL_OFFSET);
         });
 
         final LinearLayout parentLayout = new LinearLayout(false);

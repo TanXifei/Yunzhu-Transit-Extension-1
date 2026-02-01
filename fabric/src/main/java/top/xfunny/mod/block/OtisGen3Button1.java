@@ -22,7 +22,7 @@ public class OtisGen3Button1 extends LiftButtonsBase {
     @Override
     public VoxelShape getOutlineShape2(BlockState state, BlockView world, BlockPos pos, ShapeContext context) {
         final boolean single = !IBlock.getStatePropertySafe(world.getBlockState(pos), SINGLE);
-        return IBlock.getVoxelShapeByDirection(single ? 6.25 : 7, 2.75, 0, single ? 9.75 : 9, 9.75, 0.45, IBlock.getStatePropertySafe(state, FACING));
+        return IBlock.getVoxelShapeByDirection(single ? 6.25 : 7, 2.75, 0, single ? 9.75 : 9, 9.75, 0.3, IBlock.getStatePropertySafe(state, FACING));
     }
 
     @Nonnull

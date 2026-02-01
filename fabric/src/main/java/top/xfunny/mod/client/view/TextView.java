@@ -10,7 +10,6 @@ import org.mtr.mod.client.IDrawing;
 import org.mtr.mod.render.MainRenderer;
 import org.mtr.mod.render.QueuedRenderLayer;
 import org.mtr.mod.render.StoredMatrixTransformations;
-import top.xfunny.mod.client.DynamicTextureCache;
 import top.xfunny.mod.client.client_data.DynamicResource;
 import top.xfunny.mod.client.client_data.DynamicResourceTextCache;
 import top.xfunny.mod.client.resource.TextureList;
@@ -26,7 +25,7 @@ public class TextView implements RenderView {
     protected StoredMatrixTransformations storedMatrixTransformations, storedMatrixTransformations1;
     protected Font font;
     protected int color;
-    protected int letterSpacing = 0;
+    protected float letterSpacing = 0;
     protected World world;
     protected BlockPos blockPos;
     protected float height;
@@ -171,7 +170,7 @@ public class TextView implements RenderView {
         this.verticalTextAlign = verticalTextAlign;
     }
 
-    public void setLetterSpacing(int letterSpacing) {
+    public void setLetterSpacing(float letterSpacing) {
         this.letterSpacing = letterSpacing;
     }
 

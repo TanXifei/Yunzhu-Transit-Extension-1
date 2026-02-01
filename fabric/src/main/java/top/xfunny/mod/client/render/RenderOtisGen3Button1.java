@@ -69,7 +69,7 @@ public class RenderOtisGen3Button1 extends BlockEntityRenderer<OtisGen3Button1.B
         StoredMatrixTransformations storedMatrixTransformations1 = storedMatrixTransformations.copy();
         storedMatrixTransformations1.add(graphicsHolder -> {
             graphicsHolder.rotateYDegrees(-facing.asRotation());
-            graphicsHolder.translate(0, 0, 7.75F / 16 - SMALL_OFFSET);
+            graphicsHolder.translate(0, 0, 7.74F / 16 - SMALL_OFFSET);
         });
 
 
@@ -88,6 +88,12 @@ public class RenderOtisGen3Button1 extends BlockEntityRenderer<OtisGen3Button1.B
         screenLayout.setHeight(LayoutSize.WRAP_CONTENT);
         screenLayout.setGravity(Gravity.CENTER_HORIZONTAL);
         screenLayout.setMargin(0, 0.2F / 16, 0, 0);
+
+        final FrameLayout logoLayout = new FrameLayout();
+        logoLayout.setBasicsAttributes(world, blockPos);
+        logoLayout.setWidth(LayoutSize.MATCH_PARENT);
+        logoLayout.setHeight(LayoutSize.WRAP_CONTENT);
+        logoLayout.setGravity(Gravity.CENTER_HORIZONTAL);
 
 
         final FrameLayout buttonLayout = new FrameLayout();
@@ -265,6 +271,7 @@ public class RenderOtisGen3Button1 extends BlockEntityRenderer<OtisGen3Button1.B
 
         buttonLayout.addChild(buttonContainer);
         parentLayout.addChild(screenLayout);
+        parentLayout.addChild(logoLayout);
         parentLayout.addChild(buttonLayout);
 
         parentLayout.render();

@@ -198,7 +198,10 @@ public class RenderMitsubishiNexWayButton3 extends BlockEntityRenderer<Mitsubish
                 liftFloorDisplayView.setBasicsAttributes(world,
                         blockPos,
                         sortedPositionsAndLifts.get(i).right(),
-                        FontList.instance.getFont("mitsubishi_modern"),
+                        FontList.instance.getFont(
+                                floorNumber.equals("1") ? "mitsubishi_modern_1" :
+                                        (floorNumber.matches("^1.$") ? "mitsubishi_modern_10" : "mitsubishi_modern")
+                        ),
                         6,
                         0xFFFA7A24);
                 //liftFloorDisplayView.setDisplayLength(2, 0.05F);

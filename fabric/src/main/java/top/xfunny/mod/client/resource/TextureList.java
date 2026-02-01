@@ -12,7 +12,7 @@ import java.awt.*;
 
 public class TextureList {
     public static TextureList instance = new TextureList();
-    public DynamicResource renderFont(String id, Long location, String originalText, int textColor, Font font, float fontSize, int letterSpacing) {
+    public DynamicResource renderFont(String id, Long location, String originalText, int textColor, Font font, float fontSize, float letterSpacing) {
         return DynamicTextureCache.instance.getResource(String.format("%s$%s", id, originalText), location, () -> FontResourceGenerator.generateNativeImage(originalText, textColor, font, fontSize, 0, letterSpacing));
     }
 

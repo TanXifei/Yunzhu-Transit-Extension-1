@@ -11,6 +11,7 @@ import org.mtr.mapping.mapper.BlockEntityRenderer;
 import org.mtr.mapping.mapper.DirectionHelper;
 import org.mtr.mapping.mapper.GraphicsHolder;
 import org.mtr.mapping.mapper.PlayerHelper;
+import org.mtr.mod.Init;
 import org.mtr.mod.block.IBlock;
 import org.mtr.mod.data.IGui;
 import org.mtr.mod.render.QueuedRenderLayer;
@@ -24,6 +25,7 @@ import top.xfunny.mod.client.view.view_group.LinearLayout;
 import top.xfunny.mod.item.YteGroupLiftButtonsLinker;
 import top.xfunny.mod.item.YteLiftButtonsLinker;
 import top.xfunny.mod.keymapping.DefaultButtonsKeyMapping;
+import top.xfunny.mod.util.ClientGetLiftDetails;
 import top.xfunny.mod.util.ReverseRendering;
 
 import java.util.Comparator;
@@ -191,10 +193,16 @@ public class RenderShanghaiMitsubishiNexWayCRButton1 extends BlockEntityRenderer
             for (int i = 0; i < count; i++) {
 
                 final LiftFloorDisplayView liftFloorDisplayView = new LiftFloorDisplayView();
+                final Lift lift = sortedPositionsAndLifts.get(i).right();
+                ObjectObjectImmutablePair<LiftDirection, ObjectObjectImmutablePair<String, String>> liftDetails = ClientGetLiftDetails.getLiftDetails(world, lift, Init.positionToBlockPos(lift.getCurrentFloor().getPosition()));
+                String floorNumber = liftDetails.right().left();
                 liftFloorDisplayView.setBasicsAttributes(world,
                         blockPos,
                         sortedPositionsAndLifts.get(i).right(),
-                        FontList.instance.getFont("mitsubishi_modern"),
+                        FontList.instance.getFont(
+                                floorNumber.equals("1") ? "mitsubishi_modern_1" :
+                                        (floorNumber.matches("^1.$") ? "mitsubishi_modern_10" : "mitsubishi_modern")
+                        ),
                         6,
                         0xFFFA7A24);
                 //liftFloorDisplayView.setDisplayLength(2, 0.05F);

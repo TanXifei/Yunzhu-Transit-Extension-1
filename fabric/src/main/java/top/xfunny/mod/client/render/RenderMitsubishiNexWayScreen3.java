@@ -2,6 +2,7 @@ package top.xfunny.mod.client.render;
 
 
 import org.mtr.core.data.Lift;
+import org.mtr.core.data.LiftDirection;
 import org.mtr.libraries.it.unimi.dsi.fastutil.objects.ObjectArrayList;
 import org.mtr.libraries.it.unimi.dsi.fastutil.objects.ObjectObjectImmutablePair;
 import org.mtr.mapping.holder.*;
@@ -21,6 +22,7 @@ import top.xfunny.mod.client.view.*;
 import top.xfunny.mod.client.view.view_group.LinearLayout;
 import top.xfunny.mod.item.YteGroupLiftButtonsLinker;
 import top.xfunny.mod.item.YteLiftButtonsLinker;
+import top.xfunny.mod.util.ClientGetLiftDetails;
 
 import java.util.Comparator;
 
@@ -82,10 +84,16 @@ public class RenderMitsubishiNexWayScreen3<T extends LiftPanelBase.BlockEntityBa
 
             for (int i = 0; i < count; i++) {
                 final LiftFloorDisplayView liftFloorDisplayView = new LiftFloorDisplayView();
+                final Lift lift = sortedPositionsAndLifts.get(i).right();
+                ObjectObjectImmutablePair<LiftDirection, ObjectObjectImmutablePair<String, String>> liftDetails = ClientGetLiftDetails.getLiftDetails(world, lift, org.mtr.mod.Init.positionToBlockPos(lift.getCurrentFloor().getPosition()));
+                String floorNumber = liftDetails.right().left();
                 liftFloorDisplayView.setBasicsAttributes(world,
                         blockPos,
                         sortedPositionsAndLifts.get(i).right(),
-                        FontList.instance.getFont("mitsubishi_modern"),
+                        FontList.instance.getFont(
+                                floorNumber.equals("1") ? "mitsubishi_modern_1" :
+                                        (floorNumber.matches("^1.$") ? "mitsubishi_modern_10" : "mitsubishi_modern")
+                        ),
                         7,
                         0xFFFA7A24);
                 liftFloorDisplayView.setTextureId(String.format("mitsubishi_nexway_screen_3_display_%d", i))

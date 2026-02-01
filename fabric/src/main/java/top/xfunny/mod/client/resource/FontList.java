@@ -28,7 +28,8 @@ public class FontList {
             loadFont("acmeled", "font/acme-led.ttf");
             loadFont("koneModernization", "font/kone-modernization.ttf");
             loadFont("schindler_m_series", "font/schindler-m-line-led.ttf");
-            loadFont("mitsubishi_modern", "font/mitsubishi_modern.ttf");
+            loadFont("mitsubishi_modern", "font/mitsubishi_modern_v3.ttf");
+            loadFont("mitsubishi_modern_10", "font/mitsubishi_modern_v3_10.ttf");
             loadFont("mitsubishi_small_regular", "font/mitsubishi-dot-matrix-small-generic.ttf");
             loadFont("mitsubishi_small_sht", "font/mitsubishi-dot-matrix-small-shanghai-tower.ttf");
             loadFont("mitsubishi_seg_universal", "font/mitsubishi_seg_universal.ttf");

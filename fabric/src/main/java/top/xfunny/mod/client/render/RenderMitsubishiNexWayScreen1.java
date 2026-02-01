@@ -296,7 +296,10 @@ public class RenderMitsubishiNexWayScreen1<T extends LiftButtonsBase.BlockEntity
                 liftFloorDisplayView.setBasicsAttributes(world,
                         blockPos,
                         sortedPositionsAndLifts.get(i).right(),
-                        FontList.instance.getFont("mitsubishi_modern"),//字体
+                        FontList.instance.getFont(
+                                floorNumber.equals("1") ? "mitsubishi_modern_1" :
+                                        (floorNumber.matches("^1.$") ? "mitsubishi_modern_10" : "mitsubishi_modern")
+                        ),
                         11,//字号
                         0xFFFA7A24);//字体颜色
                 //liftFloorDisplayView.setDisplayLength(2, 0);//true开启滚动，开启滚动时的字数条件(>)，滚动速度
