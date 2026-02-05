@@ -8,8 +8,8 @@ import java.awt.*;
 public class TextureList {
     public static TextureList instance = new TextureList();
 
-    public DynamicResource renderFont(String id, Long blockPos, String originalText, int textColor, Font font, float fontSize, int letterSpacing) {
-        // ID 格式保持为 "name$text"，DynamicTextureCache 会负责解析
+    public DynamicResource renderFont(String id, Long blockPos, String originalText, int textColor, Font font, float fontSize, float letterSpacing) {
+        // ID 格式 "name$text"，DynamicTextureCache 负责解析
         String textureId = String.format("%s$%s", id, originalText);
 
         return DynamicTextureCache.instance.getResource(
@@ -19,7 +19,7 @@ public class TextureList {
         );
     }
 
-    // 弃用的方法可以删除或保留，不影响逻辑
+    //弃用
     public DynamicResource getTestLiftPanelDisplay(String originalText, int textColor) {
         return DynamicTextureCache.instance.getResource(
                 String.format("test_lift_panel_display_%s", originalText),

@@ -24,7 +24,7 @@ public class FontResourceGenerator implements IGui {
      * @param padding        文字内边距
      * @param letterSpacing  字符间距
      */
-    public static NativeImage generateNativeImage(String text, int textColor, Font font, float fontSize, int padding, int letterSpacing) {// 使用AI优化
+    public static NativeImage generateNativeImage(String text, int textColor, Font font, float fontSize, int padding, float letterSpacing) {// 使用AI优化
         // 基础缩放值
         int baseScale = (int) Math.pow(2, Config.getClient().getDynamicTextureResolution() + 5);
 
