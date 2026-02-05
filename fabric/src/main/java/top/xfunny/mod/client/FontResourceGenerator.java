@@ -15,34 +15,50 @@ import java.util.Map;
 public class FontResourceGenerator implements IGui {
 
     /**
-     * 生成字体图片NativeImage数据
-     * 改为 public 方便外部调用
+     * 生成字体图片 NativeImage 数据
+     *
+     * @param text           要显示的文本
+     * @param textColor      文字颜色 (ARGB)
+     * @param font           基础字体对象
+     * @param fontSize       基础字体大小
+     * @param padding        文字内边距
+     * @param letterSpacing  字符间距
      */
-    public static NativeImage generateNativeImage(String text, int textColor, Font font, float fontSize, int padding, int letterSpacing) {
-        int scale = (int) Math.pow(2, Config.getClient().getDynamicTextureResolution() + 5);
+    public static NativeImage generateNativeImage(String text, int textColor, Font font, float fontSize, int padding, int letterSpacing) {// 使用AI优化
+        // 基础缩放值
+        int baseScale = (int) Math.pow(2, Config.getClient().getDynamicTextureResolution() + 5);
+
+        // 图片尺寸缩放因子
+        float sizeScaleFactor = 0.8f;
+
+        // 实际使用的缩放值
+        int actualScale = Math.round(baseScale * sizeScaleFactor);
+
         try {
             final int[] dimensions = new int[2];
 
-            // 静态上下文现在可以正常调用静态方法 getTextPixels
+            // 字体大小跟随缩放
+            float scaledFontSize = (float) actualScale / 8 * fontSize;
+
+            // ！！！关键修改：letterSpacing 也需要跟随缩放！！！
+            // 这样间距相对于字符大小的比例才能保持不变
+            int scaledLetterSpacing = Math.round(letterSpacing * sizeScaleFactor);
+
             final Map.Entry<int[], byte[]> textInformation = getTextPixels(
                     text.toUpperCase(Locale.ENGLISH),
                     dimensions,
-                    (float) scale / 8 * fontSize,
+                    scaledFontSize,
                     padding,
                     font,
-                    letterSpacing
+                    scaledLetterSpacing  // 使用缩放后的间距
             );
 
-            // 获取计算后的宽度和高度
             final int totalWidth = dimensions[0];
-            final int totalHeight = Math.round(scale * 1.5F);
+            final int totalHeight = Math.round(actualScale * 1.5F);
 
-            // 创建 Minecraft 的 NativeImage
             final NativeImage nativeImage = new NativeImage(NativeImageFormat.getAbgrMapped(), totalWidth, totalHeight, true);
-            // 初始化画布背景为透明
             nativeImage.fillRect(0, 0, totalWidth, totalHeight, 0);
 
-            // 绘制文字像素到 NativeImage
             drawString(nativeImage, textInformation.getValue(), totalWidth / 2, totalHeight / 2, dimensions,
                     IGui.HorizontalAlignment.CENTER, IGui.VerticalAlignment.CENTER,
                     0x00000000, textColor, false);
@@ -59,7 +75,6 @@ public class FontResourceGenerator implements IGui {
      */
     private static Map.Entry<int[], byte[]> getTextPixels(String text, int[] dimensions, float fontSize, int padding, Font font, int letterSpacing) {
         try {
-            // 初始测量
             BufferedImage tempImage = new BufferedImage(1, 1, BufferedImage.TYPE_BYTE_GRAY);
             Graphics2D g2d = tempImage.createGraphics();
             Font renderFont = font.deriveFont(Font.PLAIN, fontSize);
@@ -73,18 +88,16 @@ public class FontResourceGenerator implements IGui {
                 for (char c : text.toCharArray()) {
                     textWidth += metrics.charWidth(c) + letterSpacing;
                 }
-                textWidth -= letterSpacing; // 减去最后一个字符多加的间距
+                textWidth -= letterSpacing;
             }
 
             int textHeight = metrics.getHeight();
-            // 局部变量，防止多线程冲突
             int calculatedWidth = textWidth + 2 * padding;
             int calculatedHeight = textHeight + 2 * padding;
 
             dimensions[0] = calculatedWidth;
             dimensions[1] = calculatedHeight;
 
-            // 正式绘制像素
             BufferedImage textImage = new BufferedImage(calculatedWidth, calculatedHeight, BufferedImage.TYPE_BYTE_GRAY);
             g2d = textImage.createGraphics();
             g2d.setFont(renderFont);
@@ -104,8 +117,6 @@ public class FontResourceGenerator implements IGui {
             }
 
             g2d.dispose();
-
-            // 获取灰度像素数据
             byte[] pixels = ((DataBufferByte) textImage.getRaster().getDataBuffer()).getData();
             textImage.flush();
 
@@ -121,12 +132,10 @@ public class FontResourceGenerator implements IGui {
                                    IGui.HorizontalAlignment horizontalAlignment,
                                    IGui.VerticalAlignment verticalAlignment,
                                    int backgroundColor, int textColor, boolean rotate90) {
-        // ARGB/ABGR 分量提取
         final int textR = (textColor >> 16) & 0xFF;
         final int textG = (textColor >> 8) & 0xFF;
         final int textB = textColor & 0xFF;
 
-        // 背景绘制逻辑
         if (((backgroundColor >> 24) & 0xFF) > 0) {
             for (int drawY = 0; drawY < textDimensions[rotate90 ? 0 : 1]; drawY++) {
                 for (int drawX = 0; drawX < textDimensions[rotate90 ? 1 : 0]; drawX++) {
@@ -154,11 +163,9 @@ public class FontResourceGenerator implements IGui {
                     final int existingA = (existingPixel >> 24) & 0xFF;
 
                     if (existingA == 0) {
-                        // 目标像素为空，直接填充
                         final int newColor = (alpha << 24) | (textB << 16) | (textG << 8) | textR;
                         nativeImage.setPixelColor(xPos, yPos, newColor);
                     } else {
-                        // 进行像素混合
                         blendPixel(nativeImage, xPos, yPos, alpha, textR, textG, textB);
                     }
                 }

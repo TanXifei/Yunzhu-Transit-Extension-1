@@ -222,6 +222,7 @@ public class RenderHitachiVIB221ButtonHIP43 extends BlockEntityRenderer<HitachiV
                 numberLayout.setBasicsAttributes(world, blockPos);
                 numberLayout.setWidth(LayoutSize.WRAP_CONTENT);
                 numberLayout.setHeight(LayoutSize.WRAP_CONTENT);
+
                 numberLayout.addChild(liftArrowView);
                 numberLayout.addChild(liftFloorDisplayView);
 

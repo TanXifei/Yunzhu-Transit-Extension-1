@@ -216,7 +216,10 @@ public class RenderHitachiVIB192Button extends BlockEntityRenderer<HitachiVIB192
                 numberLayout.setBasicsAttributes(world, blockPos);
                 numberLayout.setWidth(LayoutSize.WRAP_CONTENT);
                 numberLayout.setHeight(LayoutSize.WRAP_CONTENT);
-                numberLayout.setMargin(i == 1 ? 0.35F / 16 : 0, 1.37F / 16, 0, 0);
+
+                boolean needMargin = count > 1 && (reverseRendering ? i == 0 : i == 1);
+                numberLayout.setMargin(needMargin ? 0.35F / 16 : 0, 1.37F / 16, 0, 0);
+
                 numberLayout.setBackgroundColor(0xFFFFFFFF);
 
                 if (liftDirection.equals(LiftDirection.DOWN)) {

@@ -12,7 +12,7 @@ import org.mtr.mod.render.QueuedRenderLayer;
 import org.mtr.mod.render.StoredMatrixTransformations;
 import top.xfunny.mod.client.DynamicTextureCache;
 import top.xfunny.mod.client.client_data.DynamicResource;
-import top.xfunny.mod.client.client_data.DynamicResourceTextCache;
+
 import top.xfunny.mod.client.resource.TextureList;
 
 import java.awt.*;
@@ -66,13 +66,10 @@ public class TextView implements RenderView {
         calculateTextPositionX();
         calculateTextPositionY();
 
-        DynamicResourceTextCache.instance.updateText(blockPos.asLong(), text);
-
         BlockState blockState = world.getBlockState(blockPos);
         this.facing = IBlock.getStatePropertySafe(blockState, FACING);
         storedMatrixTransformations1 = storedMatrixTransformations.copy();
         storedMatrixTransformations1.add(graphicsHolder -> {
-
         });
 
         if (transformation != null) {
