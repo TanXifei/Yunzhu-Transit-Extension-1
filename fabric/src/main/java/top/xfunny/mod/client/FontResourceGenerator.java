@@ -14,52 +14,54 @@ import java.util.Map;
 
 public class FontResourceGenerator implements IGui {
 
-    public static NativeImage generateNativeImage(
-            String text,
-            int textColor,
-            Font font,
-            float fontSize,
-            int padding,
-            float letterSpacing) {
+    /**
+     * 生成字体图片 NativeImage 数据
+     *
+     * @param text           要显示的文本
+     * @param textColor      文字颜色 (ARGB)
+     * @param font           基础字体对象
+     * @param fontSize       基础字体大小
+     * @param padding        文字内边距
+     * @param letterSpacing  字符间距
+     */
+    public static NativeImage generateNativeImage(String text, int textColor, Font font, float fontSize, int padding, int letterSpacing) {// 使用AI优化
+        // 基础缩放值
+        int baseScale = (int) Math.pow(2, Config.getClient().getDynamicTextureResolution() + 5);
 
-        int scale = (int) Math.pow(2, Config.getClient().getDynamicTextureResolution() + 5);
+        // 图片尺寸缩放因子
+        float sizeScaleFactor = 0.8f;
+
+        // 实际使用的缩放值
+        int actualScale = Math.round(baseScale * sizeScaleFactor);
 
         try {
-            final float[] dimensions = new float[2];
+            final int[] dimensions = new int[2];
 
-            final Map.Entry<float[], byte[]> textInformation = getTextPixels(
+            // 字体大小跟随缩放
+            float scaledFontSize = (float) actualScale / 8 * fontSize;
+
+            // ！！！关键修改：letterSpacing 也需要跟随缩放！！！
+            // 这样间距相对于字符大小的比例才能保持不变
+            int scaledLetterSpacing = Math.round(letterSpacing * sizeScaleFactor);
+
+            final Map.Entry<int[], byte[]> textInformation = getTextPixels(
                     text.toUpperCase(Locale.ENGLISH),
                     dimensions,
-                    (float) scale / 8 * fontSize,
+                    scaledFontSize,
                     padding,
                     font,
-                    letterSpacing
+                    scaledLetterSpacing  // 使用缩放后的间距
             );
 
-            // NativeImage 必须用 int 尺寸
-            final int totalWidth = Math.round(dimensions[0]);
-            final int totalHeight = Math.round(scale * 1.5F);
+            final int totalWidth = dimensions[0];
+            final int totalHeight = Math.round(actualScale * 1.5F);
 
-            final NativeImage nativeImage = new NativeImage(
-                    NativeImageFormat.getAbgrMapped(),
-                    totalWidth,
-                    totalHeight,
-                    true);
-
+            final NativeImage nativeImage = new NativeImage(NativeImageFormat.getAbgrMapped(), totalWidth, totalHeight, true);
             nativeImage.fillRect(0, 0, totalWidth, totalHeight, 0);
 
-            drawString(
-                    nativeImage,
-                    textInformation.getValue(),
-                    totalWidth / 2f,
-                    totalHeight / 2,
-                    dimensions,
-                    IGui.HorizontalAlignment.CENTER,
-                    IGui.VerticalAlignment.CENTER,
-                    0x00000000,
-                    textColor,
-                    false
-            );
+            drawString(nativeImage, textInformation.getValue(), totalWidth / 2, totalHeight / 2, dimensions,
+                    IGui.HorizontalAlignment.CENTER, IGui.VerticalAlignment.CENTER,
+                    0x00000000, textColor, false);
 
             return nativeImage;
         } catch (Exception e) {
@@ -68,27 +70,19 @@ public class FontResourceGenerator implements IGui {
         }
     }
 
-    private static Map.Entry<float[], byte[]> getTextPixels(
-            String text,
-            float[] dimensions,
-            float fontSize,
-            int padding,
-            Font font,
-            float letterSpacing) {
-
+    /**
+     * 获取文字像素
+     */
+    private static Map.Entry<int[], byte[]> getTextPixels(String text, int[] dimensions, float fontSize, int padding, Font font, int letterSpacing) {
         try {
-            BufferedImage tempImage =
-                    new BufferedImage(1, 1, BufferedImage.TYPE_BYTE_GRAY);
+            BufferedImage tempImage = new BufferedImage(1, 1, BufferedImage.TYPE_BYTE_GRAY);
             Graphics2D g2d = tempImage.createGraphics();
-
             Font renderFont = font.deriveFont(Font.PLAIN, fontSize);
             g2d.setFont(renderFont);
 
             FontMetrics metrics = g2d.getFontMetrics();
-
-            float textWidth = 0;
-
-            if (Math.abs(letterSpacing) < 0.0001f) {
+            int textWidth = 0;
+            if (letterSpacing == 0) {
                 textWidth = metrics.stringWidth(text);
             } else {
                 for (char c : text.toCharArray()) {
@@ -98,29 +92,22 @@ public class FontResourceGenerator implements IGui {
             }
 
             int textHeight = metrics.getHeight();
-
-            int calculatedWidth = Math.round(textWidth + 2 * padding);
+            int calculatedWidth = textWidth + 2 * padding;
             int calculatedHeight = textHeight + 2 * padding;
 
             dimensions[0] = calculatedWidth;
             dimensions[1] = calculatedHeight;
 
-            BufferedImage textImage = new BufferedImage(
-                    calculatedWidth,
-                    calculatedHeight,
-                    BufferedImage.TYPE_BYTE_GRAY);
-
+            BufferedImage textImage = new BufferedImage(calculatedWidth, calculatedHeight, BufferedImage.TYPE_BYTE_GRAY);
             g2d = textImage.createGraphics();
             g2d.setFont(renderFont);
-            g2d.setRenderingHint(
-                    RenderingHints.KEY_TEXT_ANTIALIASING,
-                    RenderingHints.VALUE_TEXT_ANTIALIAS_ON);
+            g2d.setRenderingHint(RenderingHints.KEY_TEXT_ANTIALIASING, RenderingHints.VALUE_TEXT_ANTIALIAS_ON);
             g2d.setColor(Color.WHITE);
 
-            float x = padding;
+            int x = padding;
             int y = padding + metrics.getAscent();
 
-            if (Math.abs(letterSpacing) < 0.0001f) {
+            if (letterSpacing == 0) {
                 g2d.drawString(text, x, y);
             } else {
                 for (char c : text.toCharArray()) {
@@ -130,15 +117,10 @@ public class FontResourceGenerator implements IGui {
             }
 
             g2d.dispose();
-
-            byte[] pixels =
-                    ((DataBufferByte) textImage.getRaster().getDataBuffer())
-                            .getData();
-
+            byte[] pixels = ((DataBufferByte) textImage.getRaster().getDataBuffer()).getData();
             textImage.flush();
 
             return new AbstractMap.SimpleEntry<>(dimensions, pixels);
-
         } catch (Exception e) {
             dimensions[0] = 0;
             dimensions[1] = 0;
@@ -146,89 +128,45 @@ public class FontResourceGenerator implements IGui {
         }
     }
 
-    private static void drawString(
-            NativeImage nativeImage,
-            byte[] pixels,
-            float x,
-            int y,
-            float[] textDimensions,
-            IGui.HorizontalAlignment horizontalAlignment,
-            IGui.VerticalAlignment verticalAlignment,
-            int backgroundColor,
-            int textColor,
-            boolean rotate90) {
-
+    private static void drawString(NativeImage nativeImage, byte[] pixels, int x, int y, int[] textDimensions,
+                                   IGui.HorizontalAlignment horizontalAlignment,
+                                   IGui.VerticalAlignment verticalAlignment,
+                                   int backgroundColor, int textColor, boolean rotate90) {
         final int textR = (textColor >> 16) & 0xFF;
         final int textG = (textColor >> 8) & 0xFF;
         final int textB = textColor & 0xFF;
 
         if (((backgroundColor >> 24) & 0xFF) > 0) {
-            for (int drawY = 0;
-                 drawY < textDimensions[rotate90 ? 0 : 1];
-                 drawY++) {
-
-                for (int drawX = 0;
-                     drawX < textDimensions[rotate90 ? 1 : 0];
-                     drawX++) {
-
-                    drawPixelSafe(
-                            nativeImage,
-                            (int) horizontalAlignment.getOffset(
-                                    drawX + x,
-                                    textDimensions[rotate90 ? 1 : 0]),
-                            (int) verticalAlignment.getOffset(
-                                    drawY + y,
-                                    textDimensions[rotate90 ? 0 : 1]),
-                            backgroundColor
-                    );
+            for (int drawY = 0; drawY < textDimensions[rotate90 ? 0 : 1]; drawY++) {
+                for (int drawX = 0; drawX < textDimensions[rotate90 ? 1 : 0]; drawX++) {
+                    drawPixelSafe(nativeImage,
+                            (int) horizontalAlignment.getOffset(drawX + x, textDimensions[rotate90 ? 1 : 0]),
+                            (int) verticalAlignment.getOffset(drawY + y, textDimensions[rotate90 ? 0 : 1]),
+                            backgroundColor);
                 }
             }
         }
 
         int drawX = 0;
-        float drawY = rotate90 ? textDimensions[0] - 1 : 0;
+        int drawY = rotate90 ? textDimensions[0] - 1 : 0;
 
-        int pixelCount =
-                Math.round(textDimensions[0] * textDimensions[1]);
-
-        for (int i = 0; i < pixelCount; i++) {
+        for (int i = 0; i < textDimensions[0] * textDimensions[1]; i++) {
             final int alpha = pixels[i] & 0xFF;
-
             if (alpha > 0) {
-                final int xPos =
-                        (int) horizontalAlignment.getOffset(
-                                x + drawX,
-                                textDimensions[rotate90 ? 1 : 0]);
+                final int xPos = (int) horizontalAlignment.getOffset(x + drawX, textDimensions[rotate90 ? 1 : 0]);
+                final int yPos = (int) verticalAlignment.getOffset(y + drawY, textDimensions[rotate90 ? 0 : 1]);
 
-                final int yPos =
-                        (int) verticalAlignment.getOffset(
-                                y + drawY,
-                                textDimensions[rotate90 ? 0 : 1]);
+                if (Utilities.isBetween(xPos, 0, nativeImage.getWidth() - 1) &&
+                        Utilities.isBetween(yPos, 0, nativeImage.getHeight() - 1)) {
 
-                if (Utilities.isBetween(
-                        xPos, 0, nativeImage.getWidth() - 1) &&
-                        Utilities.isBetween(
-                                yPos, 0, nativeImage.getHeight() - 1)) {
-
-                    final int existingPixel =
-                            nativeImage.getColor(xPos, yPos);
-                    final int existingA =
-                            (existingPixel >> 24) & 0xFF;
+                    final int existingPixel = nativeImage.getColor(xPos, yPos);
+                    final int existingA = (existingPixel >> 24) & 0xFF;
 
                     if (existingA == 0) {
-                        final int newColor =
-                                (alpha << 24)
-                                        | (textB << 16)
-                                        | (textG << 8)
-                                        | textR;
-                        nativeImage.setPixelColor(
-                                xPos, yPos, newColor);
+                        final int newColor = (alpha << 24) | (textB << 16) | (textG << 8) | textR;
+                        nativeImage.setPixelColor(xPos, yPos, newColor);
                     } else {
-                        blendPixel(
-                                nativeImage,
-                                xPos, yPos,
-                                alpha,
-                                textR, textG, textB);
+                        blendPixel(nativeImage, xPos, yPos, alpha, textR, textG, textB);
                     }
                 }
             }
@@ -249,55 +187,26 @@ public class FontResourceGenerator implements IGui {
         }
     }
 
-    private static void drawPixelSafe(
-            NativeImage nativeImage,
-            int x, int y,
-            int color) {
-
-        if (Utilities.isBetween(
-                x, 0, nativeImage.getWidth() - 1)
-                && Utilities.isBetween(
-                y, 0, nativeImage.getHeight() - 1)) {
-
+    private static void drawPixelSafe(NativeImage nativeImage, int x, int y, int color) {
+        if (Utilities.isBetween(x, 0, nativeImage.getWidth() - 1) && Utilities.isBetween(y, 0, nativeImage.getHeight() - 1)) {
             nativeImage.setPixelColor(x, y, color);
         }
     }
 
-    private static void blendPixel(
-            NativeImage nativeImage,
-            int x, int y,
-            int alpha,
-            int r, int g, int b) {
-
-        final int existingPixel =
-                nativeImage.getColor(x, y);
-
-        final int existingA =
-                (existingPixel >> 24) & 0xFF;
-        final int existingR =
-                existingPixel & 0xFF;
-        final int existingG =
-                (existingPixel >> 8) & 0xFF;
-        final int existingB =
-                (existingPixel >> 16) & 0xFF;
+    private static void blendPixel(NativeImage nativeImage, int x, int y, int alpha, int r, int g, int b) {
+        final int existingPixel = nativeImage.getColor(x, y);
+        final int existingA = (existingPixel >> 24) & 0xFF;
+        final int existingR = existingPixel & 0xFF;
+        final int existingG = (existingPixel >> 8) & 0xFF;
+        final int existingB = (existingPixel >> 16) & 0xFF;
 
         final int invAlpha = 255 - alpha;
+        final int newR = (existingR * invAlpha + r * alpha) / 255;
+        final int newG = (existingG * invAlpha + g * alpha) / 255;
+        final int newB = (existingB * invAlpha + b * alpha) / 255;
+        final int newA = Math.min(255, existingA + alpha);
 
-        final int newR =
-                (existingR * invAlpha + r * alpha) / 255;
-        final int newG =
-                (existingG * invAlpha + g * alpha) / 255;
-        final int newB =
-                (existingB * invAlpha + b * alpha) / 255;
-        final int newA =
-                Math.min(255, existingA + alpha);
-
-        final int finalColor =
-                (newA << 24)
-                        | (newB << 16)
-                        | (newG << 8)
-                        | newR;
-
+        final int finalColor = (newA << 24) | (newB << 16) | (newG << 8) | newR;
         nativeImage.setPixelColor(x, y, finalColor);
     }
 }

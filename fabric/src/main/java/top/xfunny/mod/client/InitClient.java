@@ -9,7 +9,6 @@ import top.xfunny.mod.BlockEntityTypes;
 import top.xfunny.mod.Blocks;
 import top.xfunny.mod.Init;
 import top.xfunny.mod.Items;
-import top.xfunny.mod.client.client_data.DynamicResourceTextCache;
 import top.xfunny.mod.client.render.*;
 import top.xfunny.mod.client.resource.FontList;
 import top.xfunny.mod.config.ClientConfig;
@@ -363,7 +362,6 @@ public final class InitClient {
             gameMillis = 0;
 
             DynamicTextureCache.instance.reload();
-            DynamicResourceTextCache.instance.reload();
             FontList.instance.FontReload();
         });
 
