@@ -1,3 +1,8 @@
+project_id_env: 786484
+api_token_env: 2fad301814f8b7efb63554062ca10b4fd406d7fc5efeef64977e187e810155358600b4f56b19c4cb
+base_path: "."
+preserve_hierarchy: true
+
 files:
   - source: /fabric/src/main/resources/assets/yte/lang/en_us.json
     translation: /fabric/src/main/resources/assets/yte/lang/%locale_with_underscore%.json
