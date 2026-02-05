@@ -33,6 +33,8 @@ public class LiftFloorDisplayView extends TextView {
         this.gameTick = org.mtr.mod.InitClient.getGameTick();
         if (!noFloorNumber || !noFloorDisplay) {
             this.text = String.format("%s%s", floorNumber, noFloorNumber ? " " : "");
+        }else{
+            this.text = "";
         }
     }
 
