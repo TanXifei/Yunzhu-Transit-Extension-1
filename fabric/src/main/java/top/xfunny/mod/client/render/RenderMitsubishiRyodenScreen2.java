@@ -92,9 +92,10 @@ public class RenderMitsubishiRyodenScreen2<T extends LiftPanelBase.BlockEntityBa
                 liftFloorDisplayView.setWidth(2.6F / 16);
                 liftFloorDisplayView.setHeight(2.8F / 16);
                 liftFloorDisplayView.setGravity(Gravity.CENTER_VERTICAL);
+                liftFloorDisplayView.setTextAlign(TextView.HorizontalTextAlign.CENTER);
                 liftFloorDisplayView.setLetterSpacing(0);
                 liftFloorDisplayView.setDisplayLength(2, 0);
-                liftFloorDisplayView.setMargin(2.5F / 16, 3F / 16, 0, 0);
+                liftFloorDisplayView.setMargin(3F / 16, 3F / 16, 0, 0);
                 liftFloorDisplayView.addStoredMatrixTransformations(graphicsHolder -> graphicsHolder.translate(0, 0, -SMALL_OFFSET));
                 if (liftFloorDisplayView.getTextLength() >= 2) {
                     liftFloorDisplayView.setBasicsAttributes(world,
@@ -110,7 +111,7 @@ public class RenderMitsubishiRyodenScreen2<T extends LiftPanelBase.BlockEntityBa
                 liftArrowView_right.setTexture(new Identifier(Init.MOD_ID, "textures/block/mitsubishi_nexway_screen_3_arrow.png"));
                 liftArrowView_right.setAnimationScrolling(false, 0.05F);
                 liftArrowView_right.setDimension(1.25F / 16);
-                liftArrowView_right.setMargin(-4F / 16, 3F / 16, 0, 0);
+                liftArrowView_right.setMargin(-4.5F / 16, 3F / 16, 0, 0);
                 liftArrowView_right.setGravity(Gravity.CENTER_VERTICAL);
                 liftArrowView_right.setQueuedRenderLayer(QueuedRenderLayer.LIGHT_TRANSLUCENT);
                 liftArrowView_right.setColor(0xFFFA7A24);
