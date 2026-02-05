@@ -17,7 +17,7 @@ jobs:
         with:
           # 上传最新的 en_us.json 源文件
           upload_sources: true
-          upload_translations: false
+          upload_translations: true
           
           # 下载翻译好的文件并创建 Pull Request
           download_translations: true
