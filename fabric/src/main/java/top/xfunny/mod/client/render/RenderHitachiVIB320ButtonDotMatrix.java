@@ -199,7 +199,7 @@ public class RenderHitachiVIB320ButtonDotMatrix extends BlockEntityRenderer<Hita
                         5F,
                         0xFFFF4800);
                 liftFloorDisplayView.setTextureId(String.format("hitachi_vib_320_dot_matrix_display_%d", i));
-                liftFloorDisplayView.setWidth(1.23F / 16);
+                liftFloorDisplayView.setWidth(1.43F / 16);
                 liftFloorDisplayView.setHeight(1.7F / 16);
                 liftFloorDisplayView.setMargin(0.01F, 0, 0, 0);
                 liftFloorDisplayView.setTextAlign(TextView.HorizontalTextAlign.CENTER);
@@ -221,7 +221,7 @@ public class RenderHitachiVIB320ButtonDotMatrix extends BlockEntityRenderer<Hita
                 liftArrowView.setBasicsAttributes(world, blockPos, sortedPositionsAndLifts.get(i).right(), LiftArrowView.ArrowType.AUTO);
                 liftArrowView.setTexture(ARROW_TEXTURE);
                 liftArrowView.setDimension(0.475F / 16, 384, 512);
-                liftArrowView.setMargin(0.48F / 16, 1.75F / 16, 0, -0.3F/16);
+                liftArrowView.setMargin(0.58F / 16, 1.75F / 16, 0, -0.3F/16);
                 liftArrowView.setQueuedRenderLayer(QueuedRenderLayer.LIGHT_TRANSLUCENT);
                 if (unlocked) {
                     liftArrowView.setColor(0xFFFFFFFF);
