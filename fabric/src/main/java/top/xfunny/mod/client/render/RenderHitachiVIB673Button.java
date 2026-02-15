@@ -199,7 +199,7 @@ public class RenderHitachiVIB673Button extends BlockEntityRenderer<HitachiVIB673
                         5F,
                         0xFFFF4800);
                 liftFloorDisplayView.setTextureId(String.format("hitachi_vib_673_display_%d", i));
-                liftFloorDisplayView.setWidth(1.23F / 16);
+                liftFloorDisplayView.setWidth(1.43F / 16);
                 liftFloorDisplayView.setHeight(1.7F / 16);
 
                 liftFloorDisplayView.setMargin(0.01F, 0, 0, 0);
