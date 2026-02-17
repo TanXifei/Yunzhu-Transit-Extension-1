@@ -115,6 +115,9 @@ public class LinkerValidTypes {
             KoneKDS330Lantern1.class,
             KoneKDS330Screen1Odd.class,
             KoneKDS330Screen1Even.class,
+            KoneKDS360Button1.class,
+            KoneKDS360Button1DisplayTop.class,
+            KoneKDS360Button1WithoutScreen.class,
             KoneKSS280Button1.class,
             KoneKSS280Button1WithoutScreen.class,
             KoneKSS280Screen1Odd.class,
@@ -286,7 +289,6 @@ public class LinkerValidTypes {
             HitachiB89Screen1HorizontalOdd.class,
             HitachiB89Screen1HorizontalEven.class,
             SchindlerZLine3Keypad1.class,
-            ThyssenkruppTEGL1Button1.class,
             TonicDSScreen1Odd.class,
             TonicDSScreen1Even.class,
             TonicDMScreen1RedOdd.class,
@@ -302,6 +304,14 @@ public class LinkerValidTypes {
             ToshibaScreen1Even.class,
             ToshibaScreen2Odd.class,
             ToshibaScreen2Even.class,
+            TKEMS5EButton1.class,
+            ThyssenKruppMS3EButton1.class,
+            ThyssenKruppMS5EButton1.class,
+            ThyssenKruppALC01Button1.class,
+            ThyssenKruppS001Button1.class,
+            ThyssenKruppS001Button1WithoutScreen.class,
+            ThyssenKruppSF000Screen1Odd.class,
+            ThyssenKruppSF000Screen1Even.class,
             SchindlerZLine3Keypad1.class
     ));
 }

@@ -88,6 +88,9 @@ public class BlockEntityTypes {
     public static final BlockEntityTypeRegistryObject<KoneKDS330Lantern1.BlockEntity> KONE_KDS330_LANTERN_1;
     public static final BlockEntityTypeRegistryObject<KoneKDS330Screen1Odd.BlockEntity> KONE_KDS330_SCREEN_1_ODD;
     public static final BlockEntityTypeRegistryObject<KoneKDS330Screen1Even.BlockEntity> KONE_KDS330_SCREEN_1_EVEN;
+    public static final BlockEntityTypeRegistryObject<KoneKDS360Button1.BlockEntity> KONE_KDS360_BUTTON_1;
+    public static final BlockEntityTypeRegistryObject<KoneKDS360Button1DisplayTop.BlockEntity> KONE_KDS360_BUTTON_1_DISPLAY_TOP;
+    public static final BlockEntityTypeRegistryObject<KoneKDS360Button1WithoutScreen.BlockEntity> KONE_KDS360_BUTTON_1_WITHOUT_SCREEN;
     public static final BlockEntityTypeRegistryObject<KoneKSS280Button1.BlockEntity> KONE_KSS280_BUTTON_1;
     public static final BlockEntityTypeRegistryObject<KoneKSS280Button1WithoutScreen.BlockEntity> KONE_KSS280_BUTTON_1_WITHOUT_SCREEN;
     public static final BlockEntityTypeRegistryObject<KoneKSS280Screen1Odd.BlockEntity> KONE_KSS280_SCREEN_1_ODD;
@@ -216,9 +219,6 @@ public class BlockEntityTypes {
     public static final BlockEntityTypeRegistryObject<SchindlerDSeriesScreen2RedOdd.BlockEntity> SCHINDLER_D_SERIES_SCREEN_2_RED_ODD;
     public static final BlockEntityTypeRegistryObject<SchindlerDSeriesScreen2RedEven.BlockEntity> SCHINDLER_D_SERIES_SCREEN_2_RED_EVEN;
     public static final BlockEntityTypeRegistryObject<SchindlerZLine3Keypad1.BlockEntity> SCHINDLER_Z_LINE_3_KEYPAD_1;
-
-    public static final BlockEntityTypeRegistryObject<ThyssenkruppTEGL1Button1.BlockEntity> THYSSENKRUPP_TEGL1_BUTTON_1;
-
     public static final BlockEntityTypeRegistryObject<SchindlerMSeriesButton.BlockEntity> SCHINDLER_M_SERIES_BUTTON;
     public static final BlockEntityTypeRegistryObject<SchindlerMSeriesTouchButton.BlockEntity> SCHINDLER_M_SERIES_TOUCH_BUTTON;
     public static final BlockEntityTypeRegistryObject<SchindlerMSeriesRoundTouchButton.BlockEntity> SCHINDLER_M_SERIES_ROUND_TOUCH_BUTTON;
@@ -287,8 +287,16 @@ public class BlockEntityTypes {
     public static final BlockEntityTypeRegistryObject<HitachiB89Screen1VerticalOdd.BlockEntity> HITACHI_B89_SCREEN_1_VERTICAL_ODD;
     public static final BlockEntityTypeRegistryObject<HitachiB89Screen1HorizontalEven.BlockEntity> HITACHI_B89_SCREEN_1_HORIZONTAL_EVEN;
     public static final BlockEntityTypeRegistryObject<HitachiB89Screen1HorizontalOdd.BlockEntity> HITACHI_B89_SCREEN_1_HORIZONTAL_ODD;
-
     public static final BlockEntityTypeRegistryObject<HitachiButtonPAFC.BlockEntity> HITACHI_BUTTON_PAFC;
+
+    public static final BlockEntityTypeRegistryObject<TKEMS5EButton1.BlockEntity> TKE_MS5E_BUTTON_1;
+    public static final BlockEntityTypeRegistryObject<ThyssenKruppMS5EButton1.BlockEntity> THYSSENKRUPP_MS5E_BUTTON_1;
+    public static final BlockEntityTypeRegistryObject<ThyssenKruppMS3EButton1.BlockEntity> THYSSENKRUPP_MS3E_BUTTON_1;
+    public static final BlockEntityTypeRegistryObject<ThyssenKruppALC01Button1.BlockEntity> THYSSENKRUPP_AL_C01_BUTTON_1;
+    public static final BlockEntityTypeRegistryObject<ThyssenKruppS001Button1.BlockEntity> THYSSENKRUPP_S001_BUTTON_1;
+    public static final BlockEntityTypeRegistryObject<ThyssenKruppS001Button1WithoutScreen.BlockEntity> THYSSENKRUPP_S001_BUTTON_1_WITHOUT_SCREEN;
+    public static final BlockEntityTypeRegistryObject<ThyssenKruppSF000Screen1Odd.BlockEntity> THYSSENKRUPP_SF000_SCREEN_1_ODD;
+    public static final BlockEntityTypeRegistryObject<ThyssenKruppSF000Screen1Even.BlockEntity> THYSSENKRUPP_SF000_SCREEN_1_EVEN;
 
     public static final BlockEntityTypeRegistryObject<TonicDSScreen1Odd.BlockEntity> TONIC_DS_SCREEN_1_ODD;
     public static final BlockEntityTypeRegistryObject<TonicDSScreen1Even.BlockEntity> TONIC_DS_SCREEN_1_EVEN;
@@ -369,6 +377,9 @@ public class BlockEntityTypes {
         KONE_KDS330_LANTERN_1 = Init.REGISTRY.registerBlockEntityType(new Identifier(Init.MOD_ID, "kone_kds330_surface_lantern_1"), KoneKDS330Lantern1.BlockEntity::new, Blocks.KONE_KDS330_LANTERN_1::get);
         KONE_KDS330_SCREEN_1_ODD = Init.REGISTRY.registerBlockEntityType(new Identifier(Init.MOD_ID, "kone_kds330_surface_screen_1_odd"), KoneKDS330Screen1Odd.BlockEntity::new, Blocks.KONE_KDS330_SCREEN_1_ODD::get);
         KONE_KDS330_SCREEN_1_EVEN = Init.REGISTRY.registerBlockEntityType(new Identifier(Init.MOD_ID, "kone_kds330_surface_screen_1_even"), KoneKDS330Screen1Even.BlockEntity::new, Blocks.KONE_KDS330_SCREEN_1_EVEN::get);
+        KONE_KDS360_BUTTON_1 = Init.REGISTRY.registerBlockEntityType(new Identifier(Init.MOD_ID, "kone_kds360_surface_button_1"), KoneKDS360Button1.BlockEntity::new, Blocks.KONE_KDS360_BUTTON_1::get);
+        KONE_KDS360_BUTTON_1_DISPLAY_TOP = Init.REGISTRY.registerBlockEntityType(new Identifier(Init.MOD_ID, "kone_kds360_surface_button_1_display_top"), KoneKDS360Button1DisplayTop.BlockEntity::new, Blocks.KONE_KDS360_BUTTON_1_DISPLAY_TOP::get);
+        KONE_KDS360_BUTTON_1_WITHOUT_SCREEN = Init.REGISTRY.registerBlockEntityType(new Identifier(Init.MOD_ID, "kone_kds360_surface_button_1_without_screen"), KoneKDS360Button1WithoutScreen.BlockEntity::new, Blocks.KONE_KDS360_BUTTON_1_WITHOUT_SCREEN::get);
         KONE_KSS280_BUTTON_1 = Init.REGISTRY.registerBlockEntityType(new Identifier(Init.MOD_ID, "kone_kss280_surface_button_1"), KoneKSS280Button1.BlockEntity::new, Blocks.KONE_KSS280_BUTTON_1::get);
         KONE_KSS280_BUTTON_1_WITHOUT_SCREEN = Init.REGISTRY.registerBlockEntityType(new Identifier(Init.MOD_ID, "kone_kss280_surface_button_1_without_screen"), KoneKSS280Button1WithoutScreen.BlockEntity::new, Blocks.KONE_KSS280_BUTTON_1_WITHOUT_SCREEN::get);
         KONE_KSS280_SCREEN_1_ODD = Init.REGISTRY.registerBlockEntityType(new Identifier(Init.MOD_ID, "kone_kss280_surface_screen_1_odd"), KoneKSS280Screen1Odd.BlockEntity::new, Blocks.KONE_KSS280_SCREEN_1_ODD::get);
@@ -548,7 +559,14 @@ public class BlockEntityTypes {
         SCHINDLER_FI_GS_SCREEN_1_GREY_EVEN = Init.REGISTRY.registerBlockEntityType(new Identifier(Init.MOD_ID, "schindler_fi_gs_screen_1_grey_even"), SchindlerFIGSScreen1GreyEven.BlockEntity::new, Blocks.SCHINDLER_FI_GS_SCREEN_1_GREY_EVEN::get);
         SCHINDLER_Z_LINE_3_KEYPAD_1 = Init.REGISTRY.registerBlockEntityType(new Identifier(Init.MOD_ID, "schindler_z_line_3_keypad_1"), SchindlerZLine3Keypad1.BlockEntity::new, Blocks.SCHINDLER_Z_LINE_3_KEYPAD_1::get);
 
-        THYSSENKRUPP_TEGL1_BUTTON_1 = Init.REGISTRY.registerBlockEntityType(new Identifier(Init.MOD_ID, "thyssenkrupp_te_gl1_button_1"), ThyssenkruppTEGL1Button1.BlockEntity::new, Blocks.THYSSENKRUPP_TEGL1_BUTTON_1::get);
+        TKE_MS5E_BUTTON_1 = Init.REGISTRY.registerBlockEntityType(new Identifier(Init.MOD_ID, "tke_ms5e_button_1"), TKEMS5EButton1.BlockEntity::new, Blocks.TKE_MS5E_BUTTON_1::get);
+        THYSSENKRUPP_MS5E_BUTTON_1 = Init.REGISTRY.registerBlockEntityType(new Identifier(Init.MOD_ID, "thyssenkrupp_ms5e_button_1"), ThyssenKruppMS5EButton1.BlockEntity::new, Blocks.THYSSENKRUPP_MS5E_BUTTON_1::get);
+        THYSSENKRUPP_MS3E_BUTTON_1 = Init.REGISTRY.registerBlockEntityType(new Identifier(Init.MOD_ID, "thyssenkrupp_ms3e_button_1"), ThyssenKruppMS3EButton1.BlockEntity::new, Blocks.THYSSENKRUPP_MS3E_BUTTON_1::get);
+        THYSSENKRUPP_AL_C01_BUTTON_1 = Init.REGISTRY.registerBlockEntityType(new Identifier(Init.MOD_ID, "thyssenkrupp_al_c01_button_1"), ThyssenKruppALC01Button1.BlockEntity::new, Blocks.THYSSENKRUPP_AL_C01_BUTTON_1::get);
+        THYSSENKRUPP_S001_BUTTON_1 = Init.REGISTRY.registerBlockEntityType(new Identifier(Init.MOD_ID, "thyssenkrupp_s001_button_1"), ThyssenKruppS001Button1.BlockEntity::new, Blocks.THYSSENKRUPP_S001_BUTTON_1::get);
+        THYSSENKRUPP_S001_BUTTON_1_WITHOUT_SCREEN = Init.REGISTRY.registerBlockEntityType(new Identifier(Init.MOD_ID, "thyssenkrupp_s001_button_1_without_screen"), ThyssenKruppS001Button1WithoutScreen.BlockEntity::new, Blocks.THYSSENKRUPP_S001_BUTTON_1_WITHOUT_SCREEN::get);
+        THYSSENKRUPP_SF000_SCREEN_1_ODD = Init.REGISTRY.registerBlockEntityType(new Identifier(Init.MOD_ID, "thyssenkrupp_sf000_screen_1_odd"), ThyssenKruppSF000Screen1Odd.BlockEntity::new, Blocks.THYSSENKRUPP_SF000_SCREEN_1_ODD::get);
+        THYSSENKRUPP_SF000_SCREEN_1_EVEN = Init.REGISTRY.registerBlockEntityType(new Identifier(Init.MOD_ID, "thyssenkrupp_sf000_screen_1_even"), ThyssenKruppSF000Screen1Even.BlockEntity::new, Blocks.THYSSENKRUPP_SF000_SCREEN_1_EVEN::get);
 
         HITACHI_VIB320_BUTTON = Init.REGISTRY.registerBlockEntityType(new Identifier(Init.MOD_ID, "hitachi_vib320_button_1"), HitachiVIB320Button.BlockEntity::new, Blocks.HITACHI_VIB320_BUTTON::get);
         HITACHI_VIB320_BUTTON_DOT_MATRIX = Init.REGISTRY.registerBlockEntityType(new Identifier(Init.MOD_ID, "hitachi_vib320_button_1_dot_matrix"), HitachiVIB320ButtonDotMatrix.BlockEntity::new, Blocks.HITACHI_VIB320_BUTTON_DOT_MATRIX::get);

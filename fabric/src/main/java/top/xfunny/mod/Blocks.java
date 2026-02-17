@@ -51,6 +51,9 @@ public class Blocks {
     public static final BlockRegistryObject KONE_KDS330_LANTERN_1;
     public static final BlockRegistryObject KONE_KDS330_SCREEN_1_ODD;
     public static final BlockRegistryObject KONE_KDS330_SCREEN_1_EVEN;
+    public static final BlockRegistryObject KONE_KDS360_BUTTON_1;
+    public static final BlockRegistryObject KONE_KDS360_BUTTON_1_DISPLAY_TOP;
+    public static final BlockRegistryObject KONE_KDS360_BUTTON_1_WITHOUT_SCREEN;
     public static final BlockRegistryObject KONE_KSS280_BUTTON_1;
     public static final BlockRegistryObject KONE_KSS280_BUTTON_1_WITHOUT_SCREEN;
     public static final BlockRegistryObject KONE_KSS280_SCREEN_1_ODD;
@@ -233,7 +236,14 @@ public class Blocks {
     public static final BlockRegistryObject SCHINDLER_FI_GS_SCREEN_1_GREY_EVEN;
     public static final BlockRegistryObject SCHINDLER_Z_LINE_3_KEYPAD_1;
 
-    public static final BlockRegistryObject THYSSENKRUPP_TEGL1_BUTTON_1;
+    public static final BlockRegistryObject TKE_MS5E_BUTTON_1;
+    public static final BlockRegistryObject THYSSENKRUPP_MS5E_BUTTON_1;
+    public static final BlockRegistryObject THYSSENKRUPP_MS3E_BUTTON_1;
+    public static final BlockRegistryObject THYSSENKRUPP_AL_C01_BUTTON_1;
+    public static final BlockRegistryObject THYSSENKRUPP_S001_BUTTON_1;
+    public static final BlockRegistryObject THYSSENKRUPP_S001_BUTTON_1_WITHOUT_SCREEN;
+    public static final BlockRegistryObject THYSSENKRUPP_SF000_SCREEN_1_ODD;
+    public static final BlockRegistryObject THYSSENKRUPP_SF000_SCREEN_1_EVEN;
 
     public static final BlockRegistryObject HITACHI_B85_BUTTON_1;
     public static final BlockRegistryObject HITACHI_B85_BUTTON_1_WITHOUT_SCREEN;
@@ -377,6 +387,9 @@ public class Blocks {
         KONE_KDS330_LANTERN_1 = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "kone_kds330_surface_lantern_1"), () -> new Block(new KoneKDS330Lantern1()), CreativeModeTabs.YTE_LIFT_FIXTURES);
         KONE_KDS330_SCREEN_1_ODD = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "kone_kds330_surface_screen_1_odd"), () -> new Block(new KoneKDS330Screen1Odd()), CreativeModeTabs.YTE_LIFT_FIXTURES);
         KONE_KDS330_SCREEN_1_EVEN = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "kone_kds330_surface_screen_1_even"), () -> new Block(new KoneKDS330Screen1Even()), CreativeModeTabs.YTE_LIFT_FIXTURES);
+        KONE_KDS360_BUTTON_1 = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "kone_kds360_surface_button_1"), () -> new Block(new KoneKDS360Button1()), CreativeModeTabs.YTE_LIFT_FIXTURES);
+        KONE_KDS360_BUTTON_1_DISPLAY_TOP = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "kone_kds360_surface_button_1_display_top"), () -> new Block(new KoneKDS360Button1DisplayTop()), CreativeModeTabs.YTE_LIFT_FIXTURES);
+        KONE_KDS360_BUTTON_1_WITHOUT_SCREEN = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "kone_kds360_surface_button_1_without_screen"), () -> new Block(new KoneKDS360Button1WithoutScreen()), CreativeModeTabs.YTE_LIFT_FIXTURES);
         KONE_KSS280_BUTTON_1 = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "kone_kss280_surface_button_1"), () -> new Block(new KoneKSS280Button1()), CreativeModeTabs.YTE_LIFT_FIXTURES);
         KONE_KSS280_BUTTON_1_WITHOUT_SCREEN = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "kone_kss280_surface_button_1_without_screen"), () -> new Block(new KoneKSS280Button1WithoutScreen()), CreativeModeTabs.YTE_LIFT_FIXTURES);
         KONE_KSS280_SCREEN_1_ODD = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "kone_kss280_surface_screen_1_odd"), () -> new Block(new KoneKSS280Screen1Odd()), CreativeModeTabs.YTE_LIFT_FIXTURES);
@@ -478,8 +491,6 @@ public class Blocks {
         TEST_LIFT_PANEL = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "test_lift_panel"), () -> new Block(new TestLiftPanel()));
         TEST_LIFT_BUTTONS_WITHOUT_SCREEN = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "test_lift_buttons_without_screen"), () -> new Block(new TestLiftButtonsWithoutScreen()));
         TEST_LIFT_DESTINATION_DISPATCH_TERMINAL = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "test_lift_destination_dispatch_terminal"), () -> new Block(new TestLiftDestinationDispatchTerminal()));
-
-        THYSSENKRUPP_TEGL1_BUTTON_1 = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "thyssenkrupp_te_gl1_button_1"), () -> new Block(new ThyssenkruppTEGL1Button1()));
 
         OTIS_GEN3_BUTTON_1 = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "otis_gen3_button_1"), () -> new Block(new OtisGen3Button1()), CreativeModeTabs.YTE_LIFT_FIXTURES);
         OTIS_SERIES_1_BUTTON_1 = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "otis_series_1_button_1"), () -> new Block(new OtisSeries1Button()), CreativeModeTabs.YTE_LIFT_FIXTURES);
@@ -627,6 +638,15 @@ public class Blocks {
         HITACHI_B89_SCREEN_1_HORIZONTAL_ODD = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "hitachi_b89_screen_1_horizontal_odd"), () -> new Block(new HitachiB89Screen1HorizontalOdd()), CreativeModeTabs.YTE_LIFT_FIXTURES);
         HITACHI_B89_SCREEN_1_HORIZONTAL_EVEN = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "hitachi_b89_screen_1_horizontal_even"), () -> new Block(new HitachiB89Screen1HorizontalEven()), CreativeModeTabs.YTE_LIFT_FIXTURES);
         HITACHI_BUTTON_PAFC = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "hitachi_button_pafc"), () -> new Block(new HitachiButtonPAFC()), CreativeModeTabs.YTE_LIFT_FIXTURES);
+
+        TKE_MS5E_BUTTON_1 = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "tke_ms5e_button_1"), () -> new Block(new TKEMS5EButton1()), CreativeModeTabs.YTE_LIFT_FIXTURES);
+        THYSSENKRUPP_MS5E_BUTTON_1 = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "thyssenkrupp_ms5e_button_1"), () -> new Block(new ThyssenKruppMS5EButton1()), CreativeModeTabs.YTE_LIFT_FIXTURES);
+        THYSSENKRUPP_MS3E_BUTTON_1 = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "thyssenkrupp_ms3e_button_1"), () -> new Block(new ThyssenKruppMS3EButton1()), CreativeModeTabs.YTE_LIFT_FIXTURES);
+        THYSSENKRUPP_AL_C01_BUTTON_1 = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "thyssenkrupp_al_c01_button_1"), () -> new Block(new ThyssenKruppALC01Button1()), CreativeModeTabs.YTE_LIFT_FIXTURES);
+        THYSSENKRUPP_S001_BUTTON_1 = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "thyssenkrupp_s001_button_1"), () -> new Block(new ThyssenKruppS001Button1()), CreativeModeTabs.YTE_LIFT_FIXTURES);
+        THYSSENKRUPP_S001_BUTTON_1_WITHOUT_SCREEN = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "thyssenkrupp_s001_button_1_without_screen"), () -> new Block(new ThyssenKruppS001Button1WithoutScreen()), CreativeModeTabs.YTE_LIFT_FIXTURES);
+        THYSSENKRUPP_SF000_SCREEN_1_ODD = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "thyssenkrupp_sf000_screen_1_odd"), () -> new Block(new ThyssenKruppSF000Screen1Odd()), CreativeModeTabs.YTE_LIFT_FIXTURES);
+        THYSSENKRUPP_SF000_SCREEN_1_EVEN = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "thyssenkrupp_sf000_screen_1_even"), () -> new Block(new ThyssenKruppSF000Screen1Even()), CreativeModeTabs.YTE_LIFT_FIXTURES);
 
         TONIC_DS_SCREEN_1_ODD = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "tonic_ds_screen_1_odd"), () -> new Block(new TonicDSScreen1Odd()), CreativeModeTabs.YTE_LIFT_FIXTURES);
         TONIC_DS_SCREEN_1_EVEN = Init.REGISTRY.registerBlockWithBlockItem(new Identifier(Init.MOD_ID, "tonic_ds_screen_1_even"), () -> new Block(new TonicDSScreen1Even()), CreativeModeTabs.YTE_LIFT_FIXTURES);

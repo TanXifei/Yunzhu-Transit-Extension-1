@@ -13,22 +13,21 @@ import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 import java.util.List;
 
-public class ThyssenkruppTEGL1Button1 extends LiftButtonsBase {
-    public ThyssenkruppTEGL1Button1() {
-        super(true, true, 0.3);
+public class ThyssenKruppS001Button1WithoutScreen extends LiftButtonsBase {
+    public ThyssenKruppS001Button1WithoutScreen() {
+        super(true, true);
     }
 
     @Nonnull
     @Override
     public VoxelShape getOutlineShape2(BlockState state, BlockView world, BlockPos pos, ShapeContext context) {
-        final boolean single = !IBlock.getStatePropertySafe(world.getBlockState(pos), SINGLE);
-        return IBlock.getVoxelShapeByDirection(single ? 5.7 : 6.45, 0.675, 0, single ? 10.3 : 9.55, 9.875, 0.5, IBlock.getStatePropertySafe(state, FACING));
+        return IBlock.getVoxelShapeByDirection(6.75, 2.775, 0, 9.25, 8.525, 0.2, IBlock.getStatePropertySafe(state, FACING));
     }
 
     @Nonnull
     @Override
     public BlockEntityExtension createBlockEntity(BlockPos blockPos, BlockState blockState) {
-        return new BlockEntity(blockPos, blockState);
+        return new ThyssenKruppS001Button1WithoutScreen.BlockEntity(blockPos, blockState);
     }
 
     @Override
@@ -38,13 +37,10 @@ public class ThyssenkruppTEGL1Button1 extends LiftButtonsBase {
         properties.add(SINGLE);
     }
 
-    public void addTooltips(@NotNull ItemStack stack, @Nullable BlockView world, List<MutableText> tooltip, @NotNull TooltipContext options) {
-        tooltip.add(TextHelper.translatable("tooltip.warning_block_testing").formatted(TextFormatting.RED));
-    }
-
     public static class BlockEntity extends BlockEntityBase {
         public BlockEntity(BlockPos pos, BlockState state) {
-            super(BlockEntityTypes.THYSSENKRUPP_TEGL1_BUTTON_1.get(), pos, state);
+            super(BlockEntityTypes.THYSSENKRUPP_S001_BUTTON_1_WITHOUT_SCREEN.get(), pos, state);
         }
     }
 }
+

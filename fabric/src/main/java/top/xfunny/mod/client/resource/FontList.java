@@ -80,6 +80,8 @@ public class FontList {
             loadFont("toshiba_segmented_1", "font/toshiba-segmented-1.ttf");
             loadFont("fujitec_computer_control", "font/fujitec_computer_control.ttf");
             loadFont("otis-gen3-display", "font/otis-gen3-display.ttf");
+            loadFont("thyssenkrupp-round-dot-matrix", "font/thyssenkrupp-round-dot-matrix.ttf");
+            loadFont("thyssenkrupp-square-dot-matrix", "font/thyssenkrupp-square-dot-matrix.ttf");
             fontsLoaded = true;
         }
     }

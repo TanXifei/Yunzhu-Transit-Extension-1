@@ -67,6 +67,9 @@ public final class InitClient {
         REGISTRY_CLIENT.registerBlockEntityRenderer(BlockEntityTypes.KONE_KDS330_LANTERN_1, RenderKoneKDS330Lantern1::new);
         REGISTRY_CLIENT.registerBlockEntityRenderer(BlockEntityTypes.KONE_KDS330_SCREEN_1_ODD, dispatcher -> new top.xfunny.mod.client.render.RenderKoneKDS330Screen1<>(dispatcher, true));
         REGISTRY_CLIENT.registerBlockEntityRenderer(BlockEntityTypes.KONE_KDS330_SCREEN_1_EVEN, dispatcher -> new top.xfunny.mod.client.render.RenderKoneKDS330Screen1<>(dispatcher, false));
+        REGISTRY_CLIENT.registerBlockEntityRenderer(BlockEntityTypes.KONE_KDS360_BUTTON_1, RenderKoneKDS360Button1::new);
+        REGISTRY_CLIENT.registerBlockEntityRenderer(BlockEntityTypes.KONE_KDS360_BUTTON_1_DISPLAY_TOP, RenderKoneKDS360Button1DisplayTop::new);
+        REGISTRY_CLIENT.registerBlockEntityRenderer(BlockEntityTypes.KONE_KDS360_BUTTON_1_WITHOUT_SCREEN, RenderKoneKDS360Button1WithoutScreen::new);
         REGISTRY_CLIENT.registerBlockEntityRenderer(BlockEntityTypes.KONE_KSS280_BUTTON_1, RenderKoneKSS280Button1::new);
         REGISTRY_CLIENT.registerBlockEntityRenderer(BlockEntityTypes.KONE_KSS280_BUTTON_1_WITHOUT_SCREEN, RenderKoneKSS280Button1WithoutScreen::new);
         REGISTRY_CLIENT.registerBlockEntityRenderer(BlockEntityTypes.KONE_KSS280_SCREEN_1_ODD, dispatcher -> new top.xfunny.mod.client.render.RenderKoneKSS280Screen1<>(dispatcher, true));
@@ -164,7 +167,14 @@ public final class InitClient {
         REGISTRY_CLIENT.registerBlockEntityRenderer(BlockEntityTypes.SHANGHAI_MITSUBISHI_LEHY_3_SCREEN_1_WIDE_EVEN, dispatcher -> new top.xfunny.mod.client.render.RenderShanghaiMitsubishiLehy3Screen1Wide<>(dispatcher, false));
         REGISTRY_CLIENT.registerBlockEntityRenderer(BlockEntityTypes.SHANGHAI_MITSUBISHI_LEHY_3_SCREEN_1_WIDE_ODD, dispatcher -> new top.xfunny.mod.client.render.RenderShanghaiMitsubishiLehy3Screen1Wide<>(dispatcher, true));
 
-        REGISTRY_CLIENT.registerBlockEntityRenderer(BlockEntityTypes.THYSSENKRUPP_TEGL1_BUTTON_1, RenderThyssenkruppTEGL1Button1::new);
+        REGISTRY_CLIENT.registerBlockEntityRenderer(BlockEntityTypes.TKE_MS5E_BUTTON_1, RenderTKEMS5EButton1::new);
+        REGISTRY_CLIENT.registerBlockEntityRenderer(BlockEntityTypes.THYSSENKRUPP_MS5E_BUTTON_1, RenderThyssenKruppMS5EButton1::new);
+        REGISTRY_CLIENT.registerBlockEntityRenderer(BlockEntityTypes.THYSSENKRUPP_MS3E_BUTTON_1, RenderThyssenKruppMS3EButton1::new);
+        REGISTRY_CLIENT.registerBlockEntityRenderer(BlockEntityTypes.THYSSENKRUPP_AL_C01_BUTTON_1, RenderThyssenKruppALC01Button1::new);
+        REGISTRY_CLIENT.registerBlockEntityRenderer(BlockEntityTypes.THYSSENKRUPP_S001_BUTTON_1, RenderThyssenKruppS001Button1::new);
+        REGISTRY_CLIENT.registerBlockEntityRenderer(BlockEntityTypes.THYSSENKRUPP_S001_BUTTON_1_WITHOUT_SCREEN, RenderThyssenKruppS001Button1WithoutScreen::new);
+        REGISTRY_CLIENT.registerBlockEntityRenderer(BlockEntityTypes.THYSSENKRUPP_SF000_SCREEN_1_ODD, dispatcher -> new top.xfunny.mod.client.render.RenderThyssenKruppSF000Screen1<>(dispatcher, true));
+        REGISTRY_CLIENT.registerBlockEntityRenderer(BlockEntityTypes.THYSSENKRUPP_SF000_SCREEN_1_EVEN, dispatcher -> new top.xfunny.mod.client.render.RenderThyssenKruppSF000Screen1<>(dispatcher, false));
 
         REGISTRY_CLIENT.registerBlockEntityRenderer(BlockEntityTypes.OTIS_GEN3_BUTTON_1, RenderOtisGen3Button1::new);
         REGISTRY_CLIENT.registerBlockEntityRenderer(BlockEntityTypes.OTIS_SERIES_1_BUTTON_1, RenderOtisSeries1Button::new);
@@ -366,7 +376,7 @@ public final class InitClient {
         });
 
         // TODO: 发布前请注释此行代码。
-        //REGISTRY_CLIENT.eventRegistryClient.registerGuiRendering(RenderWatermark::render);
+        REGISTRY_CLIENT.eventRegistryClient.registerGuiRendering(RenderWatermark::render);
 
         REGISTRY_CLIENT.init();
     }
