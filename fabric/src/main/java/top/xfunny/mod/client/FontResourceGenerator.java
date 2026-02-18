@@ -14,35 +14,15 @@ import java.util.Map;
 
 public class FontResourceGenerator implements IGui {
 
-    /**
-     * 生成字体图片 NativeImage 数据
-     *
-     * @param text           要显示的文本
-     * @param textColor      文字颜色 (ARGB)
-     * @param font           基础字体对象
-     * @param fontSize       基础字体大小
-     * @param padding        文字内边距
-     * @param letterSpacing  字符间距
-     */
-    public static NativeImage generateNativeImage(String text, int textColor, Font font, float fontSize, int padding, float letterSpacing) {// 使用AI优化
-        // 基础缩放值
+    public static NativeImage generateNativeImage(String text, int textColor, Font font, float fontSize, int padding, float letterSpacing) {
+        // 绝对不改动原有的基础缩放和画布大小，保证所有配件渲染正常
         int baseScale = (int) Math.pow(2, Config.getClient().getDynamicTextureResolution() + 5);
-
-        // 图片尺寸缩放因子
         float sizeScaleFactor = 0.8f;
-
-        // 实际使用的缩放值
         int actualScale = Math.round(baseScale * sizeScaleFactor);
 
         try {
             final int[] dimensions = new int[2];
-
-            // 字体大小跟随缩放
             float scaledFontSize = (float) actualScale / 8 * fontSize;
-
-            // ！！！关键修改：letterSpacing 也需要跟随缩放！！！
-            // 这样间距相对于字符大小的比例才能保持不变
-            int scaledLetterSpacing = Math.round(letterSpacing * sizeScaleFactor);
 
             final Map.Entry<int[], byte[]> textInformation = getTextPixels(
                     text.toUpperCase(Locale.ENGLISH),
@@ -50,15 +30,17 @@ public class FontResourceGenerator implements IGui {
                     scaledFontSize,
                     padding,
                     font,
-                    scaledLetterSpacing  // 使用缩放后的间距
+                    Math.round(letterSpacing * sizeScaleFactor)
             );
 
+            // 严格维持 1.5F 的高度比例
             final int totalWidth = dimensions[0];
             final int totalHeight = Math.round(actualScale * 1.5F);
 
             final NativeImage nativeImage = new NativeImage(NativeImageFormat.getAbgrMapped(), totalWidth, totalHeight, true);
             nativeImage.fillRect(0, 0, totalWidth, totalHeight, 0);
 
+            // 居中对齐，多出来的 64 像素透明边缘会自动上下均分，不会改变字的相对位置
             drawString(nativeImage, textInformation.getValue(), totalWidth / 2, totalHeight / 2, dimensions,
                     IGui.HorizontalAlignment.CENTER, IGui.VerticalAlignment.CENTER,
                     0x00000000, textColor, false);
@@ -70,9 +52,6 @@ public class FontResourceGenerator implements IGui {
         }
     }
 
-    /**
-     * 获取文字像素
-     */
     private static Map.Entry<int[], byte[]> getTextPixels(String text, int[] dimensions, float fontSize, int padding, Font font, int letterSpacing) {
         try {
             BufferedImage tempImage = new BufferedImage(1, 1, BufferedImage.TYPE_BYTE_GRAY);
@@ -92,8 +71,12 @@ public class FontResourceGenerator implements IGui {
             }
 
             int textHeight = metrics.getHeight();
+
+            // 【修改点】：直接给 64 像素的超大安全缓冲（上下各 32 像素）
+            int vBuffer = 64;
+
             int calculatedWidth = textWidth + 2 * padding;
-            int calculatedHeight = textHeight + 2 * padding;
+            int calculatedHeight = textHeight + 2 * padding + vBuffer;
 
             dimensions[0] = calculatedWidth;
             dimensions[1] = calculatedHeight;
@@ -105,7 +88,8 @@ public class FontResourceGenerator implements IGui {
             g2d.setColor(Color.WHITE);
 
             int x = padding;
-            int y = padding + metrics.getAscent();
+            // 【修改点】：基线直接硬下移 32 像素，这下任何字体都绝对不可能突破顶部了
+            int y = padding + metrics.getAscent() + 32;
 
             if (letterSpacing == 0) {
                 g2d.drawString(text, x, y);
