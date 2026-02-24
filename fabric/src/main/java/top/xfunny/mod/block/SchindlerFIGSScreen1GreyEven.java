@@ -22,7 +22,7 @@ public class SchindlerFIGSScreen1GreyEven extends LiftPanelBase {
             case LEFT:
                 return IBlock.getVoxelShapeByDirection(12.5, 10.6, 0, 16, 13.4, 0.1, IBlock.getStatePropertySafe(state, FACING));
             case RIGHT:
-                return IBlock.getVoxelShapeByDirection(0, 11.125, 0, 3.5, 12.875, 0.1, IBlock.getStatePropertySafe(state, FACING));
+                return IBlock.getVoxelShapeByDirection(0, 10.6, 0, 3.5, 13.4, 0.1, IBlock.getStatePropertySafe(state, FACING));
             default:
                 return VoxelShapes.empty();
         }

@@ -1,19 +1,51 @@
 {
+  "hitachi_ca_lantern_1": {
+    "sounds": [
+      {
+        "name": "yte:hitachi_ca_lantern_1",
+        "pitch": 1.0
+      }
+    ]
+  },
+  "hitachi_ca_lantern_2": {
+    "sounds": [
+      {
+        "name": "yte:hitachi_ca_lantern_2",
+        "pitch": 1.0
+      }
+    ]
+  },
   "otis_series_1_lantern_1_up": {
     "sounds": [
-			{
-				"name": "yte:otis_series_1_lantern_1_up",
-				"pitch": 1.0
-			}
-		]
+      {
+        "name": "yte:otis_series_1_lantern_1_up",
+        "pitch": 1.0
+      }
+    ]
   },
   "otis_series_1_lantern_1_down": {
     "sounds": [
-			{
-				"name": "yte:otis_series_1_lantern_1_down",
-				"pitch": 1.0
-			}
-		]
+      {
+        "name": "yte:otis_series_1_lantern_1_down",
+        "pitch": 1.0
+      }
+    ]
+  },
+  "otis_series_1_lantern_2_up": {
+    "sounds": [
+      {
+        "name": "yte:otis_series_1_lantern_2_up",
+        "pitch": 1.0
+      }
+    ]
+  },
+  "otis_series_1_lantern_2_down": {
+    "sounds": [
+      {
+        "name": "yte:otis_series_1_lantern_2_down",
+        "pitch": 1.0
+      }
+    ]
   },
   "otis_series_3_lantern_1_up": {
     "sounds": [

@@ -15,13 +15,17 @@ import org.mtr.mod.data.IGui;
 import org.mtr.mod.render.RenderLifts;
 import org.mtr.mod.render.StoredMatrixTransformations;
 import top.xfunny.mod.Init;
+import top.xfunny.mod.block.HitachiGHL668Lantern1Even;
+import top.xfunny.mod.block.HitachiGHL673Lantern1Even;
 import top.xfunny.mod.block.MitsubishiNexWayScreen1Even;
 import top.xfunny.mod.block.base.LiftButtonsBase;
+import top.xfunny.mod.client.InitClient;
 import top.xfunny.mod.client.view.*;
 import top.xfunny.mod.client.view.view_group.FrameLayout;
 import top.xfunny.mod.client.view.view_group.LinearLayout;
 import top.xfunny.mod.item.YteGroupLiftButtonsLinker;
 import top.xfunny.mod.item.YteLiftButtonsLinker;
+import top.xfunny.mod.packet.PacketLanternSoundInstruction;
 import top.xfunny.mod.util.ClientGetLiftDetails;
 
 import java.util.Comparator;
@@ -137,7 +141,7 @@ public class RenderHitachiGHL673Lantern1<T extends LiftButtonsBase.BlockEntityBa
         blockEntity.forEachTrackPosition(trackPosition -> {
             line.RenderLine(holdingLinker, trackPosition);
 
-            MitsubishiNexWayScreen1Even.hasButtonsClient(trackPosition, buttonDescriptor, (floorIndex, lift) -> {
+            HitachiGHL673Lantern1Even.hasButtonsClient(trackPosition, buttonDescriptor, (floorIndex, lift) -> {
                 sortedPositionsAndLifts.add(new ObjectObjectImmutablePair<>(trackPosition, lift));
 
                 LiftDirection pressedButtonDirection = blockEntity.getPressedButtonDirection();
@@ -148,15 +152,30 @@ public class RenderHitachiGHL673Lantern1<T extends LiftButtonsBase.BlockEntityBa
 
                 final ObjectArraySet<LiftDirection> instructionDirections = lift.hasInstruction(floorIndex);
 
+                if (lift.getDoorValue() == 0) {
+                    blockEntity.lastUpActive = false;
+                    blockEntity.lastDownActive = false;
+                }
+
                 if (instructionDirections.isEmpty() && pressedButtonDirection != null && lift.getDoorValue() != 0 && floorNumber.equals(currentFloorNumber)) {
                     switch (pressedButtonDirection) {
                         case DOWN:
                             downLanternLeft.activate();
                             downLanternRight.activate();
+                            if(!blockEntity.lastDownActive) {
+                                InitClient.REGISTRY_CLIENT.sendPacketToServer(new PacketLanternSoundInstruction(blockPos, "hitachi_ca_lantern_1"));
+                                blockEntity.lastUpActive = true;
+                                blockEntity.lastDownActive = true;
+                            }
                             break;
                         case UP:
                             upLanternLeft.activate();
                             upLanternRight.activate();
+                            if(!blockEntity.lastUpActive) {
+                                InitClient.REGISTRY_CLIENT.sendPacketToServer(new PacketLanternSoundInstruction(blockPos, "hitachi_ca_lantern_1"));
+                                blockEntity.lastUpActive = true;
+                                blockEntity.lastDownActive = true;
+                            }
                             break;
                     }
                 }
@@ -169,10 +188,20 @@ public class RenderHitachiGHL673Lantern1<T extends LiftButtonsBase.BlockEntityBa
                                     case DOWN:
                                         downLanternLeft.activate();
                                         downLanternRight.activate();
+                                        if(!blockEntity.lastDownActive) {
+                                            InitClient.REGISTRY_CLIENT.sendPacketToServer(new PacketLanternSoundInstruction(blockPos, "hitachi_ca_lantern_1"));
+                                            blockEntity.lastUpActive = true;
+                                            blockEntity.lastDownActive = true;
+                                        }
                                         break;
                                     case UP:
                                         upLanternLeft.activate();
                                         upLanternRight.activate();
+                                        if(!blockEntity.lastUpActive) {
+                                            InitClient.REGISTRY_CLIENT.sendPacketToServer(new PacketLanternSoundInstruction(blockPos, "hitachi_ca_lantern_1"));
+                                            blockEntity.lastUpActive = true;
+                                            blockEntity.lastDownActive = true;
+                                        }
                                         break;
                                 }
                             }
@@ -181,10 +210,20 @@ public class RenderHitachiGHL673Lantern1<T extends LiftButtonsBase.BlockEntityBa
                                 case DOWN:
                                     downLanternLeft.activate();
                                     downLanternRight.activate();
+                                    if(!blockEntity.lastDownActive) {
+                                        InitClient.REGISTRY_CLIENT.sendPacketToServer(new PacketLanternSoundInstruction(blockPos, "hitachi_ca_lantern_1"));
+                                        blockEntity.lastUpActive = true;
+                                        blockEntity.lastDownActive = true;
+                                    }
                                     break;
                                 case UP:
                                     upLanternLeft.activate();
                                     upLanternRight.activate();
+                                    if(!blockEntity.lastUpActive) {
+                                        InitClient.REGISTRY_CLIENT.sendPacketToServer(new PacketLanternSoundInstruction(blockPos, "hitachi_ca_lantern_1"));
+                                        blockEntity.lastUpActive = true;
+                                        blockEntity.lastDownActive = true;
+                                    }
                                     break;
                             }
                         }
@@ -200,19 +239,12 @@ public class RenderHitachiGHL673Lantern1<T extends LiftButtonsBase.BlockEntityBa
             buttonLine.RenderLine(holdingLinker, buttonPosition, true);
         });
 
-        if (buttonDescriptor.hasDownButton() && buttonDescriptor.hasUpButton()) {
+        if (buttonDescriptor.hasDownButton() || buttonDescriptor.hasUpButton()) {
             lanternGroupLeft.setMargin(0, 0.01F / 16, 0, 0);
             lanternGroupRight.addChild(upLanternRight);
             lanternGroupLeft.addChild(downLanternLeft);
             linearLayout.addChild(lanternGroupRight);
             linearLayout.addChild(lanternGroupLeft);
-
-        } else if (buttonDescriptor.hasDownButton()) {
-            lanternGroupLeft.addChild(downLanternLeft);
-            linearLayout.addChild(lanternGroupLeft);
-        } else if (buttonDescriptor.hasUpButton()) {
-            lanternGroupRight.addChild(upLanternRight);
-            linearLayout.addChild(lanternGroupRight);
         }
 
         parentLayout.addChild(linearLayout);

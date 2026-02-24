@@ -8,6 +8,26 @@ import top.xfunny.mod.SoundEvents;
 public final class SoundsHelper {
     public static void playSound(BlockPos blockPos, ServerPlayerEntity serverPlayerEntity, String soundInstruction){
         switch (soundInstruction){// 播放声音
+            case "hitachi_ca_lantern_1":
+                serverPlayerEntity.getEntityWorld().playSound(
+                        null,
+                        blockPos,
+                        SoundEvents.HITACHI_CA_LANTERN_1.get(),
+                        SoundCategory.BLOCKS,
+                        1.0F,
+                        1.0F
+                );
+                break;
+                case "hitachi_ca_lantern_2":
+                serverPlayerEntity.getEntityWorld().playSound(
+                        null,
+                        blockPos,
+                        SoundEvents.HITACHI_CA_LANTERN_2.get(),
+                        SoundCategory.BLOCKS,
+                        1.0F,
+                        1.0F
+                );
+                break;
                 case "otis_series_1_lantern_up":
                 serverPlayerEntity.getEntityWorld().playSound(
                         null,
@@ -24,6 +44,27 @@ public final class SoundsHelper {
                         null,
                         blockPos,
                         SoundEvents.OTIS_SERIES_1_LANTERN_1_DOWN.get(),
+                        SoundCategory.BLOCKS,
+                        1.0F,
+                        1.0F
+                );
+                break;
+            case "otis_series_1_lantern_up_2":
+                serverPlayerEntity.getEntityWorld().playSound(
+                        null,
+                        blockPos,
+                        SoundEvents.OTIS_SERIES_1_LANTERN_2_UP.get(),
+                        SoundCategory.BLOCKS,
+                        1.0F,
+                        1.0F
+                );
+                break;
+
+            case "otis_series_1_lantern_down_2":
+                serverPlayerEntity.getEntityWorld().playSound(
+                        null,
+                        blockPos,
+                        SoundEvents.OTIS_SERIES_1_LANTERN_2_DOWN.get(),
                         SoundCategory.BLOCKS,
                         1.0F,
                         1.0F

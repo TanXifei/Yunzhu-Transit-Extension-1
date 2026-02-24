@@ -37,6 +37,7 @@ public class FontList {
             loadFont("mitsubishi_maxiez_lcd_1", "font/mitsubishi_maxiez_lcd_1.ttf");
             loadFont("kone-m-series", "font/kone-m-series.ttf");
             loadFont("otis_series1", "font/series1.otf");
+            loadFont("otis_series1_x11", "font/series1_x11.otf");
             loadFont("schindler_lcd", "font/schindler_lcd.ttf");
             loadFont("schindler_led", "font/schindler-led.ttf");
             loadFont("schindler_linea", "font/schindler-linea.ttf");

@@ -15,6 +15,7 @@ import org.mtr.mod.data.IGui;
 import org.mtr.mod.render.RenderLifts;
 import org.mtr.mod.render.StoredMatrixTransformations;
 import top.xfunny.mod.Init;
+import top.xfunny.mod.block.OtisSeries1LanternScreen1HorizontalEven;
 import top.xfunny.mod.block.OtisSeries1Screen;
 import top.xfunny.mod.block.SchindlerMSeriesRoundLantern1Even;
 import top.xfunny.mod.block.base.LiftButtonsBase;
@@ -241,7 +242,7 @@ public class RenderOtisSeries1LanternScreen1<T extends LiftButtonsBase.BlockEnti
 
         blockEntity.forEachTrackPosition(trackPosition -> {
             line.RenderLine(holdingLinker, trackPosition);
-            OtisSeries1Screen.LiftCheck(trackPosition, (floorIndex, lift) -> {
+            OtisSeries1LanternScreen1HorizontalEven.hasButtonsClient(trackPosition, buttonDescriptor, (floorIndex, lift) -> {
                 sortedPositionsAndLifts.add(new ObjectObjectImmutablePair<>(trackPosition, lift));
             });
         });
@@ -257,7 +258,7 @@ public class RenderOtisSeries1LanternScreen1<T extends LiftButtonsBase.BlockEnti
                         blockPos,
                         sortedPositionsAndLifts.get(i).right(),
                         FontList.instance.getFont("otis_series1"),
-                        5,
+                        4.5F,
                         0xFF1D953F);
                 liftFloorDisplayView.setTextureId(String.format("otis_series1_screen_display_%d", i));
                 liftFloorDisplayView.setWidth(1.3F / 16);
