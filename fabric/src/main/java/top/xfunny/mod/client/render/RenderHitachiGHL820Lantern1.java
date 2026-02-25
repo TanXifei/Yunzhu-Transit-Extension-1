@@ -170,6 +170,8 @@ public class RenderHitachiGHL820Lantern1<T extends LiftButtonsBase.BlockEntityBa
 
         final ObjectArrayList<ObjectObjectImmutablePair<BlockPos, Lift>> sortedPositionsAndLifts = new ObjectArrayList<>();
 
+        final boolean flash = (System.currentTimeMillis() % 800) < 400;
+
         blockEntity.forEachTrackPosition(trackPosition -> {
             line.RenderLine(holdingLinker, trackPosition);
 
@@ -192,8 +194,10 @@ public class RenderHitachiGHL820Lantern1<T extends LiftButtonsBase.BlockEntityBa
                 if (instructionDirections.isEmpty() && pressedButtonDirection != null && lift.getDoorValue() != 0 && floorNumber.equals(currentFloorNumber)) {
                     switch (pressedButtonDirection) {
                         case DOWN:
-                            downLanternLeft.activate();
-                            downLanternRight.activate();
+                            if (flash) {
+                                downLanternLeft.activate();
+                                downLanternRight.activate();
+                            }
                             if(!blockEntity.lastDownActive) {
                                 InitClient.REGISTRY_CLIENT.sendPacketToServer(new PacketLanternSoundInstruction(blockPos, "hitachi_ca_lantern_1"));
                                 blockEntity.lastUpActive = true;
@@ -201,8 +205,10 @@ public class RenderHitachiGHL820Lantern1<T extends LiftButtonsBase.BlockEntityBa
                             }
                             break;
                         case UP:
-                            upLanternLeft.activate();
-                            upLanternRight.activate();
+                            if (flash) {
+                                upLanternLeft.activate();
+                                upLanternRight.activate();
+                            }
                             if(!blockEntity.lastUpActive) {
                                 InitClient.REGISTRY_CLIENT.sendPacketToServer(new PacketLanternSoundInstruction(blockPos, "hitachi_ca_lantern_1"));
                                 blockEntity.lastUpActive = true;
@@ -218,8 +224,10 @@ public class RenderHitachiGHL820Lantern1<T extends LiftButtonsBase.BlockEntityBa
                             if (pressedButtonDirection != null) {
                                 switch (pressedButtonDirection) {
                                     case DOWN:
-                                        downLanternLeft.activate();
-                                        downLanternRight.activate();
+                                        if (flash) {
+                                            downLanternLeft.activate();
+                                            downLanternRight.activate();
+                                        }
                                         if(!blockEntity.lastDownActive) {
                                             InitClient.REGISTRY_CLIENT.sendPacketToServer(new PacketLanternSoundInstruction(blockPos, "hitachi_ca_lantern_1"));
                                             blockEntity.lastUpActive = true;
@@ -227,8 +235,10 @@ public class RenderHitachiGHL820Lantern1<T extends LiftButtonsBase.BlockEntityBa
                                         }
                                         break;
                                     case UP:
-                                        upLanternLeft.activate();
-                                        upLanternRight.activate();
+                                        if (flash) {
+                                            upLanternLeft.activate();
+                                            upLanternRight.activate();
+                                        }
                                         if(!blockEntity.lastUpActive) {
                                             InitClient.REGISTRY_CLIENT.sendPacketToServer(new PacketLanternSoundInstruction(blockPos, "hitachi_ca_lantern_1"));
                                             blockEntity.lastUpActive = true;
@@ -240,8 +250,10 @@ public class RenderHitachiGHL820Lantern1<T extends LiftButtonsBase.BlockEntityBa
                         } else {
                             switch (liftDirection) {
                                 case DOWN:
-                                    downLanternLeft.activate();
-                                    downLanternRight.activate();
+                                    if (flash) {
+                                        downLanternLeft.activate();
+                                        downLanternRight.activate();
+                                    }
                                     if(!blockEntity.lastDownActive) {
                                         InitClient.REGISTRY_CLIENT.sendPacketToServer(new PacketLanternSoundInstruction(blockPos, "hitachi_ca_lantern_1"));
                                         blockEntity.lastUpActive = true;
@@ -249,8 +261,10 @@ public class RenderHitachiGHL820Lantern1<T extends LiftButtonsBase.BlockEntityBa
                                     }
                                     break;
                                 case UP:
-                                    upLanternLeft.activate();
-                                    upLanternRight.activate();
+                                    if (flash) {
+                                        upLanternLeft.activate();
+                                        upLanternRight.activate();
+                                    }
                                     if(!blockEntity.lastUpActive) {
                                         InitClient.REGISTRY_CLIENT.sendPacketToServer(new PacketLanternSoundInstruction(blockPos, "hitachi_ca_lantern_1"));
                                         blockEntity.lastUpActive = true;
