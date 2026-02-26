@@ -129,6 +129,7 @@ public class RenderMitsubishiButtonSHT extends BlockEntityRenderer<MitsubishiBut
         buttonUpLight.setDefaultColor(ARGB_WHITE);
         buttonUpLight.setHoverColor(HOVER_COLOR);
         buttonUpLight.setPressedColor(PRESSED_COLOR);
+        buttonUpLight.setButtonSound("mitsubishi_nexway_button_2");
 
         ImageView buttonDown = new ImageView();
         buttonDown.setBasicsAttributes(world, blockPos);
@@ -149,6 +150,7 @@ public class RenderMitsubishiButtonSHT extends BlockEntityRenderer<MitsubishiBut
         buttonDownLight.setHoverColor(HOVER_COLOR);
         buttonDownLight.setPressedColor(PRESSED_COLOR);
         buttonDownLight.setFlip(false, true);
+        buttonDownLight.setButtonSound("mitsubishi_nexway_button_2");
 
 
         final LineComponent line = new LineComponent();

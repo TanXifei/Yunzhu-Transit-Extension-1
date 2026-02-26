@@ -116,7 +116,7 @@ public class RenderOtisSeries1Button2 extends BlockEntityRenderer<OtisSeries1But
         buttonUpLight.setDefaultColor(ARGB_WHITE);
         buttonUpLight.setHoverColor(HOVER_COLOR);
         buttonUpLight.setPressedColor(PRESSED_COLOR);
-        buttonUpLight.setLanternSound("otis_series_1_lantern_up");
+        buttonUpLight.setButtonSound("otis_series_1_button_1");
 
         ImageView buttonDown = new ImageView();
         buttonDown.setBasicsAttributes(world, blockPos);
@@ -137,7 +137,7 @@ public class RenderOtisSeries1Button2 extends BlockEntityRenderer<OtisSeries1But
         buttonDownLight.setDefaultColor(ARGB_WHITE);
         buttonDownLight.setHoverColor(HOVER_COLOR);
         buttonDownLight.setPressedColor(PRESSED_COLOR);
-        buttonDownLight.setLanternSound("otis_series_1_lantern_up");
+        buttonDownLight.setButtonSound("otis_series_1_button_1");
 
 
         final LineComponent line = new LineComponent();

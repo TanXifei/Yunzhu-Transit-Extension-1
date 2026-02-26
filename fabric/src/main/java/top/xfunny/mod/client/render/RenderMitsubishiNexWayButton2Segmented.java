@@ -128,6 +128,7 @@ public class RenderMitsubishiNexWayButton2Segmented extends BlockEntityRenderer<
         buttonUpLight.setDefaultColor(ARGB_WHITE);
         buttonUpLight.setHoverColor(HOVER_COLOR);
         buttonUpLight.setPressedColor(PRESSED_COLOR);
+        buttonUpLight.setButtonSound("mitsubishi_nexway_button_1");
 
         ImageView buttonDown = new ImageView();
         buttonDown.setBasicsAttributes(world, blockPos);
@@ -148,6 +149,7 @@ public class RenderMitsubishiNexWayButton2Segmented extends BlockEntityRenderer<
         buttonDownLight.setHoverColor(HOVER_COLOR);
         buttonDownLight.setPressedColor(PRESSED_COLOR);
         buttonDownLight.setFlip(false, true);
+        buttonDownLight.setButtonSound("mitsubishi_nexway_button_1");
 
 
         final LineComponent line = new LineComponent();

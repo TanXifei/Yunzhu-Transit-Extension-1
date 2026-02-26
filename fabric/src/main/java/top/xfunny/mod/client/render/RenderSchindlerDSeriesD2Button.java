@@ -106,6 +106,7 @@ public class RenderSchindlerDSeriesD2Button extends BlockEntityRenderer<Schindle
         buttonUpLight.setDefaultColor(ARGB_WHITE);
         buttonUpLight.setHoverColor(HOVER_COLOR);
         buttonUpLight.setPressedColor(PRESSED_COLOR);
+        buttonUpLight.setButtonSound("schindler_d_series_button_1");
 
         ImageView buttonDown = new ImageView();
         buttonDown.setBasicsAttributes(world, blockPos);
@@ -125,6 +126,7 @@ public class RenderSchindlerDSeriesD2Button extends BlockEntityRenderer<Schindle
         buttonDownLight.setDefaultColor(ARGB_WHITE);
         buttonDownLight.setHoverColor(HOVER_COLOR);
         buttonDownLight.setPressedColor(PRESSED_COLOR);
+        buttonDownLight.setButtonSound("schindler_d_series_button_1");
 
         final LineComponent line = new LineComponent();
         line.setBasicsAttributes(world, blockPos);

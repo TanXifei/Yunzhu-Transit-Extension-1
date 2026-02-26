@@ -128,6 +128,7 @@ public class RenderSchindlerLineaButton1White extends BlockEntityRenderer<Schind
         buttonUpLight.setDefaultColor(ARGB_WHITE, true);
         buttonUpLight.setHoverColor(HOVER_COLOR);
         buttonUpLight.setPressedColor(PRESSED_COLOR);
+        buttonUpLight.setButtonSound("schindler_linea_button_1");
 
         ImageView buttonDown = new ImageView();
         buttonDown.setBasicsAttributes(world, blockPos);
@@ -147,6 +148,7 @@ public class RenderSchindlerLineaButton1White extends BlockEntityRenderer<Schind
         buttonDownLight.setDefaultColor(ARGB_WHITE, true);
         buttonDownLight.setHoverColor(HOVER_COLOR);
         buttonDownLight.setPressedColor(PRESSED_COLOR);
+        buttonDownLight.setButtonSound("schindler_linea_button_1");
 
 
         final LineComponent line = new LineComponent();

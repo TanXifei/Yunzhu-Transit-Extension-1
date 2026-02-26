@@ -129,6 +129,7 @@ public class RenderSchindlerFIGSButton1Steel extends BlockEntityRenderer<Schindl
         buttonUpLight.setDefaultColor(0xFF333333, true);
         buttonUpLight.setHoverColor(HOVER_COLOR);
         buttonUpLight.setPressedColor(PRESSED_COLOR);
+        buttonUpLight.setButtonSound("schindler_fi_gs_button_1");
 
         ImageView buttonDown = new ImageView();
         buttonDown.setBasicsAttributes(world, blockPos);
@@ -148,6 +149,7 @@ public class RenderSchindlerFIGSButton1Steel extends BlockEntityRenderer<Schindl
         buttonDownLight.setDefaultColor(0xFF333333, true);
         buttonDownLight.setHoverColor(HOVER_COLOR);
         buttonDownLight.setPressedColor(PRESSED_COLOR);
+        buttonDownLight.setButtonSound("schindler_fi_gs_button_1");
 
 
         final LineComponent line = new LineComponent();

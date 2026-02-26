@@ -115,11 +115,12 @@ public class RenderSchindlerLineaButton2BlackWithoutScreen extends BlockEntityRe
         buttonUpLight.setDefaultColor(0xFF444444,true);
         buttonUpLight.setHoverColor(HOVER_COLOR);
         buttonUpLight.setPressedColor(PRESSED_COLOR);
+        buttonUpLight.setButtonSound("schindler_fi_gs_button_1");
 
         ImageView buttonDown = new ImageView();
         buttonDown.setBasicsAttributes(world, blockPos);
         buttonDown.setTexture(BUTTON_TEXTURE);
-        buttonDown.setDimension(0.9F / 16);
+        buttonDown.setDimension(0.8F / 16);
         buttonDown.setGravity(Gravity.CENTER);
         buttonDown.setLight(light);
         buttonDown.setFlip(false, true);
@@ -134,6 +135,7 @@ public class RenderSchindlerLineaButton2BlackWithoutScreen extends BlockEntityRe
         buttonDownLight.setDefaultColor(0xFF444444,true);
         buttonDownLight.setHoverColor(HOVER_COLOR);
         buttonDownLight.setPressedColor(PRESSED_COLOR);
+        buttonDownLight.setButtonSound("schindler_fi_gs_button_1");
 
 
         final LineComponent line = new LineComponent();

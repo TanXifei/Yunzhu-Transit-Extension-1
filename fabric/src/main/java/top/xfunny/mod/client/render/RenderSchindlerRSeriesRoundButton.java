@@ -107,6 +107,7 @@ public class RenderSchindlerRSeriesRoundButton extends BlockEntityRenderer<Schin
         buttonUpLight.setDefaultColor(ARGB_WHITE);
         buttonUpLight.setHoverColor(HOVER_COLOR);
         buttonUpLight.setPressedColor(PRESSED_COLOR);
+        buttonUpLight.setButtonSound("schindler_r_series_button_1");
 
         ImageView buttonDown = new ImageView();
         buttonDown.setBasicsAttributes(world, blockPos);
@@ -127,6 +128,7 @@ public class RenderSchindlerRSeriesRoundButton extends BlockEntityRenderer<Schin
         buttonDownLight.setHoverColor(HOVER_COLOR);
         buttonDownLight.setPressedColor(PRESSED_COLOR);
         buttonDownLight.setFlip(false, true);
+        buttonDownLight.setButtonSound("schindler_r_series_button_1");
 
         final LineComponent line = new LineComponent();
         line.setBasicsAttributes(world, blockEntity.getPos2());

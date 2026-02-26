@@ -12,6 +12,7 @@ import top.xfunny.mod.util.TransformPositionX;
 import static org.mtr.mapping.mapper.DirectionHelper.FACING;
 
 import java.util.Map;
+import java.util.Objects;
 import java.util.concurrent.ConcurrentHashMap;
 
 public class ButtonView extends ImageView {
@@ -19,16 +20,29 @@ public class ButtonView extends ImageView {
     private int hoverColor;
     private int pressedColor;
     private int defaultColor;
+
     private boolean isFocused;
-    private boolean isPressed;
+    private boolean isPressed; // 仅由 activate/reset 控制
     private boolean isAlwaysOn;
+
     private DefaultButtonsKeyMapping keyMapping;
+
     private float[] location, dimension;
     private float[] uv;
 
     private static final Map<String, Boolean> LAST_ACTIVE_MAP = new ConcurrentHashMap<>();
 
+    // ===============================
+    // 🔒 工业级点击冷却系统
+    // ===============================
+
+    private static final Map<String, Long> CLICK_TIME_MAP = new ConcurrentHashMap<>();
+    private static final long CLICK_COOLDOWN = 200; // 0.2 秒
+
+    private boolean wasUseKeyDown = false; // 边缘检测（实例级）
+
     private String lanternSoundInstruction = null;
+    private String buttonSound = null;
 
     public ButtonView() {
         location = new float[2];
@@ -47,18 +61,24 @@ public class ButtonView extends ImageView {
 
     @Override
     public void render() {
+
         location[0] = x;
         location[1] = y;
         dimension[0] = width;
         dimension[1] = height;
 
-        final HitResult hitResult = MinecraftClient.getInstance().getCrosshairTargetMapped();
-        if (hitResult != null && keyMapping != null) {
+        final MinecraftClient client = MinecraftClient.getInstance();
+        final HitResult hitResult = client.getCrosshairTargetMapped();
+
+        if (hitResult != null && keyMapping != null && world != null && blockPos != null) {
+
             keyMapping.registerButton(id, location, dimension);
+
             BlockState blockState = world.getBlockState(blockPos);
             Direction facing = IBlock.getStatePropertySafe(blockState, FACING);
 
             final Vector3d hitLocation = hitResult.getPos();
+
             final String inButton = keyMapping.mapping(
                     TransformPositionX.transform(
                             MathHelper.fractionalPart(hitLocation.getXMapped()),
@@ -67,22 +87,115 @@ public class ButtonView extends ImageView {
                     ),
                     MathHelper.fractionalPart(hitLocation.getYMapped())
             );
+
             final boolean inBlock = Init.newBlockPos(
                     hitLocation.getXMapped(),
                     hitLocation.getYMapped(),
                     hitLocation.getZMapped()
             ).equals(blockPos);
 
-            isFocused = inBlock && inButton.equals(id);
+            isFocused = inBlock && Objects.equals(inButton, id);
+
+            // ============================================
+            // 🔊 稳定物理点击系统（防机关枪 + 防实例重建）
+            // ============================================
+
+            boolean isUseKeyDown = client.getOptionsMapped().getKeyUseMapped().isPressed();
+            long now = System.currentTimeMillis();
+
+            if (isFocused && isUseKeyDown && !wasUseKeyDown) {
+
+                String clickKey = blockPos.getX() + "_" +
+                        blockPos.getY() + "_" +
+                        blockPos.getZ();
+
+                Long lastTime = CLICK_TIME_MAP.get(clickKey);
+
+                if (lastTime == null || now - lastTime > CLICK_COOLDOWN) {
+
+                    if (buttonSound != null) {
+                        InitClient.REGISTRY_CLIENT.sendPacketToServer(
+                                new PacketLanternSoundInstruction(blockPos, buttonSound)
+                        );
+                    }
+
+                    CLICK_TIME_MAP.put(clickKey, now);
+                }
+            }
+
+            wasUseKeyDown = isUseKeyDown;
         }
+
+        // ============================================
+        // 🛗 到站灯逻辑（完全保持原结构）
+        // ============================================
 
         if (isFocused || isPressed || isAlwaysOn) {
             setQueuedRenderLayer(QueuedRenderLayer.LIGHT_TRANSLUCENT);
         }
 
         setUv(uv);
-        color = isPressed ? pressedColor : isFocused ? hoverColor : defaultColor;
+
+        color = isPressed
+                ? pressedColor
+                : isFocused
+                ? hoverColor
+                : defaultColor;
+
         super.render();
+    }
+
+    // ============================================
+    // 🛗 电梯逻辑控制（服务器调用）
+    // ============================================
+
+    public void activate() {
+        isPressed = true;
+
+        if (lanternSoundInstruction == null || world == null || blockPos == null) {
+            return;
+        }
+
+        final String key = makeSoundKey();
+        if (key == null) return;
+
+        Boolean already = LAST_ACTIVE_MAP.get(key);
+        if (already != null && already) return;
+
+        InitClient.REGISTRY_CLIENT.sendPacketToServer(
+                new PacketLanternSoundInstruction(blockPos, lanternSoundInstruction)
+        );
+
+        LAST_ACTIVE_MAP.put(key, true);
+    }
+
+    public void resetLanternSound() {
+        isPressed = false;
+
+        final String key = makeSoundKey();
+        if (key == null) return;
+
+        LAST_ACTIVE_MAP.put(key, false);
+    }
+
+    private String makeSoundKey() {
+        if (world == null || blockPos == null || lanternSoundInstruction == null) return null;
+        return blockPos.getX() + "_" +
+                blockPos.getY() + "_" +
+                blockPos.getZ() + "_" +
+                lanternSoundInstruction;
+    }
+
+    // ============================================
+    // setter 区
+    // ============================================
+
+    public void setLanternSound(String soundInstruction) {
+        this.lanternSoundInstruction = soundInstruction;
+    }
+
+    public void setButtonSound(String sound) {
+        this.buttonSound = sound;
     }
 
     public void setDefaultColor(int defaultColor, boolean isAlwaysOn) {
@@ -113,43 +226,5 @@ public class ButtonView extends ImageView {
             uv[1] = uv[3];
             uv[3] = tempU;
         }
-    }
-
-    public void setLanternSound(String soundInstruction) {
-        this.lanternSoundInstruction = soundInstruction;
-    }
-
-    private String makeSoundKey() {
-        if (world == null || blockPos == null || lanternSoundInstruction == null) return null;
-        // 使用方块位置 + 指令构建唯一键
-        return blockPos.getX() + "_" + blockPos.getY() + "_" + blockPos.getZ() + "_" + lanternSoundInstruction;
-    }
-
-    public void activate() {
-        isPressed = true;
-
-        if (lanternSoundInstruction == null || world == null || blockPos == null) {
-            return;
-        }
-
-        final String key = makeSoundKey();
-        if (key == null) return;
-
-        // 避免重复声音（跨实例/跨帧）
-        Boolean already = LAST_ACTIVE_MAP.get(key);
-        if (already != null && already) return;
-
-        InitClient.REGISTRY_CLIENT.sendPacketToServer(
-                new PacketLanternSoundInstruction(blockPos, lanternSoundInstruction)
-        );
-
-        LAST_ACTIVE_MAP.put(key, true);
-    }
-
-    public void resetLanternSound() {
-        isPressed = false;
-        final String key = makeSoundKey();
-        if (key == null) return;
-        LAST_ACTIVE_MAP.put(key, false);
     }
 }

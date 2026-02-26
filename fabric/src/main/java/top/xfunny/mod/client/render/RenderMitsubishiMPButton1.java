@@ -110,6 +110,7 @@ public class RenderMitsubishiMPButton1 extends BlockEntityRenderer<MitsubishiMPB
         buttonUpLight.setDefaultColor(ARGB_WHITE);
         buttonUpLight.setHoverColor(HOVER_COLOR_UP);
         buttonUpLight.setPressedColor(PRESSED_COLOR_UP);
+        buttonUpLight.setButtonSound("mitsubishi_mp_button_1");
 
         ImageView buttonDown = new ImageView();
         buttonDown.setBasicsAttributes(world, blockPos);
@@ -129,6 +130,7 @@ public class RenderMitsubishiMPButton1 extends BlockEntityRenderer<MitsubishiMPB
         buttonDownLight.setDefaultColor(ARGB_WHITE);
         buttonDownLight.setHoverColor(HOVER_COLOR_DOWN);
         buttonDownLight.setPressedColor(PRESSED_COLOR_DOWN);
+        buttonDownLight.setButtonSound("mitsubishi_mp_button_1");
 
 
         final LineComponent line = new LineComponent();

@@ -131,6 +131,7 @@ public class RenderMitsubishiMaxiezButton1Silver extends BlockEntityRenderer<Mit
         buttonUpLight.setDefaultColor(ARGB_WHITE);
         buttonUpLight.setHoverColor(HOVER_COLOR);
         buttonUpLight.setPressedColor(PRESSED_COLOR);
+        buttonUpLight.setButtonSound("mitsubishi_nexway_button_2");
 
         ImageView buttonDown = new ImageView();
         buttonDown.setBasicsAttributes(world, blockPos);
@@ -151,6 +152,7 @@ public class RenderMitsubishiMaxiezButton1Silver extends BlockEntityRenderer<Mit
         buttonDownLight.setHoverColor(HOVER_COLOR);
         buttonDownLight.setPressedColor(PRESSED_COLOR);
         buttonDownLight.setFlip(false, true);
+        buttonDownLight.setButtonSound("mitsubishi_nexway_button_2");
 
         final LineComponent line = new LineComponent();
         line.setBasicsAttributes(world, blockPos);

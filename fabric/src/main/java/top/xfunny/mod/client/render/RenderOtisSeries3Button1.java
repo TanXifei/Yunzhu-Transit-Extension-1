@@ -140,6 +140,7 @@ public class RenderOtisSeries3Button1 extends BlockEntityRenderer<OtisSeries3But
         buttonUpLight.setDefaultColor(0xFF111111);
         buttonUpLight.setHoverColor(0xFFCCFFCC);
         buttonUpLight.setPressedColor(0xFF66FF66);
+        buttonUpLight.setButtonSound("otis_series_3_button_1");
 
         ButtonView buttonDownLight = new ButtonView();
         buttonDownLight.setId("down");
@@ -151,6 +152,7 @@ public class RenderOtisSeries3Button1 extends BlockEntityRenderer<OtisSeries3But
         buttonDownLight.setDefaultColor(0xFF111111);
         buttonDownLight.setHoverColor(0xFFFF9999);
         buttonDownLight.setPressedColor(0xFFFF0000);
+        buttonDownLight.setButtonSound("otis_series_3_button_1");
 
         final LineComponent line = new LineComponent();
         line.setBasicsAttributes(world, blockPos);
