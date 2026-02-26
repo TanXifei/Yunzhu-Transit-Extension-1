@@ -202,7 +202,7 @@ public class RenderHitachiVIB679Button extends BlockEntityRenderer<HitachiVIB679
                 liftFloorDisplayView.setWidth(1.5F / 16);
                 liftFloorDisplayView.setHeight(1.7F / 16);
                 liftFloorDisplayView.setLetterSpacing(5);
-                liftFloorDisplayView.setMargin(0, 0, 0.25F/16, 0);
+                liftFloorDisplayView.setMargin(0, -0.25F/ 16, 0.25F/16, 0);
                 liftFloorDisplayView.setTextAlign(TextView.HorizontalTextAlign.RIGHT);
                 liftFloorDisplayView.addStoredMatrixTransformations(graphicsHolder -> graphicsHolder.translate(0, 0, -SMALL_OFFSET));
 
@@ -210,7 +210,7 @@ public class RenderHitachiVIB679Button extends BlockEntityRenderer<HitachiVIB679
                 liftArrowView.setBasicsAttributes(world, blockPos, sortedPositionsAndLifts.get(i).right(), LiftArrowView.ArrowType.AUTO);
                 liftArrowView.setTexture(ARROW_TEXTURE);
                 liftArrowView.setDimension(0.875F / 16, 472, 436);
-                liftArrowView.setMargin(0, 0.97F / 16, 0, 0);
+                liftArrowView.setMargin(0.125F / 16, 1.12F / 16, 0, 0);
                 liftArrowView.setGravity(Gravity.CENTER_HORIZONTAL);
                 liftArrowView.setQueuedRenderLayer(QueuedRenderLayer.LIGHT_TRANSLUCENT);
                 if (unlocked) {
